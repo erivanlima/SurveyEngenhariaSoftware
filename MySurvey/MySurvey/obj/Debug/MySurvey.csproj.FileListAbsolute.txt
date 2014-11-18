@@ -1,0 +1,7 @@
+c:\users\douglas\documents\visual studio 2010\Projects\MySurvey\MySurvey\bin\MySurvey.dll
+c:\users\douglas\documents\visual studio 2010\Projects\MySurvey\MySurvey\bin\MySurvey.pdb
+c:\users\douglas\documents\visual studio 2010\Projects\MySurvey\MySurvey\bin\EntityFramework.dll
+c:\users\douglas\documents\visual studio 2010\Projects\MySurvey\MySurvey\bin\EntityFramework.xml
+c:\users\douglas\documents\visual studio 2010\Projects\MySurvey\MySurvey\obj\Debug\MySurvey.csprojResolveAssemblyReference.cache
+c:\users\douglas\documents\visual studio 2010\Projects\MySurvey\MySurvey\obj\Debug\MySurvey.dll
+c:\users\douglas\documents\visual studio 2010\Projects\MySurvey\MySurvey\obj\Debug\MySurvey.pdb
