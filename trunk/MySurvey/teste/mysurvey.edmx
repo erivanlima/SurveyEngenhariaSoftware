@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="mysurveyModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="mysurveyModelStoreContainer">
+          <EntitySet Name="TB_ENTREVISTADO" EntityType="mysurveyModel.Store.TB_ENTREVISTADO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TB_ITENS_DA_QUESTAO" EntityType="mysurveyModel.Store.TB_ITENS_DA_QUESTAO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TB_QUESTAO" EntityType="mysurveyModel.Store.TB_QUESTAO" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TB_RESPONSAVEL" EntityType="mysurveyModel.Store.TB_RESPONSAVEL" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TB_RESPOSTA" EntityType="mysurveyModel.Store.TB_RESPOSTA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TB_SURVEY" EntityType="mysurveyModel.Store.TB_SURVEY" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="TB_ENTREVISTADO">
+          <Key>
+            <PropertyRef Name="idTB_ENTREVISTADO" />
+          </Key>
+          <Property Name="idTB_ENTREVISTADO" Type="int" Nullable="false" />
+          <Property Name="NOME" Type="varchar" MaxLength="45" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="45" />
+          <Property Name="SOBRENOME" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="TB_ITENS_DA_QUESTAO">
+          <Key>
+            <PropertyRef Name="idTB_ITENS_DA_QUESTAO" />
+          </Key>
+          <Property Name="idTB_ITENS_DA_QUESTAO" Type="int" Nullable="false" />
+          <Property Name="Itens" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="TB_QUESTAO">
+          <Key>
+            <PropertyRef Name="id_Questao" />
+          </Key>
+          <Property Name="id_Questao" Type="int" Nullable="false" />
+          <Property Name="TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO" Type="int" />
+          <Property Name="TB_SURVEY_id_Survey" Type="int" Nullable="false" />
+          <Property Name="Tipo" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Pergunta" Type="varchar(max)" Nullable="false" />
+          <Property Name="Img" Type="varbinary(max)" />
+          <Property Name="Randomica" Type="bit" />
+          <Property Name="Obrigatoria" Type="bit" />
+          <Property Name="Codigo" Type="bit" Nullable="false" />
+          <Property Name="Linguagem" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="TB_RESPONSAVEL">
+          <Key>
+            <PropertyRef Name="id_Responsavel" />
+          </Key>
+          <Property Name="id_Responsavel" Type="int" Nullable="false" />
+          <Property Name="nome" Type="varchar" Nullable="false" MaxLength="45" />
+          <Property Name="email" Type="varchar" Nullable="false" MaxLength="45" />
+          <Property Name="sobrenome" Type="varchar" Nullable="false" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="TB_RESPOSTA">
+          <Key>
+            <PropertyRef Name="id_Resposta" />
+          </Key>
+          <Property Name="id_Resposta" Type="int" Nullable="false" />
+          <Property Name="TB_ENTREVISTADO_idTB_ENTREVISTADO" Type="int" Nullable="false" />
+          <Property Name="TB_QUESTAO_id_Questao" Type="int" Nullable="false" />
+          <Property Name="Resposta" Type="varchar(max)" />
+          <Property Name="Item" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="TB_SURVEY">
+          <Key>
+            <PropertyRef Name="id_Survey" />
+          </Key>
+          <Property Name="id_Survey" Type="int" Nullable="false" />
+          <Property Name="TB_RESPONSAVEL_id_Responsavel" Type="int" Nullable="false" />
+          <Property Name="Titulo" Type="varchar" Nullable="false" MaxLength="45" />
+          <Property Name="Subtitulo" Type="varchar" Nullable="false" MaxLength="45" />
+          <Property Name="Quantidade" Type="int" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="mysurveyModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="mysurveyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TB_ENTREVISTADO" EntityType="mysurveyModel.TB_ENTREVISTADO" />
+          <EntitySet Name="TB_ITENS_DA_QUESTAO" EntityType="mysurveyModel.TB_ITENS_DA_QUESTAO" />
+          <EntitySet Name="TB_QUESTAO" EntityType="mysurveyModel.TB_QUESTAO" />
+          <EntitySet Name="TB_RESPONSAVEL" EntityType="mysurveyModel.TB_RESPONSAVEL" />
+          <EntitySet Name="TB_RESPOSTA" EntityType="mysurveyModel.TB_RESPOSTA" />
+          <EntitySet Name="TB_SURVEY" EntityType="mysurveyModel.TB_SURVEY" />
+        </EntityContainer>
+        <EntityType Name="TB_ENTREVISTADO">
+          <Key>
+            <PropertyRef Name="idTB_ENTREVISTADO" />
+          </Key>
+          <Property Name="idTB_ENTREVISTADO" Type="Int32" Nullable="false" />
+          <Property Name="NOME" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="SOBRENOME" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TB_ITENS_DA_QUESTAO">
+          <Key>
+            <PropertyRef Name="idTB_ITENS_DA_QUESTAO" />
+          </Key>
+          <Property Name="idTB_ITENS_DA_QUESTAO" Type="Int32" Nullable="false" />
+          <Property Name="Itens" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TB_QUESTAO">
+          <Key>
+            <PropertyRef Name="id_Questao" />
+          </Key>
+          <Property Name="id_Questao" Type="Int32" Nullable="false" />
+          <Property Name="TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO" Type="Int32" />
+          <Property Name="TB_SURVEY_id_Survey" Type="Int32" Nullable="false" />
+          <Property Name="Tipo" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Pergunta" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Img" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Randomica" Type="Boolean" />
+          <Property Name="Obrigatoria" Type="Boolean" />
+          <Property Name="Codigo" Type="Boolean" Nullable="false" />
+          <Property Name="Linguagem" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TB_RESPONSAVEL">
+          <Key>
+            <PropertyRef Name="id_Responsavel" />
+          </Key>
+          <Property Name="id_Responsavel" Type="Int32" Nullable="false" />
+          <Property Name="nome" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="sobrenome" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TB_RESPOSTA">
+          <Key>
+            <PropertyRef Name="id_Resposta" />
+          </Key>
+          <Property Name="id_Resposta" Type="Int32" Nullable="false" />
+          <Property Name="TB_ENTREVISTADO_idTB_ENTREVISTADO" Type="Int32" Nullable="false" />
+          <Property Name="TB_QUESTAO_id_Questao" Type="Int32" Nullable="false" />
+          <Property Name="Resposta" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Item" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TB_SURVEY">
+          <Key>
+            <PropertyRef Name="id_Survey" />
+          </Key>
+          <Property Name="id_Survey" Type="Int32" Nullable="false" />
+          <Property Name="TB_RESPONSAVEL_id_Responsavel" Type="Int32" Nullable="false" />
+          <Property Name="Titulo" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Subtitulo" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="Quantidade" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="mysurveyModelStoreContainer" CdmEntityContainer="mysurveyEntities">
+          <EntitySetMapping Name="TB_ENTREVISTADO">
+            <EntityTypeMapping TypeName="mysurveyModel.TB_ENTREVISTADO">
+              <MappingFragment StoreEntitySet="TB_ENTREVISTADO">
+                <ScalarProperty Name="idTB_ENTREVISTADO" ColumnName="idTB_ENTREVISTADO" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="SOBRENOME" ColumnName="SOBRENOME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_ITENS_DA_QUESTAO">
+            <EntityTypeMapping TypeName="mysurveyModel.TB_ITENS_DA_QUESTAO">
+              <MappingFragment StoreEntitySet="TB_ITENS_DA_QUESTAO">
+                <ScalarProperty Name="idTB_ITENS_DA_QUESTAO" ColumnName="idTB_ITENS_DA_QUESTAO" />
+                <ScalarProperty Name="Itens" ColumnName="Itens" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_QUESTAO">
+            <EntityTypeMapping TypeName="mysurveyModel.TB_QUESTAO">
+              <MappingFragment StoreEntitySet="TB_QUESTAO">
+                <ScalarProperty Name="id_Questao" ColumnName="id_Questao" />
+                <ScalarProperty Name="TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO" ColumnName="TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO" />
+                <ScalarProperty Name="TB_SURVEY_id_Survey" ColumnName="TB_SURVEY_id_Survey" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Pergunta" ColumnName="Pergunta" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
+                <ScalarProperty Name="Randomica" ColumnName="Randomica" />
+                <ScalarProperty Name="Obrigatoria" ColumnName="Obrigatoria" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Linguagem" ColumnName="Linguagem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_RESPONSAVEL">
+            <EntityTypeMapping TypeName="mysurveyModel.TB_RESPONSAVEL">
+              <MappingFragment StoreEntitySet="TB_RESPONSAVEL">
+                <ScalarProperty Name="id_Responsavel" ColumnName="id_Responsavel" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="sobrenome" ColumnName="sobrenome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_RESPOSTA">
+            <EntityTypeMapping TypeName="mysurveyModel.TB_RESPOSTA">
+              <MappingFragment StoreEntitySet="TB_RESPOSTA">
+                <ScalarProperty Name="id_Resposta" ColumnName="id_Resposta" />
+                <ScalarProperty Name="TB_ENTREVISTADO_idTB_ENTREVISTADO" ColumnName="TB_ENTREVISTADO_idTB_ENTREVISTADO" />
+                <ScalarProperty Name="TB_QUESTAO_id_Questao" ColumnName="TB_QUESTAO_id_Questao" />
+                <ScalarProperty Name="Resposta" ColumnName="Resposta" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_SURVEY">
+            <EntityTypeMapping TypeName="mysurveyModel.TB_SURVEY">
+              <MappingFragment StoreEntitySet="TB_SURVEY">
+                <ScalarProperty Name="id_Survey" ColumnName="id_Survey" />
+                <ScalarProperty Name="TB_RESPONSAVEL_id_Responsavel" ColumnName="TB_RESPONSAVEL_id_Responsavel" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="Subtitulo" ColumnName="Subtitulo" />
+                <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="mysurvey">
+        <EntityTypeShape EntityType="mysurveyModel.TB_ENTREVISTADO" Width="1.5" PointX="0.75" PointY="0.75" Height="1.787985026041667" IsExpanded="true" />
+        <EntityTypeShape EntityType="mysurveyModel.TB_ITENS_DA_QUESTAO" Width="1.5" PointX="2.75" PointY="0.75" Height="1.4033821614583335" IsExpanded="true" />
+        <EntityTypeShape EntityType="mysurveyModel.TB_QUESTAO" Width="1.5" PointX="0.75" PointY="3.75" Height="2.9417936197916656" IsExpanded="true" />
+        <EntityTypeShape EntityType="mysurveyModel.TB_RESPONSAVEL" Width="1.5" PointX="2.75" PointY="3.75" Height="1.7879850260416657" IsExpanded="true" />
+        <EntityTypeShape EntityType="mysurveyModel.TB_RESPOSTA" Width="1.5" PointX="4.75" PointY="0.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="mysurveyModel.TB_SURVEY" Width="1.5" PointX="4.75" PointY="3.75" Height="1.9802864583333322" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
