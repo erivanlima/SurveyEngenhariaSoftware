@@ -68,6 +68,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\EntrevistadoModel.cs" />
+    <Compile Include="Models\Itens_da_QuestaoModel.cs" />
+    <Compile Include="Models\QuestaoModel.cs" />
+    <Compile Include="Models\ResponsavelModel.cs" />
+    <Compile Include="Models\RespostaModel.cs" />
+    <Compile Include="Models\SurveyModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

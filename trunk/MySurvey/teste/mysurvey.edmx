@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="mysurveyModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="mysurveyModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="mysurveyModelStoreContainer">
           <EntitySet Name="TB_ENTREVISTADO" EntityType="mysurveyModel.Store.TB_ENTREVISTADO" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TB_ITENS_DA_QUESTAO" EntityType="mysurveyModel.Store.TB_ITENS_DA_QUESTAO" store:Type="Tables" Schema="dbo" />
@@ -27,7 +27,11 @@
             <PropertyRef Name="idTB_ITENS_DA_QUESTAO" />
           </Key>
           <Property Name="idTB_ITENS_DA_QUESTAO" Type="int" Nullable="false" />
-          <Property Name="Itens" Type="varchar(max)" />
+          <Property Name="ItemA" Type="varchar(max)" Nullable="false" />
+          <Property Name="ItemB" Type="varchar(max)" Nullable="false" />
+          <Property Name="ItemC" Type="varchar(max)" />
+          <Property Name="ItemD" Type="varchar(max)" />
+          <Property Name="ItemE" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="TB_QUESTAO">
           <Key>
@@ -71,10 +75,11 @@
           <Property Name="TB_RESPONSAVEL_id_Responsavel" Type="int" Nullable="false" />
           <Property Name="Titulo" Type="varchar" Nullable="false" MaxLength="45" />
           <Property Name="Subtitulo" Type="varchar" Nullable="false" MaxLength="45" />
-          <Property Name="Quantidade" Type="int" />
+          <Property Name="Data_Criacao" Type="datetime" Nullable="false" />
+          <Property Name="Data_fim" Type="datetime" />
+          <Property Name="flag_ativo" Type="bit" Nullable="false" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="mysurveyModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -101,6 +106,11 @@
           </Key>
           <Property Name="idTB_ITENS_DA_QUESTAO" Type="Int32" Nullable="false" />
           <Property Name="Itens" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Type="String" Name="ItemA" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ItemB" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ItemC" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ItemD" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ItemE" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TB_QUESTAO">
           <Key>
@@ -145,6 +155,9 @@
           <Property Name="Titulo" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
           <Property Name="Subtitulo" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
           <Property Name="Quantidade" Type="Int32" />
+          <Property Type="DateTime" Name="Data_Criacao" Nullable="false" />
+          <Property Type="DateTime" Name="Data_fim" />
+          <Property Type="Boolean" Name="flag_ativo" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -165,8 +178,12 @@
           <EntitySetMapping Name="TB_ITENS_DA_QUESTAO">
             <EntityTypeMapping TypeName="mysurveyModel.TB_ITENS_DA_QUESTAO">
               <MappingFragment StoreEntitySet="TB_ITENS_DA_QUESTAO">
+                <ScalarProperty Name="ItemE" ColumnName="ItemE" />
+                <ScalarProperty Name="ItemD" ColumnName="ItemD" />
+                <ScalarProperty Name="ItemC" ColumnName="ItemC" />
+                <ScalarProperty Name="ItemB" ColumnName="ItemB" />
+                <ScalarProperty Name="ItemA" ColumnName="ItemA" />
                 <ScalarProperty Name="idTB_ITENS_DA_QUESTAO" ColumnName="idTB_ITENS_DA_QUESTAO" />
-                <ScalarProperty Name="Itens" ColumnName="Itens" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -210,11 +227,13 @@
           <EntitySetMapping Name="TB_SURVEY">
             <EntityTypeMapping TypeName="mysurveyModel.TB_SURVEY">
               <MappingFragment StoreEntitySet="TB_SURVEY">
+                <ScalarProperty Name="flag_ativo" ColumnName="flag_ativo" />
+                <ScalarProperty Name="Data_fim" ColumnName="Data_fim" />
+                <ScalarProperty Name="Data_Criacao" ColumnName="Data_Criacao" />
                 <ScalarProperty Name="id_Survey" ColumnName="id_Survey" />
                 <ScalarProperty Name="TB_RESPONSAVEL_id_Responsavel" ColumnName="TB_RESPONSAVEL_id_Responsavel" />
                 <ScalarProperty Name="Titulo" ColumnName="Titulo" />
                 <ScalarProperty Name="Subtitulo" ColumnName="Subtitulo" />
-                <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

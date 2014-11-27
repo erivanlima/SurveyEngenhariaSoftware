@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mysurveyModelStoreContainer" CdmEntityContainer="mysurveyEntities">
+    <EntitySetMapping Name="TB_ENTREVISTADO">
+      <EntityTypeMapping TypeName="mysurveyModel.TB_ENTREVISTADO">
+        <MappingFragment StoreEntitySet="TB_ENTREVISTADO">
+          <ScalarProperty Name="idTB_ENTREVISTADO" ColumnName="idTB_ENTREVISTADO" />
+          <ScalarProperty Name="NOME" ColumnName="NOME" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="SOBRENOME" ColumnName="SOBRENOME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_ITENS_DA_QUESTAO">
+      <EntityTypeMapping TypeName="mysurveyModel.TB_ITENS_DA_QUESTAO">
+        <MappingFragment StoreEntitySet="TB_ITENS_DA_QUESTAO">
+          <ScalarProperty Name="ItemE" ColumnName="ItemE" />
+          <ScalarProperty Name="ItemD" ColumnName="ItemD" />
+          <ScalarProperty Name="ItemC" ColumnName="ItemC" />
+          <ScalarProperty Name="ItemB" ColumnName="ItemB" />
+          <ScalarProperty Name="ItemA" ColumnName="ItemA" />
+          <ScalarProperty Name="idTB_ITENS_DA_QUESTAO" ColumnName="idTB_ITENS_DA_QUESTAO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_QUESTAO">
+      <EntityTypeMapping TypeName="mysurveyModel.TB_QUESTAO">
+        <MappingFragment StoreEntitySet="TB_QUESTAO">
+          <ScalarProperty Name="id_Questao" ColumnName="id_Questao" />
+          <ScalarProperty Name="TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO" ColumnName="TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO" />
+          <ScalarProperty Name="TB_SURVEY_id_Survey" ColumnName="TB_SURVEY_id_Survey" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Pergunta" ColumnName="Pergunta" />
+          <ScalarProperty Name="Img" ColumnName="Img" />
+          <ScalarProperty Name="Randomica" ColumnName="Randomica" />
+          <ScalarProperty Name="Obrigatoria" ColumnName="Obrigatoria" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Linguagem" ColumnName="Linguagem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_RESPONSAVEL">
+      <EntityTypeMapping TypeName="mysurveyModel.TB_RESPONSAVEL">
+        <MappingFragment StoreEntitySet="TB_RESPONSAVEL">
+          <ScalarProperty Name="id_Responsavel" ColumnName="id_Responsavel" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="sobrenome" ColumnName="sobrenome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_RESPOSTA">
+      <EntityTypeMapping TypeName="mysurveyModel.TB_RESPOSTA">
+        <MappingFragment StoreEntitySet="TB_RESPOSTA">
+          <ScalarProperty Name="id_Resposta" ColumnName="id_Resposta" />
+          <ScalarProperty Name="TB_ENTREVISTADO_idTB_ENTREVISTADO" ColumnName="TB_ENTREVISTADO_idTB_ENTREVISTADO" />
+          <ScalarProperty Name="TB_QUESTAO_id_Questao" ColumnName="TB_QUESTAO_id_Questao" />
+          <ScalarProperty Name="Resposta" ColumnName="Resposta" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_SURVEY">
+      <EntityTypeMapping TypeName="mysurveyModel.TB_SURVEY">
+        <MappingFragment StoreEntitySet="TB_SURVEY">
+          <ScalarProperty Name="flag_ativo" ColumnName="flag_ativo" />
+          <ScalarProperty Name="Data_fim" ColumnName="Data_fim" />
+          <ScalarProperty Name="Data_Criacao" ColumnName="Data_Criacao" />
+          <ScalarProperty Name="id_Survey" ColumnName="id_Survey" />
+          <ScalarProperty Name="TB_RESPONSAVEL_id_Responsavel" ColumnName="TB_RESPONSAVEL_id_Responsavel" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="Subtitulo" ColumnName="Subtitulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

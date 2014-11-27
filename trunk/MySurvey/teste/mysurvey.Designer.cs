@@ -364,10 +364,14 @@ namespace teste
         /// Crie um novo objeto TB_ITENS_DA_QUESTAO.
         /// </summary>
         /// <param name="idTB_ITENS_DA_QUESTAO">Valor inicial da propriedade idTB_ITENS_DA_QUESTAO.</param>
-        public static TB_ITENS_DA_QUESTAO CreateTB_ITENS_DA_QUESTAO(global::System.Int32 idTB_ITENS_DA_QUESTAO)
+        /// <param name="itemA">Valor inicial da propriedade ItemA.</param>
+        /// <param name="itemB">Valor inicial da propriedade ItemB.</param>
+        public static TB_ITENS_DA_QUESTAO CreateTB_ITENS_DA_QUESTAO(global::System.Int32 idTB_ITENS_DA_QUESTAO, global::System.String itemA, global::System.String itemB)
         {
             TB_ITENS_DA_QUESTAO tB_ITENS_DA_QUESTAO = new TB_ITENS_DA_QUESTAO();
             tB_ITENS_DA_QUESTAO.idTB_ITENS_DA_QUESTAO = idTB_ITENS_DA_QUESTAO;
+            tB_ITENS_DA_QUESTAO.ItemA = itemA;
+            tB_ITENS_DA_QUESTAO.ItemB = itemB;
             return tB_ITENS_DA_QUESTAO;
         }
 
@@ -425,6 +429,126 @@ namespace teste
         private global::System.String _Itens;
         partial void OnItensChanging(global::System.String value);
         partial void OnItensChanged();
+    
+        /// <summary>
+        /// Nenhuma Documentação de Metadados disponível.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String ItemA
+        {
+            get
+            {
+                return _ItemA;
+            }
+            set
+            {
+                OnItemAChanging(value);
+                ReportPropertyChanging("ItemA");
+                _ItemA = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ItemA");
+                OnItemAChanged();
+            }
+        }
+        private global::System.String _ItemA;
+        partial void OnItemAChanging(global::System.String value);
+        partial void OnItemAChanged();
+    
+        /// <summary>
+        /// Nenhuma Documentação de Metadados disponível.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String ItemB
+        {
+            get
+            {
+                return _ItemB;
+            }
+            set
+            {
+                OnItemBChanging(value);
+                ReportPropertyChanging("ItemB");
+                _ItemB = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ItemB");
+                OnItemBChanged();
+            }
+        }
+        private global::System.String _ItemB;
+        partial void OnItemBChanging(global::System.String value);
+        partial void OnItemBChanged();
+    
+        /// <summary>
+        /// Nenhuma Documentação de Metadados disponível.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ItemC
+        {
+            get
+            {
+                return _ItemC;
+            }
+            set
+            {
+                OnItemCChanging(value);
+                ReportPropertyChanging("ItemC");
+                _ItemC = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ItemC");
+                OnItemCChanged();
+            }
+        }
+        private global::System.String _ItemC;
+        partial void OnItemCChanging(global::System.String value);
+        partial void OnItemCChanged();
+    
+        /// <summary>
+        /// Nenhuma Documentação de Metadados disponível.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ItemD
+        {
+            get
+            {
+                return _ItemD;
+            }
+            set
+            {
+                OnItemDChanging(value);
+                ReportPropertyChanging("ItemD");
+                _ItemD = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ItemD");
+                OnItemDChanged();
+            }
+        }
+        private global::System.String _ItemD;
+        partial void OnItemDChanging(global::System.String value);
+        partial void OnItemDChanged();
+    
+        /// <summary>
+        /// Nenhuma Documentação de Metadados disponível.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ItemE
+        {
+            get
+            {
+                return _ItemE;
+            }
+            set
+            {
+                OnItemEChanging(value);
+                ReportPropertyChanging("ItemE");
+                _ItemE = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ItemE");
+                OnItemEChanged();
+            }
+        }
+        private global::System.String _ItemE;
+        partial void OnItemEChanging(global::System.String value);
+        partial void OnItemEChanged();
 
         #endregion
 
@@ -1021,13 +1145,17 @@ namespace teste
         /// <param name="tB_RESPONSAVEL_id_Responsavel">Valor inicial da propriedade TB_RESPONSAVEL_id_Responsavel.</param>
         /// <param name="titulo">Valor inicial da propriedade Titulo.</param>
         /// <param name="subtitulo">Valor inicial da propriedade Subtitulo.</param>
-        public static TB_SURVEY CreateTB_SURVEY(global::System.Int32 id_Survey, global::System.Int32 tB_RESPONSAVEL_id_Responsavel, global::System.String titulo, global::System.String subtitulo)
+        /// <param name="data_Criacao">Valor inicial da propriedade Data_Criacao.</param>
+        /// <param name="flag_ativo">Valor inicial da propriedade flag_ativo.</param>
+        public static TB_SURVEY CreateTB_SURVEY(global::System.Int32 id_Survey, global::System.Int32 tB_RESPONSAVEL_id_Responsavel, global::System.String titulo, global::System.String subtitulo, global::System.DateTime data_Criacao, global::System.Boolean flag_ativo)
         {
             TB_SURVEY tB_SURVEY = new TB_SURVEY();
             tB_SURVEY.id_Survey = id_Survey;
             tB_SURVEY.TB_RESPONSAVEL_id_Responsavel = tB_RESPONSAVEL_id_Responsavel;
             tB_SURVEY.Titulo = titulo;
             tB_SURVEY.Subtitulo = subtitulo;
+            tB_SURVEY.Data_Criacao = data_Criacao;
+            tB_SURVEY.flag_ativo = flag_ativo;
             return tB_SURVEY;
         }
 
@@ -1157,6 +1285,78 @@ namespace teste
         private Nullable<global::System.Int32> _Quantidade;
         partial void OnQuantidadeChanging(Nullable<global::System.Int32> value);
         partial void OnQuantidadeChanged();
+    
+        /// <summary>
+        /// Nenhuma Documentação de Metadados disponível.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime Data_Criacao
+        {
+            get
+            {
+                return _Data_Criacao;
+            }
+            set
+            {
+                OnData_CriacaoChanging(value);
+                ReportPropertyChanging("Data_Criacao");
+                _Data_Criacao = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Data_Criacao");
+                OnData_CriacaoChanged();
+            }
+        }
+        private global::System.DateTime _Data_Criacao;
+        partial void OnData_CriacaoChanging(global::System.DateTime value);
+        partial void OnData_CriacaoChanged();
+    
+        /// <summary>
+        /// Nenhuma Documentação de Metadados disponível.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> Data_fim
+        {
+            get
+            {
+                return _Data_fim;
+            }
+            set
+            {
+                OnData_fimChanging(value);
+                ReportPropertyChanging("Data_fim");
+                _Data_fim = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Data_fim");
+                OnData_fimChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _Data_fim;
+        partial void OnData_fimChanging(Nullable<global::System.DateTime> value);
+        partial void OnData_fimChanged();
+    
+        /// <summary>
+        /// Nenhuma Documentação de Metadados disponível.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean flag_ativo
+        {
+            get
+            {
+                return _flag_ativo;
+            }
+            set
+            {
+                Onflag_ativoChanging(value);
+                ReportPropertyChanging("flag_ativo");
+                _flag_ativo = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("flag_ativo");
+                Onflag_ativoChanged();
+            }
+        }
+        private global::System.Boolean _flag_ativo;
+        partial void Onflag_ativoChanging(global::System.Boolean value);
+        partial void Onflag_ativoChanged();
 
         #endregion
 
