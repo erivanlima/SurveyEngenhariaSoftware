@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mysurveyModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="mysurveyEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TB_ENTREVISTADO" EntityType="mysurveyModel.TB_ENTREVISTADO" />
+    <EntitySet Name="TB_ITENS_DA_QUESTAO" EntityType="mysurveyModel.TB_ITENS_DA_QUESTAO" />
+    <EntitySet Name="TB_QUESTAO" EntityType="mysurveyModel.TB_QUESTAO" />
+    <EntitySet Name="TB_RESPONSAVEL" EntityType="mysurveyModel.TB_RESPONSAVEL" />
+    <EntitySet Name="TB_RESPOSTA" EntityType="mysurveyModel.TB_RESPOSTA" />
+    <EntitySet Name="TB_SURVEY" EntityType="mysurveyModel.TB_SURVEY" />
+  </EntityContainer>
+  <EntityType Name="TB_ENTREVISTADO">
+    <Key>
+      <PropertyRef Name="idTB_ENTREVISTADO" />
+    </Key>
+    <Property Name="idTB_ENTREVISTADO" Type="Int32" Nullable="false" />
+    <Property Name="NOME" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="SOBRENOME" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TB_ITENS_DA_QUESTAO">
+    <Key>
+      <PropertyRef Name="idTB_ITENS_DA_QUESTAO" />
+    </Key>
+    <Property Name="idTB_ITENS_DA_QUESTAO" Type="Int32" Nullable="false" />
+    <Property Name="Itens" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Type="String" Name="ItemA" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ItemB" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ItemC" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ItemD" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ItemE" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TB_QUESTAO">
+    <Key>
+      <PropertyRef Name="id_Questao" />
+    </Key>
+    <Property Name="id_Questao" Type="Int32" Nullable="false" />
+    <Property Name="TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO" Type="Int32" />
+    <Property Name="TB_SURVEY_id_Survey" Type="Int32" Nullable="false" />
+    <Property Name="Tipo" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Pergunta" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Img" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Randomica" Type="Boolean" />
+    <Property Name="Obrigatoria" Type="Boolean" />
+    <Property Name="Codigo" Type="Boolean" Nullable="false" />
+    <Property Name="Linguagem" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TB_RESPONSAVEL">
+    <Key>
+      <PropertyRef Name="id_Responsavel" />
+    </Key>
+    <Property Name="id_Responsavel" Type="Int32" Nullable="false" />
+    <Property Name="nome" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="sobrenome" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TB_RESPOSTA">
+    <Key>
+      <PropertyRef Name="id_Resposta" />
+    </Key>
+    <Property Name="id_Resposta" Type="Int32" Nullable="false" />
+    <Property Name="TB_ENTREVISTADO_idTB_ENTREVISTADO" Type="Int32" Nullable="false" />
+    <Property Name="TB_QUESTAO_id_Questao" Type="Int32" Nullable="false" />
+    <Property Name="Resposta" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Item" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TB_SURVEY">
+    <Key>
+      <PropertyRef Name="id_Survey" />
+    </Key>
+    <Property Name="id_Survey" Type="Int32" Nullable="false" />
+    <Property Name="TB_RESPONSAVEL_id_Responsavel" Type="Int32" Nullable="false" />
+    <Property Name="Titulo" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="Subtitulo" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="Quantidade" Type="Int32" />
+    <Property Type="DateTime" Name="Data_Criacao" Nullable="false" />
+    <Property Type="DateTime" Name="Data_fim" />
+    <Property Type="Boolean" Name="flag_ativo" Nullable="false" />
+  </EntityType>
+</Schema>
