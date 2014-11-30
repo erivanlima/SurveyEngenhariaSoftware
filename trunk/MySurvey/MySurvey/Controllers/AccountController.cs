@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
 using MySurvey.Models;
+using Modelos;
 
 namespace MySurvey.Controllers
 {

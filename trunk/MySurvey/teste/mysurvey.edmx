@@ -263,7 +263,7 @@
         <EntityTypeShape EntityType="mysurveyModel.TB_QUESTAO" Width="1.5" PointX="0.75" PointY="3.75" Height="2.9417936197916656" IsExpanded="true" />
         <EntityTypeShape EntityType="mysurveyModel.TB_RESPONSAVEL" Width="1.5" PointX="2.75" PointY="3.75" Height="1.7879850260416657" IsExpanded="true" />
         <EntityTypeShape EntityType="mysurveyModel.TB_RESPOSTA" Width="1.5" PointX="4.75" PointY="0.75" Height="1.9802864583333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="mysurveyModel.TB_SURVEY" Width="1.5" PointX="4.75" PointY="3.75" Height="1.9802864583333322" IsExpanded="true" />
+        <EntityTypeShape EntityType="mysurveyModel.TB_SURVEY" Width="1.5" PointX="4.75" PointY="3.75" Height="2.5571907552083326" IsExpanded="true" />
       </Diagram>
     </Diagrams>
   </Designer>
