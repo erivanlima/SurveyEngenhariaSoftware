@@ -2,3 +2,4 @@ C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\Service\bin\Debug\Service.d
 C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\Service\bin\Debug\Service.pdb
 C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\Service\obj\Debug\Service.dll
 C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\Service\obj\Debug\Service.pdb
+C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
