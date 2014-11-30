@@ -146,6 +146,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{C973A2F4-89CE-43E7-AE78-65A3A8E76C63}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
     <ProjectReference Include="..\teste\Modelos.csproj">
       <Project>{CF4BE3AD-0A67-4702-965B-170EBF64EAE0}</Project>
       <Name>Modelos</Name>

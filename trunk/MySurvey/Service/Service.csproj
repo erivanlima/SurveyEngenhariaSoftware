@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,8 +41,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="GerenciadorEntrevistado.cs" />
+    <Compile Include="GerenciadorItens.cs" />
+    <Compile Include="GerenciadorQuestao.cs" />
+    <Compile Include="GerenciadorResponsavel.cs" />
+    <Compile Include="GerenciadorResposta.cs" />
+    <Compile Include="GerenciadorSurvey.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Persistence\Persistence.csproj">
+      <Project>{CDF079F5-2F0E-4597-B9F8-420EB59E655B}</Project>
+      <Name>Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\teste\Modelos.csproj">
+      <Project>{CF4BE3AD-0A67-4702-965B-170EBF64EAE0}</Project>
+      <Name>Modelos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

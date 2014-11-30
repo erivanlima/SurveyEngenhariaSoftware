@@ -14,3 +14,5 @@ C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\MySurvey\bin\EntityFramewor
 C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\MySurvey\bin\EntityFramework.xml
 C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\MySurvey\bin\teste.dll
 C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\MySurvey\bin\teste.pdb
+C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\MySurvey\bin\Service.dll
+C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\MySurvey\bin\Service.pdb
