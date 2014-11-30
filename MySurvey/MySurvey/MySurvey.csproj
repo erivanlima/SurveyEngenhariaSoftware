@@ -67,13 +67,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\EntrevistadoModel.cs" />
-    <Compile Include="Models\Itens_da_QuestaoModel.cs" />
-    <Compile Include="Models\QuestaoModel.cs" />
-    <Compile Include="Models\ResponsavelModel.cs" />
-    <Compile Include="Models\RespostaModel.cs" />
-    <Compile Include="Models\SurveyModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +144,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\teste\Modelos.csproj">
+      <Project>{CF4BE3AD-0A67-4702-965B-170EBF64EAE0}</Project>
+      <Name>Modelos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
