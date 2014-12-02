@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mysurveyModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="mysurveyEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TB_ENTREVISTADO" EntityType="mysurveyModel.TB_ENTREVISTADO" />
+    <EntitySet Name="TB_ITENS_DA_QUESTAO" EntityType="mysurveyModel.TB_ITENS_DA_QUESTAO" />
+    <EntitySet Name="TB_QUESTAO" EntityType="mysurveyModel.TB_QUESTAO" />
+    <EntitySet Name="TB_RESPONSAVEL" EntityType="mysurveyModel.TB_RESPONSAVEL" />
+    <EntitySet Name="TB_RESPOSTA" EntityType="mysurveyModel.TB_RESPOSTA" />
+    <EntitySet Name="TB_SURVEY" EntityType="mysurveyModel.TB_SURVEY" />
+    <AssociationSet Name="TB_RESPOSTA_FKIndex2" Association="mysurveyModel.TB_RESPOSTA_FKIndex2">
+      <End Role="TB_ENTREVISTADO" EntitySet="TB_ENTREVISTADO" />
+      <End Role="TB_RESPOSTA" EntitySet="TB_RESPOSTA" />
+    </AssociationSet>
+    <AssociationSet Name="TB_QUESTAO_FKIndex2" Association="mysurveyModel.TB_QUESTAO_FKIndex2">
+      <End Role="TB_ITENS_DA_QUESTAO" EntitySet="TB_ITENS_DA_QUESTAO" />
+      <End Role="TB_QUESTAO" EntitySet="TB_QUESTAO" />
+    </AssociationSet>
+    <AssociationSet Name="TB_QUESTAO_FKIndex1" Association="mysurveyModel.TB_QUESTAO_FKIndex1">
+      <End Role="TB_SURVEY" EntitySet="TB_SURVEY" />
+      <End Role="TB_QUESTAO" EntitySet="TB_QUESTAO" />
+    </AssociationSet>
+    <AssociationSet Name="TB_RESPOSTA_FKIndex1" Association="mysurveyModel.TB_RESPOSTA_FKIndex1">
+      <End Role="TB_QUESTAO" EntitySet="TB_QUESTAO" />
+      <End Role="TB_RESPOSTA" EntitySet="TB_RESPOSTA" />
+    </AssociationSet>
+    <AssociationSet Name="TB_SURVEY_FKIndex1" Association="mysurveyModel.TB_SURVEY_FKIndex1">
+      <End Role="TB_RESPONSAVEL" EntitySet="TB_RESPONSAVEL" />
+      <End Role="TB_SURVEY" EntitySet="TB_SURVEY" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="TB_ENTREVISTADO">
+    <Key>
+      <PropertyRef Name="idTB_ENTREVISTADO" />
+    </Key>
+    <Property Name="idTB_ENTREVISTADO" Type="Int32" Nullable="false" />
+    <Property Name="NOME" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="SOBRENOME" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="TB_RESPOSTA" Relationship="mysurveyModel.TB_RESPOSTA_FKIndex2" FromRole="TB_ENTREVISTADO" ToRole="TB_RESPOSTA" />
+  </EntityType>
+  <EntityType Name="TB_ITENS_DA_QUESTAO">
+    <Key>
+      <PropertyRef Name="idTB_ITENS_DA_QUESTAO" />
+    </Key>
+    <Property Name="idTB_ITENS_DA_QUESTAO" Type="Int32" Nullable="false" />
+    <Property Name="ItemA" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="ItemB" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="ItemC" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="ItemD" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="ItemE" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="TB_QUESTAO" Relationship="mysurveyModel.TB_QUESTAO_FKIndex2" FromRole="TB_ITENS_DA_QUESTAO" ToRole="TB_QUESTAO" />
+  </EntityType>
+  <EntityType Name="TB_QUESTAO">
+    <Key>
+      <PropertyRef Name="id_Questao" />
+    </Key>
+    <Property Name="id_Questao" Type="Int32" Nullable="false" />
+    <Property Name="TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO" Type="Int32" />
+    <Property Name="TB_SURVEY_id_Survey" Type="Int32" Nullable="false" />
+    <Property Name="Tipo" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Pergunta" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Img" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Randomica" Type="Boolean" />
+    <Property Name="Obrigatoria" Type="Boolean" />
+    <Property Name="Codigo" Type="Boolean" Nullable="false" />
+    <Property Name="Linguagem" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="TB_ITENS_DA_QUESTAO" Relationship="mysurveyModel.TB_QUESTAO_FKIndex2" FromRole="TB_QUESTAO" ToRole="TB_ITENS_DA_QUESTAO" />
+    <NavigationProperty Name="TB_SURVEY" Relationship="mysurveyModel.TB_QUESTAO_FKIndex1" FromRole="TB_QUESTAO" ToRole="TB_SURVEY" />
+    <NavigationProperty Name="TB_RESPOSTA" Relationship="mysurveyModel.TB_RESPOSTA_FKIndex1" FromRole="TB_QUESTAO" ToRole="TB_RESPOSTA" />
+  </EntityType>
+  <EntityType Name="TB_RESPONSAVEL">
+    <Key>
+      <PropertyRef Name="id_Responsavel" />
+    </Key>
+    <Property Name="id_Responsavel" Type="Int32" Nullable="false" />
+    <Property Name="nome" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="sobrenome" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="TB_SURVEY" Relationship="mysurveyModel.TB_SURVEY_FKIndex1" FromRole="TB_RESPONSAVEL" ToRole="TB_SURVEY" />
+  </EntityType>
+  <EntityType Name="TB_RESPOSTA">
+    <Key>
+      <PropertyRef Name="id_Resposta" />
+    </Key>
+    <Property Name="id_Resposta" Type="Int32" Nullable="false" />
+    <Property Name="TB_ENTREVISTADO_idTB_ENTREVISTADO" Type="Int32" Nullable="false" />
+    <Property Name="TB_QUESTAO_id_Questao" Type="Int32" Nullable="false" />
+    <Property Name="Resposta" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Item" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="TB_ENTREVISTADO" Relationship="mysurveyModel.TB_RESPOSTA_FKIndex2" FromRole="TB_RESPOSTA" ToRole="TB_ENTREVISTADO" />
+    <NavigationProperty Name="TB_QUESTAO" Relationship="mysurveyModel.TB_RESPOSTA_FKIndex1" FromRole="TB_RESPOSTA" ToRole="TB_QUESTAO" />
+  </EntityType>
+  <EntityType Name="TB_SURVEY">
+    <Key>
+      <PropertyRef Name="id_Survey" />
+    </Key>
+    <Property Name="id_Survey" Type="Int32" Nullable="false" />
+    <Property Name="TB_RESPONSAVEL_id_Responsavel" Type="Int32" Nullable="false" />
+    <Property Name="Titulo" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="Subtitulo" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+    <Property Name="Data_Criacao" Type="DateTime" Nullable="false" />
+    <Property Name="Data_fim" Type="DateTime" />
+    <Property Name="flag_ativo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="TB_QUESTAO" Relationship="mysurveyModel.TB_QUESTAO_FKIndex1" FromRole="TB_SURVEY" ToRole="TB_QUESTAO" />
+    <NavigationProperty Name="TB_RESPONSAVEL" Relationship="mysurveyModel.TB_SURVEY_FKIndex1" FromRole="TB_SURVEY" ToRole="TB_RESPONSAVEL" />
+  </EntityType>
+  <Association Name="TB_RESPOSTA_FKIndex2">
+    <End Role="TB_ENTREVISTADO" Type="mysurveyModel.TB_ENTREVISTADO" Multiplicity="1" />
+    <End Role="TB_RESPOSTA" Type="mysurveyModel.TB_RESPOSTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_ENTREVISTADO">
+        <PropertyRef Name="idTB_ENTREVISTADO" />
+      </Principal>
+      <Dependent Role="TB_RESPOSTA">
+        <PropertyRef Name="TB_ENTREVISTADO_idTB_ENTREVISTADO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TB_QUESTAO_FKIndex2">
+    <End Role="TB_ITENS_DA_QUESTAO" Type="mysurveyModel.TB_ITENS_DA_QUESTAO" Multiplicity="0..1" />
+    <End Role="TB_QUESTAO" Type="mysurveyModel.TB_QUESTAO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_ITENS_DA_QUESTAO">
+        <PropertyRef Name="idTB_ITENS_DA_QUESTAO" />
+      </Principal>
+      <Dependent Role="TB_QUESTAO">
+        <PropertyRef Name="TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TB_QUESTAO_FKIndex1">
+    <End Role="TB_SURVEY" Type="mysurveyModel.TB_SURVEY" Multiplicity="1" />
+    <End Role="TB_QUESTAO" Type="mysurveyModel.TB_QUESTAO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_SURVEY">
+        <PropertyRef Name="id_Survey" />
+      </Principal>
+      <Dependent Role="TB_QUESTAO">
+        <PropertyRef Name="TB_SURVEY_id_Survey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TB_RESPOSTA_FKIndex1">
+    <End Role="TB_QUESTAO" Type="mysurveyModel.TB_QUESTAO" Multiplicity="1" />
+    <End Role="TB_RESPOSTA" Type="mysurveyModel.TB_RESPOSTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_QUESTAO">
+        <PropertyRef Name="id_Questao" />
+      </Principal>
+      <Dependent Role="TB_RESPOSTA">
+        <PropertyRef Name="TB_QUESTAO_id_Questao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TB_SURVEY_FKIndex1">
+    <End Role="TB_RESPONSAVEL" Type="mysurveyModel.TB_RESPONSAVEL" Multiplicity="1" />
+    <End Role="TB_SURVEY" Type="mysurveyModel.TB_SURVEY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_RESPONSAVEL">
+        <PropertyRef Name="id_Responsavel" />
+      </Principal>
+      <Dependent Role="TB_SURVEY">
+        <PropertyRef Name="TB_RESPONSAVEL_id_Responsavel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

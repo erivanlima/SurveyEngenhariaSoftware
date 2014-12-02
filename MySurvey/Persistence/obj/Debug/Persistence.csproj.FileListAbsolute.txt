@@ -1,5 +1,0 @@
-C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\Persistence\bin\Debug\Persistence.dll
-C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\Persistence\bin\Debug\Persistence.pdb
-C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\Persistence\obj\Debug\Persistence.dll
-C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\Persistence\obj\Debug\Persistence.pdb
-C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\Persistence\obj\Debug\Persistence.csprojResolveAssemblyReference.cache

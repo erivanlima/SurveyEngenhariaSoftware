@@ -1,0 +1,18 @@
+c:\users\amanda\documents\visual studio 2010\Projects\Spider\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+C:\Users\AMANDA\Desktop\Spider\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+C:\Users\AMANDA\Desktop\Spider\Services\bin\Debug\Services.dll
+C:\Users\AMANDA\Desktop\Spider\Services\bin\Debug\Services.pdb
+C:\Users\AMANDA\Desktop\Spider\Services\bin\Debug\Model.dll
+C:\Users\AMANDA\Desktop\Spider\Services\bin\Debug\Persistence.dll
+C:\Users\AMANDA\Desktop\Spider\Services\bin\Debug\Model.pdb
+C:\Users\AMANDA\Desktop\Spider\Services\bin\Debug\Persistence.pdb
+C:\Users\AMANDA\Desktop\Spider\Services\obj\Debug\Services.dll
+C:\Users\AMANDA\Desktop\Spider\Services\obj\Debug\Services.pdb
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\Spider\Services\bin\Debug\Services.dll
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\Spider\Services\bin\Debug\Services.pdb
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\Spider\Services\bin\Debug\Model.dll
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\Spider\Services\bin\Debug\Persistence.dll
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\Spider\Services\bin\Debug\Model.pdb
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\Spider\Services\bin\Debug\Persistence.pdb
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\Spider\Services\obj\Debug\Services.dll
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\Spider\Services\obj\Debug\Services.pdb

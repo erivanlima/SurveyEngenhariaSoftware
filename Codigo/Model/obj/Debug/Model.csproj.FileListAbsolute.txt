@@ -1,0 +1,12 @@
+c:\users\amanda\documents\visual studio 2010\Projects\Spider\Model\bin\Debug\Model.dll
+c:\users\amanda\documents\visual studio 2010\Projects\Spider\Model\bin\Debug\Model.pdb
+c:\users\amanda\documents\visual studio 2010\Projects\Spider\Model\obj\Debug\Model.dll
+c:\users\amanda\documents\visual studio 2010\Projects\Spider\Model\obj\Debug\Model.pdb
+c:\users\amanda\documents\visual studio 2010\Projects\Spider\Model\bin\Debug\Model.dll.config
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\Spider\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\AMANDA\Desktop\Spider\Model\bin\Debug\Model.dll.config
+C:\Users\AMANDA\Desktop\Spider\Model\bin\Debug\Model.dll
+C:\Users\AMANDA\Desktop\Spider\Model\bin\Debug\Model.pdb
+C:\Users\AMANDA\Desktop\Spider\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\AMANDA\Desktop\Spider\Model\obj\Debug\Model.dll
+C:\Users\AMANDA\Desktop\Spider\Model\obj\Debug\Model.pdb
