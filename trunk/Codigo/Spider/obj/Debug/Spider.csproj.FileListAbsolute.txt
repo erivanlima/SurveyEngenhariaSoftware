@@ -1,0 +1,39 @@
+c:\users\amanda\documents\visual studio 2010\Projects\Spider\Spider\bin\Spider.dll
+c:\users\amanda\documents\visual studio 2010\Projects\Spider\Spider\bin\Spider.pdb
+c:\users\amanda\documents\visual studio 2010\Projects\Spider\Spider\bin\EntityFramework.dll
+c:\users\amanda\documents\visual studio 2010\Projects\Spider\Spider\bin\EntityFramework.xml
+c:\users\amanda\documents\visual studio 2010\Projects\Spider\Spider\obj\Debug\Spider.csprojResolveAssemblyReference.cache
+c:\users\amanda\documents\visual studio 2010\Projects\Spider\Spider\obj\Debug\Spider.dll
+c:\users\amanda\documents\visual studio 2010\Projects\Spider\Spider\obj\Debug\Spider.pdb
+C:\Users\AMANDA\Desktop\Spider\Spider\obj\Debug\Spider.csprojResolveAssemblyReference.cache
+C:\Users\AMANDA\Desktop\Spider\Spider\obj\Debug\Spider.dll
+C:\Users\AMANDA\Desktop\Spider\Spider\obj\Debug\Spider.pdb
+C:\Users\AMANDA\Desktop\Spider\Spider\bin\Spider.dll
+C:\Users\AMANDA\Desktop\Spider\Spider\bin\Spider.pdb
+C:\Users\AMANDA\Desktop\Spider\Spider\bin\EntityFramework.dll
+C:\Users\AMANDA\Desktop\Spider\Spider\bin\Model.dll
+C:\Users\AMANDA\Desktop\Spider\Spider\bin\Services.dll
+C:\Users\AMANDA\Desktop\Spider\Spider\bin\Persistence.dll
+C:\Users\AMANDA\Desktop\Spider\Spider\bin\Model.pdb
+C:\Users\AMANDA\Desktop\Spider\Spider\bin\Services.pdb
+C:\Users\AMANDA\Desktop\Spider\Spider\bin\EntityFramework.xml
+C:\Users\AMANDA\Desktop\Spider\Spider\bin\Persistence.pdb
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\Spider\Spider\bin\Model.dll
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\Spider\Spider\bin\Services.dll
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\Spider\Spider\bin\Persistence.dll
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\Spider\Spider\bin\Model.pdb
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\Spider\Spider\bin\Services.pdb
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\Spider\Spider\bin\Persistence.pdb
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider\bin\Spider.dll
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider\bin\Spider.pdb
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider\bin\EntityFramework.dll
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider\bin\Model.dll
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider\bin\Services.dll
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider\bin\Persistence.dll
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider\bin\Model.pdb
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider\bin\Services.pdb
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider\bin\EntityFramework.xml
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider\bin\Persistence.pdb
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider\obj\Debug\Spider.csprojResolveAssemblyReference.cache
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider\obj\Debug\Spider.dll
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider\obj\Debug\Spider.pdb

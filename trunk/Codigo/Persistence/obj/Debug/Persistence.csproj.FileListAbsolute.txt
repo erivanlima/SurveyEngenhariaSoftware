@@ -1,0 +1,19 @@
+C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\Persistence\bin\Debug\Persistence.dll
+C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\Persistence\bin\Debug\Persistence.pdb
+C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\Persistence\obj\Debug\Persistence.dll
+C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\Persistence\obj\Debug\Persistence.pdb
+C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\Persistence\obj\Debug\Persistence.csprojResolveAssemblyReference.cache
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\Spider\Persistence\obj\Debug\Persistence.csprojResolveAssemblyReference.cache
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\Spider\Persistence\obj\Debug\Persistence.dll
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\Spider\Persistence\obj\Debug\Persistence.pdb
+C:\Users\AMANDA\Desktop\Spider\Persistence\obj\Debug\Persistence.csprojResolveAssemblyReference.cache
+C:\Users\AMANDA\Desktop\Spider\Persistence\bin\Debug\Persistence.dll
+C:\Users\AMANDA\Desktop\Spider\Persistence\bin\Debug\Persistence.pdb
+C:\Users\AMANDA\Desktop\Spider\Persistence\bin\Debug\Model.dll
+C:\Users\AMANDA\Desktop\Spider\Persistence\bin\Debug\Model.pdb
+C:\Users\AMANDA\Desktop\Spider\Persistence\obj\Debug\Persistence.dll
+C:\Users\AMANDA\Desktop\Spider\Persistence\obj\Debug\Persistence.pdb
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\Spider\Persistence\bin\Debug\Persistence.dll
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\Spider\Persistence\bin\Debug\Persistence.pdb
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\Spider\Persistence\bin\Debug\Model.dll
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\Spider\Persistence\bin\Debug\Model.pdb

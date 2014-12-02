@@ -1,0 +1,30 @@
+c:\users\amanda\documents\visual studio 2010\Projects\Spider\Spider.Tests\bin\Debug\Spider.Tests.dll.config
+c:\users\amanda\documents\visual studio 2010\Projects\Spider\Spider.Tests\bin\Debug\Spider.Tests.dll
+c:\users\amanda\documents\visual studio 2010\Projects\Spider\Spider.Tests\bin\Debug\Spider.Tests.pdb
+c:\users\amanda\documents\visual studio 2010\Projects\Spider\Spider.Tests\bin\Debug\Spider.dll
+c:\users\amanda\documents\visual studio 2010\Projects\Spider\Spider.Tests\bin\Debug\Spider.pdb
+c:\users\amanda\documents\visual studio 2010\Projects\Spider\Spider.Tests\obj\Debug\Spider.Tests.csprojResolveAssemblyReference.cache
+c:\users\amanda\documents\visual studio 2010\Projects\Spider\Spider.Tests\obj\Debug\Spider.Tests.dll
+c:\users\amanda\documents\visual studio 2010\Projects\Spider\Spider.Tests\obj\Debug\Spider.Tests.pdb
+C:\Users\AMANDA\Desktop\Spider\Spider.Tests\bin\Debug\Spider.Tests.dll.config
+C:\Users\AMANDA\Desktop\Spider\Spider.Tests\bin\Debug\Spider.Tests.dll
+C:\Users\AMANDA\Desktop\Spider\Spider.Tests\bin\Debug\Spider.Tests.pdb
+C:\Users\AMANDA\Desktop\Spider\Spider.Tests\bin\Debug\Spider.dll
+C:\Users\AMANDA\Desktop\Spider\Spider.Tests\bin\Debug\Spider.pdb
+C:\Users\AMANDA\Desktop\Spider\Spider.Tests\obj\Debug\Spider.Tests.csprojResolveAssemblyReference.cache
+C:\Users\AMANDA\Desktop\Spider\Spider.Tests\obj\Debug\Spider.Tests.dll
+C:\Users\AMANDA\Desktop\Spider\Spider.Tests\obj\Debug\Spider.Tests.pdb
+C:\Users\AMANDA\Desktop\Spider\Spider.Tests\bin\Debug\Model.dll
+C:\Users\AMANDA\Desktop\Spider\Spider.Tests\bin\Debug\Model.pdb
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\Spider\Spider.Tests\bin\Debug\Model.dll
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\Spider\Spider.Tests\bin\Debug\Model.pdb
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider.Tests\bin\Debug\Spider.Tests.dll.config
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider.Tests\bin\Debug\Spider.Tests.dll
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider.Tests\bin\Debug\Spider.Tests.pdb
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider.Tests\bin\Debug\Spider.dll
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider.Tests\bin\Debug\Model.dll
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider.Tests\bin\Debug\Spider.pdb
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider.Tests\bin\Debug\Model.pdb
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider.Tests\obj\Debug\Spider.Tests.csprojResolveAssemblyReference.cache
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider.Tests\obj\Debug\Spider.Tests.dll
+C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider.Tests\obj\Debug\Spider.Tests.pdb
