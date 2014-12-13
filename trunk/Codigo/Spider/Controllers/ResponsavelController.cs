@@ -3,14 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Services;
+using Models;
 
 namespace Spider.Controllers
 {
     public class ResponsavelController : Controller
     {
-        //
-        // GET: /Responsavel/
+          private GerenciadorResponsavel gResponsavel;
+      
 
+        public ResponsavelController()
+        {
+            gResponsavel = new GerenciadorResponsavel();
+         
+            
+        }
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
@@ -36,12 +45,12 @@ namespace Spider.Controllers
         // POST: /Responsavel/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(ResponsavelModel responsavel)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                if (ModelState.IsValid)
+                    gResponsavel.Inserir(responsavel);
                 return RedirectToAction("Index");
             }
             catch

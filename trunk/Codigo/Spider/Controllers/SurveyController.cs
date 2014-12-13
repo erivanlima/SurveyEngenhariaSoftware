@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Models;
+using Services;
 
 namespace Spider.Controllers
 {
@@ -10,9 +12,19 @@ namespace Spider.Controllers
     {
         //
         // GET: /Survey/
+         private GerenciadorSurvey gSurvey;
+      
+
+        public SurveyController()
+        {
+            gSurvey = new GerenciadorSurvey();
+         
+            
+        }
 
         public ActionResult Index()
         {
+            
             return View();
         }
 
@@ -36,11 +48,13 @@ namespace Spider.Controllers
         // POST: /Survey/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(SurveyModel survey)
         {
+            
             try
             {
-                // TODO: Add insert logic here
+                if (ModelState.IsValid)
+                    gSurvey.Inserir(survey);
 
                 return RedirectToAction("Index");
             }

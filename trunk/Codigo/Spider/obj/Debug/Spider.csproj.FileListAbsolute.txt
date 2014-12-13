@@ -37,3 +37,16 @@ C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider\b
 C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider\obj\Debug\Spider.csprojResolveAssemblyReference.cache
 C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider\obj\Debug\Spider.dll
 C:\Users\AMANDA\Documents\Visual Studio 2010\Projects\survey-tcc\Codigo\Spider\obj\Debug\Spider.pdb
+C:\Users\Douglas\Documents\survey-tcc\Codigo\Spider\bin\Spider.dll
+C:\Users\Douglas\Documents\survey-tcc\Codigo\Spider\bin\Spider.pdb
+C:\Users\Douglas\Documents\survey-tcc\Codigo\Spider\bin\EntityFramework.dll
+C:\Users\Douglas\Documents\survey-tcc\Codigo\Spider\bin\Model.dll
+C:\Users\Douglas\Documents\survey-tcc\Codigo\Spider\bin\Services.dll
+C:\Users\Douglas\Documents\survey-tcc\Codigo\Spider\bin\Persistence.dll
+C:\Users\Douglas\Documents\survey-tcc\Codigo\Spider\bin\Model.pdb
+C:\Users\Douglas\Documents\survey-tcc\Codigo\Spider\bin\Services.pdb
+C:\Users\Douglas\Documents\survey-tcc\Codigo\Spider\bin\EntityFramework.xml
+C:\Users\Douglas\Documents\survey-tcc\Codigo\Spider\bin\Persistence.pdb
+C:\Users\Douglas\Documents\survey-tcc\Codigo\Spider\obj\Debug\Spider.csprojResolveAssemblyReference.cache
+C:\Users\Douglas\Documents\survey-tcc\Codigo\Spider\obj\Debug\Spider.dll
+C:\Users\Douglas\Documents\survey-tcc\Codigo\Spider\obj\Debug\Spider.pdb
