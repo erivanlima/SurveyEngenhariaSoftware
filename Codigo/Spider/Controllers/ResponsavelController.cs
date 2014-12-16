@@ -10,19 +10,28 @@ namespace Spider.Controllers
 {
     public class ResponsavelController : Controller
     {
-          private GerenciadorResponsavel gResponsavel;
-      
+
+        private GerenciadorResponsavel gResponsavel;
+
 
         public ResponsavelController()
         {
             gResponsavel = new GerenciadorResponsavel();
-         
-            
         }
-        [HttpGet]
+
+        //
+        // GET: /Responsavel/
+
         public ActionResult Index()
         {
-            return View();
+            return View(gResponsavel.ObterTodos());
+        }
+
+        //
+        // GET: /Responsavel/
+        public ActionResult Listar()
+        {
+            return View(gResponsavel.ObterTodos());
         }
 
         //
@@ -30,85 +39,76 @@ namespace Spider.Controllers
 
         public ActionResult Details(int id)
         {
-            return View();
+            return View(gResponsavel.Obter(id));
         }
 
         //
         // GET: /Responsavel/Create
-
         public ActionResult Create()
         {
-            return View();
-        } 
+           return View();
+        }
 
         //
         // POST: /Responsavel/Create
-
         [HttpPost]
         public ActionResult Create(ResponsavelModel responsavel)
         {
-            try
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
-                    gResponsavel.Inserir(responsavel);
+                gResponsavel.Inserir(responsavel);
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(responsavel);
         }
-        
+
         //
         // GET: /Responsavel/Edit/5
- 
         public ActionResult Edit(int id)
         {
-            return View();
+            ResponsavelModel responsavelModel = gResponsavel.Obter(id);
+            return View(responsavelModel);
         }
 
         //
-        // POST: /Responsavel/Edit/5
-
+        // POST: /Responsavel/Edit/
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, ResponsavelModel responsavelModel)
         {
-            try
+            // TODO: Add update logic here
+            if(ModelState.IsValid)
             {
-                // TODO: Add update logic here
- 
+
+                gResponsavel.Editar(responsavelModel);
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(responsavelModel);
         }
 
         //
         // GET: /Responsavel/Delete/5
- 
+
         public ActionResult Delete(int id)
         {
-            return View();
+            ResponsavelModel responsavelModel = gResponsavel.Obter(id);
+            return View(responsavelModel);
         }
 
         //
         // POST: /Responsavel/Delete/5
 
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, ResponsavelModel responsavelModel)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add delete logic here
- 
+
+                gResponsavel.Remover(id);
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(responsavelModel);
         }
     }
 }

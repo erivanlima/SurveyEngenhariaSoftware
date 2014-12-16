@@ -10,11 +10,6 @@
 
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
-<script type="text/javascript">
-    SyntaxHighlighter.defaults['toolbar'] = false;
-    SyntaxHighlighter.all();
- </script>
-<script type="text/javascript" src="<%:Url.Content ("~/Scripts/shBrushCSharp.js")%>"></script>
 
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
@@ -40,15 +35,11 @@
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Titulo) %>
         </div>
-          <div class="editor-field">
-         
-         <pre class="brush:csharp">
+        <div class="editor-field">
             <%: Html.EditorFor(model => model.Titulo) %>
-         </pre>
             <%: Html.ValidationMessageFor(model => model.Titulo) %>
         </div>
-     
-        
+
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Subtitulo) %>
         </div>

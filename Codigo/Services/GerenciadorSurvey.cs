@@ -85,12 +85,12 @@ namespace Services
                         {
                             id_Survey = surveyE.id_Survey,
                             id_Responsavel = surveyE.TB_RESPONSAVEL_id_Responsavel,
+                            Titulo = surveyE.Titulo,
+                            Subtitulo = surveyE.Subtitulo,
                             Data_Criacao = surveyE.Data_Criacao,
                             Data_fim = (DateTime)surveyE.Data_fim,
                             flag_ativo = surveyE.flag_ativo,
-                            Titulo = surveyE.Titulo,
-                            Subtitulo = surveyE.Subtitulo,
-
+    
 
                         };
             return query;
@@ -125,11 +125,11 @@ namespace Services
         {
             surveyE.id_Survey = survey.id_Survey;
             surveyE.TB_RESPONSAVEL_id_Responsavel = survey.id_Responsavel;
-            survey.Data_Criacao = survey.Data_Criacao;
-            survey.Data_fim = survey.Data_fim;
-            survey.Titulo = survey.Titulo;
-            survey.Subtitulo = survey.Subtitulo;
-            survey.flag_ativo = survey.flag_ativo;
+            surveyE.Data_Criacao = survey.Data_Criacao;
+            surveyE.Data_fim = survey.Data_fim;
+            surveyE.Titulo = survey.Titulo;
+            surveyE.Subtitulo = survey.Subtitulo;
+            surveyE.flag_ativo = survey.flag_ativo;
 
 
         }

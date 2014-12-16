@@ -25,7 +25,7 @@ namespace Spider.Controllers
         public ActionResult Index()
         {
             
-            return View();
+            return View(gSurvey.ObterTodos());
         }
 
         //
@@ -50,18 +50,14 @@ namespace Spider.Controllers
         [HttpPost]
         public ActionResult Create(SurveyModel survey)
         {
-            
-            try
-            {
-                if (ModelState.IsValid)
-                    gSurvey.Inserir(survey);
-
+            if (ModelState.IsValid)
+            {        
+                gSurvey.Inserir(survey);
                 return RedirectToAction("Index");
+           
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(survey);
         }
         
         //
@@ -69,25 +65,24 @@ namespace Spider.Controllers
  
         public ActionResult Edit(int id)
         {
-            return View();
+            SurveyModel surveyModel = gSurvey.Obter(id);
+            return View(surveyModel);
         }
 
         //
         // POST: /Survey/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, SurveyModel surveyModel)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
- 
+
+                gSurvey.Editar(surveyModel);
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(surveyModel);
         }
 
         //
@@ -95,25 +90,24 @@ namespace Spider.Controllers
  
         public ActionResult Delete(int id)
         {
-            return View();
+            SurveyModel surveyModel = gSurvey.Obter(id);
+            return View(surveyModel);
         }
 
         //
         // POST: /Survey/Delete/5
 
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, SurveyModel surveyModel)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add delete logic here
- 
+
+                gSurvey.Remover(id);
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(surveyModel);
         }
     }
 }

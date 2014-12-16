@@ -16,3 +16,9 @@ C:\Users\Douglas\Documents\survey-tcc\Codigo\Model\obj\Debug\Model.csprojResolve
 C:\Users\Douglas\Documents\survey-tcc\Codigo\Model\obj\Debug\Model.dll
 C:\Users\Douglas\Documents\survey-tcc\Codigo\Model\obj\Debug\Model.pdb
 C:\Users\Douglas\Documents\survey-tcc\Codigo\Model\bin\Debug\Model.dll.config
+C:\Users\AMANDA\Desktop\survey-tcc\Codigo\Model\bin\Debug\Model.dll.config
+C:\Users\AMANDA\Desktop\survey-tcc\Codigo\Model\bin\Debug\Model.dll
+C:\Users\AMANDA\Desktop\survey-tcc\Codigo\Model\bin\Debug\Model.pdb
+C:\Users\AMANDA\Desktop\survey-tcc\Codigo\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\AMANDA\Desktop\survey-tcc\Codigo\Model\obj\Debug\Model.dll
+C:\Users\AMANDA\Desktop\survey-tcc\Codigo\Model\obj\Debug\Model.pdb

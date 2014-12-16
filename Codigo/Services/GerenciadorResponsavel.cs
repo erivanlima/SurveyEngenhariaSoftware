@@ -44,7 +44,7 @@ namespace Services
             Atribuir(responsavel, responsavelE);
             unitOfWork.RepositorioResponsavel.Inserir(responsavelE);
             unitOfWork.Commit(shared);
-            return responsavel.id_Responsavel;
+            return responsavelE.id_Responsavel;
         }
 
         /// <summary>
