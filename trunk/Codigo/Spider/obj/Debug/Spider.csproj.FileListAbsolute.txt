@@ -50,3 +50,16 @@ C:\Users\Douglas\Documents\survey-tcc\Codigo\Spider\bin\Persistence.pdb
 C:\Users\Douglas\Documents\survey-tcc\Codigo\Spider\obj\Debug\Spider.csprojResolveAssemblyReference.cache
 C:\Users\Douglas\Documents\survey-tcc\Codigo\Spider\obj\Debug\Spider.dll
 C:\Users\Douglas\Documents\survey-tcc\Codigo\Spider\obj\Debug\Spider.pdb
+C:\Users\AMANDA\Desktop\survey-tcc\Codigo\Spider\bin\Spider.dll
+C:\Users\AMANDA\Desktop\survey-tcc\Codigo\Spider\bin\Spider.pdb
+C:\Users\AMANDA\Desktop\survey-tcc\Codigo\Spider\bin\EntityFramework.dll
+C:\Users\AMANDA\Desktop\survey-tcc\Codigo\Spider\bin\Model.dll
+C:\Users\AMANDA\Desktop\survey-tcc\Codigo\Spider\bin\Services.dll
+C:\Users\AMANDA\Desktop\survey-tcc\Codigo\Spider\bin\Persistence.dll
+C:\Users\AMANDA\Desktop\survey-tcc\Codigo\Spider\bin\Model.pdb
+C:\Users\AMANDA\Desktop\survey-tcc\Codigo\Spider\bin\Services.pdb
+C:\Users\AMANDA\Desktop\survey-tcc\Codigo\Spider\bin\EntityFramework.xml
+C:\Users\AMANDA\Desktop\survey-tcc\Codigo\Spider\bin\Persistence.pdb
+C:\Users\AMANDA\Desktop\survey-tcc\Codigo\Spider\obj\Debug\Spider.csprojResolveAssemblyReference.cache
+C:\Users\AMANDA\Desktop\survey-tcc\Codigo\Spider\obj\Debug\Spider.dll
+C:\Users\AMANDA\Desktop\survey-tcc\Codigo\Spider\obj\Debug\Spider.pdb

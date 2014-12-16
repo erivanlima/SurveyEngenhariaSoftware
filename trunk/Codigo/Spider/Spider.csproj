@@ -118,7 +118,11 @@
     <Content Include="Scripts\shBrushCSharp.js" />
     <Content Include="Scripts\StartSyntax.js" />
     <Content Include="Views\Responsavel\Create.aspx" />
+    <Content Include="Views\Responsavel\Delete.aspx" />
+    <Content Include="Views\Responsavel\Details.aspx" />
+    <Content Include="Views\Responsavel\Edit.aspx" />
     <Content Include="Views\Responsavel\Index.aspx" />
+    <Content Include="Views\Responsavel\Listar.aspx" />
     <Content Include="Views\Survey\Create.aspx" />
     <Content Include="Views\Survey\Delete.aspx" />
     <Content Include="Views\Survey\Details.aspx" />
