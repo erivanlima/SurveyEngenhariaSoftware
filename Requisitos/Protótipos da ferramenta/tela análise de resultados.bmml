@@ -1,0 +1,26 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="949" measuredH="403" mockupW="545" mockupH="400">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="404" y="3" w="545" h="400" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::MenuBar" x="488" y="189" w="-1" h="-1" measuredW="316" measuredH="29" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Resumo%20das%20respostas%2C%20respostas%20individuais</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="441" y="116" w="-1" h="-1" measuredW="91" measuredH="28" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>20</size>
+        <text>MySurvey</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Image" x="559" y="105" w="118" h="50" measuredW="259" measuredH="194" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>../../../Pictures/images%2520%281%29.jpg</src>
+        <text/>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
