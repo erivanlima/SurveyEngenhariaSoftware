@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Services;
 
 namespace Spider.Controllers
 {
@@ -10,10 +11,19 @@ namespace Spider.Controllers
     {
         //
         // GET: /Questao/
+       private GerenciadorQuestao gQuestao;
+      
+
+        public QuestaoController()
+        {
+            gQuestao = new GerenciadorQuestao();
+         
+            
+        }
 
         public ActionResult Index()
         {
-            return View();
+            return View(gQuestao.ObterTodos());
         }
 
         //

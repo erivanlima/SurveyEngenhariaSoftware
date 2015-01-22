@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<Models.SurveyModel>>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<Models.QuestaoModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Index
@@ -9,30 +9,36 @@
 <h2>Index</h2>
 
 <p>
-    <%: Html.ActionLink("Criar novo Survey", "CreateQuestoes") %>
+    <%: Html.ActionLink("Create New", "Create") %>
 </p>
 <table>
     <tr>
         <th>
+            id_Questao
+        </th>
+        <th>
+            idTB_ITENS_DA_QUESTAO
+        </th>
+        <th>
             id_Survey
         </th>
         <th>
-            id_Responsavel
+            Tipo
         </th>
         <th>
-            Titulo
+            Pergunta
         </th>
         <th>
-            Subtitulo
+            Randomica
         </th>
         <th>
-            Data_Criacao
+            Obrigatoria
         </th>
         <th>
-            Data_fim
+            Codigo
         </th>
         <th>
-            flag_ativo
+            Linguagem
         </th>
         <th></th>
     </tr>
@@ -40,25 +46,31 @@
 <% foreach (var item in Model) { %>
     <tr>
         <td>
+            <%: Html.DisplayFor(modelItem => item.id_Questao) %>
+        </td>
+        <td>
+            <%: Html.DisplayFor(modelItem => item.idTB_ITENS_DA_QUESTAO) %>
+        </td>
+        <td>
             <%: Html.DisplayFor(modelItem => item.id_Survey) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.id_Responsavel) %>
+            <%: Html.DisplayFor(modelItem => item.Tipo) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.Titulo) %>
+            <%: Html.DisplayFor(modelItem => item.Pergunta) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.Subtitulo) %>
+            <%: Html.DisplayFor(modelItem => item.Randomica) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.Data_Criacao) %>
+            <%: Html.DisplayFor(modelItem => item.Obrigatoria) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.Data_fim) %>
+            <%: Html.DisplayFor(modelItem => item.Codigo) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.flag_ativo) %>
+            <%: Html.DisplayFor(modelItem => item.Linguagem) %>
         </td>
         <td>
             <%: Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) %> |
