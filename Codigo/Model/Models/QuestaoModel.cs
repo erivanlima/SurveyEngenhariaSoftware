@@ -10,6 +10,8 @@ namespace Models
         public int id_Questao { get; set; }
         public int idTB_ITENS_DA_QUESTAO { get; set; }
         public int id_Survey { get; set; }
+        public RespostaModel respostas { get; set; }
+        public Itens_da_QuestaoModel itens { get; set; }
         public string Tipo { get; set; }
         public String Pergunta { get; set; }
         public byte[] Img { get; set; }
@@ -17,6 +19,13 @@ namespace Models
         public Boolean Obrigatoria { get; set; }
         public Boolean Codigo { get; set; }
         public string Linguagem { get; set; }
+
+        public QuestaoModel()
+        {
+            respostas = new RespostaModel ();
+            itens = new Itens_da_QuestaoModel(); 
+        }
+
 
 
     }

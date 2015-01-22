@@ -9,11 +9,18 @@ namespace Models
     {
         public int id_Survey { get; set; }
         public int id_Responsavel { get; set; }
+        public List<QuestaoModel> questoes  {get; set;}
         public String Titulo { get; set; }
         public String Subtitulo { get; set; }
         public DateTime Data_Criacao { get; set; }
         public DateTime Data_fim { get; set; }
         public Boolean flag_ativo { get; set; }
+
+        public SurveyModel()
+        {
+            questoes = new List<QuestaoModel> { };
+        
+        }
 
     }
 }

@@ -105,6 +105,10 @@
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\addObjcomCod.js" />
+    <Content Include="Scripts\addQuestao.js" />
+    <Content Include="Scripts\addQuestaoobj.js" />
+    <Content Include="Scripts\addSubjcomImg.js" />
     <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.5.1.js" />
     <Content Include="Scripts\jquery-1.5.1.min.js" />
@@ -117,13 +121,16 @@
     <Content Include="Scripts\modernizr-1.7.min.js" />
     <Content Include="Scripts\shBrushCSharp.js" />
     <Content Include="Scripts\StartSyntax.js" />
+    <Content Include="Views\Questao\Create.aspx" />
+    <Content Include="Views\Questao\Index.aspx" />
     <Content Include="Views\Responsavel\Create.aspx" />
     <Content Include="Views\Responsavel\Delete.aspx" />
     <Content Include="Views\Responsavel\Details.aspx" />
     <Content Include="Views\Responsavel\Edit.aspx" />
     <Content Include="Views\Responsavel\Index.aspx" />
     <Content Include="Views\Responsavel\Listar.aspx" />
-    <Content Include="Views\Survey\Create.aspx" />
+    <Content Include="Views\Survey\CreateQuestoes.aspx" />
+    <Content Include="Views\Survey\CreateSurvey.aspx" />
     <Content Include="Views\Survey\Delete.aspx" />
     <Content Include="Views\Survey\Details.aspx" />
     <Content Include="Views\Survey\Edit.aspx" />
@@ -159,6 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Pergunta\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

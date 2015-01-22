@@ -39,15 +39,23 @@ namespace Spider.Controllers
         //
         // GET: /Survey/Create
 
-        public ActionResult Create()
+        public ActionResult Create(SurveyModel survey)
         {
             return View();
-        } 
-
+        }
+        public ActionResult CreateQuestoes()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreateQuestoes(SurveyModel survey)
+        {
+            return View();
+        }
         //
         // POST: /Survey/Create
 
-        [HttpPost]
+       /** [HttpPost]
         public ActionResult Create(SurveyModel survey)
         {
             if (ModelState.IsValid)
@@ -58,7 +66,7 @@ namespace Spider.Controllers
             }
 
             return View(survey);
-        }
+        }*/
         
         //
         // GET: /Survey/Edit/5

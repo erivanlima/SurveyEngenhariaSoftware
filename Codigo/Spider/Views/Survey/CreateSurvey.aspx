@@ -1,20 +1,15 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<Models.SuperSurveyModel>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<Models.SurveyModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Create
+    CreateSurvey
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Create</h2>
+<h2>CreateSurvey</h2>
 
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
-<script type="text/javascript">
-	    SyntaxHighlighter.defaults['toolbar'] = false;
-	    SyntaxHighlighter.all();
-</script>
-	<script type="text/javascript" src="<%:Url.Content ("~/Scripts/shBrushCSharp.js")%>"></script>
 
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
@@ -39,12 +34,12 @@
 
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Titulo) %>
-            
         </div>
-       <div>
-         <%: Html.EditorFor(model => model.Titulo) %>
-         <%: Html.ValidationMessageFor(model => model.Titulo) %>
-       </div>
+        <div class="editor-field">
+            <%: Html.EditorFor(model => model.Titulo) %>
+            <%: Html.ValidationMessageFor(model => model.Titulo) %>
+        </div>
+
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Subtitulo) %>
         </div>
@@ -52,7 +47,9 @@
             <%: Html.EditorFor(model => model.Subtitulo) %>
             <%: Html.ValidationMessageFor(model => model.Subtitulo) %>
         </div>
-
+        <div>
+                
+        </div>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Data_Criacao) %>
         </div>
