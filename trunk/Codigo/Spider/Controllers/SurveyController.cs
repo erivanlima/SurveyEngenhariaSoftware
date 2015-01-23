@@ -13,11 +13,14 @@ namespace Spider.Controllers
         //
         // GET: /Survey/
          private GerenciadorSurvey gSurvey;
+         private GerenciadorQuestao gQuestao;
+      
       
 
         public SurveyController()
         {
             gSurvey = new GerenciadorSurvey();
+            gQuestao = new GerenciadorQuestao();
          
             
         }
@@ -38,25 +41,39 @@ namespace Spider.Controllers
 
         //
         // GET: /Survey/Create
-
-        public ActionResult Create(SurveyModel survey)
+        [HttpGet]
+        public ActionResult CreateSurvey()
         {
             return View();
         }
-        public ActionResult CreateQuestoes()
-        {
-            return View();
-        }
+     
         [HttpPost]
         public ActionResult CreateQuestoes(SurveyModel survey)
         {
+
+                List<QuestaoModel> novasQuestoes = new List<QuestaoModel>();
+
+                foreach (QuestaoModel questao in survey.questoes)
+                {
+                    
+                    questao.id_Survey = survey.id_Survey;
+                   // novasQuestoes.Add(questao);
+                    gQuestao.Inserir(questao);
+                }
+
+                return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public ActionResult CreateQuestoes(int id)
+        {
+            ViewBag.id_Survey = id;
             return View();
         }
         //
         // POST: /Survey/Create
 
-       /** [HttpPost]
-        public ActionResult Create(SurveyModel survey)
+        [HttpPost]
+        public ActionResult CreateSurvey(SurveyModel survey)
         {
             if (ModelState.IsValid)
             {        
@@ -66,7 +83,7 @@ namespace Spider.Controllers
             }
 
             return View(survey);
-        }*/
+        }
         
         //
         // GET: /Survey/Edit/5

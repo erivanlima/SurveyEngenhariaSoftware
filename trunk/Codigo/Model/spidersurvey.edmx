@@ -317,12 +317,12 @@
           <Property Name="id_Questao" Type="int" Nullable="false" />
           <Property Name="TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO" Type="int" />
           <Property Name="TB_SURVEY_id_Survey" Type="int" Nullable="false" />
-          <Property Name="Tipo" Type="varchar" Nullable="false" MaxLength="10" />
-          <Property Name="Pergunta" Type="varchar(max)" Nullable="false" />
+          <Property Name="Tipo" Type="varchar" MaxLength="10" />
+          <Property Name="Pergunta" Type="varchar(max)" />
           <Property Name="Img" Type="varbinary(max)" />
           <Property Name="Randomica" Type="bit" />
           <Property Name="Obrigatoria" Type="bit" />
-          <Property Name="Codigo" Type="bit" Nullable="false" />
+          <Property Name="Codigo" Type="bit" />
           <Property Name="Linguagem" Type="varchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="TB_RESPONSAVEL">
@@ -1097,12 +1097,12 @@
           <Property Name="id_Questao" Type="Int32" Nullable="false" />
           <Property Name="TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO" Type="Int32" />
           <Property Name="TB_SURVEY_id_Survey" Type="Int32" Nullable="false" />
-          <Property Name="Tipo" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Tipo" Type="String" MaxLength="10" Unicode="false" FixedLength="false" Nullable="true" />
           <Property Name="Pergunta" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="Img" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Randomica" Type="Boolean" />
           <Property Name="Obrigatoria" Type="Boolean" />
-          <Property Name="Codigo" Type="Boolean" Nullable="false" />
+          <Property Name="Codigo" Type="Boolean" Nullable="true" />
           <Property Name="Linguagem" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="TB_ITENS_DA_QUESTAO" Relationship="mysurveyModel.TB_QUESTAO_FKIndex2" FromRole="TB_QUESTAO" ToRole="TB_ITENS_DA_QUESTAO" />
           <NavigationProperty Name="TB_SURVEY" Relationship="mysurveyModel.TB_QUESTAO_FKIndex1" FromRole="TB_QUESTAO" ToRole="TB_SURVEY" />

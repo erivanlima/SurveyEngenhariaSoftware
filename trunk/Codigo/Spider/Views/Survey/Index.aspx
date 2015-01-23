@@ -9,7 +9,7 @@
 <h2>Index</h2>
 
 <p>
-    <%: Html.ActionLink("Criar novo Survey", "CreateQuestoes") %>
+    <%: Html.ActionLink("Criar novo Survey", "CreateSurvey") %>
 </p>
 <table>
     <tr>
@@ -61,9 +61,9 @@
             <%: Html.DisplayFor(modelItem => item.flag_ativo) %>
         </td>
         <td>
-            <%: Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) %> |
-            <%: Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) %> |
-            <%: Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) %>
+            <%: Html.ActionLink("Edit", "Edit", new {  id=item.id_Survey }) %> |
+            <%: Html.ActionLink("Delete", "Delete", new {  id=item.id_Survey }) %> |
+            <%: Html.ActionLink("Adicionar perguntas", "CreateQuestoes", new {  id=item.id_Survey }) %>
         </td>
     </tr>
 <% } %>

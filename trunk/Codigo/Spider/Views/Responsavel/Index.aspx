@@ -43,9 +43,9 @@
             <%: Html.DisplayFor(modelItem => item.sobrenome) %>
         </td>
         <td>
-            <%: Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) %> |
-            <%: Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) %> |
-            <%: Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) %>
+            <%: Html.ActionLink("Edit", "Edit", new {  id=item.id_Responsavel  }) %> |
+            <%: Html.ActionLink("Details", "Details", new {  id=item.id_Responsavel }) %> |
+            <%: Html.ActionLink("Delete", "Delete", new {  id=item.id_Responsavel  }) %>
         </td>
     </tr>
 <% } %>

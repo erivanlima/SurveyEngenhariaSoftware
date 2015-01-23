@@ -22,6 +22,8 @@
         
       
       <fieldset>
+       <%: Html.HiddenFor(model => model.id_Survey, new { Value = ViewBag.id_Survey })%>
+ 
         <img src="psubjetiva.png" width="300" height="200"alt="pergunta subjetiva" />    
         
            
