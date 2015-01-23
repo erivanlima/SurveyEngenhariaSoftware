@@ -3889,17 +3889,13 @@ namespace Models
         /// </summary>
         /// <param name="id_Questao">Valor inicial da propriedade id_Questao.</param>
         /// <param name="tB_SURVEY_id_Survey">Valor inicial da propriedade TB_SURVEY_id_Survey.</param>
-        /// <param name="tipo">Valor inicial da propriedade Tipo.</param>
         /// <param name="pergunta">Valor inicial da propriedade Pergunta.</param>
-        /// <param name="codigo">Valor inicial da propriedade Codigo.</param>
-        public static TB_QUESTAO CreateTB_QUESTAO(global::System.Int32 id_Questao, global::System.Int32 tB_SURVEY_id_Survey, global::System.String tipo, global::System.String pergunta, global::System.Boolean codigo)
+        public static TB_QUESTAO CreateTB_QUESTAO(global::System.Int32 id_Questao, global::System.Int32 tB_SURVEY_id_Survey, global::System.String pergunta)
         {
             TB_QUESTAO tB_QUESTAO = new TB_QUESTAO();
             tB_QUESTAO.id_Questao = id_Questao;
             tB_QUESTAO.TB_SURVEY_id_Survey = tB_SURVEY_id_Survey;
-            tB_QUESTAO.Tipo = tipo;
             tB_QUESTAO.Pergunta = pergunta;
-            tB_QUESTAO.Codigo = codigo;
             return tB_QUESTAO;
         }
 
@@ -3985,7 +3981,7 @@ namespace Models
         /// <summary>
         /// Nenhuma Documentação de Metadados disponível.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String Tipo
         {
@@ -3997,7 +3993,7 @@ namespace Models
             {
                 OnTipoChanging(value);
                 ReportPropertyChanging("Tipo");
-                _Tipo = StructuralObject.SetValidValue(value, false);
+                _Tipo = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("Tipo");
                 OnTipoChanged();
             }
@@ -4105,9 +4101,9 @@ namespace Models
         /// <summary>
         /// Nenhuma Documentação de Metadados disponível.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Boolean Codigo
+        public Nullable<global::System.Boolean> Codigo
         {
             get
             {
@@ -4122,8 +4118,8 @@ namespace Models
                 OnCodigoChanged();
             }
         }
-        private global::System.Boolean _Codigo;
-        partial void OnCodigoChanging(global::System.Boolean value);
+        private Nullable<global::System.Boolean> _Codigo;
+        partial void OnCodigoChanging(Nullable<global::System.Boolean> value);
         partial void OnCodigoChanged();
     
         /// <summary>

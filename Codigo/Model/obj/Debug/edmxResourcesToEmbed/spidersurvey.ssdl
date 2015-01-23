@@ -312,12 +312,12 @@
     <Property Name="id_Questao" Type="int" Nullable="false" />
     <Property Name="TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO" Type="int" />
     <Property Name="TB_SURVEY_id_Survey" Type="int" Nullable="false" />
-    <Property Name="Tipo" Type="varchar" Nullable="false" MaxLength="10" />
-    <Property Name="Pergunta" Type="varchar(max)" Nullable="false" />
+    <Property Name="Tipo" Type="varchar" MaxLength="10" />
+    <Property Name="Pergunta" Type="varchar(max)" />
     <Property Name="Img" Type="varbinary(max)" />
     <Property Name="Randomica" Type="bit" />
     <Property Name="Obrigatoria" Type="bit" />
-    <Property Name="Codigo" Type="bit" Nullable="false" />
+    <Property Name="Codigo" Type="bit" />
     <Property Name="Linguagem" Type="varchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="TB_RESPONSAVEL">

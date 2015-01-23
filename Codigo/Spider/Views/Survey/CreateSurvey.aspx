@@ -47,9 +47,7 @@
             <%: Html.EditorFor(model => model.Subtitulo) %>
             <%: Html.ValidationMessageFor(model => model.Subtitulo) %>
         </div>
-        <div>
-                
-        </div>
+
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Data_Criacao) %>
         </div>

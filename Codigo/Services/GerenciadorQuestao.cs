@@ -84,7 +84,7 @@ namespace Services
                         select new QuestaoModel
                         {
                             id_Questao = questaoE.id_Questao,
-                            Codigo = questaoE.Codigo,
+                            Codigo = (Boolean)questaoE.Codigo,
                             Img = questaoE.Img,
                             Linguagem = questaoE.Linguagem,
                             Obrigatoria = (Boolean)questaoE.Obrigatoria,
@@ -93,6 +93,7 @@ namespace Services
                             idTB_ITENS_DA_QUESTAO = (int) questaoE.TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO,
                             id_Survey = questaoE.TB_SURVEY_id_Survey,
                             Tipo = questaoE.Tipo,
+                            
 
                         };
             return query;
@@ -142,8 +143,10 @@ namespace Services
         }
 
 
-        
-    
-    
+
+
+
+
+       
     }
 }
