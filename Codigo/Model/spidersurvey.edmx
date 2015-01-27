@@ -158,6 +158,26 @@
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
           </AssociationSet>
+          <AssociationSet Name="TB_QUESTAO_FKIndex1" Association="mysurveyModel.Store.TB_QUESTAO_FKIndex1">
+            <End Role="TB_SURVEY" EntitySet="TB_SURVEY" />
+            <End Role="TB_QUESTAO" EntitySet="TB_QUESTAO" />
+          </AssociationSet>
+          <AssociationSet Name="TB_QUESTAO_FKIndex2" Association="mysurveyModel.Store.TB_QUESTAO_FKIndex2">
+            <End Role="TB_ITENS_DA_QUESTAO" EntitySet="TB_ITENS_DA_QUESTAO" />
+            <End Role="TB_QUESTAO" EntitySet="TB_QUESTAO" />
+          </AssociationSet>
+          <AssociationSet Name="TB_RESPOSTA_FKIndex1" Association="mysurveyModel.Store.TB_RESPOSTA_FKIndex1">
+            <End Role="TB_QUESTAO" EntitySet="TB_QUESTAO" />
+            <End Role="TB_RESPOSTA" EntitySet="TB_RESPOSTA" />
+          </AssociationSet>
+          <AssociationSet Name="TB_RESPOSTA_FKIndex2" Association="mysurveyModel.Store.TB_RESPOSTA_FKIndex2">
+            <End Role="TB_ENTREVISTADO" EntitySet="TB_ENTREVISTADO" />
+            <End Role="TB_RESPOSTA" EntitySet="TB_RESPOSTA" />
+          </AssociationSet>
+          <AssociationSet Name="TB_SURVEY_FKIndex1" Association="mysurveyModel.Store.TB_SURVEY_FKIndex1">
+            <End Role="TB_RESPONSAVEL" EntitySet="TB_RESPONSAVEL" />
+            <End Role="TB_SURVEY" EntitySet="TB_SURVEY" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="aspnet_Applications">
           <Key>
@@ -294,7 +314,7 @@
           <Key>
             <PropertyRef Name="idTB_ENTREVISTADO" />
           </Key>
-          <Property Name="idTB_ENTREVISTADO" Type="int" Nullable="false" />
+          <Property Name="idTB_ENTREVISTADO" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="NOME" Type="varchar" MaxLength="45" />
           <Property Name="EMAIL" Type="varchar" MaxLength="45" />
           <Property Name="SOBRENOME" Type="varchar" MaxLength="45" />
@@ -303,7 +323,7 @@
           <Key>
             <PropertyRef Name="idTB_ITENS_DA_QUESTAO" />
           </Key>
-          <Property Name="idTB_ITENS_DA_QUESTAO" Type="int" Nullable="false" />
+          <Property Name="idTB_ITENS_DA_QUESTAO" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="ItemA" Type="varchar(max)" Nullable="false" />
           <Property Name="ItemB" Type="varchar(max)" Nullable="false" />
           <Property Name="ItemC" Type="varchar(max)" />
@@ -314,22 +334,22 @@
           <Key>
             <PropertyRef Name="id_Questao" />
           </Key>
-          <Property Name="id_Questao" Type="int" Nullable="false" />
+          <Property Name="id_Questao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO" Type="int" />
           <Property Name="TB_SURVEY_id_Survey" Type="int" Nullable="false" />
-          <Property Name="Tipo" Type="varchar" MaxLength="10" />
-          <Property Name="Pergunta" Type="varchar(max)" />
+          <Property Name="Tipo" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Pergunta" Type="varchar(max)" Nullable="false" />
           <Property Name="Img" Type="varbinary(max)" />
           <Property Name="Randomica" Type="bit" />
           <Property Name="Obrigatoria" Type="bit" />
-          <Property Name="Codigo" Type="bit" />
+          <Property Name="Codigo" Type="bit" Nullable="false" />
           <Property Name="Linguagem" Type="varchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="TB_RESPONSAVEL">
           <Key>
             <PropertyRef Name="id_Responsavel" />
           </Key>
-          <Property Name="id_Responsavel" Type="int" Nullable="false" />
+          <Property Name="id_Responsavel" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="nome" Type="varchar" Nullable="false" MaxLength="45" />
           <Property Name="email" Type="varchar" Nullable="false" MaxLength="45" />
           <Property Name="sobrenome" Type="varchar" Nullable="false" MaxLength="45" />
@@ -338,7 +358,7 @@
           <Key>
             <PropertyRef Name="id_Resposta" />
           </Key>
-          <Property Name="id_Resposta" Type="int" Nullable="false" />
+          <Property Name="id_Resposta" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="TB_ENTREVISTADO_idTB_ENTREVISTADO" Type="int" Nullable="false" />
           <Property Name="TB_QUESTAO_id_Questao" Type="int" Nullable="false" />
           <Property Name="Resposta" Type="varchar(max)" />
@@ -348,7 +368,7 @@
           <Key>
             <PropertyRef Name="id_Survey" />
           </Key>
-          <Property Name="id_Survey" Type="int" Nullable="false" />
+          <Property Name="id_Survey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="TB_RESPONSAVEL_id_Responsavel" Type="int" Nullable="false" />
           <Property Name="Titulo" Type="varchar" Nullable="false" MaxLength="45" />
           <Property Name="Subtitulo" Type="varchar" Nullable="false" MaxLength="45" />
@@ -643,6 +663,66 @@
             </Principal>
             <Dependent Role="aspnet_UsersInRoles">
               <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TB_QUESTAO_FKIndex1">
+          <End Role="TB_SURVEY" Type="mysurveyModel.Store.TB_SURVEY" Multiplicity="1" />
+          <End Role="TB_QUESTAO" Type="mysurveyModel.Store.TB_QUESTAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_SURVEY">
+              <PropertyRef Name="id_Survey" />
+            </Principal>
+            <Dependent Role="TB_QUESTAO">
+              <PropertyRef Name="TB_SURVEY_id_Survey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TB_QUESTAO_FKIndex2">
+          <End Role="TB_ITENS_DA_QUESTAO" Type="mysurveyModel.Store.TB_ITENS_DA_QUESTAO" Multiplicity="0..1" />
+          <End Role="TB_QUESTAO" Type="mysurveyModel.Store.TB_QUESTAO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_ITENS_DA_QUESTAO">
+              <PropertyRef Name="idTB_ITENS_DA_QUESTAO" />
+            </Principal>
+            <Dependent Role="TB_QUESTAO">
+              <PropertyRef Name="TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TB_RESPOSTA_FKIndex1">
+          <End Role="TB_QUESTAO" Type="mysurveyModel.Store.TB_QUESTAO" Multiplicity="1" />
+          <End Role="TB_RESPOSTA" Type="mysurveyModel.Store.TB_RESPOSTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_QUESTAO">
+              <PropertyRef Name="id_Questao" />
+            </Principal>
+            <Dependent Role="TB_RESPOSTA">
+              <PropertyRef Name="TB_QUESTAO_id_Questao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TB_RESPOSTA_FKIndex2">
+          <End Role="TB_ENTREVISTADO" Type="mysurveyModel.Store.TB_ENTREVISTADO" Multiplicity="1" />
+          <End Role="TB_RESPOSTA" Type="mysurveyModel.Store.TB_RESPOSTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_ENTREVISTADO">
+              <PropertyRef Name="idTB_ENTREVISTADO" />
+            </Principal>
+            <Dependent Role="TB_RESPOSTA">
+              <PropertyRef Name="TB_ENTREVISTADO_idTB_ENTREVISTADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TB_SURVEY_FKIndex1">
+          <End Role="TB_RESPONSAVEL" Type="mysurveyModel.Store.TB_RESPONSAVEL" Multiplicity="1" />
+          <End Role="TB_SURVEY" Type="mysurveyModel.Store.TB_SURVEY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_RESPONSAVEL">
+              <PropertyRef Name="id_Responsavel" />
+            </Principal>
+            <Dependent Role="TB_SURVEY">
+              <PropertyRef Name="TB_RESPONSAVEL_id_Responsavel" />
             </Dependent>
           </ReferentialConstraint>
         </Association>

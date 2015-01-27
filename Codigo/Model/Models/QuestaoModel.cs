@@ -20,11 +20,14 @@ namespace Models
         public Boolean Codigo { get; set; }
         public string Linguagem { get; set; }
 
-        public QuestaoModel()
+         public QuestaoModel()
         {
-            respostas = new RespostaModel ();
-            itens = new Itens_da_QuestaoModel(); 
+            itens = new Itens_da_QuestaoModel { };
+            respostas = new RespostaModel();
+        
         }
+
+      
 
 
 
