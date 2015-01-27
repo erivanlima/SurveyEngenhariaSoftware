@@ -14,6 +14,8 @@ namespace Spider.Controllers
         // GET: /Survey/
          private GerenciadorSurvey gSurvey;
          private GerenciadorQuestao gQuestao;
+         private GerenciadorItens gItens;
+         private GerenciadorResposta gResposta;
       
       
 
@@ -21,6 +23,8 @@ namespace Spider.Controllers
         {
             gSurvey = new GerenciadorSurvey();
             gQuestao = new GerenciadorQuestao();
+            gItens = new GerenciadorItens();
+            gResposta = new GerenciadorResposta();
          
             
         }
@@ -51,14 +55,17 @@ namespace Spider.Controllers
         public ActionResult CreateQuestoes(SurveyModel survey)
         {
 
-                List<QuestaoModel> novasQuestoes = new List<QuestaoModel>();
-
+            //List<QuestaoModel> novasquestoes = new List<QuestaoModel>();
+            //List<Itens_da_QuestaoModel> itensQuestoes = new List<Itens_da_QuestaoModel>();
+            
                 foreach (QuestaoModel questao in survey.questoes)
                 {
-                    
                     questao.id_Survey = survey.id_Survey;
-                   // novasQuestoes.Add(questao);
+
+                    questao.idTB_ITENS_DA_QUESTAO = gItens.Inserir(questao.itens);
+                    
                     gQuestao.Inserir(questao);
+                    
                 }
 
                 return RedirectToAction("Index");

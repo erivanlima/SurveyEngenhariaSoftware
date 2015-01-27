@@ -298,7 +298,7 @@
     <Key>
       <PropertyRef Name="idTB_ITENS_DA_QUESTAO" />
     </Key>
-    <Property Name="idTB_ITENS_DA_QUESTAO" Type="int" Nullable="false" />
+    <Property Name="idTB_ITENS_DA_QUESTAO" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="ItemA" Type="varchar(max)" Nullable="false" />
     <Property Name="ItemB" Type="varchar(max)" Nullable="false" />
     <Property Name="ItemC" Type="varchar(max)" />
