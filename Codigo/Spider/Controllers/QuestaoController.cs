@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Services;
+using Models;
 
 namespace Spider.Controllers
 {
@@ -11,14 +12,17 @@ namespace Spider.Controllers
     {
         //
         // GET: /Questao/
-       private GerenciadorQuestao gQuestao;
-      
+        private GerenciadorQuestao gQuestao;
+        private GerenciadorEntrevistado gEntrevistado;
+        private GerenciadorResposta gResposta;
+
 
         public QuestaoController()
         {
             gQuestao = new GerenciadorQuestao();
-         
-            
+            gEntrevistado = new GerenciadorEntrevistado();
+            gResposta = new GerenciadorResposta();
+
         }
 
         public ActionResult Index()
@@ -40,7 +44,7 @@ namespace Spider.Controllers
         public ActionResult Create()
         {
             return View();
-        } 
+        }
 
         //
         // POST: /Questao/Create
@@ -59,10 +63,37 @@ namespace Spider.Controllers
                 return View();
             }
         }
-        
+
+        //
+        // GET: /Resposta/Create
+
+        public ActionResult CreateResposta(int id)
+        {
+            ViewBag.id_Questao = id;
+            return View();
+        }
+
+        //
+        // POST: /Resposta/Create
+        [HttpPost]
+        public ActionResult CreateResposta(QuestaoModel questao)
+        {
+            //RespostaModel resp = new RespostaModel();
+            EntrevistadoModel entrevistado = new EntrevistadoModel();
+            //entrevistado.idTB_ENTREVISTADO = '0';
+            //gEntrevistado.Inserir(entrevistado);
+                questao.respostas.id_Questao = questao.id_Questao;
+                questao.respostas.idTB_ENTREVISTADO = gEntrevistado.Inserir(entrevistado);
+                gResposta.Inserir(questao.respostas);
+
+
+
+            return RedirectToAction("Index");
+        }
+
         //
         // GET: /Questao/Edit/5
- 
+
         public ActionResult Edit(int id)
         {
             return View();
@@ -77,7 +108,7 @@ namespace Spider.Controllers
             try
             {
                 // TODO: Add update logic here
- 
+
                 return RedirectToAction("Index");
             }
             catch
@@ -88,7 +119,7 @@ namespace Spider.Controllers
 
         //
         // GET: /Questao/Delete/5
- 
+
         public ActionResult Delete(int id)
         {
             return View();
@@ -103,7 +134,7 @@ namespace Spider.Controllers
             try
             {
                 // TODO: Add delete logic here
- 
+
                 return RedirectToAction("Index");
             }
             catch
