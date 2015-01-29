@@ -63,7 +63,8 @@
         <td>
             <%: Html.ActionLink("Edit", "Edit", new {  id=item.id_Survey }) %> |
             <%: Html.ActionLink("Delete", "Delete", new {  id=item.id_Survey }) %> |
-            <%: Html.ActionLink("Adicionar perguntas", "CreateQuestoes", new {  id=item.id_Survey }) %>
+            <%: Html.ActionLink("Adicionar perguntas", "CreateQuestoes", new {  id=item.id_Survey }) %> |
+            <%: Html.ActionLink("Responder Survey", "CreateResposta", new {  id=item.id_Survey }) %>
         </td>
     </tr>
 <% } %>

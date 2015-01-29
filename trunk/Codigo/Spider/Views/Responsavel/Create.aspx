@@ -17,14 +17,6 @@
         <legend>ResponsavelModel</legend>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.id_Responsavel) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.id_Responsavel) %>
-            <%: Html.ValidationMessageFor(model => model.id_Responsavel) %>
-        </div>
-
-        <div class="editor-label">
             <%: Html.LabelFor(model => model.nome) %>
         </div>
         <div class="editor-field">
