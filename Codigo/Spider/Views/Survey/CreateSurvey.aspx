@@ -15,14 +15,14 @@
     <%: Html.ValidationSummary(true) %>
     <fieldset>
         <legend>SurveyModel</legend>
-
+<%--
         <div class="editor-label">
             <%: Html.LabelFor(model => model.id_Survey) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.id_Survey) %>
+        </div>--%>
+        <%--<div class="editor-field">
+            <%: Html.HiddenFor(model => model.id_Survey, new { Value = '1' })%>
             <%: Html.ValidationMessageFor(model => model.id_Survey) %>
-        </div>
+        </div>--%>
 
         <div class="editor-label">
             <%: Html.LabelFor(model => model.id_Responsavel) %>

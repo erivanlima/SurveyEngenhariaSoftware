@@ -21,11 +21,8 @@
     <fieldset>
         <legend>QuestaoModel</legend>
 
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.id_Questao) %>
-        </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.id_Questao) %>
+            <%: Html.HiddenFor(model => model.id_Questao, new { Value = '0' })%>
             <%: Html.ValidationMessageFor(model => model.id_Questao) %>
         </div>
 
