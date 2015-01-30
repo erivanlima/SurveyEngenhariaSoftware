@@ -3681,14 +3681,10 @@ namespace Models
         /// Crie um novo objeto TB_ITENS_DA_QUESTAO.
         /// </summary>
         /// <param name="idTB_ITENS_DA_QUESTAO">Valor inicial da propriedade idTB_ITENS_DA_QUESTAO.</param>
-        /// <param name="itemA">Valor inicial da propriedade ItemA.</param>
-        /// <param name="itemB">Valor inicial da propriedade ItemB.</param>
-        public static TB_ITENS_DA_QUESTAO CreateTB_ITENS_DA_QUESTAO(global::System.Int32 idTB_ITENS_DA_QUESTAO, global::System.String itemA, global::System.String itemB)
+        public static TB_ITENS_DA_QUESTAO CreateTB_ITENS_DA_QUESTAO(global::System.Int32 idTB_ITENS_DA_QUESTAO)
         {
             TB_ITENS_DA_QUESTAO tB_ITENS_DA_QUESTAO = new TB_ITENS_DA_QUESTAO();
             tB_ITENS_DA_QUESTAO.idTB_ITENS_DA_QUESTAO = idTB_ITENS_DA_QUESTAO;
-            tB_ITENS_DA_QUESTAO.ItemA = itemA;
-            tB_ITENS_DA_QUESTAO.ItemB = itemB;
             return tB_ITENS_DA_QUESTAO;
         }
 
@@ -3726,7 +3722,7 @@ namespace Models
         /// <summary>
         /// Nenhuma Documentação de Metadados disponível.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String ItemA
         {
@@ -3738,7 +3734,7 @@ namespace Models
             {
                 OnItemAChanging(value);
                 ReportPropertyChanging("ItemA");
-                _ItemA = StructuralObject.SetValidValue(value, false);
+                _ItemA = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("ItemA");
                 OnItemAChanged();
             }
@@ -3750,7 +3746,7 @@ namespace Models
         /// <summary>
         /// Nenhuma Documentação de Metadados disponível.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String ItemB
         {
@@ -3762,7 +3758,7 @@ namespace Models
             {
                 OnItemBChanging(value);
                 ReportPropertyChanging("ItemB");
-                _ItemB = StructuralObject.SetValidValue(value, false);
+                _ItemB = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("ItemB");
                 OnItemBChanged();
             }

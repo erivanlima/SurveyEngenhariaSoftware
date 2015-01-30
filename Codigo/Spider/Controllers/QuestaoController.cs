@@ -13,6 +13,7 @@ namespace Spider.Controllers
         //
         // GET: /Questao/
         private GerenciadorQuestao gQuestao;
+        private GerenciadorSurvey gSurvey;
         private GerenciadorEntrevistado gEntrevistado;
         private GerenciadorResposta gResposta;
 
@@ -22,6 +23,7 @@ namespace Spider.Controllers
             gQuestao = new GerenciadorQuestao();
             gEntrevistado = new GerenciadorEntrevistado();
             gResposta = new GerenciadorResposta();
+            gSurvey = new GerenciadorSurvey();
 
         }
 
@@ -89,6 +91,36 @@ namespace Spider.Controllers
 
 
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult ListaQuestoes(int id)
+        {
+            //ViewBag.id_Survey = id;
+            return View(gSurvey.Obter(id));
+        }
+
+        [HttpPost]
+        public ActionResult ListaQuestoes(int idsurvey, SurveyModel survey)
+        {
+            //int idsurvey = 0;
+            //SurveyModel survey = new SurveyModel();
+            List<QuestaoModel> SurveyQuestoes = new List<QuestaoModel>();
+            //SurveyQuestoes = survey.questoes;
+
+            foreach (QuestaoModel questao in SurveyQuestoes)
+            {
+                // gQuestao.Obter(questao.id_Survey);
+                if (questao.id_Survey == idsurvey)
+                {
+                    //questao.idTB_ITENS_DA_QUESTAO = gItens.Inserir(questao.itens);
+                    SurveyQuestoes.Add(gQuestao.Obter(questao.id_Survey));
+                    //gQuestao.Inserir(questao);
+                }
+
+            }
+
+            return View(SurveyQuestoes);
         }
 
         //

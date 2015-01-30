@@ -16,16 +16,6 @@
     <fieldset>
         <legend>RespostaModel</legend>
 
-        <div class="editor-field">
-            <%: Html.HiddenFor(model => model.id_Resposta, new { Value = '0' }) %>
-            <%: Html.ValidationMessageFor(model => model.id_Resposta) %>
-        </div>
-
-        <%--<div class="editor-field">
-            <%: Html.HiddenFor(model => model.idTB_ENTREVISTADO)%>
-            <%: Html.ValidationMessageFor(model => model.idTB_ENTREVISTADO) %>
-        </div>--%>
-
         <div class="editor-label">
             <%--<%: Html.LabelFor(model => model.id_Questao) %>--%>
         </div>

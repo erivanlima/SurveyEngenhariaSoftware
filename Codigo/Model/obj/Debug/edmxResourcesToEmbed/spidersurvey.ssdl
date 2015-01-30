@@ -18,97 +18,15 @@
     <EntitySet Name="TB_RESPONSAVEL" EntityType="mysurveyModel.Store.TB_RESPONSAVEL" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TB_RESPOSTA" EntityType="mysurveyModel.Store.TB_RESPOSTA" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TB_SURVEY" EntityType="mysurveyModel.Store.TB_SURVEY" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="vw_aspnet_Applications" EntityType="mysurveyModel.Store.vw_aspnet_Applications" store:Type="Views" store:Schema="dbo" store:Name="vw_aspnet_Applications">
-      <DefiningQuery>SELECT 
-      [vw_aspnet_Applications].[ApplicationName] AS [ApplicationName], 
-      [vw_aspnet_Applications].[LoweredApplicationName] AS [LoweredApplicationName], 
-      [vw_aspnet_Applications].[ApplicationId] AS [ApplicationId], 
-      [vw_aspnet_Applications].[Description] AS [Description]
-      FROM [dbo].[vw_aspnet_Applications] AS [vw_aspnet_Applications]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="vw_aspnet_MembershipUsers" EntityType="mysurveyModel.Store.vw_aspnet_MembershipUsers" store:Type="Views" store:Schema="dbo" store:Name="vw_aspnet_MembershipUsers">
-      <DefiningQuery>SELECT 
-      [vw_aspnet_MembershipUsers].[UserId] AS [UserId], 
-      [vw_aspnet_MembershipUsers].[PasswordFormat] AS [PasswordFormat], 
-      [vw_aspnet_MembershipUsers].[MobilePIN] AS [MobilePIN], 
-      [vw_aspnet_MembershipUsers].[Email] AS [Email], 
-      [vw_aspnet_MembershipUsers].[LoweredEmail] AS [LoweredEmail], 
-      [vw_aspnet_MembershipUsers].[PasswordQuestion] AS [PasswordQuestion], 
-      [vw_aspnet_MembershipUsers].[PasswordAnswer] AS [PasswordAnswer], 
-      [vw_aspnet_MembershipUsers].[IsApproved] AS [IsApproved], 
-      [vw_aspnet_MembershipUsers].[IsLockedOut] AS [IsLockedOut], 
-      [vw_aspnet_MembershipUsers].[CreateDate] AS [CreateDate], 
-      [vw_aspnet_MembershipUsers].[LastLoginDate] AS [LastLoginDate], 
-      [vw_aspnet_MembershipUsers].[LastPasswordChangedDate] AS [LastPasswordChangedDate], 
-      [vw_aspnet_MembershipUsers].[LastLockoutDate] AS [LastLockoutDate], 
-      [vw_aspnet_MembershipUsers].[FailedPasswordAttemptCount] AS [FailedPasswordAttemptCount], 
-      [vw_aspnet_MembershipUsers].[FailedPasswordAttemptWindowStart] AS [FailedPasswordAttemptWindowStart], 
-      [vw_aspnet_MembershipUsers].[FailedPasswordAnswerAttemptCount] AS [FailedPasswordAnswerAttemptCount], 
-      [vw_aspnet_MembershipUsers].[FailedPasswordAnswerAttemptWindowStart] AS [FailedPasswordAnswerAttemptWindowStart], 
-      [vw_aspnet_MembershipUsers].[Comment] AS [Comment], 
-      [vw_aspnet_MembershipUsers].[ApplicationId] AS [ApplicationId], 
-      [vw_aspnet_MembershipUsers].[UserName] AS [UserName], 
-      [vw_aspnet_MembershipUsers].[MobileAlias] AS [MobileAlias], 
-      [vw_aspnet_MembershipUsers].[IsAnonymous] AS [IsAnonymous], 
-      [vw_aspnet_MembershipUsers].[LastActivityDate] AS [LastActivityDate]
-      FROM [dbo].[vw_aspnet_MembershipUsers] AS [vw_aspnet_MembershipUsers]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="vw_aspnet_Profiles" EntityType="mysurveyModel.Store.vw_aspnet_Profiles" store:Type="Views" store:Schema="dbo" store:Name="vw_aspnet_Profiles">
-      <DefiningQuery>SELECT 
-      [vw_aspnet_Profiles].[UserId] AS [UserId], 
-      [vw_aspnet_Profiles].[LastUpdatedDate] AS [LastUpdatedDate], 
-      [vw_aspnet_Profiles].[DataSize] AS [DataSize]
-      FROM [dbo].[vw_aspnet_Profiles] AS [vw_aspnet_Profiles]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="vw_aspnet_Roles" EntityType="mysurveyModel.Store.vw_aspnet_Roles" store:Type="Views" store:Schema="dbo" store:Name="vw_aspnet_Roles">
-      <DefiningQuery>SELECT 
-      [vw_aspnet_Roles].[ApplicationId] AS [ApplicationId], 
-      [vw_aspnet_Roles].[RoleId] AS [RoleId], 
-      [vw_aspnet_Roles].[RoleName] AS [RoleName], 
-      [vw_aspnet_Roles].[LoweredRoleName] AS [LoweredRoleName], 
-      [vw_aspnet_Roles].[Description] AS [Description]
-      FROM [dbo].[vw_aspnet_Roles] AS [vw_aspnet_Roles]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="vw_aspnet_Users" EntityType="mysurveyModel.Store.vw_aspnet_Users" store:Type="Views" store:Schema="dbo" store:Name="vw_aspnet_Users">
-      <DefiningQuery>SELECT 
-      [vw_aspnet_Users].[ApplicationId] AS [ApplicationId], 
-      [vw_aspnet_Users].[UserId] AS [UserId], 
-      [vw_aspnet_Users].[UserName] AS [UserName], 
-      [vw_aspnet_Users].[LoweredUserName] AS [LoweredUserName], 
-      [vw_aspnet_Users].[MobileAlias] AS [MobileAlias], 
-      [vw_aspnet_Users].[IsAnonymous] AS [IsAnonymous], 
-      [vw_aspnet_Users].[LastActivityDate] AS [LastActivityDate]
-      FROM [dbo].[vw_aspnet_Users] AS [vw_aspnet_Users]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="vw_aspnet_UsersInRoles" EntityType="mysurveyModel.Store.vw_aspnet_UsersInRoles" store:Type="Views" store:Schema="dbo" store:Name="vw_aspnet_UsersInRoles">
-      <DefiningQuery>SELECT 
-      [vw_aspnet_UsersInRoles].[UserId] AS [UserId], 
-      [vw_aspnet_UsersInRoles].[RoleId] AS [RoleId]
-      FROM [dbo].[vw_aspnet_UsersInRoles] AS [vw_aspnet_UsersInRoles]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="vw_aspnet_WebPartState_Paths" EntityType="mysurveyModel.Store.vw_aspnet_WebPartState_Paths" store:Type="Views" store:Schema="dbo" store:Name="vw_aspnet_WebPartState_Paths">
-      <DefiningQuery>SELECT 
-      [vw_aspnet_WebPartState_Paths].[ApplicationId] AS [ApplicationId], 
-      [vw_aspnet_WebPartState_Paths].[PathId] AS [PathId], 
-      [vw_aspnet_WebPartState_Paths].[Path] AS [Path], 
-      [vw_aspnet_WebPartState_Paths].[LoweredPath] AS [LoweredPath]
-      FROM [dbo].[vw_aspnet_WebPartState_Paths] AS [vw_aspnet_WebPartState_Paths]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="vw_aspnet_WebPartState_Shared" EntityType="mysurveyModel.Store.vw_aspnet_WebPartState_Shared" store:Type="Views" store:Schema="dbo" store:Name="vw_aspnet_WebPartState_Shared">
-      <DefiningQuery>SELECT 
-      [vw_aspnet_WebPartState_Shared].[PathId] AS [PathId], 
-      [vw_aspnet_WebPartState_Shared].[DataSize] AS [DataSize], 
-      [vw_aspnet_WebPartState_Shared].[LastUpdatedDate] AS [LastUpdatedDate]
-      FROM [dbo].[vw_aspnet_WebPartState_Shared] AS [vw_aspnet_WebPartState_Shared]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="vw_aspnet_WebPartState_User" EntityType="mysurveyModel.Store.vw_aspnet_WebPartState_User" store:Type="Views" store:Schema="dbo" store:Name="vw_aspnet_WebPartState_User">
-      <DefiningQuery>SELECT 
-      [vw_aspnet_WebPartState_User].[PathId] AS [PathId], 
-      [vw_aspnet_WebPartState_User].[UserId] AS [UserId], 
-      [vw_aspnet_WebPartState_User].[DataSize] AS [DataSize], 
-      [vw_aspnet_WebPartState_User].[LastUpdatedDate] AS [LastUpdatedDate]
-      FROM [dbo].[vw_aspnet_WebPartState_User] AS [vw_aspnet_WebPartState_User]</DefiningQuery>
-    </EntitySet>
+    <EntitySet Name="vw_aspnet_Applications" EntityType="mysurveyModel.Store.vw_aspnet_Applications" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vw_aspnet_MembershipUsers" EntityType="mysurveyModel.Store.vw_aspnet_MembershipUsers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vw_aspnet_Profiles" EntityType="mysurveyModel.Store.vw_aspnet_Profiles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vw_aspnet_Roles" EntityType="mysurveyModel.Store.vw_aspnet_Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vw_aspnet_Users" EntityType="mysurveyModel.Store.vw_aspnet_Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vw_aspnet_UsersInRoles" EntityType="mysurveyModel.Store.vw_aspnet_UsersInRoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vw_aspnet_WebPartState_Paths" EntityType="mysurveyModel.Store.vw_aspnet_WebPartState_Paths" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vw_aspnet_WebPartState_Shared" EntityType="mysurveyModel.Store.vw_aspnet_WebPartState_Shared" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vw_aspnet_WebPartState_User" EntityType="mysurveyModel.Store.vw_aspnet_WebPartState_User" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="FK__aspnet_Me__Appli__3A81B327" Association="mysurveyModel.Store.FK__aspnet_Me__Appli__3A81B327">
       <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
       <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
@@ -145,13 +63,33 @@
       <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
       <End Role="aspnet_Users" EntitySet="aspnet_Users" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Us__RoleI__5DCAEF64" Association="mysurveyModel.Store.FK__aspnet_Us__RoleI__5DCAEF64">
+    <AssociationSet Name="FK_aspnet_UsersInRoles_aspnet_Roles" Association="mysurveyModel.Store.FK_aspnet_UsersInRoles_aspnet_Roles">
       <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
       <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Us__UserI__5CD6CB2B" Association="mysurveyModel.Store.FK__aspnet_Us__UserI__5CD6CB2B">
+    <AssociationSet Name="FK_aspnet_UsersInRoles_aspnet_Users" Association="mysurveyModel.Store.FK_aspnet_UsersInRoles_aspnet_Users">
       <End Role="aspnet_Users" EntitySet="aspnet_Users" />
       <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_QUESTAO_FKIndex1" Association="mysurveyModel.Store.FK_TB_QUESTAO_FKIndex1">
+      <End Role="TB_SURVEY" EntitySet="TB_SURVEY" />
+      <End Role="TB_QUESTAO" EntitySet="TB_QUESTAO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_QUESTAO_FKIndex2" Association="mysurveyModel.Store.FK_TB_QUESTAO_FKIndex2">
+      <End Role="TB_ITENS_DA_QUESTAO" EntitySet="TB_ITENS_DA_QUESTAO" />
+      <End Role="TB_QUESTAO" EntitySet="TB_QUESTAO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_RESPOSTA_FKIndex1" Association="mysurveyModel.Store.FK_TB_RESPOSTA_FKIndex1">
+      <End Role="TB_QUESTAO" EntitySet="TB_QUESTAO" />
+      <End Role="TB_RESPOSTA" EntitySet="TB_RESPOSTA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_RESPOSTA_FKIndex2" Association="mysurveyModel.Store.FK_TB_RESPOSTA_FKIndex2">
+      <End Role="TB_ENTREVISTADO" EntitySet="TB_ENTREVISTADO" />
+      <End Role="TB_RESPOSTA" EntitySet="TB_RESPOSTA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_SURVEY_FKIndex1" Association="mysurveyModel.Store.FK_TB_SURVEY_FKIndex1">
+      <End Role="TB_RESPONSAVEL" EntitySet="TB_RESPONSAVEL" />
+      <End Role="TB_SURVEY" EntitySet="TB_SURVEY" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="aspnet_Applications">
@@ -187,7 +125,7 @@
     <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
     <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
     <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
-    <Property Name="Comment" Type="ntext" />
+    <Property Name="Comment" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="aspnet_Paths">
     <Key>
@@ -203,7 +141,7 @@
       <PropertyRef Name="PathId" />
     </Key>
     <Property Name="PathId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="PageSettings" Type="image" Nullable="false" />
+    <Property Name="PageSettings" Type="varbinary(max)" Nullable="false" />
     <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="aspnet_PersonalizationPerUser">
@@ -213,7 +151,7 @@
     <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
     <Property Name="PathId" Type="uniqueidentifier" />
     <Property Name="UserId" Type="uniqueidentifier" />
-    <Property Name="PageSettings" Type="image" Nullable="false" />
+    <Property Name="PageSettings" Type="varbinary(max)" Nullable="false" />
     <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="aspnet_Profile">
@@ -221,9 +159,9 @@
       <PropertyRef Name="UserId" />
     </Key>
     <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="PropertyNames" Type="ntext" Nullable="false" />
-    <Property Name="PropertyValuesString" Type="ntext" Nullable="false" />
-    <Property Name="PropertyValuesBinary" Type="image" Nullable="false" />
+    <Property Name="PropertyNames" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PropertyValuesString" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PropertyValuesBinary" Type="varbinary(max)" Nullable="false" />
     <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="aspnet_Roles">
@@ -259,11 +197,11 @@
   </EntityType>
   <EntityType Name="aspnet_UsersInRoles">
     <Key>
-      <PropertyRef Name="UserId" />
-      <PropertyRef Name="RoleId" />
+      <PropertyRef Name="aspnet_Roles_RoleId" />
+      <PropertyRef Name="aspnet_Users_UserId" />
     </Key>
-    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="aspnet_Roles_RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="aspnet_Users_UserId" Type="uniqueidentifier" Nullable="false" />
   </EntityType>
   <EntityType Name="aspnet_WebEvent_Events">
     <Key>
@@ -283,13 +221,13 @@
     <Property Name="MachineName" Type="nvarchar" Nullable="false" MaxLength="256" />
     <Property Name="RequestUrl" Type="nvarchar" MaxLength="1024" />
     <Property Name="ExceptionType" Type="nvarchar" MaxLength="256" />
-    <Property Name="Details" Type="ntext" />
+    <Property Name="Details" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="TB_ENTREVISTADO">
     <Key>
       <PropertyRef Name="idTB_ENTREVISTADO" />
     </Key>
-    <Property Name="idTB_ENTREVISTADO" Type="int" Nullable="false" />
+    <Property Name="idTB_ENTREVISTADO" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="NOME" Type="varchar" MaxLength="45" />
     <Property Name="EMAIL" Type="varchar" MaxLength="45" />
     <Property Name="SOBRENOME" Type="varchar" MaxLength="45" />
@@ -299,8 +237,8 @@
       <PropertyRef Name="idTB_ITENS_DA_QUESTAO" />
     </Key>
     <Property Name="idTB_ITENS_DA_QUESTAO" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="ItemA" Type="varchar(max)" Nullable="false" />
-    <Property Name="ItemB" Type="varchar(max)" Nullable="false" />
+    <Property Name="ItemA" Type="varchar(max)" />
+    <Property Name="ItemB" Type="varchar(max)" />
     <Property Name="ItemC" Type="varchar(max)" />
     <Property Name="ItemD" Type="varchar(max)" />
     <Property Name="ItemE" Type="varchar(max)" />
@@ -309,11 +247,11 @@
     <Key>
       <PropertyRef Name="id_Questao" />
     </Key>
-    <Property Name="id_Questao" Type="int" Nullable="false" />
+    <Property Name="id_Questao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO" Type="int" />
     <Property Name="TB_SURVEY_id_Survey" Type="int" Nullable="false" />
     <Property Name="Tipo" Type="varchar" MaxLength="10" />
-    <Property Name="Pergunta" Type="varchar(max)" />
+    <Property Name="Pergunta" Type="varchar(max)" Nullable="false" />
     <Property Name="Img" Type="varbinary(max)" />
     <Property Name="Randomica" Type="bit" />
     <Property Name="Obrigatoria" Type="bit" />
@@ -324,7 +262,7 @@
     <Key>
       <PropertyRef Name="id_Responsavel" />
     </Key>
-    <Property Name="id_Responsavel" Type="int" Nullable="false" />
+    <Property Name="id_Responsavel" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="nome" Type="varchar" Nullable="false" MaxLength="45" />
     <Property Name="email" Type="varchar" Nullable="false" MaxLength="45" />
     <Property Name="sobrenome" Type="varchar" Nullable="false" MaxLength="45" />
@@ -333,7 +271,7 @@
     <Key>
       <PropertyRef Name="id_Resposta" />
     </Key>
-    <Property Name="id_Resposta" Type="int" Nullable="false" />
+    <Property Name="id_Resposta" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="TB_ENTREVISTADO_idTB_ENTREVISTADO" Type="int" Nullable="false" />
     <Property Name="TB_QUESTAO_id_Questao" Type="int" Nullable="false" />
     <Property Name="Resposta" Type="varchar(max)" />
@@ -343,7 +281,7 @@
     <Key>
       <PropertyRef Name="id_Survey" />
     </Key>
-    <Property Name="id_Survey" Type="int" Nullable="false" />
+    <Property Name="id_Survey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="TB_RESPONSAVEL_id_Responsavel" Type="int" Nullable="false" />
     <Property Name="Titulo" Type="varchar" Nullable="false" MaxLength="45" />
     <Property Name="Subtitulo" Type="varchar" Nullable="false" MaxLength="45" />
@@ -351,9 +289,6 @@
     <Property Name="Data_fim" Type="datetime" />
     <Property Name="flag_ativo" Type="bit" Nullable="false" />
   </EntityType>
-  <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_Applications' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
-      -->
   <EntityType Name="vw_aspnet_Applications">
     <Key>
       <PropertyRef Name="ApplicationName" />
@@ -365,9 +300,6 @@
     <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="256" />
   </EntityType>
-  <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_MembershipUsers' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
-      -->
   <EntityType Name="vw_aspnet_MembershipUsers">
     <Key>
       <PropertyRef Name="UserId" />
@@ -404,16 +336,13 @@
     <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
     <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
     <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
-    <Property Name="Comment" Type="ntext" />
+    <Property Name="Comment" Type="nvarchar(max)" />
     <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
     <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
     <Property Name="IsAnonymous" Type="bit" Nullable="false" />
     <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
   </EntityType>
-  <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_Profiles' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
-      -->
   <EntityType Name="vw_aspnet_Profiles">
     <Key>
       <PropertyRef Name="UserId" />
@@ -423,9 +352,6 @@
     <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
     <Property Name="DataSize" Type="int" />
   </EntityType>
-  <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_Roles' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
-      -->
   <EntityType Name="vw_aspnet_Roles">
     <Key>
       <PropertyRef Name="ApplicationId" />
@@ -439,9 +365,6 @@
     <Property Name="LoweredRoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
     <Property Name="Description" Type="nvarchar" MaxLength="256" />
   </EntityType>
-  <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_Users' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
-      -->
   <EntityType Name="vw_aspnet_Users">
     <Key>
       <PropertyRef Name="ApplicationId" />
@@ -459,9 +382,6 @@
     <Property Name="IsAnonymous" Type="bit" Nullable="false" />
     <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
   </EntityType>
-  <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_UsersInRoles' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
-      -->
   <EntityType Name="vw_aspnet_UsersInRoles">
     <Key>
       <PropertyRef Name="UserId" />
@@ -470,9 +390,6 @@
     <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
   </EntityType>
-  <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_WebPartState_Paths' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
-      -->
   <EntityType Name="vw_aspnet_WebPartState_Paths">
     <Key>
       <PropertyRef Name="ApplicationId" />
@@ -485,9 +402,6 @@
     <Property Name="Path" Type="nvarchar" Nullable="false" MaxLength="256" />
     <Property Name="LoweredPath" Type="nvarchar" Nullable="false" MaxLength="256" />
   </EntityType>
-  <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_WebPartState_Shared' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
-      -->
   <EntityType Name="vw_aspnet_WebPartState_Shared">
     <Key>
       <PropertyRef Name="PathId" />
@@ -497,9 +411,6 @@
     <Property Name="DataSize" Type="int" />
     <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
   </EntityType>
-  <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_WebPartState_User' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
-      -->
   <EntityType Name="vw_aspnet_WebPartState_User">
     <Key>
       <PropertyRef Name="LastUpdatedDate" />
@@ -617,7 +528,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Us__RoleI__5DCAEF64">
+  <Association Name="FK_aspnet_UsersInRoles_aspnet_Roles">
     <End Role="aspnet_Roles" Type="mysurveyModel.Store.aspnet_Roles" Multiplicity="1" />
     <End Role="aspnet_UsersInRoles" Type="mysurveyModel.Store.aspnet_UsersInRoles" Multiplicity="*" />
     <ReferentialConstraint>
@@ -625,11 +536,11 @@
         <PropertyRef Name="RoleId" />
       </Principal>
       <Dependent Role="aspnet_UsersInRoles">
-        <PropertyRef Name="RoleId" />
+        <PropertyRef Name="aspnet_Roles_RoleId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Us__UserI__5CD6CB2B">
+  <Association Name="FK_aspnet_UsersInRoles_aspnet_Users">
     <End Role="aspnet_Users" Type="mysurveyModel.Store.aspnet_Users" Multiplicity="1" />
     <End Role="aspnet_UsersInRoles" Type="mysurveyModel.Store.aspnet_UsersInRoles" Multiplicity="*" />
     <ReferentialConstraint>
@@ -637,339 +548,68 @@
         <PropertyRef Name="UserId" />
       </Principal>
       <Dependent Role="aspnet_UsersInRoles">
-        <PropertyRef Name="UserId" />
+        <PropertyRef Name="aspnet_Users_UserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="aspnet_AnyDataInTables" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="TablesToCheck" Type="int" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Applications_CreateApplication" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="ApplicationId" Type="uniqueidentifier" Mode="InOut" />
-  </Function>
-  <Function Name="aspnet_CheckSchemaVersion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Feature" Type="nvarchar" Mode="In" />
-    <Parameter Name="CompatibleSchemaVersion" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Membership_ChangePasswordQuestionAndAnswer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-    <Parameter Name="NewPasswordQuestion" Type="nvarchar" Mode="In" />
-    <Parameter Name="NewPasswordAnswer" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Membership_CreateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-    <Parameter Name="Password" Type="nvarchar" Mode="In" />
-    <Parameter Name="PasswordSalt" Type="nvarchar" Mode="In" />
-    <Parameter Name="Email" Type="nvarchar" Mode="In" />
-    <Parameter Name="PasswordQuestion" Type="nvarchar" Mode="In" />
-    <Parameter Name="PasswordAnswer" Type="nvarchar" Mode="In" />
-    <Parameter Name="IsApproved" Type="bit" Mode="In" />
-    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-    <Parameter Name="CreateDate" Type="datetime" Mode="In" />
-    <Parameter Name="UniqueEmail" Type="int" Mode="In" />
-    <Parameter Name="PasswordFormat" Type="int" Mode="In" />
-    <Parameter Name="UserId" Type="uniqueidentifier" Mode="InOut" />
-  </Function>
-  <Function Name="aspnet_Membership_FindUsersByEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="EmailToMatch" Type="nvarchar" Mode="In" />
-    <Parameter Name="PageIndex" Type="int" Mode="In" />
-    <Parameter Name="PageSize" Type="int" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Membership_FindUsersByName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="UserNameToMatch" Type="nvarchar" Mode="In" />
-    <Parameter Name="PageIndex" Type="int" Mode="In" />
-    <Parameter Name="PageSize" Type="int" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Membership_GetAllUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="PageIndex" Type="int" Mode="In" />
-    <Parameter Name="PageSize" Type="int" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Membership_GetNumberOfUsersOnline" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="MinutesSinceLastInActive" Type="int" Mode="In" />
-    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Membership_GetPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-    <Parameter Name="MaxInvalidPasswordAttempts" Type="int" Mode="In" />
-    <Parameter Name="PasswordAttemptWindow" Type="int" Mode="In" />
-    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-    <Parameter Name="PasswordAnswer" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Membership_GetPasswordWithFormat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-    <Parameter Name="UpdateLastLoginActivityDate" Type="bit" Mode="In" />
-    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Membership_GetUserByEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="Email" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Membership_GetUserByName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-    <Parameter Name="UpdateLastActivity" Type="bit" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Membership_GetUserByUserId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="UserId" Type="uniqueidentifier" Mode="In" />
-    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-    <Parameter Name="UpdateLastActivity" Type="bit" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Membership_ResetPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-    <Parameter Name="NewPassword" Type="nvarchar" Mode="In" />
-    <Parameter Name="MaxInvalidPasswordAttempts" Type="int" Mode="In" />
-    <Parameter Name="PasswordAttemptWindow" Type="int" Mode="In" />
-    <Parameter Name="PasswordSalt" Type="nvarchar" Mode="In" />
-    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-    <Parameter Name="PasswordFormat" Type="int" Mode="In" />
-    <Parameter Name="PasswordAnswer" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Membership_SetPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-    <Parameter Name="NewPassword" Type="nvarchar" Mode="In" />
-    <Parameter Name="PasswordSalt" Type="nvarchar" Mode="In" />
-    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-    <Parameter Name="PasswordFormat" Type="int" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Membership_UnlockUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Membership_UpdateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-    <Parameter Name="Email" Type="nvarchar" Mode="In" />
-    <Parameter Name="Comment" Type="ntext" Mode="In" />
-    <Parameter Name="IsApproved" Type="bit" Mode="In" />
-    <Parameter Name="LastLoginDate" Type="datetime" Mode="In" />
-    <Parameter Name="LastActivityDate" Type="datetime" Mode="In" />
-    <Parameter Name="UniqueEmail" Type="int" Mode="In" />
-    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Membership_UpdateUserInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-    <Parameter Name="IsPasswordCorrect" Type="bit" Mode="In" />
-    <Parameter Name="UpdateLastLoginActivityDate" Type="bit" Mode="In" />
-    <Parameter Name="MaxInvalidPasswordAttempts" Type="int" Mode="In" />
-    <Parameter Name="PasswordAttemptWindow" Type="int" Mode="In" />
-    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-    <Parameter Name="LastLoginDate" Type="datetime" Mode="In" />
-    <Parameter Name="LastActivityDate" Type="datetime" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Paths_CreatePath" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationId" Type="uniqueidentifier" Mode="In" />
-    <Parameter Name="Path" Type="nvarchar" Mode="In" />
-    <Parameter Name="PathId" Type="uniqueidentifier" Mode="InOut" />
-  </Function>
-  <Function Name="aspnet_Personalization_GetApplicationId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="ApplicationId" Type="uniqueidentifier" Mode="InOut" />
-  </Function>
-  <Function Name="aspnet_PersonalizationAdministration_DeleteAllState" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="AllUsersScope" Type="bit" Mode="In" />
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="Count" Type="int" Mode="InOut" />
-  </Function>
-  <Function Name="aspnet_PersonalizationAdministration_FindState" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="AllUsersScope" Type="bit" Mode="In" />
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="PageIndex" Type="int" Mode="In" />
-    <Parameter Name="PageSize" Type="int" Mode="In" />
-    <Parameter Name="Path" Type="nvarchar" Mode="In" />
-    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-    <Parameter Name="InactiveSinceDate" Type="datetime" Mode="In" />
-  </Function>
-  <Function Name="aspnet_PersonalizationAdministration_GetCountOfState" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Count" Type="int" Mode="InOut" />
-    <Parameter Name="AllUsersScope" Type="bit" Mode="In" />
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="Path" Type="nvarchar" Mode="In" />
-    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-    <Parameter Name="InactiveSinceDate" Type="datetime" Mode="In" />
-  </Function>
-  <Function Name="aspnet_PersonalizationAdministration_ResetSharedState" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Count" Type="int" Mode="InOut" />
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="Path" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="aspnet_PersonalizationAdministration_ResetUserState" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Count" Type="int" Mode="InOut" />
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="InactiveSinceDate" Type="datetime" Mode="In" />
-    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-    <Parameter Name="Path" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="aspnet_PersonalizationAllUsers_GetPageSettings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="Path" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="aspnet_PersonalizationAllUsers_ResetPageSettings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="Path" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="aspnet_PersonalizationAllUsers_SetPageSettings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="Path" Type="nvarchar" Mode="In" />
-    <Parameter Name="PageSettings" Type="image" Mode="In" />
-    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-  </Function>
-  <Function Name="aspnet_PersonalizationPerUser_GetPageSettings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-    <Parameter Name="Path" Type="nvarchar" Mode="In" />
-    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-  </Function>
-  <Function Name="aspnet_PersonalizationPerUser_ResetPageSettings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-    <Parameter Name="Path" Type="nvarchar" Mode="In" />
-    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-  </Function>
-  <Function Name="aspnet_PersonalizationPerUser_SetPageSettings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-    <Parameter Name="Path" Type="nvarchar" Mode="In" />
-    <Parameter Name="PageSettings" Type="image" Mode="In" />
-    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Profile_DeleteInactiveProfiles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="ProfileAuthOptions" Type="int" Mode="In" />
-    <Parameter Name="InactiveSinceDate" Type="datetime" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Profile_DeleteProfiles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="UserNames" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Profile_GetNumberOfInactiveProfiles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="ProfileAuthOptions" Type="int" Mode="In" />
-    <Parameter Name="InactiveSinceDate" Type="datetime" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Profile_GetProfiles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="ProfileAuthOptions" Type="int" Mode="In" />
-    <Parameter Name="PageIndex" Type="int" Mode="In" />
-    <Parameter Name="PageSize" Type="int" Mode="In" />
-    <Parameter Name="UserNameToMatch" Type="nvarchar" Mode="In" />
-    <Parameter Name="InactiveSinceDate" Type="datetime" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Profile_GetProperties" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Profile_SetProperties" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="PropertyNames" Type="ntext" Mode="In" />
-    <Parameter Name="PropertyValuesString" Type="ntext" Mode="In" />
-    <Parameter Name="PropertyValuesBinary" Type="image" Mode="In" />
-    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-    <Parameter Name="IsUserAnonymous" Type="bit" Mode="In" />
-    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-  </Function>
-  <Function Name="aspnet_RegisterSchemaVersion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Feature" Type="nvarchar" Mode="In" />
-    <Parameter Name="CompatibleSchemaVersion" Type="nvarchar" Mode="In" />
-    <Parameter Name="IsCurrentVersion" Type="bit" Mode="In" />
-    <Parameter Name="RemoveIncompatibleSchema" Type="bit" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Roles_CreateRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Roles_DeleteRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
-    <Parameter Name="DeleteOnlyIfRoleIsEmpty" Type="bit" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Roles_GetAllRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Roles_RoleExists" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Setup_RemoveAllRoleMembers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="name" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Setup_RestorePermissions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="name" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="aspnet_UnRegisterSchemaVersion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Feature" Type="nvarchar" Mode="In" />
-    <Parameter Name="CompatibleSchemaVersion" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="aspnet_Users_CreateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationId" Type="uniqueidentifier" Mode="In" />
-    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-    <Parameter Name="IsUserAnonymous" Type="bit" Mode="In" />
-    <Parameter Name="LastActivityDate" Type="datetime" Mode="In" />
-    <Parameter Name="UserId" Type="uniqueidentifier" Mode="InOut" />
-  </Function>
-  <Function Name="aspnet_Users_DeleteUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-    <Parameter Name="TablesToDeleteFrom" Type="int" Mode="In" />
-    <Parameter Name="NumTablesDeletedFrom" Type="int" Mode="InOut" />
-  </Function>
-  <Function Name="aspnet_UsersInRoles_AddUsersToRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="UserNames" Type="nvarchar" Mode="In" />
-    <Parameter Name="RoleNames" Type="nvarchar" Mode="In" />
-    <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-  </Function>
-  <Function Name="aspnet_UsersInRoles_FindUsersInRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
-    <Parameter Name="UserNameToMatch" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="aspnet_UsersInRoles_GetRolesForUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="aspnet_UsersInRoles_GetUsersInRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="aspnet_UsersInRoles_IsUserInRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-    <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="aspnet_UsersInRoles_RemoveUsersFromRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-    <Parameter Name="UserNames" Type="nvarchar" Mode="In" />
-    <Parameter Name="RoleNames" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="aspnet_WebEvent_LogEvent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="EventId" Type="char" Mode="In" />
-    <Parameter Name="EventTimeUtc" Type="datetime" Mode="In" />
-    <Parameter Name="EventTime" Type="datetime" Mode="In" />
-    <Parameter Name="EventType" Type="nvarchar" Mode="In" />
-    <Parameter Name="EventSequence" Type="decimal" Mode="In" />
-    <Parameter Name="EventOccurrence" Type="decimal" Mode="In" />
-    <Parameter Name="EventCode" Type="int" Mode="In" />
-    <Parameter Name="EventDetailCode" Type="int" Mode="In" />
-    <Parameter Name="Message" Type="nvarchar" Mode="In" />
-    <Parameter Name="ApplicationPath" Type="nvarchar" Mode="In" />
-    <Parameter Name="ApplicationVirtualPath" Type="nvarchar" Mode="In" />
-    <Parameter Name="MachineName" Type="nvarchar" Mode="In" />
-    <Parameter Name="RequestUrl" Type="nvarchar" Mode="In" />
-    <Parameter Name="ExceptionType" Type="nvarchar" Mode="In" />
-    <Parameter Name="Details" Type="ntext" Mode="In" />
-  </Function>
+  <Association Name="FK_TB_QUESTAO_FKIndex1">
+    <End Role="TB_SURVEY" Type="mysurveyModel.Store.TB_SURVEY" Multiplicity="1" />
+    <End Role="TB_QUESTAO" Type="mysurveyModel.Store.TB_QUESTAO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_SURVEY">
+        <PropertyRef Name="id_Survey" />
+      </Principal>
+      <Dependent Role="TB_QUESTAO">
+        <PropertyRef Name="TB_SURVEY_id_Survey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_QUESTAO_FKIndex2">
+    <End Role="TB_ITENS_DA_QUESTAO" Type="mysurveyModel.Store.TB_ITENS_DA_QUESTAO" Multiplicity="0..1" />
+    <End Role="TB_QUESTAO" Type="mysurveyModel.Store.TB_QUESTAO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_ITENS_DA_QUESTAO">
+        <PropertyRef Name="idTB_ITENS_DA_QUESTAO" />
+      </Principal>
+      <Dependent Role="TB_QUESTAO">
+        <PropertyRef Name="TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_RESPOSTA_FKIndex1">
+    <End Role="TB_QUESTAO" Type="mysurveyModel.Store.TB_QUESTAO" Multiplicity="1" />
+    <End Role="TB_RESPOSTA" Type="mysurveyModel.Store.TB_RESPOSTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_QUESTAO">
+        <PropertyRef Name="id_Questao" />
+      </Principal>
+      <Dependent Role="TB_RESPOSTA">
+        <PropertyRef Name="TB_QUESTAO_id_Questao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_RESPOSTA_FKIndex2">
+    <End Role="TB_ENTREVISTADO" Type="mysurveyModel.Store.TB_ENTREVISTADO" Multiplicity="1" />
+    <End Role="TB_RESPOSTA" Type="mysurveyModel.Store.TB_RESPOSTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_ENTREVISTADO">
+        <PropertyRef Name="idTB_ENTREVISTADO" />
+      </Principal>
+      <Dependent Role="TB_RESPOSTA">
+        <PropertyRef Name="TB_ENTREVISTADO_idTB_ENTREVISTADO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_SURVEY_FKIndex1">
+    <End Role="TB_RESPONSAVEL" Type="mysurveyModel.Store.TB_RESPONSAVEL" Multiplicity="1" />
+    <End Role="TB_SURVEY" Type="mysurveyModel.Store.TB_SURVEY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_RESPONSAVEL">
+        <PropertyRef Name="id_Responsavel" />
+      </Principal>
+      <Dependent Role="TB_SURVEY">
+        <PropertyRef Name="TB_RESPONSAVEL_id_Responsavel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
