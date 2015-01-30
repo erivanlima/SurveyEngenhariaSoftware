@@ -40,7 +40,7 @@ namespace Spider.Controllers
 
         public ActionResult Details(int id)
         {
-            return View();
+            return View(gSurvey.Obter(id));
         }
 
         //
@@ -70,15 +70,56 @@ namespace Spider.Controllers
 
                 return RedirectToAction("Index");
         }
+
+        
+        public ActionResult QuestaoPartial()
+        {
+            //ViewBag.id_Survey = id;
+            return PartialView(gQuestao.ObterTodos());
+        }
+
+        [HttpGet]
+        public ActionResult ListaQuestoes(int id)
+        {
+
+            //ViewBag.id_Questao = gQuestao.Obter(id).id_Questao;
+            //ViewBag.Pergunta = gQuestao.Obter(id).Pergunta;
+            ViewBag.id_Survey = id;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ListaQuestoes(int idsurvey, SurveyModel survey)
+        {
+            //int idsurvey = 0;
+            //SurveyModel survey = new SurveyModel();
+            List<QuestaoModel> SurveyQuestoes = new List<QuestaoModel>();
+            //SurveyQuestoes = survey.questoes;
+
+            foreach (QuestaoModel questao in SurveyQuestoes)
+            {
+               // gQuestao.Obter(questao.id_Survey);
+                if (questao.id_Survey == idsurvey)
+                {
+                    //questao.idTB_ITENS_DA_QUESTAO = gItens.Inserir(questao.itens);
+                    SurveyQuestoes.Add(gQuestao.Obter(questao.id_Survey));
+                    //gQuestao.Inserir(questao);
+                }
+
+            }
+
+            return View(SurveyQuestoes);
+        }
+
         [HttpGet]
         public ActionResult CreateQuestoes(int id)
         {
             ViewBag.id_Survey = id;
             return View();
         }
+
         //
         // POST: /Survey/Create
-
         [HttpPost]
         public ActionResult CreateSurvey(SurveyModel survey)
         {

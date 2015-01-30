@@ -23,97 +23,15 @@
           <EntitySet Name="TB_RESPONSAVEL" EntityType="mysurveyModel.Store.TB_RESPONSAVEL" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TB_RESPOSTA" EntityType="mysurveyModel.Store.TB_RESPOSTA" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TB_SURVEY" EntityType="mysurveyModel.Store.TB_SURVEY" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="vw_aspnet_Applications" EntityType="mysurveyModel.Store.vw_aspnet_Applications" store:Type="Views" store:Schema="dbo" store:Name="vw_aspnet_Applications">
-            <DefiningQuery>SELECT 
-      [vw_aspnet_Applications].[ApplicationName] AS [ApplicationName], 
-      [vw_aspnet_Applications].[LoweredApplicationName] AS [LoweredApplicationName], 
-      [vw_aspnet_Applications].[ApplicationId] AS [ApplicationId], 
-      [vw_aspnet_Applications].[Description] AS [Description]
-      FROM [dbo].[vw_aspnet_Applications] AS [vw_aspnet_Applications]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vw_aspnet_MembershipUsers" EntityType="mysurveyModel.Store.vw_aspnet_MembershipUsers" store:Type="Views" store:Schema="dbo" store:Name="vw_aspnet_MembershipUsers">
-            <DefiningQuery>SELECT 
-      [vw_aspnet_MembershipUsers].[UserId] AS [UserId], 
-      [vw_aspnet_MembershipUsers].[PasswordFormat] AS [PasswordFormat], 
-      [vw_aspnet_MembershipUsers].[MobilePIN] AS [MobilePIN], 
-      [vw_aspnet_MembershipUsers].[Email] AS [Email], 
-      [vw_aspnet_MembershipUsers].[LoweredEmail] AS [LoweredEmail], 
-      [vw_aspnet_MembershipUsers].[PasswordQuestion] AS [PasswordQuestion], 
-      [vw_aspnet_MembershipUsers].[PasswordAnswer] AS [PasswordAnswer], 
-      [vw_aspnet_MembershipUsers].[IsApproved] AS [IsApproved], 
-      [vw_aspnet_MembershipUsers].[IsLockedOut] AS [IsLockedOut], 
-      [vw_aspnet_MembershipUsers].[CreateDate] AS [CreateDate], 
-      [vw_aspnet_MembershipUsers].[LastLoginDate] AS [LastLoginDate], 
-      [vw_aspnet_MembershipUsers].[LastPasswordChangedDate] AS [LastPasswordChangedDate], 
-      [vw_aspnet_MembershipUsers].[LastLockoutDate] AS [LastLockoutDate], 
-      [vw_aspnet_MembershipUsers].[FailedPasswordAttemptCount] AS [FailedPasswordAttemptCount], 
-      [vw_aspnet_MembershipUsers].[FailedPasswordAttemptWindowStart] AS [FailedPasswordAttemptWindowStart], 
-      [vw_aspnet_MembershipUsers].[FailedPasswordAnswerAttemptCount] AS [FailedPasswordAnswerAttemptCount], 
-      [vw_aspnet_MembershipUsers].[FailedPasswordAnswerAttemptWindowStart] AS [FailedPasswordAnswerAttemptWindowStart], 
-      [vw_aspnet_MembershipUsers].[Comment] AS [Comment], 
-      [vw_aspnet_MembershipUsers].[ApplicationId] AS [ApplicationId], 
-      [vw_aspnet_MembershipUsers].[UserName] AS [UserName], 
-      [vw_aspnet_MembershipUsers].[MobileAlias] AS [MobileAlias], 
-      [vw_aspnet_MembershipUsers].[IsAnonymous] AS [IsAnonymous], 
-      [vw_aspnet_MembershipUsers].[LastActivityDate] AS [LastActivityDate]
-      FROM [dbo].[vw_aspnet_MembershipUsers] AS [vw_aspnet_MembershipUsers]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vw_aspnet_Profiles" EntityType="mysurveyModel.Store.vw_aspnet_Profiles" store:Type="Views" store:Schema="dbo" store:Name="vw_aspnet_Profiles">
-            <DefiningQuery>SELECT 
-      [vw_aspnet_Profiles].[UserId] AS [UserId], 
-      [vw_aspnet_Profiles].[LastUpdatedDate] AS [LastUpdatedDate], 
-      [vw_aspnet_Profiles].[DataSize] AS [DataSize]
-      FROM [dbo].[vw_aspnet_Profiles] AS [vw_aspnet_Profiles]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vw_aspnet_Roles" EntityType="mysurveyModel.Store.vw_aspnet_Roles" store:Type="Views" store:Schema="dbo" store:Name="vw_aspnet_Roles">
-            <DefiningQuery>SELECT 
-      [vw_aspnet_Roles].[ApplicationId] AS [ApplicationId], 
-      [vw_aspnet_Roles].[RoleId] AS [RoleId], 
-      [vw_aspnet_Roles].[RoleName] AS [RoleName], 
-      [vw_aspnet_Roles].[LoweredRoleName] AS [LoweredRoleName], 
-      [vw_aspnet_Roles].[Description] AS [Description]
-      FROM [dbo].[vw_aspnet_Roles] AS [vw_aspnet_Roles]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vw_aspnet_Users" EntityType="mysurveyModel.Store.vw_aspnet_Users" store:Type="Views" store:Schema="dbo" store:Name="vw_aspnet_Users">
-            <DefiningQuery>SELECT 
-      [vw_aspnet_Users].[ApplicationId] AS [ApplicationId], 
-      [vw_aspnet_Users].[UserId] AS [UserId], 
-      [vw_aspnet_Users].[UserName] AS [UserName], 
-      [vw_aspnet_Users].[LoweredUserName] AS [LoweredUserName], 
-      [vw_aspnet_Users].[MobileAlias] AS [MobileAlias], 
-      [vw_aspnet_Users].[IsAnonymous] AS [IsAnonymous], 
-      [vw_aspnet_Users].[LastActivityDate] AS [LastActivityDate]
-      FROM [dbo].[vw_aspnet_Users] AS [vw_aspnet_Users]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vw_aspnet_UsersInRoles" EntityType="mysurveyModel.Store.vw_aspnet_UsersInRoles" store:Type="Views" store:Schema="dbo" store:Name="vw_aspnet_UsersInRoles">
-            <DefiningQuery>SELECT 
-      [vw_aspnet_UsersInRoles].[UserId] AS [UserId], 
-      [vw_aspnet_UsersInRoles].[RoleId] AS [RoleId]
-      FROM [dbo].[vw_aspnet_UsersInRoles] AS [vw_aspnet_UsersInRoles]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vw_aspnet_WebPartState_Paths" EntityType="mysurveyModel.Store.vw_aspnet_WebPartState_Paths" store:Type="Views" store:Schema="dbo" store:Name="vw_aspnet_WebPartState_Paths">
-            <DefiningQuery>SELECT 
-      [vw_aspnet_WebPartState_Paths].[ApplicationId] AS [ApplicationId], 
-      [vw_aspnet_WebPartState_Paths].[PathId] AS [PathId], 
-      [vw_aspnet_WebPartState_Paths].[Path] AS [Path], 
-      [vw_aspnet_WebPartState_Paths].[LoweredPath] AS [LoweredPath]
-      FROM [dbo].[vw_aspnet_WebPartState_Paths] AS [vw_aspnet_WebPartState_Paths]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vw_aspnet_WebPartState_Shared" EntityType="mysurveyModel.Store.vw_aspnet_WebPartState_Shared" store:Type="Views" store:Schema="dbo" store:Name="vw_aspnet_WebPartState_Shared">
-            <DefiningQuery>SELECT 
-      [vw_aspnet_WebPartState_Shared].[PathId] AS [PathId], 
-      [vw_aspnet_WebPartState_Shared].[DataSize] AS [DataSize], 
-      [vw_aspnet_WebPartState_Shared].[LastUpdatedDate] AS [LastUpdatedDate]
-      FROM [dbo].[vw_aspnet_WebPartState_Shared] AS [vw_aspnet_WebPartState_Shared]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vw_aspnet_WebPartState_User" EntityType="mysurveyModel.Store.vw_aspnet_WebPartState_User" store:Type="Views" store:Schema="dbo" store:Name="vw_aspnet_WebPartState_User">
-            <DefiningQuery>SELECT 
-      [vw_aspnet_WebPartState_User].[PathId] AS [PathId], 
-      [vw_aspnet_WebPartState_User].[UserId] AS [UserId], 
-      [vw_aspnet_WebPartState_User].[DataSize] AS [DataSize], 
-      [vw_aspnet_WebPartState_User].[LastUpdatedDate] AS [LastUpdatedDate]
-      FROM [dbo].[vw_aspnet_WebPartState_User] AS [vw_aspnet_WebPartState_User]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="vw_aspnet_Applications" EntityType="mysurveyModel.Store.vw_aspnet_Applications" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vw_aspnet_MembershipUsers" EntityType="mysurveyModel.Store.vw_aspnet_MembershipUsers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vw_aspnet_Profiles" EntityType="mysurveyModel.Store.vw_aspnet_Profiles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vw_aspnet_Roles" EntityType="mysurveyModel.Store.vw_aspnet_Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vw_aspnet_Users" EntityType="mysurveyModel.Store.vw_aspnet_Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vw_aspnet_UsersInRoles" EntityType="mysurveyModel.Store.vw_aspnet_UsersInRoles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vw_aspnet_WebPartState_Paths" EntityType="mysurveyModel.Store.vw_aspnet_WebPartState_Paths" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vw_aspnet_WebPartState_Shared" EntityType="mysurveyModel.Store.vw_aspnet_WebPartState_Shared" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vw_aspnet_WebPartState_User" EntityType="mysurveyModel.Store.vw_aspnet_WebPartState_User" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="FK__aspnet_Me__Appli__3A81B327" Association="mysurveyModel.Store.FK__aspnet_Me__Appli__3A81B327">
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
@@ -150,31 +68,31 @@
             <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Us__RoleI__5DCAEF64" Association="mysurveyModel.Store.FK__aspnet_Us__RoleI__5DCAEF64">
+          <AssociationSet Name="FK_aspnet_UsersInRoles_aspnet_Roles" Association="mysurveyModel.Store.FK_aspnet_UsersInRoles_aspnet_Roles">
             <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
             <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
           </AssociationSet>
-          <AssociationSet Name="FK__aspnet_Us__UserI__5CD6CB2B" Association="mysurveyModel.Store.FK__aspnet_Us__UserI__5CD6CB2B">
+          <AssociationSet Name="FK_aspnet_UsersInRoles_aspnet_Users" Association="mysurveyModel.Store.FK_aspnet_UsersInRoles_aspnet_Users">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
           </AssociationSet>
-          <AssociationSet Name="TB_QUESTAO_FKIndex1" Association="mysurveyModel.Store.TB_QUESTAO_FKIndex1">
+          <AssociationSet Name="FK_TB_QUESTAO_FKIndex1" Association="mysurveyModel.Store.FK_TB_QUESTAO_FKIndex1">
             <End Role="TB_SURVEY" EntitySet="TB_SURVEY" />
             <End Role="TB_QUESTAO" EntitySet="TB_QUESTAO" />
           </AssociationSet>
-          <AssociationSet Name="TB_QUESTAO_FKIndex2" Association="mysurveyModel.Store.TB_QUESTAO_FKIndex2">
+          <AssociationSet Name="FK_TB_QUESTAO_FKIndex2" Association="mysurveyModel.Store.FK_TB_QUESTAO_FKIndex2">
             <End Role="TB_ITENS_DA_QUESTAO" EntitySet="TB_ITENS_DA_QUESTAO" />
             <End Role="TB_QUESTAO" EntitySet="TB_QUESTAO" />
           </AssociationSet>
-          <AssociationSet Name="TB_RESPOSTA_FKIndex1" Association="mysurveyModel.Store.TB_RESPOSTA_FKIndex1">
+          <AssociationSet Name="FK_TB_RESPOSTA_FKIndex1" Association="mysurveyModel.Store.FK_TB_RESPOSTA_FKIndex1">
             <End Role="TB_QUESTAO" EntitySet="TB_QUESTAO" />
             <End Role="TB_RESPOSTA" EntitySet="TB_RESPOSTA" />
           </AssociationSet>
-          <AssociationSet Name="TB_RESPOSTA_FKIndex2" Association="mysurveyModel.Store.TB_RESPOSTA_FKIndex2">
+          <AssociationSet Name="FK_TB_RESPOSTA_FKIndex2" Association="mysurveyModel.Store.FK_TB_RESPOSTA_FKIndex2">
             <End Role="TB_ENTREVISTADO" EntitySet="TB_ENTREVISTADO" />
             <End Role="TB_RESPOSTA" EntitySet="TB_RESPOSTA" />
           </AssociationSet>
-          <AssociationSet Name="TB_SURVEY_FKIndex1" Association="mysurveyModel.Store.TB_SURVEY_FKIndex1">
+          <AssociationSet Name="FK_TB_SURVEY_FKIndex1" Association="mysurveyModel.Store.FK_TB_SURVEY_FKIndex1">
             <End Role="TB_RESPONSAVEL" EntitySet="TB_RESPONSAVEL" />
             <End Role="TB_SURVEY" EntitySet="TB_SURVEY" />
           </AssociationSet>
@@ -212,7 +130,7 @@
           <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
           <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
           <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
-          <Property Name="Comment" Type="ntext" />
+          <Property Name="Comment" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="aspnet_Paths">
           <Key>
@@ -228,7 +146,7 @@
             <PropertyRef Name="PathId" />
           </Key>
           <Property Name="PathId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="PageSettings" Type="image" Nullable="false" />
+          <Property Name="PageSettings" Type="varbinary(max)" Nullable="false" />
           <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="aspnet_PersonalizationPerUser">
@@ -238,7 +156,7 @@
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="PathId" Type="uniqueidentifier" />
           <Property Name="UserId" Type="uniqueidentifier" />
-          <Property Name="PageSettings" Type="image" Nullable="false" />
+          <Property Name="PageSettings" Type="varbinary(max)" Nullable="false" />
           <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="aspnet_Profile">
@@ -246,9 +164,9 @@
             <PropertyRef Name="UserId" />
           </Key>
           <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="PropertyNames" Type="ntext" Nullable="false" />
-          <Property Name="PropertyValuesString" Type="ntext" Nullable="false" />
-          <Property Name="PropertyValuesBinary" Type="image" Nullable="false" />
+          <Property Name="PropertyNames" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PropertyValuesString" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PropertyValuesBinary" Type="varbinary(max)" Nullable="false" />
           <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="aspnet_Roles">
@@ -284,11 +202,11 @@
         </EntityType>
         <EntityType Name="aspnet_UsersInRoles">
           <Key>
-            <PropertyRef Name="UserId" />
-            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="aspnet_Roles_RoleId" />
+            <PropertyRef Name="aspnet_Users_UserId" />
           </Key>
-          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="aspnet_Roles_RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="aspnet_Users_UserId" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <EntityType Name="aspnet_WebEvent_Events">
           <Key>
@@ -308,7 +226,7 @@
           <Property Name="MachineName" Type="nvarchar" Nullable="false" MaxLength="256" />
           <Property Name="RequestUrl" Type="nvarchar" MaxLength="1024" />
           <Property Name="ExceptionType" Type="nvarchar" MaxLength="256" />
-          <Property Name="Details" Type="ntext" />
+          <Property Name="Details" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="TB_ENTREVISTADO">
           <Key>
@@ -324,8 +242,8 @@
             <PropertyRef Name="idTB_ITENS_DA_QUESTAO" />
           </Key>
           <Property Name="idTB_ITENS_DA_QUESTAO" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="ItemA" Type="varchar(max)" Nullable="false" />
-          <Property Name="ItemB" Type="varchar(max)" Nullable="false" />
+          <Property Name="ItemA" Type="varchar(max)" />
+          <Property Name="ItemB" Type="varchar(max)" />
           <Property Name="ItemC" Type="varchar(max)" />
           <Property Name="ItemD" Type="varchar(max)" />
           <Property Name="ItemE" Type="varchar(max)" />
@@ -337,12 +255,12 @@
           <Property Name="id_Questao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO" Type="int" />
           <Property Name="TB_SURVEY_id_Survey" Type="int" Nullable="false" />
-          <Property Name="Tipo" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Tipo" Type="varchar" MaxLength="10" />
           <Property Name="Pergunta" Type="varchar(max)" Nullable="false" />
           <Property Name="Img" Type="varbinary(max)" />
           <Property Name="Randomica" Type="bit" />
           <Property Name="Obrigatoria" Type="bit" />
-          <Property Name="Codigo" Type="bit" Nullable="false" />
+          <Property Name="Codigo" Type="bit" />
           <Property Name="Linguagem" Type="varchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="TB_RESPONSAVEL">
@@ -376,9 +294,6 @@
           <Property Name="Data_fim" Type="datetime" />
           <Property Name="flag_ativo" Type="bit" Nullable="false" />
         </EntityType>
-        <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_Applications' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
-      -->
         <EntityType Name="vw_aspnet_Applications">
           <Key>
             <PropertyRef Name="ApplicationName" />
@@ -390,9 +305,6 @@
           <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="256" />
         </EntityType>
-        <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_MembershipUsers' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
-      -->
         <EntityType Name="vw_aspnet_MembershipUsers">
           <Key>
             <PropertyRef Name="UserId" />
@@ -429,16 +341,13 @@
           <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
           <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
           <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
-          <Property Name="Comment" Type="ntext" />
+          <Property Name="Comment" Type="nvarchar(max)" />
           <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
           <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
           <Property Name="IsAnonymous" Type="bit" Nullable="false" />
           <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
         </EntityType>
-        <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_Profiles' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
-      -->
         <EntityType Name="vw_aspnet_Profiles">
           <Key>
             <PropertyRef Name="UserId" />
@@ -448,9 +357,6 @@
           <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
           <Property Name="DataSize" Type="int" />
         </EntityType>
-        <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_Roles' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
-      -->
         <EntityType Name="vw_aspnet_Roles">
           <Key>
             <PropertyRef Name="ApplicationId" />
@@ -464,9 +370,6 @@
           <Property Name="LoweredRoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
           <Property Name="Description" Type="nvarchar" MaxLength="256" />
         </EntityType>
-        <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_Users' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
-      -->
         <EntityType Name="vw_aspnet_Users">
           <Key>
             <PropertyRef Name="ApplicationId" />
@@ -484,9 +387,6 @@
           <Property Name="IsAnonymous" Type="bit" Nullable="false" />
           <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
         </EntityType>
-        <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_UsersInRoles' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
-      -->
         <EntityType Name="vw_aspnet_UsersInRoles">
           <Key>
             <PropertyRef Name="UserId" />
@@ -495,9 +395,6 @@
           <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
-        <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_WebPartState_Paths' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
-      -->
         <EntityType Name="vw_aspnet_WebPartState_Paths">
           <Key>
             <PropertyRef Name="ApplicationId" />
@@ -510,9 +407,6 @@
           <Property Name="Path" Type="nvarchar" Nullable="false" MaxLength="256" />
           <Property Name="LoweredPath" Type="nvarchar" Nullable="false" MaxLength="256" />
         </EntityType>
-        <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_WebPartState_Shared' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
-      -->
         <EntityType Name="vw_aspnet_WebPartState_Shared">
           <Key>
             <PropertyRef Name="PathId" />
@@ -522,9 +416,6 @@
           <Property Name="DataSize" Type="int" />
           <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
         </EntityType>
-        <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_WebPartState_User' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
-      -->
         <EntityType Name="vw_aspnet_WebPartState_User">
           <Key>
             <PropertyRef Name="LastUpdatedDate" />
@@ -642,7 +533,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Us__RoleI__5DCAEF64">
+        <Association Name="FK_aspnet_UsersInRoles_aspnet_Roles">
           <End Role="aspnet_Roles" Type="mysurveyModel.Store.aspnet_Roles" Multiplicity="1" />
           <End Role="aspnet_UsersInRoles" Type="mysurveyModel.Store.aspnet_UsersInRoles" Multiplicity="*" />
           <ReferentialConstraint>
@@ -650,11 +541,11 @@
               <PropertyRef Name="RoleId" />
             </Principal>
             <Dependent Role="aspnet_UsersInRoles">
-              <PropertyRef Name="RoleId" />
+              <PropertyRef Name="aspnet_Roles_RoleId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__aspnet_Us__UserI__5CD6CB2B">
+        <Association Name="FK_aspnet_UsersInRoles_aspnet_Users">
           <End Role="aspnet_Users" Type="mysurveyModel.Store.aspnet_Users" Multiplicity="1" />
           <End Role="aspnet_UsersInRoles" Type="mysurveyModel.Store.aspnet_UsersInRoles" Multiplicity="*" />
           <ReferentialConstraint>
@@ -662,11 +553,11 @@
               <PropertyRef Name="UserId" />
             </Principal>
             <Dependent Role="aspnet_UsersInRoles">
-              <PropertyRef Name="UserId" />
+              <PropertyRef Name="aspnet_Users_UserId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="TB_QUESTAO_FKIndex1">
+        <Association Name="FK_TB_QUESTAO_FKIndex1">
           <End Role="TB_SURVEY" Type="mysurveyModel.Store.TB_SURVEY" Multiplicity="1" />
           <End Role="TB_QUESTAO" Type="mysurveyModel.Store.TB_QUESTAO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -678,7 +569,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="TB_QUESTAO_FKIndex2">
+        <Association Name="FK_TB_QUESTAO_FKIndex2">
           <End Role="TB_ITENS_DA_QUESTAO" Type="mysurveyModel.Store.TB_ITENS_DA_QUESTAO" Multiplicity="0..1" />
           <End Role="TB_QUESTAO" Type="mysurveyModel.Store.TB_QUESTAO" Multiplicity="*" />
           <ReferentialConstraint>
@@ -690,7 +581,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="TB_RESPOSTA_FKIndex1">
+        <Association Name="FK_TB_RESPOSTA_FKIndex1">
           <End Role="TB_QUESTAO" Type="mysurveyModel.Store.TB_QUESTAO" Multiplicity="1" />
           <End Role="TB_RESPOSTA" Type="mysurveyModel.Store.TB_RESPOSTA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -702,7 +593,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="TB_RESPOSTA_FKIndex2">
+        <Association Name="FK_TB_RESPOSTA_FKIndex2">
           <End Role="TB_ENTREVISTADO" Type="mysurveyModel.Store.TB_ENTREVISTADO" Multiplicity="1" />
           <End Role="TB_RESPOSTA" Type="mysurveyModel.Store.TB_RESPOSTA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -714,7 +605,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="TB_SURVEY_FKIndex1">
+        <Association Name="FK_TB_SURVEY_FKIndex1">
           <End Role="TB_RESPONSAVEL" Type="mysurveyModel.Store.TB_RESPONSAVEL" Multiplicity="1" />
           <End Role="TB_SURVEY" Type="mysurveyModel.Store.TB_SURVEY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -726,337 +617,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="aspnet_AnyDataInTables" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="TablesToCheck" Type="int" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Applications_CreateApplication" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="ApplicationId" Type="uniqueidentifier" Mode="InOut" />
-        </Function>
-        <Function Name="aspnet_CheckSchemaVersion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Feature" Type="nvarchar" Mode="In" />
-          <Parameter Name="CompatibleSchemaVersion" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Membership_ChangePasswordQuestionAndAnswer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-          <Parameter Name="NewPasswordQuestion" Type="nvarchar" Mode="In" />
-          <Parameter Name="NewPasswordAnswer" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Membership_CreateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-          <Parameter Name="Password" Type="nvarchar" Mode="In" />
-          <Parameter Name="PasswordSalt" Type="nvarchar" Mode="In" />
-          <Parameter Name="Email" Type="nvarchar" Mode="In" />
-          <Parameter Name="PasswordQuestion" Type="nvarchar" Mode="In" />
-          <Parameter Name="PasswordAnswer" Type="nvarchar" Mode="In" />
-          <Parameter Name="IsApproved" Type="bit" Mode="In" />
-          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-          <Parameter Name="CreateDate" Type="datetime" Mode="In" />
-          <Parameter Name="UniqueEmail" Type="int" Mode="In" />
-          <Parameter Name="PasswordFormat" Type="int" Mode="In" />
-          <Parameter Name="UserId" Type="uniqueidentifier" Mode="InOut" />
-        </Function>
-        <Function Name="aspnet_Membership_FindUsersByEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="EmailToMatch" Type="nvarchar" Mode="In" />
-          <Parameter Name="PageIndex" Type="int" Mode="In" />
-          <Parameter Name="PageSize" Type="int" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Membership_FindUsersByName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserNameToMatch" Type="nvarchar" Mode="In" />
-          <Parameter Name="PageIndex" Type="int" Mode="In" />
-          <Parameter Name="PageSize" Type="int" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Membership_GetAllUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="PageIndex" Type="int" Mode="In" />
-          <Parameter Name="PageSize" Type="int" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Membership_GetNumberOfUsersOnline" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="MinutesSinceLastInActive" Type="int" Mode="In" />
-          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Membership_GetPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-          <Parameter Name="MaxInvalidPasswordAttempts" Type="int" Mode="In" />
-          <Parameter Name="PasswordAttemptWindow" Type="int" Mode="In" />
-          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-          <Parameter Name="PasswordAnswer" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Membership_GetPasswordWithFormat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-          <Parameter Name="UpdateLastLoginActivityDate" Type="bit" Mode="In" />
-          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Membership_GetUserByEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="Email" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Membership_GetUserByName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-          <Parameter Name="UpdateLastActivity" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Membership_GetUserByUserId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="UserId" Type="uniqueidentifier" Mode="In" />
-          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-          <Parameter Name="UpdateLastActivity" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Membership_ResetPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-          <Parameter Name="NewPassword" Type="nvarchar" Mode="In" />
-          <Parameter Name="MaxInvalidPasswordAttempts" Type="int" Mode="In" />
-          <Parameter Name="PasswordAttemptWindow" Type="int" Mode="In" />
-          <Parameter Name="PasswordSalt" Type="nvarchar" Mode="In" />
-          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-          <Parameter Name="PasswordFormat" Type="int" Mode="In" />
-          <Parameter Name="PasswordAnswer" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Membership_SetPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-          <Parameter Name="NewPassword" Type="nvarchar" Mode="In" />
-          <Parameter Name="PasswordSalt" Type="nvarchar" Mode="In" />
-          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-          <Parameter Name="PasswordFormat" Type="int" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Membership_UnlockUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Membership_UpdateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-          <Parameter Name="Email" Type="nvarchar" Mode="In" />
-          <Parameter Name="Comment" Type="ntext" Mode="In" />
-          <Parameter Name="IsApproved" Type="bit" Mode="In" />
-          <Parameter Name="LastLoginDate" Type="datetime" Mode="In" />
-          <Parameter Name="LastActivityDate" Type="datetime" Mode="In" />
-          <Parameter Name="UniqueEmail" Type="int" Mode="In" />
-          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Membership_UpdateUserInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-          <Parameter Name="IsPasswordCorrect" Type="bit" Mode="In" />
-          <Parameter Name="UpdateLastLoginActivityDate" Type="bit" Mode="In" />
-          <Parameter Name="MaxInvalidPasswordAttempts" Type="int" Mode="In" />
-          <Parameter Name="PasswordAttemptWindow" Type="int" Mode="In" />
-          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-          <Parameter Name="LastLoginDate" Type="datetime" Mode="In" />
-          <Parameter Name="LastActivityDate" Type="datetime" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Paths_CreatePath" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationId" Type="uniqueidentifier" Mode="In" />
-          <Parameter Name="Path" Type="nvarchar" Mode="In" />
-          <Parameter Name="PathId" Type="uniqueidentifier" Mode="InOut" />
-        </Function>
-        <Function Name="aspnet_Personalization_GetApplicationId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="ApplicationId" Type="uniqueidentifier" Mode="InOut" />
-        </Function>
-        <Function Name="aspnet_PersonalizationAdministration_DeleteAllState" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="AllUsersScope" Type="bit" Mode="In" />
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="Count" Type="int" Mode="InOut" />
-        </Function>
-        <Function Name="aspnet_PersonalizationAdministration_FindState" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="AllUsersScope" Type="bit" Mode="In" />
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="PageIndex" Type="int" Mode="In" />
-          <Parameter Name="PageSize" Type="int" Mode="In" />
-          <Parameter Name="Path" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-          <Parameter Name="InactiveSinceDate" Type="datetime" Mode="In" />
-        </Function>
-        <Function Name="aspnet_PersonalizationAdministration_GetCountOfState" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Count" Type="int" Mode="InOut" />
-          <Parameter Name="AllUsersScope" Type="bit" Mode="In" />
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="Path" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-          <Parameter Name="InactiveSinceDate" Type="datetime" Mode="In" />
-        </Function>
-        <Function Name="aspnet_PersonalizationAdministration_ResetSharedState" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Count" Type="int" Mode="InOut" />
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="Path" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="aspnet_PersonalizationAdministration_ResetUserState" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Count" Type="int" Mode="InOut" />
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="InactiveSinceDate" Type="datetime" Mode="In" />
-          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-          <Parameter Name="Path" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="aspnet_PersonalizationAllUsers_GetPageSettings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="Path" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="aspnet_PersonalizationAllUsers_ResetPageSettings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="Path" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="aspnet_PersonalizationAllUsers_SetPageSettings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="Path" Type="nvarchar" Mode="In" />
-          <Parameter Name="PageSettings" Type="image" Mode="In" />
-          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-        </Function>
-        <Function Name="aspnet_PersonalizationPerUser_GetPageSettings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-          <Parameter Name="Path" Type="nvarchar" Mode="In" />
-          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-        </Function>
-        <Function Name="aspnet_PersonalizationPerUser_ResetPageSettings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-          <Parameter Name="Path" Type="nvarchar" Mode="In" />
-          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-        </Function>
-        <Function Name="aspnet_PersonalizationPerUser_SetPageSettings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-          <Parameter Name="Path" Type="nvarchar" Mode="In" />
-          <Parameter Name="PageSettings" Type="image" Mode="In" />
-          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Profile_DeleteInactiveProfiles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="ProfileAuthOptions" Type="int" Mode="In" />
-          <Parameter Name="InactiveSinceDate" Type="datetime" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Profile_DeleteProfiles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserNames" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Profile_GetNumberOfInactiveProfiles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="ProfileAuthOptions" Type="int" Mode="In" />
-          <Parameter Name="InactiveSinceDate" Type="datetime" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Profile_GetProfiles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="ProfileAuthOptions" Type="int" Mode="In" />
-          <Parameter Name="PageIndex" Type="int" Mode="In" />
-          <Parameter Name="PageSize" Type="int" Mode="In" />
-          <Parameter Name="UserNameToMatch" Type="nvarchar" Mode="In" />
-          <Parameter Name="InactiveSinceDate" Type="datetime" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Profile_GetProperties" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Profile_SetProperties" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="PropertyNames" Type="ntext" Mode="In" />
-          <Parameter Name="PropertyValuesString" Type="ntext" Mode="In" />
-          <Parameter Name="PropertyValuesBinary" Type="image" Mode="In" />
-          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-          <Parameter Name="IsUserAnonymous" Type="bit" Mode="In" />
-          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-        </Function>
-        <Function Name="aspnet_RegisterSchemaVersion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Feature" Type="nvarchar" Mode="In" />
-          <Parameter Name="CompatibleSchemaVersion" Type="nvarchar" Mode="In" />
-          <Parameter Name="IsCurrentVersion" Type="bit" Mode="In" />
-          <Parameter Name="RemoveIncompatibleSchema" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Roles_CreateRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Roles_DeleteRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
-          <Parameter Name="DeleteOnlyIfRoleIsEmpty" Type="bit" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Roles_GetAllRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Roles_RoleExists" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Setup_RemoveAllRoleMembers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="name" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Setup_RestorePermissions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="name" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="aspnet_UnRegisterSchemaVersion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Feature" Type="nvarchar" Mode="In" />
-          <Parameter Name="CompatibleSchemaVersion" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="aspnet_Users_CreateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationId" Type="uniqueidentifier" Mode="In" />
-          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-          <Parameter Name="IsUserAnonymous" Type="bit" Mode="In" />
-          <Parameter Name="LastActivityDate" Type="datetime" Mode="In" />
-          <Parameter Name="UserId" Type="uniqueidentifier" Mode="InOut" />
-        </Function>
-        <Function Name="aspnet_Users_DeleteUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-          <Parameter Name="TablesToDeleteFrom" Type="int" Mode="In" />
-          <Parameter Name="NumTablesDeletedFrom" Type="int" Mode="InOut" />
-        </Function>
-        <Function Name="aspnet_UsersInRoles_AddUsersToRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserNames" Type="nvarchar" Mode="In" />
-          <Parameter Name="RoleNames" Type="nvarchar" Mode="In" />
-          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
-        </Function>
-        <Function Name="aspnet_UsersInRoles_FindUsersInRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserNameToMatch" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="aspnet_UsersInRoles_GetRolesForUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="aspnet_UsersInRoles_GetUsersInRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="aspnet_UsersInRoles_IsUserInRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
-          <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="aspnet_UsersInRoles_RemoveUsersFromRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
-          <Parameter Name="UserNames" Type="nvarchar" Mode="In" />
-          <Parameter Name="RoleNames" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="aspnet_WebEvent_LogEvent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="EventId" Type="char" Mode="In" />
-          <Parameter Name="EventTimeUtc" Type="datetime" Mode="In" />
-          <Parameter Name="EventTime" Type="datetime" Mode="In" />
-          <Parameter Name="EventType" Type="nvarchar" Mode="In" />
-          <Parameter Name="EventSequence" Type="decimal" Mode="In" />
-          <Parameter Name="EventOccurrence" Type="decimal" Mode="In" />
-          <Parameter Name="EventCode" Type="int" Mode="In" />
-          <Parameter Name="EventDetailCode" Type="int" Mode="In" />
-          <Parameter Name="Message" Type="nvarchar" Mode="In" />
-          <Parameter Name="ApplicationPath" Type="nvarchar" Mode="In" />
-          <Parameter Name="ApplicationVirtualPath" Type="nvarchar" Mode="In" />
-          <Parameter Name="MachineName" Type="nvarchar" Mode="In" />
-          <Parameter Name="RequestUrl" Type="nvarchar" Mode="In" />
-          <Parameter Name="ExceptionType" Type="nvarchar" Mode="In" />
-          <Parameter Name="Details" Type="ntext" Mode="In" />
-        </Function>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -1163,8 +723,8 @@
             <PropertyRef Name="idTB_ITENS_DA_QUESTAO" />
           </Key>
           <Property Name="idTB_ITENS_DA_QUESTAO" Type="Int32" Nullable="false" />
-          <Property Name="ItemA" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
-          <Property Name="ItemB" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ItemA" Type="String" Nullable="true" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ItemB" Type="String" Nullable="true" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="ItemC" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="ItemD" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="ItemE" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
@@ -1674,332 +1234,331 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="mysurveyModelStoreContainer" CdmEntityContainer="mysurveyEntities">
-          <EntitySetMapping Name="TB_ENTREVISTADO">
-            <EntityTypeMapping TypeName="mysurveyModel.TB_ENTREVISTADO">
-              <MappingFragment StoreEntitySet="TB_ENTREVISTADO">
-                <ScalarProperty Name="idTB_ENTREVISTADO" ColumnName="idTB_ENTREVISTADO" />
-                <ScalarProperty Name="NOME" ColumnName="NOME" />
-                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
-                <ScalarProperty Name="SOBRENOME" ColumnName="SOBRENOME" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TB_ITENS_DA_QUESTAO">
-            <EntityTypeMapping TypeName="mysurveyModel.TB_ITENS_DA_QUESTAO">
-              <MappingFragment StoreEntitySet="TB_ITENS_DA_QUESTAO">
-                <ScalarProperty Name="idTB_ITENS_DA_QUESTAO" ColumnName="idTB_ITENS_DA_QUESTAO" />
-                <ScalarProperty Name="ItemA" ColumnName="ItemA" />
-                <ScalarProperty Name="ItemB" ColumnName="ItemB" />
-                <ScalarProperty Name="ItemC" ColumnName="ItemC" />
-                <ScalarProperty Name="ItemD" ColumnName="ItemD" />
-                <ScalarProperty Name="ItemE" ColumnName="ItemE" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TB_QUESTAO">
-            <EntityTypeMapping TypeName="mysurveyModel.TB_QUESTAO">
-              <MappingFragment StoreEntitySet="TB_QUESTAO">
-                <ScalarProperty Name="id_Questao" ColumnName="id_Questao" />
-                <ScalarProperty Name="TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO" ColumnName="TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO" />
-                <ScalarProperty Name="TB_SURVEY_id_Survey" ColumnName="TB_SURVEY_id_Survey" />
-                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
-                <ScalarProperty Name="Pergunta" ColumnName="Pergunta" />
-                <ScalarProperty Name="Img" ColumnName="Img" />
-                <ScalarProperty Name="Randomica" ColumnName="Randomica" />
-                <ScalarProperty Name="Obrigatoria" ColumnName="Obrigatoria" />
-                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
-                <ScalarProperty Name="Linguagem" ColumnName="Linguagem" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TB_RESPONSAVEL">
-            <EntityTypeMapping TypeName="mysurveyModel.TB_RESPONSAVEL">
-              <MappingFragment StoreEntitySet="TB_RESPONSAVEL">
-                <ScalarProperty Name="id_Responsavel" ColumnName="id_Responsavel" />
-                <ScalarProperty Name="nome" ColumnName="nome" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="sobrenome" ColumnName="sobrenome" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TB_RESPOSTA">
-            <EntityTypeMapping TypeName="mysurveyModel.TB_RESPOSTA">
-              <MappingFragment StoreEntitySet="TB_RESPOSTA">
-                <ScalarProperty Name="id_Resposta" ColumnName="id_Resposta" />
-                <ScalarProperty Name="TB_ENTREVISTADO_idTB_ENTREVISTADO" ColumnName="TB_ENTREVISTADO_idTB_ENTREVISTADO" />
-                <ScalarProperty Name="TB_QUESTAO_id_Questao" ColumnName="TB_QUESTAO_id_Questao" />
-                <ScalarProperty Name="Resposta" ColumnName="Resposta" />
-                <ScalarProperty Name="Item" ColumnName="Item" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TB_SURVEY">
-            <EntityTypeMapping TypeName="mysurveyModel.TB_SURVEY">
-              <MappingFragment StoreEntitySet="TB_SURVEY">
-                <ScalarProperty Name="id_Survey" ColumnName="id_Survey" />
-                <ScalarProperty Name="TB_RESPONSAVEL_id_Responsavel" ColumnName="TB_RESPONSAVEL_id_Responsavel" />
-                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
-                <ScalarProperty Name="Subtitulo" ColumnName="Subtitulo" />
-                <ScalarProperty Name="Data_Criacao" ColumnName="Data_Criacao" />
-                <ScalarProperty Name="Data_fim" ColumnName="Data_fim" />
-                <ScalarProperty Name="flag_ativo" ColumnName="flag_ativo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="aspnet_Applications">
-            <EntityTypeMapping TypeName="mysurveyModel.aspnet_Applications">
-              <MappingFragment StoreEntitySet="aspnet_Applications">
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
-                <ScalarProperty Name="LoweredApplicationName" ColumnName="LoweredApplicationName" />
-                <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="aspnet_Membership">
-            <EntityTypeMapping TypeName="mysurveyModel.aspnet_Membership">
-              <MappingFragment StoreEntitySet="aspnet_Membership">
-                <ScalarProperty Name="Comment" ColumnName="Comment" />
-                <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
-                <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
-                <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
-                <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
-                <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
-                <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
-                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-                <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
-                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
-                <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
-                <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
-                <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="MobilePIN" ColumnName="MobilePIN" />
-                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
-                <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="aspnet_Paths">
-            <EntityTypeMapping TypeName="mysurveyModel.aspnet_Paths">
-              <MappingFragment StoreEntitySet="aspnet_Paths">
-                <ScalarProperty Name="LoweredPath" ColumnName="LoweredPath" />
-                <ScalarProperty Name="Path" ColumnName="Path" />
-                <ScalarProperty Name="PathId" ColumnName="PathId" />
-                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="aspnet_PersonalizationAllUsers">
-            <EntityTypeMapping TypeName="mysurveyModel.aspnet_PersonalizationAllUsers">
-              <MappingFragment StoreEntitySet="aspnet_PersonalizationAllUsers">
-                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
-                <ScalarProperty Name="PageSettings" ColumnName="PageSettings" />
-                <ScalarProperty Name="PathId" ColumnName="PathId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="aspnet_PersonalizationPerUser">
-            <EntityTypeMapping TypeName="mysurveyModel.aspnet_PersonalizationPerUser">
-              <MappingFragment StoreEntitySet="aspnet_PersonalizationPerUser">
-                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
-                <ScalarProperty Name="PageSettings" ColumnName="PageSettings" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="PathId" ColumnName="PathId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="aspnet_Profile">
-            <EntityTypeMapping TypeName="mysurveyModel.aspnet_Profile">
-              <MappingFragment StoreEntitySet="aspnet_Profile">
-                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
-                <ScalarProperty Name="PropertyValuesBinary" ColumnName="PropertyValuesBinary" />
-                <ScalarProperty Name="PropertyValuesString" ColumnName="PropertyValuesString" />
-                <ScalarProperty Name="PropertyNames" ColumnName="PropertyNames" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="aspnet_Roles">
-            <EntityTypeMapping TypeName="mysurveyModel.aspnet_Roles">
-              <MappingFragment StoreEntitySet="aspnet_Roles">
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
-                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
-                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="aspnet_SchemaVersions">
-            <EntityTypeMapping TypeName="mysurveyModel.aspnet_SchemaVersions">
-              <MappingFragment StoreEntitySet="aspnet_SchemaVersions">
-                <ScalarProperty Name="IsCurrentVersion" ColumnName="IsCurrentVersion" />
-                <ScalarProperty Name="CompatibleSchemaVersion" ColumnName="CompatibleSchemaVersion" />
-                <ScalarProperty Name="Feature" ColumnName="Feature" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="aspnet_Users">
-            <EntityTypeMapping TypeName="mysurveyModel.aspnet_Users">
-              <MappingFragment StoreEntitySet="aspnet_Users">
-                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
-                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
-                <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
-                <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="aspnet_WebEvent_Events">
-            <EntityTypeMapping TypeName="mysurveyModel.aspnet_WebEvent_Events">
-              <MappingFragment StoreEntitySet="aspnet_WebEvent_Events">
-                <ScalarProperty Name="Details" ColumnName="Details" />
-                <ScalarProperty Name="ExceptionType" ColumnName="ExceptionType" />
-                <ScalarProperty Name="RequestUrl" ColumnName="RequestUrl" />
-                <ScalarProperty Name="MachineName" ColumnName="MachineName" />
-                <ScalarProperty Name="ApplicationVirtualPath" ColumnName="ApplicationVirtualPath" />
-                <ScalarProperty Name="ApplicationPath" ColumnName="ApplicationPath" />
-                <ScalarProperty Name="Message" ColumnName="Message" />
-                <ScalarProperty Name="EventDetailCode" ColumnName="EventDetailCode" />
-                <ScalarProperty Name="EventCode" ColumnName="EventCode" />
-                <ScalarProperty Name="EventOccurrence" ColumnName="EventOccurrence" />
-                <ScalarProperty Name="EventSequence" ColumnName="EventSequence" />
-                <ScalarProperty Name="EventType" ColumnName="EventType" />
-                <ScalarProperty Name="EventTime" ColumnName="EventTime" />
-                <ScalarProperty Name="EventTimeUtc" ColumnName="EventTimeUtc" />
-                <ScalarProperty Name="EventId" ColumnName="EventId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vw_aspnet_Applications">
-            <EntityTypeMapping TypeName="mysurveyModel.vw_aspnet_Applications">
-              <MappingFragment StoreEntitySet="vw_aspnet_Applications">
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
-                <ScalarProperty Name="LoweredApplicationName" ColumnName="LoweredApplicationName" />
-                <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vw_aspnet_MembershipUsers">
-            <EntityTypeMapping TypeName="mysurveyModel.vw_aspnet_MembershipUsers">
-              <MappingFragment StoreEntitySet="vw_aspnet_MembershipUsers">
-                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
-                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
-                <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
-                <ScalarProperty Name="Comment" ColumnName="Comment" />
-                <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
-                <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
-                <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
-                <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
-                <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
-                <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
-                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-                <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
-                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
-                <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
-                <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
-                <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="MobilePIN" ColumnName="MobilePIN" />
-                <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vw_aspnet_Profiles">
-            <EntityTypeMapping TypeName="mysurveyModel.vw_aspnet_Profiles">
-              <MappingFragment StoreEntitySet="vw_aspnet_Profiles">
-                <ScalarProperty Name="DataSize" ColumnName="DataSize" />
-                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vw_aspnet_Roles">
-            <EntityTypeMapping TypeName="mysurveyModel.vw_aspnet_Roles">
-              <MappingFragment StoreEntitySet="vw_aspnet_Roles">
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
-                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
-                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vw_aspnet_Users">
-            <EntityTypeMapping TypeName="mysurveyModel.vw_aspnet_Users">
-              <MappingFragment StoreEntitySet="vw_aspnet_Users">
-                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
-                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
-                <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
-                <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vw_aspnet_UsersInRoles">
-            <EntityTypeMapping TypeName="mysurveyModel.vw_aspnet_UsersInRoles">
-              <MappingFragment StoreEntitySet="vw_aspnet_UsersInRoles">
-                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vw_aspnet_WebPartState_Paths">
-            <EntityTypeMapping TypeName="mysurveyModel.vw_aspnet_WebPartState_Paths">
-              <MappingFragment StoreEntitySet="vw_aspnet_WebPartState_Paths">
-                <ScalarProperty Name="LoweredPath" ColumnName="LoweredPath" />
-                <ScalarProperty Name="Path" ColumnName="Path" />
-                <ScalarProperty Name="PathId" ColumnName="PathId" />
-                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vw_aspnet_WebPartState_Shared">
-            <EntityTypeMapping TypeName="mysurveyModel.vw_aspnet_WebPartState_Shared">
-              <MappingFragment StoreEntitySet="vw_aspnet_WebPartState_Shared">
-                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
-                <ScalarProperty Name="DataSize" ColumnName="DataSize" />
-                <ScalarProperty Name="PathId" ColumnName="PathId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vw_aspnet_WebPartState_User">
-            <EntityTypeMapping TypeName="mysurveyModel.vw_aspnet_WebPartState_User">
-              <MappingFragment StoreEntitySet="vw_aspnet_WebPartState_User">
-                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
-                <ScalarProperty Name="DataSize" ColumnName="DataSize" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="PathId" ColumnName="PathId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <AssociationSetMapping Name="aspnet_UsersInRoles" TypeName="mysurveyModel.aspnet_UsersInRoles" StoreEntitySet="aspnet_UsersInRoles">
-            <EndProperty Name="aspnet_Users">
-              <ScalarProperty Name="UserId" ColumnName="UserId" />
-            </EndProperty>
-            <EndProperty Name="aspnet_Roles">
-              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-            </EndProperty>
-          </AssociationSetMapping>
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mysurveyModelStoreContainer" CdmEntityContainer="mysurveyEntities">
+    <EntitySetMapping Name="TB_ENTREVISTADO">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.TB_ENTREVISTADO)">
+        <MappingFragment StoreEntitySet="TB_ENTREVISTADO">
+          <ScalarProperty Name="idTB_ENTREVISTADO" ColumnName="idTB_ENTREVISTADO" />
+          <ScalarProperty Name="NOME" ColumnName="NOME" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="SOBRENOME" ColumnName="SOBRENOME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_ITENS_DA_QUESTAO">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.TB_ITENS_DA_QUESTAO)">
+        <MappingFragment StoreEntitySet="TB_ITENS_DA_QUESTAO">
+          <ScalarProperty Name="idTB_ITENS_DA_QUESTAO" ColumnName="idTB_ITENS_DA_QUESTAO" />
+          <ScalarProperty Name="ItemA" ColumnName="ItemA" />
+          <ScalarProperty Name="ItemB" ColumnName="ItemB" />
+          <ScalarProperty Name="ItemC" ColumnName="ItemC" />
+          <ScalarProperty Name="ItemD" ColumnName="ItemD" />
+          <ScalarProperty Name="ItemE" ColumnName="ItemE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_QUESTAO">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.TB_QUESTAO)">
+        <MappingFragment StoreEntitySet="TB_QUESTAO">
+          <ScalarProperty Name="id_Questao" ColumnName="id_Questao" />
+          <ScalarProperty Name="TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO" ColumnName="TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO" />
+          <ScalarProperty Name="TB_SURVEY_id_Survey" ColumnName="TB_SURVEY_id_Survey" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Pergunta" ColumnName="Pergunta" />
+          <ScalarProperty Name="Img" ColumnName="Img" />
+          <ScalarProperty Name="Randomica" ColumnName="Randomica" />
+          <ScalarProperty Name="Obrigatoria" ColumnName="Obrigatoria" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Linguagem" ColumnName="Linguagem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_RESPONSAVEL">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.TB_RESPONSAVEL)">
+        <MappingFragment StoreEntitySet="TB_RESPONSAVEL">
+          <ScalarProperty Name="id_Responsavel" ColumnName="id_Responsavel" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="sobrenome" ColumnName="sobrenome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_RESPOSTA">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.TB_RESPOSTA)">
+        <MappingFragment StoreEntitySet="TB_RESPOSTA">
+          <ScalarProperty Name="id_Resposta" ColumnName="id_Resposta" />
+          <ScalarProperty Name="TB_ENTREVISTADO_idTB_ENTREVISTADO" ColumnName="TB_ENTREVISTADO_idTB_ENTREVISTADO" />
+          <ScalarProperty Name="TB_QUESTAO_id_Questao" ColumnName="TB_QUESTAO_id_Questao" />
+          <ScalarProperty Name="Resposta" ColumnName="Resposta" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_SURVEY">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.TB_SURVEY)">
+        <MappingFragment StoreEntitySet="TB_SURVEY">
+          <ScalarProperty Name="id_Survey" ColumnName="id_Survey" />
+          <ScalarProperty Name="TB_RESPONSAVEL_id_Responsavel" ColumnName="TB_RESPONSAVEL_id_Responsavel" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="Subtitulo" ColumnName="Subtitulo" />
+          <ScalarProperty Name="Data_Criacao" ColumnName="Data_Criacao" />
+          <ScalarProperty Name="Data_fim" ColumnName="Data_fim" />
+          <ScalarProperty Name="flag_ativo" ColumnName="flag_ativo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Applications">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.aspnet_Applications)">
+        <MappingFragment StoreEntitySet="aspnet_Applications">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+          <ScalarProperty Name="LoweredApplicationName" ColumnName="LoweredApplicationName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Membership">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.aspnet_Membership)">
+        <MappingFragment StoreEntitySet="aspnet_Membership">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+          <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+          <ScalarProperty Name="MobilePIN" ColumnName="MobilePIN" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
+          <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+          <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+          <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+          <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+          <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+          <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+          <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Paths">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.aspnet_Paths)">
+        <MappingFragment StoreEntitySet="aspnet_Paths">
+          <ScalarProperty Name="PathId" ColumnName="PathId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="LoweredPath" ColumnName="LoweredPath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_PersonalizationAllUsers">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.aspnet_PersonalizationAllUsers)">
+        <MappingFragment StoreEntitySet="aspnet_PersonalizationAllUsers">
+          <ScalarProperty Name="PathId" ColumnName="PathId" />
+          <ScalarProperty Name="PageSettings" ColumnName="PageSettings" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_PersonalizationPerUser">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.aspnet_PersonalizationPerUser)">
+        <MappingFragment StoreEntitySet="aspnet_PersonalizationPerUser">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PathId" ColumnName="PathId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PageSettings" ColumnName="PageSettings" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Profile">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.aspnet_Profile)">
+        <MappingFragment StoreEntitySet="aspnet_Profile">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PropertyNames" ColumnName="PropertyNames" />
+          <ScalarProperty Name="PropertyValuesString" ColumnName="PropertyValuesString" />
+          <ScalarProperty Name="PropertyValuesBinary" ColumnName="PropertyValuesBinary" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Roles">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.aspnet_Roles)">
+        <MappingFragment StoreEntitySet="aspnet_Roles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_SchemaVersions">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.aspnet_SchemaVersions)">
+        <MappingFragment StoreEntitySet="aspnet_SchemaVersions">
+          <ScalarProperty Name="Feature" ColumnName="Feature" />
+          <ScalarProperty Name="CompatibleSchemaVersion" ColumnName="CompatibleSchemaVersion" />
+          <ScalarProperty Name="IsCurrentVersion" ColumnName="IsCurrentVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_Users">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.aspnet_Users)">
+        <MappingFragment StoreEntitySet="aspnet_Users">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
+          <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+          <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+          <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="aspnet_WebEvent_Events">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.aspnet_WebEvent_Events)">
+        <MappingFragment StoreEntitySet="aspnet_WebEvent_Events">
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="EventTimeUtc" ColumnName="EventTimeUtc" />
+          <ScalarProperty Name="EventTime" ColumnName="EventTime" />
+          <ScalarProperty Name="EventType" ColumnName="EventType" />
+          <ScalarProperty Name="EventSequence" ColumnName="EventSequence" />
+          <ScalarProperty Name="EventOccurrence" ColumnName="EventOccurrence" />
+          <ScalarProperty Name="EventCode" ColumnName="EventCode" />
+          <ScalarProperty Name="EventDetailCode" ColumnName="EventDetailCode" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="ApplicationPath" ColumnName="ApplicationPath" />
+          <ScalarProperty Name="ApplicationVirtualPath" ColumnName="ApplicationVirtualPath" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="RequestUrl" ColumnName="RequestUrl" />
+          <ScalarProperty Name="ExceptionType" ColumnName="ExceptionType" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_aspnet_Applications">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.vw_aspnet_Applications)">
+        <MappingFragment StoreEntitySet="vw_aspnet_Applications">
+          <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+          <ScalarProperty Name="LoweredApplicationName" ColumnName="LoweredApplicationName" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_aspnet_MembershipUsers">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.vw_aspnet_MembershipUsers)">
+        <MappingFragment StoreEntitySet="vw_aspnet_MembershipUsers">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+          <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+          <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+          <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+          <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+          <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+          <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+          <ScalarProperty Name="MobilePIN" ColumnName="MobilePIN" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
+          <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+          <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_aspnet_Profiles">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.vw_aspnet_Profiles)">
+        <MappingFragment StoreEntitySet="vw_aspnet_Profiles">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="DataSize" ColumnName="DataSize" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_aspnet_Roles">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.vw_aspnet_Roles)">
+        <MappingFragment StoreEntitySet="vw_aspnet_Roles">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_aspnet_Users">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.vw_aspnet_Users)">
+        <MappingFragment StoreEntitySet="vw_aspnet_Users">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
+          <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+          <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+          <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_aspnet_UsersInRoles">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.vw_aspnet_UsersInRoles)">
+        <MappingFragment StoreEntitySet="vw_aspnet_UsersInRoles">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_aspnet_WebPartState_Paths">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.vw_aspnet_WebPartState_Paths)">
+        <MappingFragment StoreEntitySet="vw_aspnet_WebPartState_Paths">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="PathId" ColumnName="PathId" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="LoweredPath" ColumnName="LoweredPath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_aspnet_WebPartState_Shared">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.vw_aspnet_WebPartState_Shared)">
+        <MappingFragment StoreEntitySet="vw_aspnet_WebPartState_Shared">
+          <ScalarProperty Name="PathId" ColumnName="PathId" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="DataSize" ColumnName="DataSize" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_aspnet_WebPartState_User">
+      <EntityTypeMapping TypeName="IsTypeOf(mysurveyModel.vw_aspnet_WebPartState_User)">
+        <MappingFragment StoreEntitySet="vw_aspnet_WebPartState_User">
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="PathId" ColumnName="PathId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="DataSize" ColumnName="DataSize" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="aspnet_UsersInRoles" TypeName="mysurveyModel.aspnet_UsersInRoles" StoreEntitySet="aspnet_UsersInRoles">
+      <EndProperty Name="aspnet_Roles">
+        <ScalarProperty Name="RoleId" ColumnName="aspnet_Roles_RoleId" />
+      </EndProperty>
+      <EndProperty Name="aspnet_Users">
+        <ScalarProperty Name="UserId" ColumnName="aspnet_Users_UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">

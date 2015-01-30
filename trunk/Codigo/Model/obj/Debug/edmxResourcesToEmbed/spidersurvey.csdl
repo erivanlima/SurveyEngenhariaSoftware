@@ -102,8 +102,8 @@
       <PropertyRef Name="idTB_ITENS_DA_QUESTAO" />
     </Key>
     <Property Name="idTB_ITENS_DA_QUESTAO" Type="Int32" Nullable="false" />
-    <Property Name="ItemA" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
-    <Property Name="ItemB" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="ItemA" Type="String" Nullable="true" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="ItemB" Type="String" Nullable="true" MaxLength="Max" Unicode="false" FixedLength="false" />
     <Property Name="ItemC" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
     <Property Name="ItemD" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
     <Property Name="ItemE" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />

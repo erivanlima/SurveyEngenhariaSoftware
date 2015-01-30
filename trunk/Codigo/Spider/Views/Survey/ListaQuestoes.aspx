@@ -1,15 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<Models.SurveyModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Index
+    ListaQuestoes
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Index</h2>
+<h2>ListaQuestoes</h2>
 
 <p>
-    <%: Html.ActionLink("Criar novo Survey", "CreateSurvey") %>
+    <%: Html.ActionLink("Create New", "Create") %>
 </p>
 <table>
     <tr>
@@ -61,11 +61,9 @@
             <%: Html.DisplayFor(modelItem => item.flag_ativo) %>
         </td>
         <td>
-            <%: Html.ActionLink("Edit", "Edit", new {  id=item.id_Survey }) %> |
-            <%: Html.ActionLink("Delete", "Delete", new {  id=item.id_Survey }) %> |
-            <%: Html.ActionLink("Adicionar perguntas", "CreateQuestoes", new {  id=item.id_Survey }) %> |
-            <%: Html.ActionLink("Enviar Survey", "CreateResposta", new {  id=item.id_Survey }) %> |
-            <%: Html.ActionLink("Listar Questões", "ListaQuestoes", new {  id=item.id_Survey }) %>
+            <%: Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) %> |
+            <%: Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) %> |
+            <%: Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) %>
         </td>
     </tr>
 <% } %>

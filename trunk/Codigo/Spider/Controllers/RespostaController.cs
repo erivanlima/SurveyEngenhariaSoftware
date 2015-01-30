@@ -3,17 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Services;
 
 namespace Spider.Controllers
 {
     public class RespostaController : Controller
     {
+        GerenciadorResposta gResposta; 
+
+        public RespostaController(){
+            gResposta = new GerenciadorResposta();
+    }
         //
         // GET: /Resposta/
 
         public ActionResult Index()
         {
-            return View();
+            return View(gResposta.ObterTodos());
         }
 
         //

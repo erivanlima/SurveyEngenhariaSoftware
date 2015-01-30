@@ -1,13 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<Models.SurveyModel>" %>
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<Models.SurveyModel>" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    CreateSurvey
-</asp:Content>
-
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
-<h2>CreateSurvey</h2>
-
+<script src="<%: Url.Content("~/Scripts/jquery-1.5.1.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
 
@@ -15,7 +8,15 @@
     <%: Html.ValidationSummary(true) %>
     <fieldset>
         <legend>SurveyModel</legend>
-        
+
+        <div class="editor-label">
+            <%: Html.LabelFor(model => model.id_Survey) %>
+        </div>
+        <div class="editor-field">
+            <%: Html.EditorFor(model => model.id_Survey) %>
+            <%: Html.ValidationMessageFor(model => model.id_Survey) %>
+        </div>
+
         <div class="editor-label">
             <%: Html.LabelFor(model => model.id_Responsavel) %>
         </div>
@@ -73,5 +74,3 @@
 <div>
     <%: Html.ActionLink("Back to List", "Index") %>
 </div>
-
-</asp:Content>

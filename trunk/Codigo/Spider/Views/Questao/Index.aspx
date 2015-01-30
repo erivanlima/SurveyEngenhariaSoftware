@@ -75,7 +75,8 @@
         <td>
             <%: Html.ActionLink("Edit", "Edit", new { id=item.id_Questao }) %> |
             <%: Html.ActionLink("Delete", "Delete", new { id = item.id_Questao })%> |
-            <%: Html.ActionLink("Criar Resposta", "CreateResposta", new { id = item.id_Questao })%> 
+            <%: Html.ActionLink("Criar Resposta", "CreateResposta", new { id = item.id_Questao })%> |
+            <%: Html.ActionLink("Listar Questões", "ListaQuestoes", new {  id=item.id_Survey }) %>
         </td>
     </tr>
 <% } %>
