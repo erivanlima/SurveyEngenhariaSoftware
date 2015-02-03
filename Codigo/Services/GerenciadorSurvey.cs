@@ -8,7 +8,7 @@ using Persistence;
 namespace Services
 {
     /// <summary>
-    /// Gerencia todas as regras de negócio da entidade surveyssoa
+    /// Gerencia todas as regras de negócio da entidade survey
     /// </summary>
 
     public class GerenciadorSurvey
@@ -74,7 +74,7 @@ namespace Services
 
 
         /// <summary>
-        /// Consulta padrão para retornar dados do editora como model
+        /// Consulta padrão para retornar dados do Survey como model
         /// </summary>
         /// <returns></returns>
         private IQueryable<SurveyModel> GetQuery()
@@ -107,10 +107,10 @@ namespace Services
         }
 
         /// <summary>
-        /// Obtém um editora
+        /// Obtém um survey
         /// </summary>
         /// <param name="idEditora">Identificador do editora na base de dados</param>
-        /// <returns>Editora model</returns>
+        /// <returns>Survey model</returns>
         public SurveyModel Obter(int IDsurvey)
         {
             IEnumerable<SurveyModel> surveys = GetQuery().Where(SurveyModel => SurveyModel.id_Survey.Equals(IDsurvey));
@@ -118,10 +118,10 @@ namespace Services
         }
 
         /// <summary>
-        /// Atribui dados do Editora Model para o Editora Entity
+        /// Atribui dados do Survey Model para o Survey Entity
         /// </summary>
         /// <param name="surveyssoa">Objeto do modelo</param>
-        /// <param name="survey">Entity masurveyada da base de dados</param>
+        /// <param name="survey">Entity survey da base de dados</param>
         private void Atribuir(SurveyModel survey, TB_SURVEY surveyE)
         {
             surveyE.id_Survey = survey.id_Survey;

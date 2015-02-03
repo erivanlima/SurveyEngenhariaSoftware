@@ -142,7 +142,16 @@ namespace Services
             
         }
 
-
+        /// <summary>
+        /// Obtém lista de questões de um Survey
+        /// </summary>
+        /// <param name="idEditora">Identificador do Survey na base de dados</param>
+        /// <returns>Survey model</returns>
+        public IEnumerable<QuestaoModel> ListaQuestaoSurvey(int IDsurvey)
+        {
+            IEnumerable<QuestaoModel> questoesSurveys = GetQuery().Where(QuestaoModel => QuestaoModel.id_Survey.Equals(IDsurvey));
+            return questoesSurveys;
+        }
 
 
 

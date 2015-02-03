@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Services;
 using Models;
+using System.Web.Security;
 
 namespace Spider.Controllers
 {
@@ -56,11 +57,53 @@ namespace Spider.Controllers
         {
             if (ModelState.IsValid)
             {
-                gResponsavel.Inserir(responsavel);
+                MembershipUser usuario = Membership.GetUser();
+                int idCodigo = retornarIdResponsavel(usuario.ToString());
+                if (idCodigo != -1)
+                {
+                    Roles.AddUserToRole(usuario.ToString(), "Responsavel");
+                    responsavel.id_Responsavel = idCodigo;
+                    gResponsavel.Inserir(responsavel);
+                    return RedirectToAction("Index");
+                }
+                
                 return RedirectToAction("Index");
             }
-            return View(responsavel);
+
+            return View();
         }
+
+
+        public int retornarIdResponsavel(string usuario)
+        {
+
+            try
+            {
+
+                IQueryable<ResponsavelModel> responsavelE = gResponsavel.obterIdResponsavel(usuario.ToString());
+                int idCodigo = -1;
+                foreach (ResponsavelModel responsavel in responsavelE)
+                {
+                    idCodigo = responsavel.id_Responsavel;
+                }
+
+                if (idCodigo != -1)
+                    return idCodigo;
+
+
+            }
+            catch
+            {
+                return -1;
+
+            }
+
+
+
+            return -1;
+
+        }
+
 
         //
         // GET: /Responsavel/Edit/5

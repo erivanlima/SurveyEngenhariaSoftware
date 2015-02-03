@@ -31,19 +31,21 @@ namespace Models.Controllers
                 if (Membership.ValidateUser(model.UserName, model.Password))
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
-                    if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
-                        && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
-                    {
-                        return Redirect(returnUrl);
-                    }
-                    else
-                    {
-                        return RedirectToAction("Index", "Home");
-                    }
+                  //  if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
+                    //    && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
+                    //{
+                     //   return Redirect(returnUrl);
+                    //}
+                    //else
+                    //{
+                      //  return RedirectToAction("Index", "Home");
+                    //}
+                    if (Roles.IsUserInRole(model.UserName, "Responsavel"))
+                        return RedirectToAction("Index", "Responsavel");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "The user name or password provided is incorrect.");
+                    ModelState.AddModelError("", "O nome do usuário ou senha estão incorretos.");
                 }
             }
 

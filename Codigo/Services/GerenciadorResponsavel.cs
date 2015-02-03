@@ -109,7 +109,20 @@ namespace Services
             return responsavels.ElementAtOrDefault(0);
         }
 
-       
+        public IQueryable<ResponsavelModel> obterIdResponsavel(string login)
+        {
+            IQueryable<TB_RESPONSAVEL> tb_responsavel = unitOfWork.RepositorioResponsavel.GetQueryable();
+            var query = from responsavelE in tb_responsavel where responsavelE.email.Equals(login)
+                        select new ResponsavelModel
+                        {
+                            id_Responsavel = responsavelE.id_Responsavel
+
+
+                        };
+
+            return query;
+        }
+
 
         /// <summary>
         /// Atribui dados da responsavel Model para a responsavel Entity

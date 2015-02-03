@@ -123,6 +123,7 @@
     <Content Include="Scripts\StartSyntax.js" />
     <Content Include="Views\Questao\Create.aspx" />
     <Content Include="Views\Questao\CreateResposta.aspx" />
+    <Content Include="Views\Questao\Details.aspx" />
     <Content Include="Views\Questao\Index.aspx" />
     <Content Include="Views\Questao\ListaQuestoes.aspx" />
     <Content Include="Views\Responsavel\Create.aspx" />
@@ -165,7 +166,7 @@
     <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Shared\LogOnUserControl.ascx" />
     <Content Include="Views\Shared\Site.Master" />
-    <Content Include="Views\Survey\Web.config" />
+    <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
