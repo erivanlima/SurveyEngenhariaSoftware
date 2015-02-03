@@ -16,14 +16,22 @@
     <fieldset>
         <legend>RespostaModel</legend>
 
-        <div class="editor-label">
-            <%--<%: Html.LabelFor(model => model.id_Questao) %>--%>
+       <%: Html.HiddenFor(model => model.id_Questao, new { Value = ViewBag.id_Questao })%>
+
+        <%--<div class="editor-label">
+            <%: Html.LabelFor(model => model.idTB_ENTREVISTADO) %>
         </div>
         <div class="editor-field">
-            <%--<%: Html.EditorFor(model => model.id_Questao) %>--%>
-            <%: Html.HiddenFor(model => model.id_Questao, new { Value = ViewBag.id_Questao })%>
-           <%-- <%: Html.ValidationMessageFor(model => model.id_Questao) %>--%>
+            <%: Html.EditorFor(model => model.idTB_ENTREVISTADO) %>
+            <%: Html.ValidationMessageFor(model => model.idTB_ENTREVISTADO) %>
+        </div>--%>
+
+       <%-- <div class="display-label">
+            <%: Html.LabelFor(model => model.id_Questao) %>
         </div>
+        <div class="display-field">
+            <%: Html.DisplayFor(model => model.id_Questao, new { Value = ViewBag.id_Questao })%>
+        </div>--%>
 
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Resposta) %>

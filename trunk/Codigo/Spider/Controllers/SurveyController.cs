@@ -5,9 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using Models;
 using Services;
+using System.Web.Security;
 
 namespace Spider.Controllers
 {
+    [Authorize(Roles = "Responsavel")]
     public class SurveyController : Controller
     {
         //
@@ -32,6 +34,7 @@ namespace Spider.Controllers
         public ActionResult Index()
         {
             
+            
             return View(gSurvey.ObterTodos());
         }
 
@@ -40,21 +43,22 @@ namespace Spider.Controllers
 
         public ActionResult Details(int id)
         {
+            
             return View(gSurvey.Obter(id));
         }
 
-        //
-        // GET: /Survey/Create
+        
         [HttpGet]
-        public ActionResult CreateSurvey()
+        public ActionResult CreateQuestoes(int id)
         {
+            ViewBag.id_Survey = id;
             return View();
         }
-     
+
         [HttpPost]
         public ActionResult CreateQuestoes(SurveyModel survey)
         {
-
+            
             //List<QuestaoModel> novasquestoes = new List<QuestaoModel>();
             //List<Itens_da_QuestaoModel> itensQuestoes = new List<Itens_da_QuestaoModel>();
             
@@ -79,42 +83,44 @@ namespace Spider.Controllers
         }
 
         [HttpGet]
-        public ActionResult ListaQuestoes(int id)
+        public ActionResult ListaQuestoes(int idsurvey)
         {
 
             //ViewBag.id_Questao = gQuestao.Obter(id).id_Questao;
             //ViewBag.Pergunta = gQuestao.Obter(id).Pergunta;
-            ViewBag.id_Survey = id;
+            ViewBag.id_Survey = idsurvey;
+            
             return View();
         }
 
         [HttpPost]
-        public ActionResult ListaQuestoes(int idsurvey, SurveyModel survey)
+        public ActionResult ListaQuestoes(SurveyModel survey)
         {
             //int idsurvey = 0;
             //SurveyModel survey = new SurveyModel();
             List<QuestaoModel> SurveyQuestoes = new List<QuestaoModel>();
-            //SurveyQuestoes = survey.questoes;
-
+            
+            SurveyQuestoes = survey.questoes;
             foreach (QuestaoModel questao in SurveyQuestoes)
             {
-               // gQuestao.Obter(questao.id_Survey);
-                if (questao.id_Survey == idsurvey)
-                {
+                SurveyQuestoes.Add(gQuestao.Obter(survey.id_Survey));
+                //if (questao.id_Survey == idsurvey)
+                //{
                     //questao.idTB_ITENS_DA_QUESTAO = gItens.Inserir(questao.itens);
                     SurveyQuestoes.Add(gQuestao.Obter(questao.id_Survey));
                     //gQuestao.Inserir(questao);
-                }
+                //}
 
             }
 
             return View(SurveyQuestoes);
         }
 
+        //
+        // GET: /Survey/Create
         [HttpGet]
-        public ActionResult CreateQuestoes(int id)
+        public ActionResult CreateSurvey()
         {
-            ViewBag.id_Survey = id;
             return View();
         }
 

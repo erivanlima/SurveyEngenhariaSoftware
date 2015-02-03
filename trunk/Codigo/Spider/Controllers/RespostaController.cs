@@ -4,15 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Services;
+using Models;
 
 namespace Spider.Controllers
 {
     public class RespostaController : Controller
     {
-        GerenciadorResposta gResposta; 
+        private GerenciadorResposta gResposta;
+        private GerenciadorEntrevistado gEntrevistado;
 
         public RespostaController(){
             gResposta = new GerenciadorResposta();
+            gEntrevistado = new GerenciadorEntrevistado();
     }
         //
         // GET: /Resposta/
@@ -33,8 +36,9 @@ namespace Spider.Controllers
         //
         // GET: /Resposta/Create
 
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
+            ViewBag.id_Questao = id;
             return View();
         } 
 
@@ -42,18 +46,17 @@ namespace Spider.Controllers
         // POST: /Resposta/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(QuestaoModel questao)
         {
-            try
-            {
-                // TODO: Add insert logic here
+            EntrevistadoModel entrevistado = new EntrevistadoModel();
+            RespostaModel resposta = new RespostaModel();
+            resposta = questao.respostas;
+            resposta.id_Questao = questao.id_Questao;
+            resposta.idTB_ENTREVISTADO = gEntrevistado.Inserir(entrevistado);
+            gResposta.Inserir(resposta);
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+
+            return RedirectToAction("Index");
         }
         
         //

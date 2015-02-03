@@ -65,7 +65,8 @@
             <%: Html.ActionLink("Delete", "Delete", new {  id=item.id_Survey }) %> |
             <%: Html.ActionLink("Adicionar perguntas", "CreateQuestoes", new {  id=item.id_Survey }) %> |
             <%: Html.ActionLink("Enviar Survey", "CreateResposta", new {  id=item.id_Survey }) %> |
-            <%: Html.ActionLink("Listar Questões", "ListaQuestoes", new {  id=item.id_Survey }) %>
+           <%-- <%: Html.ActionLink("Listar Questões", "ListaQuestoes", new {  id=item.id_Survey }) %>--%>
+            <%: Html.ActionLink("Listar Questões", "ListaQuestoes", "Questao", new { id = item.id_Survey }, null)%> 
         </td>
     </tr>
 <% } %>

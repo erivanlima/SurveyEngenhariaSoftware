@@ -5,9 +5,9 @@
 </asp:Content>
 
 <asp:Content ID="loginContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Log On</h2>
+    <h2>Login</h2>
     <p>
-        Please enter your user name and password. <%: Html.ActionLink("Register", "Register") %> if you don't have an account.
+        Por favor entre com o seu nome de usuário e senha. <%: Html.ActionLink("Register", "Register") %> Se você não tem uma conta registre - se.
     </p>
 
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
@@ -17,10 +17,10 @@
         <%: Html.ValidationSummary(true, "Login was unsuccessful. Please correct the errors and try again.") %>
         <div>
             <fieldset>
-                <legend>Account Information</legend>
+                <legend>Informação da conta</legend>
                 
                 <div class="editor-label">
-                    <%: Html.LabelFor(m => m.UserName) %>
+                    Nome de usuário
                 </div>
                 <div class="editor-field">
                     <%: Html.TextBoxFor(m => m.UserName) %>
@@ -28,7 +28,7 @@
                 </div>
                 
                 <div class="editor-label">
-                    <%: Html.LabelFor(m => m.Password) %>
+                    Senha
                 </div>
                 <div class="editor-field">
                     <%: Html.PasswordFor(m => m.Password) %>
@@ -37,13 +37,16 @@
                 
                 <div class="editor-label">
                     <%: Html.CheckBoxFor(m => m.RememberMe) %>
-                    <%: Html.LabelFor(m => m.RememberMe) %>
+                    Lembrar?
                 </div>
                 
                 <p>
-                    <input type="submit" value="Log On" />
+                    <input type="submit" value="Login" />
                 </p>
             </fieldset>
         </div>
     <% } %>
+    <div>
+    <%: Html.ActionLink("Voltar", "Index","Home") %>
+</div>
 </asp:Content>
