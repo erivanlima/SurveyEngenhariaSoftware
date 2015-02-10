@@ -128,25 +128,24 @@ namespace Spider.Controllers
 
         public ActionResult Delete(int id)
         {
-            return View();
+            SurveyModel questaoModel = gSurvey.Obter(id);
+            return View(questaoModel);
         }
 
         //
         // POST: /Questao/Delete/5
 
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, QuestaoModel questaoModel)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add delete logic here
 
+                gQuestao.Remover(id);
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(questaoModel);
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
 using Models;
+using Services;
 
 namespace Models.Controllers
 {
@@ -14,6 +15,11 @@ namespace Models.Controllers
 
         //
         // GET: /Account/LogOn
+        private GerenciadorResponsavel gResponsavel;
+        public AccountController()
+        {
+            gResponsavel = new GerenciadorResponsavel();
+        }
 
         public ActionResult LogOn()
         {
@@ -82,7 +88,14 @@ namespace Models.Controllers
                 // Attempt to register the user
                 MembershipCreateStatus createStatus;
                 Membership.CreateUser(model.UserName, model.Password, model.Email, null, null, true, null, out createStatus);
-
+                ResponsavelModel responsavel = new ResponsavelModel();
+                responsavel.nome = model.UserName;
+                responsavel.email = model.Email;
+                responsavel.sobrenome = model.UserName;
+                gResponsavel.Inserir(responsavel);
+                //Membership usuario = Membership.GetUser();
+                Roles.AddUserToRole(model.UserName, "Responsavel");
+                               
                 if (createStatus == MembershipCreateStatus.Success)
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);

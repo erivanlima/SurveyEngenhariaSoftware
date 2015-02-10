@@ -152,8 +152,7 @@ namespace Services
             IEnumerable<QuestaoModel> questoesSurveys = GetQuery().Where(QuestaoModel => QuestaoModel.id_Survey.Equals(IDsurvey));
             return questoesSurveys;
         }
-
-
+       
 
 
        

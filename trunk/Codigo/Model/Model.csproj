@@ -63,12 +63,11 @@
   <ItemGroup>
     <EntityDeploy Include="spidersurvey.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>spidersurvey.Designer.cs</LastGenOutput>
+      <LastGenOutput>spidersurvey1.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.Config" />
-    <Content Include="spidersurvey.edmx.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

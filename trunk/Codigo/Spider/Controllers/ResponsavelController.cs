@@ -7,19 +7,48 @@ using Services;
 using Models;
 using System.Web.Security;
 
+
 namespace Spider.Controllers
 {
     public class ResponsavelController : Controller
     {
 
         private GerenciadorResponsavel gResponsavel;
+        private GerenciadorSurvey gSurvey;
+        private GerenciadorQuestao gQuestao;
+        private GerenciadorItens gItens;
+        private GerenciadorResposta gResposta;
 
 
         public ResponsavelController()
         {
             gResponsavel = new GerenciadorResponsavel();
+            gSurvey = new GerenciadorSurvey();
+            gQuestao = new GerenciadorQuestao();
+            gItens = new GerenciadorItens();
+            gResposta = new GerenciadorResposta();
+        }
+       
+        [HttpGet]
+        public ActionResult CreateViewTotal(int id)
+        {
+             SurveyModel survey = new SurveyModel();
+             survey = gSurvey.Obter(id);
+             survey.questoes =  gQuestao.ListaQuestaoSurvey(id).ToList();
+             for (int i = 0; i < survey.questoes.Count; i++)
+             {
+                 survey.questoes[i].itens = gItens.Obter(survey.questoes[i].idTB_ITENS_DA_QUESTAO);
+             }
+
+             return View(survey);
         }
 
+        [HttpPost]
+        public ActionResult CreateViewTotal()
+        {
+
+            return View();
+        }
         //
         // GET: /Responsavel/
 
