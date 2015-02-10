@@ -9,17 +9,17 @@ using System.Web.Security;
 
 namespace Spider.Controllers
 {
-    [Authorize(Roles = "Responsavel")]
+    //[Authorize(Roles = "Responsavel")]
     public class SurveyController : Controller
     {
         //
         // GET: /Survey/
-         private GerenciadorSurvey gSurvey;
-         private GerenciadorQuestao gQuestao;
-         private GerenciadorItens gItens;
-         private GerenciadorResposta gResposta;
-      
-      
+        private GerenciadorSurvey gSurvey;
+        private GerenciadorQuestao gQuestao;
+        private GerenciadorItens gItens;
+        private GerenciadorResposta gResposta;
+
+
 
         public SurveyController()
         {
@@ -27,14 +27,14 @@ namespace Spider.Controllers
             gQuestao = new GerenciadorQuestao();
             gItens = new GerenciadorItens();
             gResposta = new GerenciadorResposta();
-         
-            
+
+
         }
 
         public ActionResult Index()
         {
-            
-            
+
+
             return View(gSurvey.ObterTodos());
         }
 
@@ -43,11 +43,11 @@ namespace Spider.Controllers
 
         public ActionResult Details(int id)
         {
-            
+
             return View(gSurvey.Obter(id));
         }
 
-        
+
         [HttpGet]
         public ActionResult CreateQuestoes(int id)
         {
@@ -58,24 +58,28 @@ namespace Spider.Controllers
         [HttpPost]
         public ActionResult CreateQuestoes(SurveyModel survey)
         {
-            
+
+
+
             //List<QuestaoModel> novasquestoes = new List<QuestaoModel>();
             //List<Itens_da_QuestaoModel> itensQuestoes = new List<Itens_da_QuestaoModel>();
-            
-                foreach (QuestaoModel questao in survey.questoes)
+
+
+            foreach (QuestaoModel questao in survey.questoes)
+            {
+                if (questao.Pergunta != null)
                 {
                     questao.id_Survey = survey.id_Survey;
-
                     questao.idTB_ITENS_DA_QUESTAO = gItens.Inserir(questao.itens);
-                    
                     gQuestao.Inserir(questao);
-                    
                 }
 
-                return RedirectToAction("Index");
+            }
+
+            return RedirectToAction("Index");
         }
 
-        
+
         public ActionResult QuestaoPartial()
         {
             //ViewBag.id_Survey = id;
@@ -89,7 +93,7 @@ namespace Spider.Controllers
             //ViewBag.id_Questao = gQuestao.Obter(id).id_Questao;
             //ViewBag.Pergunta = gQuestao.Obter(id).Pergunta;
             ViewBag.id_Survey = idsurvey;
-            
+
             return View();
         }
 
@@ -99,16 +103,16 @@ namespace Spider.Controllers
             //int idsurvey = 0;
             //SurveyModel survey = new SurveyModel();
             List<QuestaoModel> SurveyQuestoes = new List<QuestaoModel>();
-            
+
             SurveyQuestoes = survey.questoes;
             foreach (QuestaoModel questao in SurveyQuestoes)
             {
                 SurveyQuestoes.Add(gQuestao.Obter(survey.id_Survey));
                 //if (questao.id_Survey == idsurvey)
                 //{
-                    //questao.idTB_ITENS_DA_QUESTAO = gItens.Inserir(questao.itens);
-                    SurveyQuestoes.Add(gQuestao.Obter(questao.id_Survey));
-                    //gQuestao.Inserir(questao);
+                //questao.idTB_ITENS_DA_QUESTAO = gItens.Inserir(questao.itens);
+                SurveyQuestoes.Add(gQuestao.Obter(questao.id_Survey));
+                //gQuestao.Inserir(questao);
                 //}
 
             }
@@ -130,18 +134,18 @@ namespace Spider.Controllers
         public ActionResult CreateSurvey(SurveyModel survey)
         {
             if (ModelState.IsValid)
-            {        
+            {
                 gSurvey.Inserir(survey);
                 return RedirectToAction("Index");
-           
+
             }
 
             return View(survey);
         }
-        
+
         //
         // GET: /Survey/Edit/5
- 
+
         public ActionResult Edit(int id)
         {
             SurveyModel surveyModel = gSurvey.Obter(id);
@@ -166,7 +170,7 @@ namespace Spider.Controllers
 
         //
         // GET: /Survey/Delete/5
- 
+        
         public ActionResult Delete(int id)
         {
             SurveyModel surveyModel = gSurvey.Obter(id);
@@ -177,16 +181,35 @@ namespace Spider.Controllers
         // POST: /Survey/Delete/5
 
         [HttpPost]
-        public ActionResult Delete(int id, SurveyModel surveyModel)
+        public ActionResult Delete(int id,int o=0)
         {
             if (ModelState.IsValid)
-            {
+               {
+                   SurveyModel survey = new SurveyModel();
+                   survey = gSurvey.Obter(id);
+                   survey.questoes = gQuestao.ListaQuestaoSurvey(id).ToList();
+                   for (int i = 0; i < survey.questoes.Count; i++)
+                   {
+                       survey.questoes[i].itens = gItens.Obter(survey.questoes[i].idTB_ITENS_DA_QUESTAO);
+                   }
+                   foreach (QuestaoModel questao in survey.questoes)
+                   {
+                       gResposta.Remover(questao.respostas.id_Resposta);
+                       if (questao.Tipo.Equals("OBJETIVA"))
+                       {
+                           gQuestao.Remover(questao.id_Questao);
+                           gItens.Remover(questao.idTB_ITENS_DA_QUESTAO);
+                       }
+                       else
+                       {
+                           gQuestao.Remover(questao.id_Questao);
+                       }
+                   }
 
-                gSurvey.Remover(id);
-                return RedirectToAction("Index");
-            }
-
-            return View(surveyModel);
+               }
+             gSurvey.Remover(id);
+             return RedirectToAction("Index");
+           // return View();
         }
     }
 }

@@ -33,6 +33,6 @@ namespace Models
 
     }
     public enum Tipo { Objetiva, Subjetiva };
-    public enum Linguagem { CSharp, Java, PHP };
+    
 
 }

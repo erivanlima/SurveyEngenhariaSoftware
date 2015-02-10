@@ -7,9 +7,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2> Bem-vindo</h2>
     <p>
+    
+    <h3> </h3>
+
+    </p>
      <div id="logindisplay">
                 <% Html.RenderPartial("LogOnUserControl"); %>
      </div>
+
      
-    </p>
+    
 </asp:Content>
