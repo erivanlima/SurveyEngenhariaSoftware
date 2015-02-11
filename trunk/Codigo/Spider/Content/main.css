@@ -1,0 +1,1031 @@
+﻿/* Aplicando CSS Reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: #000;
+    background: url(images/bg.jpg);
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+div.pageWrap
+{
+    width: 1000px;
+    height: auto;
+    margin: 0px auto;
+}
+div.page
+{
+    width: 100%;
+    float: left;
+    height: auto;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+    min-height: 900px;
+}
+
+div#rodapeWrap, header
+{
+    width: 100%;
+    height: 180px;
+    float: left;
+    background: rgb(244,244,0); /* Old browsers */
+    background: -moz-linear-gradient(left,  rgba(244,244,0,1) 0%, rgba(231,247,12,1) 40%, rgba(244,244,0,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(244,244,0,1)), color-stop(40%,rgba(231,247,12,1)), color-stop(100%,rgba(244,244,0,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  rgba(244,244,0,1) 0%,rgba(231,247,12,1) 40%,rgba(244,244,0,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  rgba(244,244,0,1) 0%,rgba(231,247,12,1) 40%,rgba(244,244,0,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  rgba(244,244,0,1) 0%,rgba(231,247,12,1) 40%,rgba(244,244,0,1) 100%); /* IE10+ */
+    background: linear-gradient(to right,  rgba(244,244,0,1) 0%,rgba(231,247,12,1) 40%,rgba(244,244,0,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f400', endColorstr='#f4f400',GradientType=1 ); /* IE6-9 */
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+}
+
+header
+{
+    height: 150px;
+}
+
+div#conteudoHeader
+{
+    width: 1000px;
+    height: auto;
+    margin: 0px auto;
+}
+
+div#rodapeWrap footer
+{
+    width: 1000px;
+    height: auto;
+    padding: 20px;
+    margin: 0px auto;
+}
+
+div#rodapeWrap footer img
+{
+    float: left;
+    margin: 0px 0px 0px 130px;
+    opacity: 0.8;
+}
+
+div#rodapeWrap footer img:hover
+{
+    opacity: 1;
+}
+
+div#rodapeWrap footer img[alt="logo_itatech"]
+{
+    margin: 10px 0px 0px 100px;
+}
+
+div#rodapeWrap hr, div#cabecalho hr
+{
+    border-bottom: 25px solid #1e5799;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    padding: 0px;
+    float: left;
+    width: 100%;
+    box-shadow: 0px -3px 8px rgba(0,0,0,0.5);
+}
+
+div#cabecalho hr
+{
+    margin-top: 0px;
+}
+
+div#logo
+{
+    float: left;
+    width: 200px;
+    height: 96px;
+    margin: 25px 0px 0px 10px;
+    background: url(images/logo_cfc.png) no-repeat;
+    opacity: 0.8;
+}
+
+div#logo:hover
+{
+    opacity: 1;
+}
+
+
+div#logindisplay img
+{
+    float: right;
+    opacity: 0.8;
+    cursor: pointer;
+    margin-right: 40px;
+    margin-top: 0px;
+}
+
+div#logindisplay a
+{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 15px;
+    text-shadow: 0px 0px 2px rgba(0,0,0,0.8);
+    font-weight: bold;
+    float: right;
+    clear: right;
+    margin-right: 70px;
+    margin-top: -8px;
+    font-family: Verdana;
+}
+
+div#logindisplay img:hover
+{
+    opacity: 1;
+}
+
+div#menuWrap
+{
+    width: 1000px;
+    height: auto;
+    margin-top: 150px;
+    float: left;
+}
+
+div#menuWrap > span
+{
+    float: left;
+    margin: 280px 0px 0px 410px;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 2px rgba(0,0,0,6);
+    color: #fff;
+    font-weight: bold;
+    font-family: Verdana;
+    text-align: center !important;
+}
+
+div#menuWrap > span.Subpaginas
+{
+    margin-top: 140px;
+    margin-left: 300px;
+}
+
+
+div#menu {
+    
+    width:210px;
+    height:285px;
+    background:url(images/icon_menu1.png) no-repeat;
+    cursor:pointer;
+    position:relative;
+    margin:0 auto;
+    background-position: 0px 0px;
+}
+
+div#menu.SubpaginasDespesas
+{
+    width:210px;
+    height:285px;
+    background:url(images/icon_despesas.png) no-repeat;
+    margin: 0px 0px 0px 300px;
+}
+
+div#menu.SubpaginasVeiculos
+{
+    width:210px;
+    height:285px;
+    background:url(images/icon_veiculos.png) no-repeat;
+    margin: 0px 0px 0px 300px;
+}
+
+div#menu.SubpaginasServicos
+{
+    width:210px;
+    height:285px;
+    background:url(images/icon_services.png) no-repeat;
+    margin: 0px 0px 0px 300px;
+}
+
+div#menu.SubpaginasAgendamento
+{
+    width:210px;
+    height:285px;
+    background:url(images/icon_agenda.png) no-repeat;
+    margin: 0px 0px 0px 300px;
+}
+
+div#menu.SubpaginasTurmas
+{
+    width:210px;
+    height:285px;
+    background:url(images/icon_turmas.png) no-repeat;
+    margin: 0px 0px 0px 300px;
+}
+
+div#menu.SubpaginasFuncionarios
+{
+    width:210px;
+    height:285px;
+    background:url(images/icon_funcionarios.png) no-repeat;
+    margin: 0px 0px 0px 300px;
+}
+
+div#menu.SubpaginasAlunos
+{
+    width:210px;
+    height:285px;
+    background:url(images/icon_alunos.png) no-repeat;
+    margin: 0px 0px 0px 300px;
+}
+
+/* Posicionando Imagens do Menu Dinâmico Home Page */
+div#menu img[alt="icone_despesas"]{margin-top: 120px; margin-bottom: 15px;}
+div#menu img[alt="icone_agenda"]{margin-top: 40px; margin-left: 80px;}
+div#menu img[alt="icone_veiculos"]{margin-top: 60px; margin-left: 80px;}
+div#menu img[alt="icone_funcionarios"]{margin-top: 60px; margin-left: -110px;}
+div#menu img[alt="icone_alunos"]{margin-top: 50px; margin-left: -120px;}
+
+
+/*Pocionando as Legendas do Menu Dinâmico da Home Page */
+div#menu span.menuLink1{margin: 0px 0px 0px 10px;} /*Link para Gerenciamento de Despesas */ 
+div#menu span.menuLink2{margin: 0px 0px 0px 80px;} /*Link para Gerenciamento de Agendamentos */
+div#menu span.menuLink3{margin: 0px 0px 0px 90px;} /*Link para Gerenciamento de Veiculos */
+div#menu span.menuLink4{margin: 185px 0px 0px -70px;} /*Link para Gerenciamento de Funcionários */
+div#menu span.menuLink5{margin: 180px 0px 0px 40px;} /*Link para Gerenciamento de Usuários */
+
+
+/* Posicionando Imagens do Menu Dinâmico Subpáginas */
+div#menu img[alt="opcao01"]{margin-top: 120px; margin-bottom: 15px;}
+div#menu img[alt="opcao02"]{margin-top: 10px; margin-left: 50px;}
+div#menu img[alt="opcao03"]{margin-top: 20px; margin-left: 30px;}
+div#menu img[alt="opcao04"]{margin-top: 20px; margin-left: -80px;}
+div#menu img[alt="opcao05"]{margin-top: 10px; margin-left: -150px;}
+
+/*Pocionando as Legendas do Menu Dinâmico Subpáginas */
+div#menu span.menuSubLink1{margin: 0px 0px 0px 10px;} /*Link para Opcao 01 */ 
+div#menu span.menuSubLink2{margin: 0px 0px 0px 40px;} /*Link para Opcao 02 */
+div#menu span.menuSubLink3{margin: 0px 0px 0px 40px;} /*Link para Opcao 03 */
+div#menu span.menuSubLink4{margin: 10px 0px 0px -110px; width: 180px;} /*Link para Opcao 04 */
+div#menu span.menuSubLink5{margin: 120px 0px 0px -20px; width: 200px;} /*Link para Opcao 05 */
+
+div#menu
+{
+    opacity: 0.8;
+}
+
+div#menu:hover
+{
+    opacity: 1;
+}
+
+div#menu ul li a span
+{
+    text-transform: uppercase;
+    color: #cc0000;
+    font-weight: bold;
+    width: 100px;
+    text-decoration: none;
+    margin: 0px 0px 0px 0px;
+    font-family: tahoma;
+    text-align: center;
+    float:left;
+}
+
+ul.reset,
+ul.reset li {
+display:block;
+list-style:none;
+padding:0;
+margin:0;
+}
+
+ul.reset li {
+position:absolute;
+}
+
+ul.reset li a {
+outline:none;
+}
+
+/* Define a estilização do Título Principais das Seções do Sistema */
+h2.formataTitulo1, div#formulario form legend, div#grid_detalhes legend, div#grid_detalhes table th
+{
+    float: left;
+    margin: 50px 0px 0px 70px;
+    font-size: 24px;
+    text-transform: uppercase;
+    width: 600px;
+    height: 20px;
+    padding: 20px;
+    font-weight: bold;
+    font-family: Trebuchet MS;
+    background: rgb(244,244,0); /* Old browsers */
+    background: -moz-linear-gradient(left,  rgba(244,244,0,1) 0%, rgba(231,247,12,1) 40%, rgba(244,244,0,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(244,244,0,1)), color-stop(40%,rgba(231,247,12,1)), color-stop(100%,rgba(244,244,0,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  rgba(244,244,0,1) 0%,rgba(231,247,12,1) 40%,rgba(244,244,0,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  rgba(244,244,0,1) 0%,rgba(231,247,12,1) 40%,rgba(244,244,0,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  rgba(244,244,0,1) 0%,rgba(231,247,12,1) 40%,rgba(244,244,0,1) 100%); /* IE10+ */
+    background: linear-gradient(to right,  rgba(244,244,0,1) 0%,rgba(231,247,12,1) 40%,rgba(244,244,0,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f400', endColorstr='#f4f400',GradientType=1 ); /* IE6-9 */
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5); 
+    border-left: 20px solid #1e5799;  
+    color: #fff;
+    text-shadow: 1px 0px 2px rgba(0,0,0,1);
+}
+
+div#formulario form legend, div#grid_detalhes legend, div#grid_detalhes table th
+{
+    margin: -50px 0px 20px -50px;
+    border-left: none;
+    background: #1e5799;
+    width: 660px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;    
+}
+
+div#grid_detalhes table th
+{
+    width: 760px;
+}
+
+div#grid_detalhes fieldset legend
+{
+    margin: -50px 0px 30px -50px !important;
+    width: 770px;
+    font-size: 16px;
+    height: 30px;
+}
+
+div#grid_detalhes fieldset div, div#grid_detalhes table td
+{
+    float: left;
+    width: 200px;
+    height: 30px;
+    border: 1px solid #1e5799;
+    padding-top: 8px;
+    margin-top: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-bottom: 8px;
+}
+
+div#grid_detalhes table td:nth-of-type(odd)
+{
+    width: 400px;
+    border-right: none;
+}
+
+div#grid_detalhes table td:nth-of-type(even)
+{
+    border-left: none;
+    width: 300px;
+}
+
+div#grid_detalhes fieldset div.display-field
+{
+    border-left: none;
+    border-right: none;
+}
+
+div#grid_detalhes fieldset div.btn_acoes
+{
+    border-left: none;
+}
+
+div#grid_detalhes fieldset div.btn_acoes img, div#grid_detalhes div.btn_acoes img
+{
+    margin-left: 35px;
+}
+
+div#grid_detalhes fieldset div.editor-label, div#grid_detalhes table td div.editor-label, div#grid_detalhes fieldset div.display-label
+{
+    border-right: none;
+    background: #1e5799;
+    color: #fff;
+}
+
+table td div.editor-label
+{
+    float: left;
+    margin: -10px 0px 0px 0px;
+    height: 30px;
+    padding-top: 20px;
+}
+
+
+div#formulario form label, div#grid_detalhes legend
+{
+    float: left;
+    width: 76%;
+    height: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 10px;
+    margin: 25px 30% 10px -20px;
+    border-left: 10px solid #1e5799;
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
+}
+
+div#formulario form input[type=text] 
+{
+    float: left;
+    margin: 10px 200px 0px 0px;
+    border-radius: 10px;
+    width: 585px;
+    height: 35px;
+    background: url(images/bg_input.png);
+    background-position: center -10px;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+}
+
+div#formulario form select
+{
+    float: left;
+    width: 270px;
+    height: 40px;
+    margin-left: -15px;
+    margin-bottom: -20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-weight: bold;
+    background: url(images/bg_input.png);
+    background-position: center -10px;
+}
+
+div#formulario form input[type=submit], div#grid_detalhes form input[type=submit]
+{
+    width: 90px;
+	height: 40px;
+	float: right;
+	margin: 80px 200px 10px 0px;
+	border: 0px;
+	border-radius: 7px;
+	background: rgb(30,87,153); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(30,87,153,1) 0%, rgba(41,137,216,1) 90%, rgba(32,124,202,1) 99%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,87,153,1)), color-stop(90%,rgba(41,137,216,1)), color-stop(99%,rgba(32,124,202,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(41,137,216,1) 90%,rgba(32,124,202,1) 99%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(41,137,216,1) 90%,rgba(32,124,202,1) 99%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(41,137,216,1) 90%,rgba(32,124,202,1) 99%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(30,87,153,1) 0%,rgba(41,137,216,1) 90%,rgba(32,124,202,1) 99%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#207cca',GradientType=0 ); /* IE6-9 */
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.8);
+	font-family: Trebuchet MS;
+	font-size: 13px;
+	font-weight: bold;
+	padding: 5px 0px 0px 4px;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+    text-transform: uppercase;
+}
+
+div#formulario form input[type=submit]:hover
+{
+    background: #207cca; /* Old browsers */
+	background: -moz-linear-gradient(top,  #207cca 1%, #2989d8 10%, #1e5799 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#207cca), color-stop(10%,#2989d8), color-stop(100%,#1e5799)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #207cca 1%,#2989d8 10%,#1e5799 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #207cca 1%,#2989d8 10%,#1e5799 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #207cca 1%,#2989d8 10%,#1e5799 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #207cca 1%,#2989d8 10%,#1e5799 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#207cca', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */
+	cursor: pointer;
+}
+
+div#formulario form input[type=text]:focus
+{
+    background-position: 0px 10px;
+	box-shadow: inset 0px 0px 8px rgba(0,0,0,0.5);
+}
+
+div#formulario form input[type=text]:hover
+{
+    border: 1px solid #1e5799;
+}
+
+/*Agrupando de Campos no Layout em Duas Colunas */
+form div.formata_campos1{float: left; width: 320px; height: auto; margin: 20px 25px 0px -20px; padding: 0px;}
+form div.formata_campos1 input{float: left !important;width: 260px !important; margin: 15px 0px -5px 20px !important;}
+form div.formata_campos1 label{width: 280px !important; margin: 0px 0px 0px 0px !important;}
+form div.formata_campos1 input[type=radio]{width: auto !important; margin: 30px 100px 0px 30px !important;}
+form div.formata_campos1Radio1 input[type=radio]{margin: 30px 4px 0px 0px !important; padding: 0px;}
+form div.formata_campos1Radio2 input[type=radio]{margin: 30px 30px 0px 0px !important; padding: 0px;}
+div#formulario form textarea
+{
+    width: 450px;
+    height: 200px;
+    box-shadow: inset 0px 0px 7px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    float: left;    
+    margin-right: 200px;
+}
+
+div#formulario form textarea:hover
+{
+    border: 1px solid #1e5799;
+}
+
+/*Insere Icone Plano de Contas no Título da Seção */
+div.IconePlanoContas
+{
+    float: left;
+    margin: 10px 0px 0px -90px;
+    width: 128px;
+    height: 129px;
+    background: url(images/icon_despesas.png) no-repeat;
+}
+
+/*Insere Icone Agendamento no Título da Seção */
+div.IconeAgendamento
+{
+    float: left;
+    margin: 10px 0px 0px -90px;
+    width: 128px;
+    height: 129px;
+    background: url(images/icon_agenda.png) no-repeat;
+}
+
+/*Insere Icone Relatorios no Título da Seção */
+div.IconeRelatorio
+{
+    float: left;
+    margin: 10px 0px 0px -90px;
+    width: 128px;
+    height: 129px;
+    background: url(images/icon_report.png) no-repeat;
+}
+
+/*Insere Icone Servicos no Título da Seção */
+div.IconeServicos
+{
+    float: left;
+    margin: 10px 0px 0px -90px;
+    width: 128px;
+    height: 129px;
+    background: url(images/icon_services.png) no-repeat;
+}
+
+/*Insere Icone Relatorio no Título da Seção */
+div.IconeRelatorio
+{
+    float: left;
+    margin: 10px 0px 0px -90px;
+    width: 128px;
+    height: 129px;
+    background: url(images/icon_report.png) no-repeat;
+}
+
+/*Insere Icone Funcionários no Título da Seção */
+div.IconeFuncionarios
+{
+    float: left;
+    margin: 10px 0px 0px -90px;
+    width: 128px;
+    height: 128px;
+    background: url(images/icon_funcionarios.png) no-repeat;
+}
+
+/*Insere Icone Turmas no Título da Seção */
+div.IconeTurmas
+{
+    float: left;
+    margin: 30px 0px 0px -60px;
+    width: 128px;
+    height: 128px;
+    background: url(images/icon_turmas.png) no-repeat;
+}
+
+/*Insere Icone Alunos no Título da Seção */
+div.IconeAlunos
+{
+    float: left;
+    margin: 30px 0px 0px -90px;
+    width: 128px;
+    height: 128px;
+    background: url(images/icon_alunos.png) no-repeat;
+}
+
+/*Insere Icone Veículos no Título da Seção */
+div.IconeVeiculos
+{
+    float: left;
+    margin: 20px 0px 0px -90px;
+    width: 128px;
+    height: 128px;
+    background: url(images/icon_veiculos.png) no-repeat;
+}
+
+div#formulario form, div#grid_detalhes
+{
+    float: left;
+    width: 600px;
+    height: auto;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.8);
+    margin: 40px 0px 0px 70px;
+    padding: 50px;
+    border-radius: 15px;
+}
+
+img[alt="btn_voltar"]
+{
+    float: left;
+    clear: left;
+    margin-left: 10%;
+    margin-bottom: 7%;
+}
+
+div#grid_detalhes
+{
+    width: 700px;    
+}
+
+div#grid_detalhes table
+{
+    float: left;
+    width: 700px;
+}
+
+/* Aplicando Ajustes no Formulário Detalhes Plano de Contas */
+
+div#grid_detalhes.hack_detalhes1 div.editor-label
+{
+    width: 160px;
+    margin-bottom: 20px;
+}
+
+div#grid_detalhes.hack_detalhes1 div.display-field
+{
+    border-right: 1px solid #1e5799;
+    
+}
+
+/* Aplicando Ajustes no Formulário Listagem dos Plano de Contas */
+
+div#grid_detalhes.hack_detalhes2 table td:nth-of-type(odd)
+{
+    width: 130px; 
+    border-right: 1px solid #1e5799;
+}
+
+div#grid_detalhes.hack_detalhes2 table td:nth-of-type(even)
+{
+    width: 290px; 
+    border-right: 1px solid #1e5799;
+}
+
+div#grid_detalhes.hack_detalhes2 table div.btn_acoes
+{
+    width: 270px; 
+}
+
+div#grid_detalhes.hack_detalhes2 table
+{
+    width: 900px;
+}
+
+div#grid_detalhes.hack_detalhes2 table td:nth-of-type(3n+0)
+{
+    width: 300px;
+    border-left: none;
+}
+
+div#grid_detalhes.hack_detalhes2 td.titulo
+{
+    background: #1e5799;
+    color: #fff;
+}
+
+/* Aplicando Ajustes no Formulário Detalhes do Plano de Contas */
+
+div#grid_detalhes.hack_detalhes3 {width: 800px;margin-left: 50px;}
+
+div#grid_detalhes.hack_detalhes3 fieldset{margin-left: -30px;}
+
+div#grid_detalhes.hack_detalhes3 fieldset legend{width: 870px; margin-left: -20px !important;}
+
+div#grid_detalhes.hack_detalhes3 fieldset div.display-label{width: 140px;}
+
+div#grid_detalhes.hack_detalhes3 fieldset div.display-field{width: 180px;}
+
+div#grid_detalhes.hack_detalhes3 fieldset div.btn_acoes{width: 170px;margin-right: 10px;}
+
+div#grid_detalhes.hack_detalhes3 fieldset div.btn_acoes img{margin-left: 70px; margin-right: -45px; float: left;}
+
+/* Aplicando Ajustes no Formulário Listagem Funcionários */
+
+div#grid_detalhes.hack_detalhes4 {width: 860px;margin-left: 20px;}
+
+div#grid_detalhes.hack_detalhes4 table{width: 940px; margin-left: -35px;}
+
+div#grid_detalhes.hack_detalhes4 table td
+{
+    width: auto; 
+    padding: 10px;
+    border-right: 1px solid #1e5799; 
+    min-width: 50px; 
+    font-size: 11px; 
+    background: #1e5799;
+    color: #fff;
+    border-right: 1px solid #fff;    
+}
+
+div#grid_detalhes.hack_detalhes4 table th{width: 920px;margin-left: -15px;}
+
+div#grid_detalhes.hack_detalhes4 table td.formata_campos1{width: 70px;}
+
+div#grid_detalhes.hack_detalhes4 table td.formata_campos2{width: 200px;}
+
+
+/* Aplicando Ajustes no Formulário Listagem Alunos */
+
+div#grid_detalhes.hack_detalhes5 {font-size: 10px;}
+
+div#grid_detalhes.hack_detalhes5 .formata_campos1{width: 90px; }
+
+div#grid_detalhes.hack_detalhes5 .formata_campos2{width: 120px; border-right: 1px solid #1e5799;}
+
+div#grid_detalhes.hack_detalhes5 .formata_campos3{width: 620px; margin-bottom: 20px; border-right: 1px solid #1e5799;}
+
+/* Aplicando Ajustes no Formulário Listagem Turmas */
+
+div#grid_detalhes.hack_detalhes6{width: 790px;}
+div#grid_detalhes.hack_detalhes6 .formata_campos1{width: 190px !important; }
+
+
+/* Aplicando Ajustes no Formulário Detalhes Turmas */
+
+div#grid_detalhes.hack_detalhes7{width: 830px; margin-left: 40px;}
+div#grid_detalhes.hack_detalhes7 legend{width: 900px;}
+div#grid_detalhes.hack_detalhes7 .formata_campos1{width: 190px !important; }
+div#grid_detalhes.hack_detalhes7 div.display-label{width: 90px; margin-left: 0px;}
+div#grid_detalhes.hack_detalhes7 div.display-field{width: 130px; margin-left: 0px;}
+div#grid_detalhes.hack_detalhes7 div.btn_acoes{width: 150px;}
+div#grid_detalhes.hack_detalhes7 div.btn_acoes img{margin-left: 35px; margin-right: -10px;}
+
+/* Aplicando Ajustes no Formulário Excluir Turmas */
+
+div#grid_detalhes.hack_detalhes8 div.display-label{width: 100px; margin-bottom: 20px;}
+div#grid_detalhes.hack_detalhes8 div.display-field{width: 130px; border-right: 1px solid #1e5799}
+
+#menu_top ul
+{
+    width: 100%;
+    height: 55px;
+    float: left;
+    background: #207cca; /* Old browsers */
+	background: -moz-linear-gradient(top,  #207cca 1%, #2989d8 10%, #1e5799 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#207cca), color-stop(10%,#2989d8), color-stop(100%,#1e5799)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #207cca 1%,#2989d8 10%,#1e5799 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #207cca 1%,#2989d8 10%,#1e5799 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #207cca 1%,#2989d8 10%,#1e5799 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #207cca 1%,#2989d8 10%,#1e5799 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#207cca', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */
+	border-bottom: 8px solid #ffda00;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.5); 
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#menu_top ul li
+{
+    display: inline;
+}
+
+#menu_top ul li a
+{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-family: Verdana;
+    font-size: 16px;
+    float: left;
+    margin: 18px 0px 0px 40px;
+    text-shadow: 0px 0px 3px rgba(0,0,0,0.7);
+}
+
+#menu_top ul li a:hover
+{
+    color: #ffda00;
+}
+
+.rootVoices{
+  background-color:#EDEDED;
+  padding:5px;
+  padding-bottom:0;
+}
+.rootVoices td.rootVoice {
+  vertical-align:middle;
+  background-color:#fff;
+  width:120px;
+  font-family:Arial,Helvetica,sans-serif;
+  text-shadow:#fff 1px 1px 1px;
+  color: gray;
+  font-size:14px;
+  line-height:18px;
+  padding:8px;
+  cursor: pointer;
+}
+
+.rootVoices td.rootVoice.selected{
+  background: black url("images/bgnd_sel_4.png");
+  padding:8px;
+  color:#ffffff;
+  cursor: pointer;
+  font-size:14px;
+  text-shadow:#660033 1px 1px 1px;
+  -moz-border-radius:8px 8px 0 0px;
+  -webkit-border-top-right-radius:8px;
+  -webkit-border-top-left-radius:8px;
+  -webkit-border-bottom-right-radius:0px;
+  -webkit-border-bottom-left-radius:0px;
+  border-top-right-radius:8px;
+  border-top-left-radius:8px;
+  border-bottom-right-radius:0;
+  border-bottom-left-radius:0;
+
+}
+.rootVoices td.rootVoice.disabled.selected{
+  background:#999!important;
+  color:#666;
+  text-shadow:#ddd 1px 1px 1px;
+}
+
+.rootVoices.vertical {
+  width:140px;
+}
+.rootVoices.vertical td.rootVoice{
+  -moz-border-radius:8px 0px 0 8px;
+  -webkit-border-top-right-radius:0px;
+  -webkit-border-top-left-radius:8px;
+  -webkit-border-bottom-right-radius:0px;
+  -webkit-border-bottom-left-radius:8px;
+  border-top-right-radius:0px;
+  border-top-left-radius:8px;
+  border-bottom-right-radius:0px;
+  border-bottom-left-radius:8px;
+}
+
+.mbmenu{
+  display:none;
+}
+
+/*BOX MENU*/
+
+.boxMenu{
+  color:#f3f3f3;
+  border-top:8px solid #ffda00;
+  background: #207cca; /* Old browsers */
+  background : -moz-linear-gradient(top,  #207cca 1%, #2989d8 10%, #1e5799 100%); /* FF3.6+ */
+  background : -webkit-gradient(linear, left top, left bottom, color-stop(1%,#207cca), color-stop(10%,#2989d8), color-stop(100%,#1e5799)); /* Chrome,Safari4+ */
+  background : -webkit-linear-gradient(top,  #207cca 1%,#2989d8 10%,#1e5799 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #207cca 1%,#2989d8 10%,#1e5799 100%); /* Opera 11.10+ */
+  background : -ms-linear-gradient(top,  #207cca 1%,#2989d8 10%,#1e5799 100%); /* IE10+ */
+  background  : linear-gradient(to bottom,  #207cca 1%,#2989d8 10%,#1e5799 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#207cca', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */
+  border-bottom: 8px solid #ffda00;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+  margin-top: 20px;
+  margin-bottom: -40px;
+}
+.boxMenu h4{
+  white-space:nowrap;
+  margin:0 0 20px 0;
+  padding:3px;
+  font:18px/20px georgia, serif;
+  padding-right:20px;
+  text-shadow:#666 2px 2px 1px;
+}
+
+.boxMenu td{
+  min-width:160px;
+  vertical-align:top;
+  border-right:1px solid #999;
+}
+
+.boxMenu td:hover{
+    background: rgb(73,155,234); /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(73,155,234,1) 0%, rgba(32,124,229,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(73,155,234,1)), color-stop(100%,rgba(32,124,229,1))); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(73,155,234,1) 0%,rgba(32,124,229,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  rgba(73,155,234,1) 0%,rgba(32,124,229,1) 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  rgba(73,155,234,1) 0%,rgba(32,124,229,1) 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  rgba(73,155,234,1) 0%,rgba(32,124,229,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#207ce5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  -moz-box-shadow:#666 2px 2px 4px;
+  -webkit-box-shadow:#666 2px 2px 4px;
+}
+
+.boxMenu td:hover a{
+  margin-right:3px;
+  color:#fff;
+}
+
+.boxMenu td:last-child{
+  min-width:160px;
+  vertical-align:top;
+  border-right:none;
+}
+
+.boxMenu td div{
+  margin-top: 10px; 
+  margin-bottom: 20px; 
+}
+
+.boxMenu a{
+  font-size:14px;
+  white-space:nowrap;
+  display:block;
+  padding:15px;
+  margin-bottom:5px;
+  color: #fff;
+  text-decoration: none;
+  padding-left: 25px;
+}
+
+.boxMenu a img{
+  padding-right:5px;
+}
+
+.boxMenu a:hover{
+  color:#000 !important;
+  font-weight: bold;
+  background: #fff;
+  -moz-box-shadow:#666 2px 2px 4px;
+  -webkit-box-shadow:#666 2px 2px 4px;
+}
+
+.boxMenu a img{
+  border:0;
+}
+
+div#relatorios
+{
+    width: 800px;
+    margin: 0px auto;
+}
+
+div#relatorios img
+{
+    float: left;
+    margin: -50px 0px 0px 50px
+}
+
+div#relatorios a
+{
+    float: left;
+    margin: 0px 0px 0px 0px;
+    padding: 90px 0px 0px 0px;
+    width: auto;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    opacity: 0.8;
+    width: 380px;
+}
+
+div#relatorios a:hover
+{
+    opacity: 1;
+    text-decoration: underline;
+}
