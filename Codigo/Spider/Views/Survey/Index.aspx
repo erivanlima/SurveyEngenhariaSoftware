@@ -1,55 +1,39 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<Models.SurveyModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Index
+    Meus Surveys
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Index</h2>
+<h2>Meus Surveys</h2>
 
 <p>
-    <%: Html.ActionLink("Criar novo Survey", "CreateSurvey") %>
+    <%: Html.ActionLink("Criar novo Survey", "CreateSurvey",null,new { @class = "button" }) %>
 </p>
 <table>
     <tr>
         <th>
-            id_Survey
+            Titulo do Survey
         </th>
         <th>
-            id_Responsavel
+            Data Criado
         </th>
         <th>
-            Titulo
+            Data de Encerramento
         </th>
         <th>
-            Subtitulo
+            Status
         </th>
-        <th>
-            Data_Criacao
+        <th id="thc">
+            Ações
         </th>
-        <th>
-            Data_fim
-        </th>
-        <th>
-            flag_ativo
-        </th>
-        <th></th>
     </tr>
 
 <% foreach (var item in Model) { %>
     <tr>
         <td>
-            <%: Html.DisplayFor(modelItem => item.id_Survey) %>
-        </td>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.id_Responsavel) %>
-        </td>
-        <td>
             <%: Html.DisplayFor(modelItem => item.Titulo) %>
-        </td>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.Subtitulo) %>
         </td>
         <td>
             <%: Html.DisplayFor(modelItem => item.Data_Criacao) %>
@@ -61,12 +45,12 @@
             <%: Html.DisplayFor(modelItem => item.flag_ativo) %>
         </td>
         <td>
-            <%: Html.ActionLink("Edit", "Edit", new {  id=item.id_Survey }) %> |
-            <%: Html.ActionLink("Delete", "Delete", new {  id=item.id_Survey }) %> |
-            <%: Html.ActionLink("Adicionar perguntas", "CreateQuestoes", new {  id=item.id_Survey }) %> |
-            <%: Html.ActionLink("Enviar Survey", "CreateViewTotal","Responsavel", new { id = item.id_Survey },null)%> |
-           <%-- <%: Html.ActionLink("Listar Questões", "ListaQuestoes", new {  id=item.id_Survey }) %>--%>
-            <%: Html.ActionLink("Listar Questões", "ListaQuestoes", "Questao", new { id = item.id_Survey }, null)%> 
+            <%: Html.ActionLink("Manter Questões", "ListaQuestoes", "Questao", new { id = item.id_Survey }, new { @class = "button" })%> 
+            <%: Html.ActionLink("Editar", "Edit", new {  id=item.id_Survey }, new { @class = "button" }) %> 
+            <%: Html.ActionLink("Excluir", "Delete", new {  id=item.id_Survey }, new { @class = "button" }) %> 
+            <%: Html.ActionLink("Adicionar Questão", "CreateQuestoes", new {  id=item.id_Survey }, new { @class = "button" }) %> 
+            <%: Html.ActionLink("Visualizar", "CreateViewTotal","Responsavel", new { id = item.id_Survey },new { @class = "button" })%> 
+            
         </td>
     </tr>
 <% } %>
