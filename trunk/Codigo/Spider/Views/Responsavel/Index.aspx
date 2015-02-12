@@ -11,14 +11,7 @@
 <p>
     <%: Html.ActionLink("Create New", "Create") %>
 </p>
-  <ul id="menu">
-                    <li><%: Html.ActionLink("Survey", "Index", "Survey")%></li>
-                    <li><%: Html.ActionLink("Responsável", "Index", "Responsavel")%></li>
-                    <li><%: Html.ActionLink("Questão", "Index", "Questao")%></li>
-                    <li><%: Html.ActionLink("Resposta", "Index", "Resposta")%></li>
-                    <li><%: Html.ActionLink("Home", "Index", "Home")%></li>
-                    <li><%: Html.ActionLink("About", "About", "Home")%></li>
-        </ul>
+  
 <table>
     <tr>
         <th>

@@ -91,10 +91,11 @@ namespace Spider.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpGet]
+        [HttpPost]
         public ActionResult ListaQuestoes(int id)
         {
             ViewBag.id_Survey = id;
+            ViewBag.Titulo = gSurvey.Obter(id).Titulo;
             return View(gQuestao.ListaQuestaoSurvey(id));
         }
 

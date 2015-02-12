@@ -44,7 +44,7 @@ section {
 
 /* HEADINGS   
 ----------------------------------------------------------*/
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,h7 {
     font-size: 1.5em;
     color: #000;
 }
@@ -71,6 +71,12 @@ h5, h6 {
     font-size: 1em;
 }
 
+h7 
+{
+    text-align:center;
+    font-size: 2em;
+}
+
 /* PRIMARY LAYOUT ELEMENTS   
 ----------------------------------------------------------*/
 
@@ -82,11 +88,27 @@ page width. Or, you can specify an exact pixel width. */
     margin-right: auto;
 }
 
+.page-login {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 header, #header {
     position: relative;
     margin-bottom: 0px;
     color: #000;
     padding: 0;
+}
+
+.header-login {
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: #000;
+    text-align:center;
+    padding: 0;
+ 
 }
 
 header h1, #header h1 {
@@ -100,7 +122,22 @@ header h1, #header h1 {
     text-shadow: 1px 1px 2px #111;
 }
 
-#main {
+#main 
+{
+    margin-top:auto;
+    padding: 30px 30px 15px 30px;
+    background-color: #fff;
+    border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 0 0 0;
+    -moz-border-radius: 4px 0 0 0;
+}
+
+#main-titulo 
+{
+    margin-top:10px;
+    margin-bottom:10px;
+    padding: 30px 30px 15px 30px;
+    color:#5c87b2;
     padding: 30px 30px 15px 30px;
     background-color: #fff;
     border-radius: 4px 0 0 0;
@@ -125,16 +162,20 @@ footer,
 /* TAB MENU   
 ----------------------------------------------------------*/
 ul#menu {
-    border-bottom: 1px #5C87B2 solid;
-    padding: 0 0 2px;
-    position: relative;
+	width: 50%;
+    border-bottom: 0px #5C87B2 solid;
+    padding: 6px 0 6px;
+    position: absolute;
     margin: 0;
-    text-align: right;
+    text-align: center;
 }
 
-ul#menu li {
+ul#menu li 
+{
+    width:auto;
+    position:relative;
     display: inline;
-    list-style: none;
+	float: none;
 }
 
 ul#menu li#greeting {
@@ -146,13 +187,15 @@ ul#menu li#greeting {
 }
 
 ul#menu li a {
+ margin-bottom: 5px;
+  text-align: center;
     padding: 10px 20px;
     font-weight: bold;
     text-decoration: none;
     line-height: 2.8em;
     background-color: #e8eef4;
     color: #034af3;
-    border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 4px 4px;
     -webkit-border-radius: 4px 4px 0 0;
     -moz-border-radius: 4px 4px 0 0;
 }
@@ -171,6 +214,21 @@ ul#menu li.selected a {
     background-color: #fff;
     color: #000;
 }
+
+.button  { 
+    padding: 0.2em;
+    height: 0.2em 2em;
+    text-decoration: none !important; 
+    cursor: pointer; 
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    background-color:#5c87b2;
+    border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+}
+a.button { color:White;}
 
 /* FORM LAYOUT ELEMENTS   
 ----------------------------------------------------------*/
@@ -229,6 +287,10 @@ table th {
     text-align: left;
     background-color: #e8eef4;
     border: solid 1px #e8eef4;
+}
+
+#thc {
+    text-align: center;
 }
 
 /* MISC  
