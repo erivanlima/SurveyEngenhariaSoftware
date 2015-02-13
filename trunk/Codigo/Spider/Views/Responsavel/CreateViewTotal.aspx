@@ -97,7 +97,7 @@
 <% } %>
 
 <div>
-    <%: Html.ActionLink("Back to List", "Index") %>
+    <%: Html.ActionLink("Voltar", "Index", new { @class = "button" })%>
 </div>
 
 </asp:Content>

@@ -211,5 +211,14 @@ namespace Spider.Controllers
              return RedirectToAction("Index");
            // return View();
         }
+
+        public ActionResult EnviarSurvey()
+        {
+
+            return View(gSurvey.ObterTodos());
+        }
+
     }
+
+
 }
