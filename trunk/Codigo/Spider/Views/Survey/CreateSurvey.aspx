@@ -1,14 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<Models.SurveyModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    CreateSurvey
+    Criar Novo Survey
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
 <br />
 
-<h2>CreateSurvey</h2>
+<h2>Criar Novo Survey</h2>
 
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
@@ -16,21 +16,22 @@
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>SurveyModel</legend>
-
-        <div class="editor-label">
+        <legend>Criar Novo Survey</legend>
+        
+        <%: Html.HiddenFor(model => model.id_Responsavel, new { Value = ViewBag.id_Responsavel })%>
+        <%--<div class="editor-label">
             <%: Html.LabelFor(model => model.id_Responsavel) %>
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.id_Responsavel) %>
             <%: Html.ValidationMessageFor(model => model.id_Responsavel) %>
-        </div>
+        </div>--%>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Titulo) %>
+            Titulo
         </div>
         <div class="editor-field">
-            Titulo
+            <%: Html.EditorFor(model => model.Titulo) %>
             <%: Html.ValidationMessageFor(model => model.Titulo) %>
         </div>
 
@@ -46,7 +47,7 @@
             Data Criado
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.Data_Criacao) %>
+            <%: Html.EditorFor(model => model.Data_Criacao)%>
             <%: Html.ValidationMessageFor(model => model.Data_Criacao) %>
         </div>
 
@@ -67,13 +68,13 @@
         </div>
 
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Salvar" />
         </p>
     </fieldset>
 <% } %>
 
 <div>
-    <%: Html.ActionLink("Voltar", "Index", new { @class = "button" },null)%>
+    <%: Html.ActionLink("Voltar", "Index", "Survey")%>
 </div>
 
 </asp:Content>

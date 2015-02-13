@@ -125,9 +125,8 @@ namespace Spider.Controllers
         {
             if (ModelState.IsValid)
             {
-
                 gQuestao.Editar(questaoModel);
-                return RedirectToAction("Index");
+                return RedirectToAction("ListaQuestoes/" + questaoModel.id_Survey, "Questao");
             }
 
             return View(questaoModel);
@@ -138,7 +137,7 @@ namespace Spider.Controllers
 
         public ActionResult Delete(int id)
         {
-            SurveyModel questaoModel = gSurvey.Obter(id);
+            QuestaoModel questaoModel = gQuestao.Obter(id);
             return View(questaoModel);
         }
 
@@ -148,11 +147,12 @@ namespace Spider.Controllers
         [HttpPost]
         public ActionResult Delete(int id, QuestaoModel questaoModel)
         {
+            questaoModel = gQuestao.Obter(id);
             if (ModelState.IsValid)
             {
 
                 gQuestao.Remover(id);
-                return RedirectToAction("Index");
+                return RedirectToAction("ListaQuestoes/" + questaoModel.id_Survey, "Questao");
             }
 
             return View(questaoModel);
@@ -188,7 +188,7 @@ namespace Spider.Controllers
 
             }
 
-            return RedirectToAction("Index");
+            return RedirectToAction("ListaQuestoes/"+survey.id_Survey,"Questao");
         }
     }
 }

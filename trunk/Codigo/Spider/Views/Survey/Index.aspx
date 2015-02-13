@@ -37,10 +37,10 @@
             <%: Html.DisplayFor(modelItem => item.Titulo) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.Data_Criacao) %>
+            <%: Html.DisplayFor(modelItem => item.Data_Criacao.Date) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.Data_fim) %>
+            <%: Html.DisplayFor(modelItem => item.Data_fim.Date) %>
         </td>
         <td>
             <%: Html.DisplayFor(modelItem => item.flag_ativo) %>

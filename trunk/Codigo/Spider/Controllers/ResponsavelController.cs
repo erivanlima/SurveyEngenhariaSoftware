@@ -32,6 +32,7 @@ namespace Spider.Controllers
         [HttpGet]
         public ActionResult CreateViewTotal(int id)
         {
+             ViewBag.id_Survey = id;
              SurveyModel survey = new SurveyModel();
              survey = gSurvey.Obter(id);
              survey.questoes =  gQuestao.ListaQuestaoSurvey(id).ToList();
@@ -44,8 +45,24 @@ namespace Spider.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateViewTotal()
+        public ActionResult CreateViewTotal(SurveyModel survey)
         {
+            survey = gSurvey.Obter(survey.id_Survey);
+            survey.questoes = gQuestao.ListaQuestaoSurvey(survey.id_Survey).ToList();   
+            RespostaModel resposta = new RespostaModel();
+            for (int i = 0; i < survey.questoes.Count; i++)
+            { 
+                resposta.id_Questao = survey.questoes[i].id_Questao;
+                if (survey.questoes[i].Tipo.Equals("OBJETIVA"))
+                {
+                    resposta.Item = survey.questoes[i].respostas.Item;
+                    gResposta.Inserir(resposta);
+                }
+                else {
+                    resposta.Resposta = survey.questoes[i].respostas.Resposta;
+                    gResposta.Inserir(resposta);
+                }
+            }
 
             return View();
         }
@@ -105,10 +122,8 @@ namespace Spider.Controllers
 
         public int retornarIdResponsavel(string usuario)
         {
-
             try
             {
-
                 IQueryable<ResponsavelModel> responsavelE = gResponsavel.obterIdResponsavel(usuario.ToString());
                 int idCodigo = -1;
                 foreach (ResponsavelModel responsavel in responsavelE)
@@ -118,8 +133,6 @@ namespace Spider.Controllers
 
                 if (idCodigo != -1)
                     return idCodigo;
-
-
             }
             catch
             {
@@ -127,12 +140,9 @@ namespace Spider.Controllers
 
             }
 
-
-
             return -1;
 
         }
-
 
         //
         // GET: /Responsavel/Edit/5

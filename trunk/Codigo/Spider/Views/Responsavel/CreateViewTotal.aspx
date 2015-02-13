@@ -1,103 +1,106 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<Models.SurveyModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    CreateViewTotal
+    Visualizar Survey
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>CreateViewTotal</h2>
+<h2>Visualizar Survey</h2>
 
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
 
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
+<fieldset>
+        <legend>Visualizar Survey</legend>
     <fieldset>
-        <legend>SuperModel</legend>
-
-       
-    
+    <%: Html.HiddenFor(model => model.id_Survey, new { Value = ViewBag.id_Survey })%>
         <td>
             <%: Html.LabelFor(model => Model.Titulo) %>
         </td>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => Model.Titulo) %>
+        <div class="display-field">
+            <%: Html.DisplayFor(model => Model.Titulo) %>
         </div>
         <td>
             <%: Html.LabelFor(model => Model.Subtitulo) %>
         </td>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => Model.Subtitulo)%>
+        <div class="display-field">
+            <%: Html.DisplayFor(model => Model.Subtitulo)%>
         </div>
+    
+     <fieldset> 
         
-       
-         <% foreach (var itemQuestao in Model.questoes) { %>
-        
+         <% foreach (var Questao in Model.questoes) { %>
+        <fieldset> 
           <td>
-              <%: Html.LabelFor(model => itemQuestao.Pergunta) %>
+              <%: Html.LabelFor(model => Questao.Pergunta) %>
           </td>
-          <div class="editor-field">
-            <%: Html.EditorFor(model => itemQuestao.Pergunta)%>
+       
+          <div class="display-field">
+            <%: Html.DisplayFor(model => Questao.Pergunta)%>
           </div>
         
-              <% if (itemQuestao.Tipo.Equals("OBJETIVA"))
+              <% if (Questao.Tipo.Equals("OBJETIVA"))
                  {  %> 
-                 
-                    
+                 <fieldset>
+                        
                 <td>
-                    <%: Html.LabelFor(model => itemQuestao.itens.ItemA)%>
+                    <%: Html.LabelFor(model => Questao.itens.ItemA)%>
                 </td>
-                <div class="editor-field">
-                <%: Html.EditorFor(model => itemQuestao.itens.ItemA)%>
-                </div>
-
-                <td>
-                    <%: Html.LabelFor(model => itemQuestao.itens.ItemB)%>
-                </td>
-                <div class="editor-field">
-                <%: Html.EditorFor(model => itemQuestao.itens.ItemB)%>
+                <div class="display-field">
+                <%: Html.DisplayFor(model => Questao.itens.ItemA)%>
                 </div>
                 <td>
-                    <%: Html.LabelFor(model => itemQuestao.itens.ItemC)%>
+                    <%: Html.LabelFor(model =>Questao.itens.ItemB)%>
                 </td>
-                <div class="editor-field">
-                <%: Html.EditorFor(model => itemQuestao.itens.ItemC)%>
+                <div class="display-field">
+                <%: Html.DisplayFor(model => Questao.itens.ItemB)%>
                 </div>
                 <td>
-                    <%: Html.LabelFor(model => itemQuestao.itens.ItemD)%>
+                    <%: Html.LabelFor(model => Questao.itens.ItemC)%>
                 </td>
-                <div class="editor-field">
-                <%: Html.EditorFor(model => itemQuestao.itens.ItemD)%>
+                <div class="display-field">
+                <%: Html.DisplayFor(model => Questao.itens.ItemC)%>
                 </div>
-
                 <td>
-                    <%: Html.LabelFor(model => itemQuestao.itens.ItemE)%>
+                    <%: Html.LabelFor(model => Questao.itens.ItemD)%>
                 </td>
-
-                <div class="editor-field">
-                <%: Html.EditorFor(model => itemQuestao.itens.ItemE)%>
+                <div class="display-field">
+                <%: Html.DisplayFor(model => Questao.itens.ItemD)%>
                 </div>
-                 
+                <td>
+                    <%: Html.LabelFor(model => Questao.itens.ItemE)%>
+                </td>
+                <div class="display-field">
+                <%: Html.DisplayFor(model => Questao.itens.ItemE)%>
+                </div>
+                 Resposta:
+                            <%: Html.EditorFor(model => Questao.respostas.Item)%>
+               </fieldset>
                 <% }
-                  else{  %>  
-                             Resposta:
-                            <%: Html.EditorFor(model => itemQuestao.respostas.Resposta)%>
                  
-                   <% } %>         
-            
+                  else{  %>   
+                  <fieldset>
+                             Resposta:
+                            <%: Html.EditorFor(model => Questao.respostas.Resposta)%>
+                 </fieldset>
+                   <% } %>  
+              </fieldset>        
        <% } %>
-    
+            </fieldset> 
 
       <p>
 
-            <input type="submit" value="Save" />
+            <input type="submit" value="Salvar" />
         </p>
     </fieldset>
+</fieldset>
 <% } %>
 
 <div>
-    <%: Html.ActionLink("Voltar", "Index", new { @class = "button" })%>
+    <%: Html.ActionLink("Voltar", "Index", new { @class = "button" },null)%>
 </div>
 
 </asp:Content>

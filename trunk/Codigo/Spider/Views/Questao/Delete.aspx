@@ -7,12 +7,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 <br />
 
-<h2>Excluir Questão</h2>
+<h3>Excluir Questão</h3>
 
 <h3>Deseja realmente excluir?</h3>
 <fieldset>
-    <legend>QuestaoModel</legend>
-
+    <legend></legend>
+            <%: Html.HiddenFor(model => model.id_Questao) %>
+            <%: Html.HiddenFor(model => model.id_Survey)%>
+            <%: Html.HiddenFor(model => model.idTB_ITENS_DA_QUESTAO)%>
     <div class="display-label">Tipo</div>
     <div class="display-field">
         <%: Html.DisplayFor(model => model.Tipo) %>
@@ -45,7 +47,7 @@
 </fieldset>
 <% using (Html.BeginForm()) { %>
     <p>
-        <input type="submit" value="Delete" /> |
+        <input type="submit" value="Excluir" /> |
         <%: Html.ActionLink("Voltar", "Index", new { @class = "button" })%>
     </p>
 <% } %>

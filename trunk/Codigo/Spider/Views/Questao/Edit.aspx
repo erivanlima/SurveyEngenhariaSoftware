@@ -19,6 +19,27 @@
         <legend>QuestaoModel</legend>
 
         <div class="editor-label">
+           <%-- <%: Html.LabelFor(model => model.id_Questao) %>--%>
+        </div>
+        <div class="editor-field">
+            <%: Html.HiddenFor(model => model.id_Questao) %>
+           <%-- <%: Html.ValidationMessageFor(model => model.id_Questao) %>--%>
+        </div>
+        <div class="editor-label">
+            <%--<%: Html.LabelFor(model => model.id_Survey) %>--%>
+        </div>
+        <div class="editor-field">
+            <%: Html.HiddenFor(model => model.id_Survey)%>
+            <%--<%: Html.ValidationMessageFor(model => model.id_Survey) %>--%>
+        </div>
+                <div class="editor-label">
+            <%--<%: Html.LabelFor(model => model.idTB_ITENS_DA_QUESTAO) %>--%>
+        </div>
+        <div class="editor-field">
+            <%: Html.HiddenFor(model => model.idTB_ITENS_DA_QUESTAO)%>
+            <%--<%: Html.ValidationMessageFor(model => model.idTB_ITENS_DA_QUESTAO) %>--%>
+        </div>
+        <div class="editor-label">
             <%: Html.LabelFor(model => model.Pergunta) %>
         </div>
         <div class="editor-field">

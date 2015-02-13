@@ -2,13 +2,13 @@
 <%
     if (Request.IsAuthenticated) {
 %>
-        Welcome <strong><%: Page.User.Identity.Name %></strong>!
-        [ <%: Html.ActionLink("Log Off", "LogOff", "Account") %> ]
+         Usuário:<strong><%: Page.User.Identity.Name %></strong>!
+         <%: Html.ActionLink("Sair", "LogOff", "Account") %> 
 <%
     }
     else {
 %> 
-        [ <%: Html.ActionLink("Log On", "LogOn", "Account") %> ]
+         <%: Html.ActionLink("Login", "LogOn", "Account") %> 
 <%
     }
 %>

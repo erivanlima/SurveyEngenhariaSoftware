@@ -12,7 +12,7 @@
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
 
     <% using (Html.BeginForm()) { %>
-        <%: Html.ValidationSummary(true, "Usuário e/ou Senha inválido.") %>
+        <%: Html.ValidationSummary(true, "") %>
         <div class="page">
             <div class="header">
                 <p>
@@ -50,6 +50,6 @@
         </div>
     <% } %>
     <div>
-    <%: Html.ActionLink("Voltar", "Index", "Home", new { @class = "button" })%>
+    <%--<%: Html.ActionLink("Voltar", "Index", "Home", new { @class = "button" })%>--%>
 </div>
 </asp:Content>

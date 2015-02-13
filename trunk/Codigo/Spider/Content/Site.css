@@ -234,9 +234,16 @@ a.button { color:White;}
 ----------------------------------------------------------*/
 
 fieldset {
-    border: 1px solid #ddd;
+    border: 0 solid #ddd;
     padding: 0 1.4em 1.4em 1.4em;
     margin: 0 0 1.5em 0;
+}
+
+fieldset-p 
+{
+    border: 2px solid #ddd;
+    padding: 0 0 1.4em 1.4em;
+    margin: 0 0 1.5em 1.5em;
 }
 
 legend {
