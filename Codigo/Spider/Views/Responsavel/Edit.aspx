@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<Models.ResponsavelModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Edit
+    Editar Responsável
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Edit</h2>
+<h2>Editar Responsável</h2>
 
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
@@ -15,14 +15,6 @@
     <%: Html.ValidationSummary(true) %>
     <fieldset>
         <legend>ResponsavelModel</legend>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.id_Responsavel) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.id_Responsavel) %>
-            <%: Html.ValidationMessageFor(model => model.id_Responsavel) %>
-        </div>
 
         <div class="editor-label">
             <%: Html.LabelFor(model => model.nome) %>
@@ -55,7 +47,7 @@
 <% } %>
 
 <div>
-    <%: Html.ActionLink("Back to List", "Index") %>
+    <%: Html.ActionLink("Voltar", "Index", new { @class = "button" })%>
 </div>
 
 </asp:Content>

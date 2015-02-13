@@ -91,37 +91,46 @@ namespace Spider.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
+        //Get
+        [HttpGet]
         public ActionResult ListaQuestoes(int id)
         {
             ViewBag.id_Survey = id;
-            ViewBag.Titulo = gSurvey.Obter(id).Titulo;
             return View(gQuestao.ListaQuestaoSurvey(id));
+        }
+
+        //Post
+        [HttpPost]
+        public ActionResult ListaQuestoes(SurveyModel survey)
+        {
+            ViewBag.id_Survey = survey.id_Survey;
+            ViewBag.Titulo = gSurvey.Obter(survey.id_Survey).Titulo;
+            return View(gQuestao.ListaQuestaoSurvey(survey.id_Survey));
         }
 
         //
         // GET: /Questao/Edit/5
+
         public ActionResult Edit(int id)
         {
-            return View();
+            QuestaoModel questaoModel = gQuestao.Obter(id);
+            return View(questaoModel);
         }
 
         //
-        // POST: /Questao/Edit/5
+        // POST: /Survey/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, QuestaoModel questaoModel)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
 
+                gQuestao.Editar(questaoModel);
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(questaoModel);
         }
 
         //
@@ -147,6 +156,39 @@ namespace Spider.Controllers
             }
 
             return View(questaoModel);
+        }
+
+
+
+        [HttpGet]
+        public ActionResult CreateQuestoes(int id)
+        {
+            ViewBag.id_Survey = id;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateQuestoes(SurveyModel survey)
+        {
+
+
+
+            //List<QuestaoModel> novasquestoes = new List<QuestaoModel>();
+            //List<Itens_da_QuestaoModel> itensQuestoes = new List<Itens_da_QuestaoModel>();
+
+
+            foreach (QuestaoModel questao in survey.questoes)
+            {
+                if (questao.Pergunta != null)
+                {
+                    questao.id_Survey = survey.id_Survey;
+                    questao.idTB_ITENS_DA_QUESTAO = gItens.Inserir(questao.itens);
+                    gQuestao.Inserir(questao);
+                }
+
+            }
+
+            return RedirectToAction("Index");
         }
     }
 }

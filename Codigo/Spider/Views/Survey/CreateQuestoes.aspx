@@ -1,12 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<Models.SurveyModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    CreateQuestoes
+    Criar Questões
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>CreateQuestoes</h2>
+<br />
+
+<h2>Criar Questões</h2>
 
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
@@ -25,17 +27,12 @@
        <%: Html.HiddenFor(model => model.id_Survey, new { Value = ViewBag.id_Survey })%>
  
         <img src="psubjetiva.png" width="300" height="200"alt="pergunta subjetiva" />    
-        
-           
            <div class="editor-label">
-              <a href="javascript: perguntasubjetiva();" >Adicionar questão </a>
+              <a href="javascript: perguntasubjetiva();" > Adicionar questão </a>
           </div>
-           
           <div class="divperguntasubjetiva">
           
           </div>
-           
-         
      </fieldset>
       
     <fieldset>
@@ -45,8 +42,6 @@
          </div>
          <div class="divperguntaobjetiva">
          </div>
-
-        
    </fieldset>    
    
    <fieldset>
@@ -70,13 +65,13 @@
    </fieldset>  
        
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Salvar" />
         </p>
     </fieldset>
 <% } %>
 
 <div>
-    <%: Html.ActionLink("Back to List", "Index") %>
+    <%: Html.ActionLink("Voltar", "Index", new { @class = "button" },null)%>
 </div>
 
 </asp:Content>

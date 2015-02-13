@@ -6,6 +6,8 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
+<br />
+
 <h2>CreateSurvey</h2>
 
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
@@ -15,14 +17,6 @@
     <%: Html.ValidationSummary(true) %>
     <fieldset>
         <legend>SurveyModel</legend>
-<%--
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.id_Survey) %>
-        </div>--%>
-        <%--<div class="editor-field">
-            <%: Html.HiddenFor(model => model.id_Survey, new { Value = '1' })%>
-            <%: Html.ValidationMessageFor(model => model.id_Survey) %>
-        </div>--%>
 
         <div class="editor-label">
             <%: Html.LabelFor(model => model.id_Responsavel) %>
@@ -36,12 +30,12 @@
             <%: Html.LabelFor(model => model.Titulo) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.Titulo) %>
+            Titulo
             <%: Html.ValidationMessageFor(model => model.Titulo) %>
         </div>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Subtitulo) %>
+            Subtitulo
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Subtitulo) %>
@@ -49,7 +43,7 @@
         </div>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Data_Criacao) %>
+            Data Criado
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Data_Criacao) %>
@@ -57,7 +51,7 @@
         </div>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Data_fim) %>
+            Data de Encerramento
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Data_fim) %>
@@ -65,7 +59,7 @@
         </div>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.flag_ativo) %>
+            Ativo
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.flag_ativo) %>
@@ -79,7 +73,7 @@
 <% } %>
 
 <div>
-    <%: Html.ActionLink("Back to List", "Index") %>
+    <%: Html.ActionLink("Voltar", "Index", new { @class = "button" },null)%>
 </div>
 
 </asp:Content>

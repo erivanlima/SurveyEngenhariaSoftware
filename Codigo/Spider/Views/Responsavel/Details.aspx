@@ -1,20 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<Models.ResponsavelModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Details
+    Detalhes
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Details</h2>
+<h2>Detalhes</h2>
 
 <fieldset>
     <legend>ResponsavelModel</legend>
-
-    <div class="display-label">id_Responsavel</div>
-    <div class="display-field">
-        <%: Html.DisplayFor(model => model.id_Responsavel) %>
-    </div>
 
     <div class="display-label">nome</div>
     <div class="display-field">
@@ -32,8 +27,8 @@
     </div>
 </fieldset>
 <p>
-    <%: Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) %> |
-    <%: Html.ActionLink("Back to List", "Index") %>
+    <%: Html.ActionLink("Edit", "Edit", new { id = Model.id_Responsavel }, new  {@class = "button" })%> |
+    <%: Html.ActionLink("Voltar", "Index") %>
 </p>
 
 </asp:Content>

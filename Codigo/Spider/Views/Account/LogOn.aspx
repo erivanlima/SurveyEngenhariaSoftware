@@ -50,6 +50,6 @@
         </div>
     <% } %>
     <div>
-    <%: Html.ActionLink("Voltar", "Index","Home") %>
+    <%: Html.ActionLink("Voltar", "Index", "Home", new { @class = "button" })%>
 </div>
 </asp:Content>

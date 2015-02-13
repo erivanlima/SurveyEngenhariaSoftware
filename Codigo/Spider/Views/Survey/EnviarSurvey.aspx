@@ -7,11 +7,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 <br />
 
-<h2>Meus Surveys</h2>
+<h2></h2>
 
-<p>
-    <%: Html.ActionLink("Criar Novo Survey", "CreateSurvey",null,new { @class = "button" }) %>
-</p>
+
 <table>
     <tr>
         <th>
@@ -46,9 +44,8 @@
             <%: Html.DisplayFor(modelItem => item.flag_ativo) %>
         </td>
         <td>
-            <%: Html.ActionLink("Manter Questões", "ListaQuestoes", "Questao", new { id = item.id_Survey }, new { @class = "button" })%> 
-            <%: Html.ActionLink("Editar", "Edit", new {  id=item.id_Survey }, new { @class = "button" }) %> 
-            <%: Html.ActionLink("Excluir", "Delete", new {  id=item.id_Survey }, new { @class = "button" }) %> 
+            <%: Html.ActionLink("Enviar via Email", "ListaQuestoes", "Questao", new { id = item.id_Survey }, new { @class = "button" })%> 
+            <%: Html.ActionLink("Enviar via Rede Social", "Edit", new { id = item.id_Survey }, new { @class = "button" })%>  
             <%: Html.ActionLink("Visualizar", "CreateViewTotal","Responsavel", new { id = item.id_Survey },new { @class = "button" })%> 
             
         </td>

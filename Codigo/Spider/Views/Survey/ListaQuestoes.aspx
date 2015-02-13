@@ -1,69 +1,63 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<Models.SurveyModel>>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<Models.QuestaoModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    ListaQuestoes
+    Manter Questões
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>ListaQuestoes</h2>
+<br />
+
+<h2>Manter Questões</h2>
+
+
+<div class="display-label">Título do Survey</div>
+    <div class="display-field">
+        <%--<%: Html.DisplayFor(model => model.Titulo, new { Value = ViewBag.Titulo })%> %>--%>
+    </div>
 
 <p>
-    <%: Html.ActionLink("Create New", "Create") %>
+<%--<%: Html.ActionLink("Adicionar Questão", "CreateQuestoes", new {  id=item.id_Survey }, new { @class = "button" }) %> --%>
+    <%: Html.ActionLink("Adicionar Questão", "CreateQuestoes", "Survey", new { @class = "button" })%>
 </p>
 <table>
     <tr>
         <th>
-            id_Survey
+            Pergunta
         </th>
         <th>
-            id_Responsavel
+            Randomica
         </th>
         <th>
-            Titulo
+            Obrigatoria
         </th>
         <th>
-            Subtitulo
+            Linguagem
         </th>
-        <th>
-            Data_Criacao
+        <th id="thc">
+            Ações
         </th>
-        <th>
-            Data_fim
-        </th>
-        <th>
-            flag_ativo
-        </th>
-        <th></th>
     </tr>
 
 <% foreach (var item in Model) { %>
     <tr>
         <td>
-            <%: Html.DisplayFor(modelItem => item.id_Survey) %>
+            <%: Html.DisplayFor(modelItem => item.Pergunta) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.id_Responsavel) %>
+            <%: Html.DisplayFor(modelItem => item.Randomica) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.Titulo) %>
+            <%: Html.DisplayFor(modelItem => item.Obrigatoria) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.Subtitulo) %>
+            <%: Html.DisplayFor(modelItem => item.Linguagem) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.Data_Criacao) %>
-        </td>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.Data_fim) %>
-        </td>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.flag_ativo) %>
-        </td>
-        <td>
-            <%: Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) %> |
-            <%: Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) %> |
-            <%: Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) %>
+            <%: Html.ActionLink("Editar Questão", "Edit", new { id = item.id_Questao }, new { @class = "button" })%> 
+            <%: Html.ActionLink("Excluir Questão", "Delete", new { id = item.id_Questao }, new { @class = "button" })%> 
+            <%: Html.ActionLink("Mover para Cima", "Delete", new { id = item.id_Questao }, new { @class = "button" })%>
+            <%: Html.ActionLink("Mover para Baixo", "Delete", new { id = item.id_Questao }, new { @class = "button" })%>
         </td>
     </tr>
 <% } %>
