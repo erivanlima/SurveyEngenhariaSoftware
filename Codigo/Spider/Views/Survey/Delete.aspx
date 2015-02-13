@@ -41,8 +41,8 @@
 </fieldset>
 <% using (Html.BeginForm()) { %>
     <p>
-        <input type="submit" value="Delete" /> |
-        <%: Html.ActionLink("Voltar", "Index") %>
+        <input type="submit" value="Excluir" /> |
+        <%: Html.ActionLink("Voltar", "Index","Survey") %>
     </p>
 <% } %>
 

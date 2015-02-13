@@ -17,6 +17,9 @@
     <fieldset>
         <legend>SurveyModel</legend>
 
+            <%: Html.HiddenFor(model => model.id_Survey)%>
+            <%: Html.HiddenFor(model => model.id_Responsavel)%>
+
        <div class="editor-label">
             <%: Html.LabelFor(model => model.Titulo) %>
         </div>

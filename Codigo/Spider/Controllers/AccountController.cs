@@ -47,7 +47,7 @@ namespace Models.Controllers
                       //  return RedirectToAction("Index", "Home");
                     //}
                     if (Roles.IsUserInRole(model.UserName, "Responsavel"))
-                        return RedirectToAction("Index", "Responsavel");
+                        return RedirectToAction("Index", "Survey");
                 }
                 else
                 {

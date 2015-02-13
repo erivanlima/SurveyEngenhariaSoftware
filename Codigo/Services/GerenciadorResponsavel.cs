@@ -123,6 +123,16 @@ namespace Services
             return query;
         }
 
+        /// <summary>
+        /// Obtém uma responsavel
+        /// </summary>
+        /// <param name="User">nome de responsavel na base de dados</param>
+        /// <returns> responsavel model</returns>
+        public int ObterIdResp(String User)
+        {
+            IEnumerable<ResponsavelModel> responsavel = GetQuery().Where(ResponsavelModel => ResponsavelModel.nome.Equals(User));
+            return responsavel.ElementAtOrDefault(0).id_Responsavel;
+        }
 
         /// <summary>
         /// Atribui dados da responsavel Model para a responsavel Entity
