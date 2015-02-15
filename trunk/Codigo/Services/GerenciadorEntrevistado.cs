@@ -116,6 +116,11 @@ namespace Services
             IEnumerable<EntrevistadoModel> entrevistados = GetQuery().Where(entrevistadoModel => entrevistadoModel.idTB_ENTREVISTADO.Equals(IDentrevistado));
             return entrevistados.ElementAtOrDefault(0);
         }
+        public EntrevistadoModel ObterPorIP(string ip)
+        {
+            IEnumerable<EntrevistadoModel> entrevistados = GetQuery().Where(entrevistadoModel => entrevistadoModel.nome.Equals(ip));
+            return entrevistados.ElementAtOrDefault(0);
+        }
 
         /// <summary>
         /// Atribui dados do ClienteModel para o Cliente Entity

@@ -31,9 +31,12 @@
         </div>
     
      <fieldset> 
-        
+        <% int i = 0; %>
          <% foreach (var Questao in Model.questoes) { %>
         <fieldset> 
+
+        <input class="valid" value="<%= Questao.id_Questao %>" id="questoes_<%= i %>__id_Questao" name="questoes[<%= i %>].id_Questao" type="hidden">
+        <input class="valid" value="<%= Questao.Tipo %>" id="questoes_<%= i %>__Tipo" name="questoes[<%= i %>].Tipo" type="hidden">
           <td>
               <%: Html.LabelFor(model => Questao.Pergunta) %>
           </td>
@@ -77,18 +80,22 @@
                 <%: Html.DisplayFor(model => Questao.itens.ItemE)%>
                 </div>
                  Resposta:
-                            <%: Html.EditorFor(model => Questao.respostas.Item)%>
+                 
+                 <input class="text-box single-line" id="questoes_<%= i %>__respostas__Item" name="questoes[<%= i %>].respostas.Item" value="" type="text">
+                            
                </fieldset>
                 <% }
                  
                   else{  %>   
                   <fieldset>
                              Resposta:
-                            <%: Html.EditorFor(model => Questao.respostas.Resposta)%>
+                              <input class="text-box single-line" id="questoes_<%= i %>__respostas__Resposta" name="questoes[<%= i %>].respostas.Resposta" value="" type="text">
+                
                  </fieldset>
                    <% } %>  
               </fieldset>        
-       <% } %>
+       <% i++;
+            } %>
             </fieldset> 
 
       <p>
