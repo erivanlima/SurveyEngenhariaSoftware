@@ -33,3 +33,4 @@ C:\Users\AMANDA\Dropbox\UFS-SI\UFS2014.2\TCC2\survey-tcc\Codigo\Model\obj\Debug\
 C:\Users\AMANDA\Dropbox\UFS-SI\UFS2014.2\TCC2\survey-tcc\Codigo\Model\obj\Debug\Model.dll
 C:\Users\AMANDA\Dropbox\UFS-SI\UFS2014.2\TCC2\survey-tcc\Codigo\Model\obj\Debug\Model.pdb
 F:\UFS2014.2\TCC2\survey-tcc\Codigo\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\Douglas\Documents\survey-tcc\Codigo\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
