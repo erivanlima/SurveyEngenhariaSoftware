@@ -54,7 +54,7 @@
     <Compile Include="Models\SuperModel.cs" />
     <Compile Include="Models\SurveyModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="spidersurvey.Designer.cs">
+    <Compile Include="spidersurvey1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>spidersurvey.edmx</DependentUpon>

@@ -4,7 +4,7 @@ to use a different color start by replacing all instances of
 #5c87b2 with your new color.
 ----------------------------------------------------------*/
 body {
-    background-color: #5c87b2;
+    background-color: #83C7BE;
     font-size: .85em;
     font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
     margin: 0;
@@ -94,14 +94,32 @@ page width. Or, you can specify an exact pixel width. */
     margin-right: auto;
 }
 
-header, #header {
+.page-body 
+{
+   background-color: #0A5C8B;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    position: inherit;
+    padding: 6px 6px 6px 6px;
+}
+
+header, #header 
+{
     position: relative;
     margin-bottom: 0px;
     color: #000;
     padding: 0;
 }
 
-.header-login {
+#headermenu {
+    position: relative;
+    margin-bottom: 10px;
+    color: #000;
+    padding: 0;
+}
+
+header-login {
     position: relative;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -122,14 +140,26 @@ header h1, #header h1 {
     text-shadow: 1px 1px 2px #111;
 }
 
-#main 
+#main
+{
+    margin-top:auto;
+    padding: 20px 30px 15px 30px;
+    background-color: #E3EBF0;
+    border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
+}
+
+#main1 
 {
     margin-top:auto;
     padding: 30px 30px 15px 30px;
-    background-color: #fff;
-    border-radius: 4px 4px 4px 4px;
-    -webkit-border-radius: 4px 0 0 0;
-    -moz-border-radius: 4px 0 0 0;
+    background-color: #999;
+    border-radius: 0 0 0 0;
+    -webkit-border-radius: 0 0 0;
+    -moz-border-radius: 0 0 0;
+    position: absolute;
+    
 }
 
 #main-titulo 
@@ -154,25 +184,44 @@ footer,
     line-height: normal;
     margin: 0 0 30px 0;
     font-size: .9em;
-    border-radius: 0 0 4px 4px;
-    -webkit-border-radius: 0 0 4px 4px;
-    -moz-border-radius: 0 0 4px 4px;
+    border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
+}
+
+#footer1 
+{
+    width:100%;
+    background-color: #fff;
+    color: #5C87B2;
+    padding: 10px 10;
+    text-align: center;
+    line-height: normal;
+    margin: 0 0 30px 0;
+    font-size: .9em;
+    border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
+   
 }
 
 /* TAB MENU   
 ----------------------------------------------------------*/
-ul#menu {
-	width: 70%;
+ul#menu 
+{
+    background-color:  #83C7BE;
+	width: auto;
     border-bottom: 0px #5C87B2 solid;
-    padding: 6px 0 6px;
-    position: absolute;
+    padding: 6px 0 ;
+    position: relative;
     margin: 0;
-    text-align: center;
+    text-align: left;
+    border-radius: 4px 4px 4px 4px;
 }
 
 ul#menu li 
 {
-    width:auto;
+    margin-left: 0;
     position:relative;
     display: inline;
 	float: none;
@@ -182,36 +231,37 @@ ul#menu li#greeting {
     padding: 10px 20px;
     font-weight: bold;
     text-decoration: none;
-    line-height: 2.8em;
+    line-height: 2em;
     color: #fff;
 }
 
 ul#menu li a {
- margin-bottom: 5px;
-  text-align: center;
-    padding: 10px 20px;
+    margin-top: 2px;
+    text-align: center;
+    padding: 20px 20px ;
     font-weight: bold;
+    font-size: 18px ;
     text-decoration: none;
     line-height: 2.8em;
-    background-color: #e8eef4;
+    background-color: #83C7BE;
     color: #034af3;
     border-radius: 4px 4px 4px 4px;
-    -webkit-border-radius: 4px 4px 0 0;
-    -moz-border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
 }
 
 ul#menu li a:hover {
-    background-color: #fff;
+    background-color: #E3EBF0;
     text-decoration: none;
 }
 
 ul#menu li a:active {
-    background-color: #a6e2a6;
+    background-color: #E3EBF0;
     text-decoration: none;
 }
 
 ul#menu li.selected a {
-    background-color: #fff;
+    background-color: white;
     color: #000;
 }
 
@@ -225,18 +275,36 @@ ul#menu li.selected a {
     display: inline-block;
     background-color:#5c87b2;
     border-radius: 4px 4px 4px 4px;
-    -webkit-border-radius: 4px 4px 0 0;
-    -moz-border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
 }
 a.button { color:White;}
+
+.button-l  { 
+    padding: 0.2em 0.5em;
+    height: 0.2em 2em;
+    text-decoration: none !important; 
+    cursor: pointer; 
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    background-color:#5c87b2;
+    border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
+    margin: 2px;
+}
+a.button-l { background-color:#B8B8B8 ;}
 
 /* FORM LAYOUT ELEMENTS   
 ----------------------------------------------------------*/
 
-fieldset {
+fieldset 
+{
     border: 0 solid #ddd;
     padding: 0 1.4em 1.4em 1.4em;
     margin: 0 0 1.5em 0;
+    text-align: justify;
 }
 
 fieldset-p 
@@ -274,6 +342,17 @@ select {
 input[type="submit"] {
     font-size: 1.2em;
     padding: 5px;
+    color:White;
+    height: 0.2em 2em;
+    text-decoration: none !important; 
+    cursor: pointer; 
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    background-color:#5c87b2;
+    border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
 }
 
 /* TABLE
@@ -300,6 +379,34 @@ table th {
     text-align: center;
 }
 
+/*Agrupando de Campos no Layout em Duas Colunas */
+form div.formata_campos1{float: left; width: 320px; height: auto; margin: 20px 25px 0px -20px; padding: 0px;}
+form div.formata_campos1 input{float: left !important;width: 260px !important; margin: 15px 0px -5px 20px !important;}
+form div.formata_campos1 label{width: 280px !important; margin: 0px 0px 0px 0px !important;}
+form div.formata_campos1 input[type=radio]{width: auto !important; margin: 30px 100px 0px 30px !important;}
+form div.formata_campos1Radio1 input[type=radio]{margin: 30px 4px 0px 0px !important; padding: 0px;}
+form div.formata_campos1Radio2 input[type=radio]{margin: 30px 30px 0px 0px !important; padding: 0px;}
+div#formulario form textarea
+{
+    width: 450px;
+    height: 200px;
+    box-shadow: inset 0px 0px 7px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    float: left;    
+    margin-right: 200px;
+}
+
+div#formulario form textarea:hover
+{
+    border: 1px solid #1e5799;
+}
+
+
+
+
 /* MISC  
 ----------------------------------------------------------*/
 .clear {
@@ -312,7 +419,7 @@ table th {
 
 nav, 
 #menucontainer {
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 div#title {

@@ -11,9 +11,9 @@
     <h3> </h3>
 
     </p>
-     <div id="logindisplay">
+    <%-- <div id="logindisplay">
                 <% Html.RenderPartial("LogOnUserControl"); %>
-     </div>
+     </div>--%>
 
      
     

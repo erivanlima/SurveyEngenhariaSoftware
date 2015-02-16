@@ -248,7 +248,17 @@ namespace Spider.Controllers
            // return View();
         }
 
+        //
         public ActionResult EnviarSurvey()
+        {
+
+            MembershipUser usuario = Membership.GetUser();
+            int idCodigo = gResponsavel.ObterIdResp(usuario.ToString());
+            return View(gSurvey.ListarSurvey(idCodigo));
+        }
+
+        //
+        public ActionResult AnaliseSurvey()
         {
 
             MembershipUser usuario = Membership.GetUser();

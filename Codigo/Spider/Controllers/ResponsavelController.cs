@@ -30,26 +30,26 @@ namespace Spider.Controllers
             gResposta = new GerenciadorResposta();
             gEntrevistado = new GerenciadorEntrevistado();
         }
-       
+
         [HttpGet]
         public ActionResult CreateViewTotal(int id)
         {
-             ViewBag.id_Survey = id;
-             SurveyModel survey = new SurveyModel();
-             survey = gSurvey.Obter(id);
-             survey.questoes =  gQuestao.ListaQuestaoSurvey(id).ToList();
-             for (int i = 0; i < survey.questoes.Count; i++)
-             {
-                 survey.questoes[i].itens = gItens.Obter(survey.questoes[i].idTB_ITENS_DA_QUESTAO);
-             }
+            ViewBag.id_Survey = id;
+            SurveyModel survey = new SurveyModel();
+            survey = gSurvey.Obter(id);
+            survey.questoes = gQuestao.ListaQuestaoSurvey(id).ToList();
+            for (int i = 0; i < survey.questoes.Count; i++)
+            {
+                survey.questoes[i].itens = gItens.Obter(survey.questoes[i].idTB_ITENS_DA_QUESTAO);
+            }
 
-             return View(survey);
+            return View(survey);
         }
 
         [HttpPost]
         public ActionResult CreateViewTotal(SurveyModel survey)
         {
-            int i=0;
+            int i = 0;
             string ip = Request.UserHostAddress;
 
             RespostaModel respostas = new RespostaModel();
@@ -61,21 +61,21 @@ namespace Spider.Controllers
             entrevistados.email = ip;
             gEntrevistado.Inserir(entrevistados);
             //EntrevistadoModel entrevistados_2 = new EntrevistadoModel();
-            entrevistados= gEntrevistado.Obter(entrevistados.idTB_ENTREVISTADO);
+            entrevistados = gEntrevistado.Obter(entrevistados.idTB_ENTREVISTADO);
             foreach (QuestaoModel questoes in survey.questoes)
             {
-                
+
                 if (survey.questoes[i].Tipo.Equals("OBJETIVA"))
                 {
-                     respostas.Item =survey.questoes[i].respostas.Item;
-                     respostas.id_Questao =  survey.questoes[i].id_Questao;
-                     respostas.idTB_ENTREVISTADO = entrevistados.idTB_ENTREVISTADO;
-                     respostas.Resposta = null;
-                     gResposta.Inserir(respostas);
-                     i++;
-                
+                    respostas.Item = survey.questoes[i].respostas.Item;
+                    respostas.id_Questao = survey.questoes[i].id_Questao;
+                    respostas.idTB_ENTREVISTADO = entrevistados.idTB_ENTREVISTADO;
+                    respostas.Resposta = null;
+                    gResposta.Inserir(respostas);
+                    i++;
+
                 }
-                else 
+                else
                 {
                     respostas.Resposta = survey.questoes[i].respostas.Resposta;
                     respostas.id_Questao = survey.questoes[i].id_Questao;
@@ -83,14 +83,87 @@ namespace Spider.Controllers
                     respostas.Item = null;
                     gResposta.Inserir(respostas);
                     i++;
-                
+
                 }
 
             }
-          
+
 
             return View(survey);
         }
+
+        // Get
+        //id = idSurvey
+        [HttpGet]
+        public ActionResult ListarRespostas(int id)
+        {
+            ViewBag.id_Survey = id;
+            SurveyModel survey = new SurveyModel();
+            survey = gSurvey.Obter(id);
+            survey.questoes = gQuestao.ListaQuestaoSurvey(id).ToList();
+
+            List<RespostaModel> resp = new List<RespostaModel>();
+            List<RespostaModel> resp2 = new List<RespostaModel>();
+            for (int i = 0; i < survey.questoes.Count; i++)
+            {
+                //resp.Add(resp);
+                resp = gResposta.ListaRespostaPorQuestao(survey.questoes[i].id_Questao).ToList();
+                resp2.AddRange(resp);
+
+
+            }
+
+
+            return View(resp2);
+        }
+
+        [HttpPost]
+        public ActionResult ListarRespostas(SurveyModel survey)
+        {
+            int i = 0;
+            string ip = Request.UserHostAddress;
+
+            RespostaModel respostas = new RespostaModel();
+            EntrevistadoModel entrevistados = new EntrevistadoModel();
+            //Posteriormente colocar um if aqui comparando com o IP para evitar que o mesmo entrevistado responda mais de 
+            //mais de uma vez.
+            entrevistados.nome = ip;
+            entrevistados.sobrenome = ip;
+            entrevistados.email = ip;
+            gEntrevistado.Inserir(entrevistados);
+            //EntrevistadoModel entrevistados_2 = new EntrevistadoModel();
+            entrevistados = gEntrevistado.Obter(entrevistados.idTB_ENTREVISTADO);
+            foreach (QuestaoModel questoes in survey.questoes)
+            {
+
+                if (survey.questoes[i].Tipo.Equals("OBJETIVA"))
+                {
+                    respostas.Item = survey.questoes[i].respostas.Item;
+                    respostas.id_Questao = survey.questoes[i].id_Questao;
+                    respostas.idTB_ENTREVISTADO = entrevistados.idTB_ENTREVISTADO;
+                    respostas.Resposta = null;
+                    gResposta.Inserir(respostas);
+                    i++;
+
+                }
+                else
+                {
+                    respostas.Resposta = survey.questoes[i].respostas.Resposta;
+                    respostas.id_Questao = survey.questoes[i].id_Questao;
+                    respostas.idTB_ENTREVISTADO = entrevistados.idTB_ENTREVISTADO;
+                    respostas.Item = null;
+                    gResposta.Inserir(respostas);
+                    i++;
+
+                }
+
+            }
+
+
+            return View(survey);
+        }
+
+
         //
         // GET: /Responsavel/
 
@@ -118,7 +191,7 @@ namespace Spider.Controllers
         // GET: /Responsavel/Create
         public ActionResult Create()
         {
-           return View();
+            return View();
         }
 
         //
@@ -137,7 +210,7 @@ namespace Spider.Controllers
                     gResponsavel.Inserir(responsavel);
                     return RedirectToAction("Index");
                 }
-                
+
                 return RedirectToAction("Index");
             }
 
@@ -183,7 +256,7 @@ namespace Spider.Controllers
         public ActionResult Edit(int id, ResponsavelModel responsavelModel)
         {
             // TODO: Add update logic here
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
 
                 gResponsavel.Editar(responsavelModel);
