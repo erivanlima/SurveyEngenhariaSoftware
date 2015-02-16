@@ -13,6 +13,17 @@
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
 
+<link href="../Content/jquery-ui.css" rel="stylesheet" type="text/css" />
+  <script src="<%: Url.Content("~/Scripts/jquery-ui-1.8.11.js") %>" type="text/javascript"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css" />
+
+<script type="text/javascript">
+     $(document).ready(function () {
+         $('.datepicker').datepicker({ dateFormat: "dd/mm/yy",});
+     });
+    </script>
+
+<div id="formulario">
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
@@ -43,11 +54,11 @@
             <%: Html.ValidationMessageFor(model => model.Subtitulo) %>
         </div>
 
-        <div class="editor-label">
+        <%--<div class="editor-label">
             Data Criado
-        </div>
+        </div>--%>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.Data_Criacao)%>
+            <%: Html.HiddenFor(model => model.Data_Criacao, new { Value = DateTime.Now.ToShortDateString() })%>
             <%: Html.ValidationMessageFor(model => model.Data_Criacao) %>
         </div>
 
@@ -55,7 +66,7 @@
             Data de Encerramento
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.Data_fim) %>
+            <%: Html.TextBoxFor(model => model.Data_fim, new { @class = "datepicker" }) %>
             <%: Html.ValidationMessageFor(model => model.Data_fim) %>
         </div>
 
@@ -76,5 +87,5 @@
 <div>
     <%: Html.ActionLink("Voltar", "Index", "Survey")%>
 </div>
-
+</div>
 </asp:Content>

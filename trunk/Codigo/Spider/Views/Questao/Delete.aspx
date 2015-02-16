@@ -15,10 +15,7 @@
             <%: Html.HiddenFor(model => model.id_Questao) %>
             <%: Html.HiddenFor(model => model.id_Survey)%>
             <%: Html.HiddenFor(model => model.idTB_ITENS_DA_QUESTAO)%>
-    <div class="display-label">Tipo</div>
-    <div class="display-field">
-        <%: Html.DisplayFor(model => model.Tipo) %>
-    </div>
+            <%: Html.HiddenFor(model => model.Tipo)%>
 
     <div class="display-label">Pergunta</div>
     <div class="display-field">

@@ -15,13 +15,13 @@
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>SurveyModel</legend>
+        <legend></legend>
 
             <%: Html.HiddenFor(model => model.id_Survey)%>
             <%: Html.HiddenFor(model => model.id_Responsavel)%>
 
        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Titulo) %>
+            Titulo
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Titulo) %>
@@ -29,7 +29,7 @@
         </div>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Subtitulo) %>
+            Subtitulo
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Subtitulo) %>
@@ -37,7 +37,7 @@
         </div>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Data_Criacao) %>
+            Data Criado
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Data_Criacao) %>
@@ -45,7 +45,7 @@
         </div>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Data_fim) %>
+            Data Fim
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Data_fim) %>
@@ -53,7 +53,7 @@
         </div>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.flag_ativo) %>
+            Ativo
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.flag_ativo) %>

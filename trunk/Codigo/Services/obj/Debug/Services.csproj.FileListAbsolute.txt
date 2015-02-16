@@ -52,3 +52,12 @@ C:\Users\AMANDA\Dropbox\UFS-SI\UFS2014.2\TCC2\survey-tcc\Codigo\Services\bin\Deb
 C:\Users\AMANDA\Dropbox\UFS-SI\UFS2014.2\TCC2\survey-tcc\Codigo\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
 C:\Users\AMANDA\Dropbox\UFS-SI\UFS2014.2\TCC2\survey-tcc\Codigo\Services\obj\Debug\Services.dll
 C:\Users\AMANDA\Dropbox\UFS-SI\UFS2014.2\TCC2\survey-tcc\Codigo\Services\obj\Debug\Services.pdb
+H:\survey-tcc\Codigo\Services\bin\Debug\Services.dll
+H:\survey-tcc\Codigo\Services\bin\Debug\Services.pdb
+H:\survey-tcc\Codigo\Services\bin\Debug\Model.dll
+H:\survey-tcc\Codigo\Services\bin\Debug\Persistence.dll
+H:\survey-tcc\Codigo\Services\bin\Debug\Model.pdb
+H:\survey-tcc\Codigo\Services\bin\Debug\Persistence.pdb
+H:\survey-tcc\Codigo\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+H:\survey-tcc\Codigo\Services\obj\Debug\Services.dll
+H:\survey-tcc\Codigo\Services\obj\Debug\Services.pdb

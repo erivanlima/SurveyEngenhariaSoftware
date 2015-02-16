@@ -77,7 +77,7 @@ namespace Services
             unitOfWork.Commit(shared);
         }
 
-        
+
 
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Services
                         select new RespostaModel
                         {
                             id_Resposta = respostaE.id_Resposta,
-                            idTB_ENTREVISTADO= respostaE.TB_ENTREVISTADO_idTB_ENTREVISTADO,
+                            idTB_ENTREVISTADO = respostaE.TB_ENTREVISTADO_idTB_ENTREVISTADO,
                             id_Questao = respostaE.TB_QUESTAO_id_Questao,
                             Resposta = respostaE.Resposta,
                             Item = respostaE.Item,
@@ -100,7 +100,7 @@ namespace Services
             return query;
         }
 
-        
+
 
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Services
             return GetQuery();
         }
 
-       
+
         /// <summary>
         /// Obtém um Serviço
         /// </summary>
@@ -124,7 +124,7 @@ namespace Services
             return resposta.ElementAtOrDefault(0);
         }
 
-           
+
 
         /// <summary>
         /// Atribui dados do PrestadorPrestadorServicoModel para o PrestadorPrestadorServico Entity
@@ -138,9 +138,21 @@ namespace Services
             respostaE.TB_QUESTAO_id_Questao = resposta.id_Questao;
             respostaE.Resposta = resposta.Resposta;
             respostaE.Item = resposta.Item;
-           }
+        }
 
-                
 
-    } 
+        /// <summary>
+        /// Obtém respostas do survey
+        /// </summary>
+        /// <param name="idResposta">Identificador do survey na base de dados</param>
+        /// <returns>RespostaModel</returns>
+        public IEnumerable<RespostaModel> ListaRespostaPorQuestao(int idQuestao)
+        {
+            IEnumerable<RespostaModel> respostas = GetQuery().Where(RespostaModel => RespostaModel.id_Questao.Equals(idQuestao));
+            return respostas;
+        }
+
+
+
+    }
 }

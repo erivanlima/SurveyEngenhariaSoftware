@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace Models
 {
@@ -12,7 +13,11 @@ namespace Models
         public List<QuestaoModel> questoes  {get; set;}
         public String Titulo { get; set; }
         public String Subtitulo { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime Data_Criacao { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime Data_fim { get; set; }
         public Boolean flag_ativo { get; set; }
 

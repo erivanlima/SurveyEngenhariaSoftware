@@ -136,5 +136,17 @@ namespace Services
                
             
         }
+
+        /// <summary>
+        /// Obtém uma entrevistado
+        /// </summary>
+        /// <param name="User">nome de entrevistado na base de dados</param>
+        /// <returns> responsavel model</returns>
+        public int ObterIdResp(String User)
+        {
+            IEnumerable<EntrevistadoModel> entrevistado = GetQuery().
+                Where(EntrevistadoModel => EntrevistadoModel.sobrenome.Equals(User));
+            return entrevistado.ElementAtOrDefault(0).idTB_ENTREVISTADO;
+        }
     }
 }

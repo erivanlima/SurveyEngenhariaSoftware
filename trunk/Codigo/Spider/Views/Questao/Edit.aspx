@@ -37,6 +37,7 @@
         </div>
         <div class="editor-field">
             <%: Html.HiddenFor(model => model.idTB_ITENS_DA_QUESTAO)%>
+            <%: Html.HiddenFor(model => model.Tipo)%>
             <%--<%: Html.ValidationMessageFor(model => model.idTB_ITENS_DA_QUESTAO) %>--%>
         </div>
         <div class="editor-label">
@@ -86,7 +87,7 @@
 <% } %>
 
 <div>
-    <%: Html.ActionLink("Voltar", "Index", new {@class = "button"})%>
+    <%: Html.ActionLink("Voltar", "Index",null, new {@class = "button"})%>
 </div>
 
 </asp:Content>
