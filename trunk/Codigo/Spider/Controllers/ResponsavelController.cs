@@ -92,33 +92,24 @@ namespace Spider.Controllers
             return View(survey);
         }
 
-        // Get
-        //id = idSurvey
+
         [HttpGet]
-        public ActionResult ListarRespostas(int id)
+        public ActionResult VisualizarSurvey(int id)
         {
             ViewBag.id_Survey = id;
             SurveyModel survey = new SurveyModel();
             survey = gSurvey.Obter(id);
             survey.questoes = gQuestao.ListaQuestaoSurvey(id).ToList();
-
-            List<RespostaModel> resp = new List<RespostaModel>();
-            List<RespostaModel> resp2 = new List<RespostaModel>();
             for (int i = 0; i < survey.questoes.Count; i++)
             {
-                //resp.Add(resp);
-                resp = gResposta.ListaRespostaPorQuestao(survey.questoes[i].id_Questao).ToList();
-                resp2.AddRange(resp);
-
-
+                survey.questoes[i].itens = gItens.Obter(survey.questoes[i].idTB_ITENS_DA_QUESTAO);
             }
 
-
-            return View(resp2);
+            return View(survey);
         }
 
         [HttpPost]
-        public ActionResult ListarRespostas(SurveyModel survey)
+        public ActionResult VisualizarSurvey(SurveyModel survey)
         {
             int i = 0;
             string ip = Request.UserHostAddress;
@@ -163,6 +154,30 @@ namespace Spider.Controllers
             return View(survey);
         }
 
+        // Get
+        //id = idSurvey
+        [HttpGet]
+        public ActionResult ListarRespostas(int id)
+        {
+            ViewBag.id_Survey = id;
+            SurveyModel survey = new SurveyModel();
+            survey = gSurvey.Obter(id);
+            survey.questoes = gQuestao.ListaQuestaoSurvey(id).ToList();
+            ViewBag.Titulo = survey.Titulo;
+            List<RespostaModel> resp = new List<RespostaModel>();
+            List<RespostaModel> resp2 = new List<RespostaModel>();
+            for (int i = 0; i < survey.questoes.Count; i++)
+            {
+                //resp.Add(resp);
+                resp = gResposta.ListaRespostaPorQuestao(survey.questoes[i].id_Questao).ToList();
+                resp2.AddRange(resp);
+
+
+            }
+
+
+            return View(resp2);
+        }
 
         //
         // GET: /Responsavel/
@@ -290,5 +305,11 @@ namespace Spider.Controllers
 
             return View(responsavelModel);
         }
+
+        public ActionResult GerarLinkSurvey(int id)
+        {
+
+            return View(gSurvey.Obter(id));
+        } 
     }
 }

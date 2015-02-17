@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 <br />
 
-<h2></h2>
+<h2> Enviar Survey</h2>
 
 
 <table>
@@ -22,7 +22,7 @@
             Data de Encerramento
         </th>
         <th>
-            Status
+            Ativo
         </th>
         <th id="thc">
             Ações
@@ -44,9 +44,9 @@
             <%: Html.DisplayFor(modelItem => item.flag_ativo) %>
         </td>
         <td>
-            <%: Html.ActionLink("Enviar via Email", "ListaQuestoes", "Questao", new { id = item.id_Survey }, new { @class = "button" })%> 
+            <%: Html.ActionLink("Enviar via Email", "GerarLinkSurvey", "Responsavel", new { id = item.id_Survey }, new { @class = "button" })%> 
             <%: Html.ActionLink("Enviar via Rede Social", "Edit", new { id = item.id_Survey }, new { @class = "button" })%>  
-            <%: Html.ActionLink("Visualizar", "CreateViewTotal","Responsavel", new { id = item.id_Survey },new { @class = "button" })%> 
+            <%: Html.ActionLink("Visualizar", "VisualizarSurvey","Responsavel", new { id = item.id_Survey },new { @class = "button" })%> 
             
         </td>
     </tr>

@@ -9,7 +9,7 @@ body {
     font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
     margin: 0;
     padding: 0;
-    color: #696969;
+    color: #202020;
 }
 
 a:link {
@@ -101,7 +101,8 @@ page width. Or, you can specify an exact pixel width. */
     margin-left: auto;
     margin-right: auto;
     position: inherit;
-    padding: 6px 6px 6px 6px;
+    padding: 6px 6px 0px 6px;
+    padding-bottom: 20px;
 }
 
 header, #header 
@@ -143,7 +144,7 @@ header h1, #header h1 {
 #main
 {
     margin-top:auto;
-    padding: 20px 30px 15px 30px;
+    padding: 8px 30px 15px 30px;
     background-color: #E3EBF0;
     border-radius: 4px 4px 4px 4px;
     -webkit-border-radius: 4px 4px 4px 4px;
@@ -212,7 +213,7 @@ ul#menu
     background-color:  #83C7BE;
 	width: auto;
     border-bottom: 0px #5C87B2 solid;
-    padding: 6px 0 ;
+    padding: 1px 0 ;
     position: relative;
     margin: 0;
     text-align: left;
@@ -238,7 +239,7 @@ ul#menu li#greeting {
 ul#menu li a {
     margin-top: 2px;
     text-align: center;
-    padding: 20px 20px ;
+    padding: 15px 25px;
     font-weight: bold;
     font-size: 18px ;
     text-decoration: none;
@@ -301,17 +302,22 @@ a.button-l { background-color:#B8B8B8 ;}
 
 fieldset 
 {
-    border: 0 solid #ddd;
+    margin-right:auto; 
+    margin-left:auto;
+    border: 1px solid #ddd;
     padding: 0 1.4em 1.4em 1.4em;
     margin: 0 0 1.5em 0;
-    text-align: justify;
+    text-align: left;
 }
 
 fieldset-p 
 {
-    border: 2px solid #ddd;
-    padding: 0 0 1.4em 1.4em;
-    margin: 0 0 1.5em 1.5em;
+    margin-right:auto; 
+    margin-left:auto;
+    border: 1px solid #ddd;
+    padding: 0 0 1.4em;
+    margin: 0 0 1.5em 0;
+    text-align: left;
 }
 
 legend {
@@ -358,21 +364,31 @@ input[type="submit"] {
 /* TABLE
 ----------------------------------------------------------*/
 
-table {
+table 
+{
+   /* margin-right:auto; 
+    margin-left:auto;*/
     border: solid 1px #e8eef4;
     border-collapse: collapse;
+    position: relative;
+    text-align:center;
 }
 
-table td {
-    padding: 5px;
-    border: solid 1px #e8eef4;
+table td 
+{
+    margin-right:auto; 
+    margin-left:auto;
+    padding: 6px;
+    border: solid 1px #0A5C8B;
+    background-color:#e8eef4;
 }
 
-table th {
-    padding: 6px 5px;
-    text-align: left;
-    background-color: #e8eef4;
-    border: solid 1px #e8eef4;
+table th 
+{
+    
+    padding: 6px 6px 6px 25px;
+    background-color: #CCE5FF;
+    border: solid 1px #0A5C8B;
 }
 
 #thc {
@@ -404,6 +420,9 @@ div#formulario form textarea:hover
     border: 1px solid #1e5799;
 }
 
+.text-center {
+  text-align: center;
+}
 
 
 
@@ -419,7 +438,7 @@ div#formulario form textarea:hover
 
 nav, 
 #menucontainer {
-    margin-top: 60px;
+    margin-top: 50px;
 }
 
 div#title {
@@ -478,13 +497,15 @@ div#title {
 /* Styles for editor and display helpers
 ----------------------------------------------------------*/
 .display-label, 
-.editor-label {
-    margin: 1em 0 0 0;
+.editor-label 
+{
+    margin: 1em 1em 0 0;
 }
 
 .display-field, 
-.editor-field {
-    margin: 0.5em 0 0 0;
+.editor-field 
+{
+    margin : 0.5em 0 0 0;
 }
 
 .text-box {

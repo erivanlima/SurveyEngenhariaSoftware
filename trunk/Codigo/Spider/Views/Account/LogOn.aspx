@@ -5,7 +5,7 @@
 </asp:Content>
 
 <asp:Content ID="loginContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div><h7> Autenticação </h7></div>
+
     
 
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
@@ -15,6 +15,8 @@
         <%: Html.ValidationSummary(true, "") %>
         <div class="page">
             <div class="header">
+
+            <h1 class="text-center">Autenticação</h1>
                 <p>
                 Por favor entre com o seu nome de usuário e senha.
                 </p>

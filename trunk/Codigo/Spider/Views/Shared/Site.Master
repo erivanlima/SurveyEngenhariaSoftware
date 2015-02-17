@@ -19,9 +19,9 @@
    <div class="page-body">
    <div id="menu1">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
-            <div id="footer1">
+            <%--<div id="footer1">
             </div>
-        </div>
+            </div>--%>
 
         <div id="header">
             <div id="title">
