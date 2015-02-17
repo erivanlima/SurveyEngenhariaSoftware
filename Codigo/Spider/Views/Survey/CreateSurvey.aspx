@@ -27,7 +27,7 @@
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>Criar Novo Survey</legend>
+        <legend></legend>
         
         <%: Html.HiddenFor(model => model.id_Responsavel, new { Value = ViewBag.id_Responsavel })%>
         <%--<div class="editor-label">
@@ -74,7 +74,7 @@
             Ativo
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.flag_ativo) %>
+            <%: Html.CheckBoxFor(model => model.flag_ativo, new { Value = "true" })%>
             <%: Html.ValidationMessageFor(model => model.flag_ativo) %>
         </div>
 

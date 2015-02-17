@@ -1,16 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<Models.SurveyModel>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    AnaliseSurvey
+    Análise Survey
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>AnaliseSurvey</h2>
-
-<p>
-    <%: Html.ActionLink("Create New", "Create") %>
-</p>
+<h2>Respostas</h2>
 
 <table>
     <tr>
@@ -24,7 +20,7 @@
             Data de Encerramento
         </th>
         <th>
-            Status
+            Ativo
         </th>
         <th id="thc">
             Ações

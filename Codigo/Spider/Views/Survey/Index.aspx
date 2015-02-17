@@ -23,7 +23,7 @@
             Data de Encerramento
         </th>
         <th>
-            Status
+            Ativo
         </th>
         <th id="thc">
             Ações
@@ -36,10 +36,10 @@
             <%: Html.DisplayFor(modelItem => item.Titulo) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.Data_Criacao.Date) %>
+            <%: Html.DisplayFor(modelItem => item.Data_Criacao)%>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.Data_fim.Date) %>
+            <%: Html.DisplayFor(modelItem => item.Data_fim)%>
         </td>
         <td>
             <%: Html.DisplayFor(modelItem => item.flag_ativo) %>
@@ -48,7 +48,7 @@
             <%: Html.ActionLink("Manter Questões", "ListaQuestoes", "Questao", new { id = item.id_Survey }, new { @class = "button" })%> 
             <%: Html.ActionLink("Editar", "Edit", new {  id=item.id_Survey }, new { @class = "button" }) %> 
             <%: Html.ActionLink("Excluir", "Delete", new {  id=item.id_Survey }, new { @class = "button" }) %> 
-            <%: Html.ActionLink("Visualizar", "CreateViewTotal","Responsavel", new { id = item.id_Survey },new { @class = "button" })%> 
+            <%: Html.ActionLink("Visualizar", "VisualizarSurvey","Responsavel", new { id = item.id_Survey },new { @class = "button" })%> 
             
         </td>
     </tr>

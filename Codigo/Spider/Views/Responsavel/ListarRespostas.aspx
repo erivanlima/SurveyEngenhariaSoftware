@@ -13,14 +13,14 @@
 </p>
 <table>
     <tr>
+        <%--<th>
+            Resposta
+        </th>--%>
         <th>
-            id_Resposta
+            Entrevistado
         </th>
         <th>
-            ENTREVISTADO
-        </th>
-        <th>
-            id_Questao
+            Questao
         </th>
         <th>
             Resposta
@@ -28,14 +28,13 @@
         <th>
             Item
         </th>
-        <th></th>
     </tr>
 
 <% foreach (var item in Model) { %>
     <tr>
-        <td>
+        <%--<td>
             <%: Html.DisplayFor(modelItem => item.id_Resposta) %>
-        </td>
+        </td>--%>
         <td>
             <%: Html.DisplayFor(modelItem => item.idTB_ENTREVISTADO) %>
         </td>

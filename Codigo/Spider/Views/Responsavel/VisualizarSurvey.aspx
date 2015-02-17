@@ -98,11 +98,7 @@
             } %>
             </fieldset> 
 
-      <p>
-
-            <input type="submit" value="Salvar" />
-        </p>
-    </fieldset-p>
+       </fieldset-p>
 </fieldset-p>
 <% } %>
 
