@@ -1,13 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<Models.SurveyModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Criar Questão
+    Criar Questões
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
 <br />
 
-<h2>Criar Questão</h2>
+<h2>Criar Questões</h2>
 
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
@@ -15,28 +16,45 @@
 <script src="<%: Url.Content("~/Scripts/addSubjcomImg.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/addQuestaoobj.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/addObjcomCod.js") %>" type="text/javascript"></script>
+<script src="<%: Url.Content("~/Scripts/fileinput.min.js") %>" type="text/javascript"></script>
+<script src="<%: Url.Content("~/Scripts/bootstrap.min.js") %>" type="text/javascript"></script>
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+ 
+ 
+<%--<script runat="server" type="text/C#">
+    
+    protected void btnUpload_Click(object sender, EventArgs e)
+    {
+        for (int i = 0; i < Request.Files.Count; i++)
+        {
+            HttpPostedFile PostedFile = Request.Files[i];
+            if (PostedFile.ContentLength > 0)
+            {
+                string FileName = System.IO.Path.GetFileName(PostedFile.FileName);
+                PostedFile.SaveAs(Server.MapPath("Files\\") + FileName);
+            }
+        }
+    }
+ </script>--%>
 
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
         <legend>SurveyModel</legend>
+
         
-      
+     <% Html.HiddenFor(model => model.id_Survey, new { Value = ViewBag.id_Survey });%>
+
       <fieldset>
-       <%: Html.HiddenFor(model => model.id_Survey, new { Value = ViewBag.id_Survey })%>
+       
  
         <img src="psubjetiva.png" width="300" height="200"alt="pergunta subjetiva" />    
-        
-           
            <div class="editor-label">
-              <a href="javascript: perguntasubjetiva();" > Adicionar Questão</a>
+              <a href="javascript: perguntasubjetiva();" > Adicionar questão </a>
           </div>
-           
           <div class="divperguntasubjetiva">
           
           </div>
-           
-         
      </fieldset>
       
     <fieldset>
@@ -46,8 +64,6 @@
          </div>
          <div class="divperguntaobjetiva">
          </div>
-
-        
    </fieldset>    
    
    <fieldset>
@@ -69,7 +85,7 @@
           
          </div>
    </fieldset>  
-       
+         
         <p>
             <input type="submit" value="Salvar" />
         </p>
@@ -77,7 +93,7 @@
 <% } %>
 
 <div>
-    <%: Html.ActionLink("Voltar", "Index", new { @class = "button" })%>
+    <%: Html.ActionLink("Voltar", "Index", new { @class = "button" },null)%>
 </div>
 
 </asp:Content>

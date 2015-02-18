@@ -10,6 +10,22 @@
 
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
+<script type="text/javascript">
+if (RadioButton1.Checked)
+   Label1.Text="You selected " & red.Text
+else
+if (RadioButton2.Checked) 
+   Label1.Text="You selected " & green.Text
+else
+if (RadioButton3.Checked)
+    Label1.Text = "You selected " & blue.Text
+else
+if (RadioButton4.Checked) 
+   Label1.Text="You selected " & green.Text
+else
+if (RadioButton5.Checked)
+    Label1.Text = "You selected " & green.Text
+</script>
 
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
@@ -32,6 +48,8 @@
     
      <fieldset> 
         <% int i = 0; %>
+        
+        
          <% foreach (var Questao in Model.questoes) { %>
         <fieldset> 
 
@@ -52,36 +70,69 @@
                 <td>
                     <%--<%: Html.LabelFor(model => Questao.itens.ItemA)%>--%>
                 </td>
-                <div class="display-field">
-                <%: Html.DisplayFor(model => Questao.itens.ItemA)%>
-                </div>
+                    
+                   <div  class="display-field">
+                    <input  
+                     id="questoes_<%= i %>__itens__ItemA" 
+                     name="questoes[<%= i %>].itens.ItemA"
+                     type="radio"
+                     value="<%= Html.DisplayFor(model => Questao.itens.ItemA)%>" /> 
+                     <%: Html.DisplayFor(model => Questao.itens.ItemA)%>
+                   </div>
+               
                 <td>
                     <%--<%: Html.LabelFor(model =>Questao.itens.ItemB)%>--%>
                 </td>
                 <div class="display-field">
+                <input  
+                     id="questoes_<%= i %>__itens__ItemB" 
+                     name="questoes[<%= i %>].itens.ItemB" 
+                     type="radio" 
+                     value="<%= Html.DisplayFor(model => Questao.itens.ItemB)%>" />
                 <%: Html.DisplayFor(model => Questao.itens.ItemB)%>
                 </div>
                 <td>
                    <%-- <%: Html.LabelFor(model => Questao.itens.ItemC)%>--%>
                 </td>
                 <div class="display-field">
+                <input  
+                     id="questoes_<%= i %>__itens__ItemC" 
+                     name="questoes[<%= i %>].itens.ItemC" 
+                     type="radio" 
+                     value="<%= Html.DisplayFor(model => Questao.itens.ItemC)%>" />
                 <%: Html.DisplayFor(model => Questao.itens.ItemC)%>
                 </div>
                 <td>
                     <%--<%: Html.LabelFor(model => Questao.itens.ItemD)%>--%>
                 </td>
                 <div class="display-field">
+                
+                <input 
+                    
+                     id="questoes_<%= i %>__itens__ItemD" 
+                     name="questoes[<%= i %>].itens.ItemD"
+                     type="radio" 
+                     value="<%= Html.DisplayFor(model => Questao.itens.ItemD)%>" /> 
                 <%: Html.DisplayFor(model => Questao.itens.ItemD)%>
+                
                 </div>
                 <td>
                     <%--<%: Html.LabelFor(model => Questao.itens.ItemE)%>--%>
                 </td>
                 <div class="display-field">
-                <%: Html.DisplayFor(model => Questao.itens.ItemE)%>
+                
+                <input  
+                     id="questoes_<%= i %>__itens__ItemE" 
+                     name="questoes[<%= i %>].itens.ItemE"
+                     type="radio" 
+                     value="<%= Html.DisplayFor(model => Questao.itens.ItemE )%>" />
+                     <%: Html.DisplayFor(model => Questao.itens.ItemE)%> 
                 </div>
-                 Resposta:
                  
-                 <input class="text-box single-line" id="questoes_<%= i %>__respostas__Item" name="questoes[<%= i %>].respostas.Item" value="" type="text">
+                 
+                <%-- Resposta:
+                 
+                 <input class="text-box single-line" id="questoes_<%= i %>__respostas__Item" name="questoes[<%= i %>].respostas.Item" value="" type="text">--%>
                             
                </fieldset>
                 <% }

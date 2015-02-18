@@ -67,7 +67,17 @@ namespace Spider.Controllers
 
                 if (survey.questoes[i].Tipo.Equals("OBJETIVA"))
                 {
-                    respostas.Item = survey.questoes[i].respostas.Item;
+                    if(survey.questoes[i].itens.ItemA != null)
+                        respostas.Item = survey.questoes[i].itens.ItemA;
+                    if (survey.questoes[i].itens.ItemB != null)
+                        respostas.Item = survey.questoes[i].itens.ItemB;
+                    if (survey.questoes[i].itens.ItemC != null)
+                        respostas.Item = survey.questoes[i].itens.ItemC;
+                    if (survey.questoes[i].itens.ItemD != null)
+                        respostas.Item = survey.questoes[i].itens.ItemD;
+                    if (survey.questoes[i].itens.ItemE != null)
+                        respostas.Item = survey.questoes[i].itens.ItemE;
+                    
                     respostas.id_Questao = survey.questoes[i].id_Questao;
                     respostas.idTB_ENTREVISTADO = entrevistados.idTB_ENTREVISTADO;
                     respostas.Resposta = null;
@@ -93,66 +103,66 @@ namespace Spider.Controllers
         }
 
 
-        [HttpGet]
-        public ActionResult VisualizarSurvey(int id)
-        {
-            ViewBag.id_Survey = id;
-            SurveyModel survey = new SurveyModel();
-            survey = gSurvey.Obter(id);
-            survey.questoes = gQuestao.ListaQuestaoSurvey(id).ToList();
-            for (int i = 0; i < survey.questoes.Count; i++)
-            {
-                survey.questoes[i].itens = gItens.Obter(survey.questoes[i].idTB_ITENS_DA_QUESTAO);
-            }
+        //[HttpGet]
+        //public ActionResult VisualizarSurvey(int id)
+        //{
+        //    ViewBag.id_Survey = id;
+        //    SurveyModel survey = new SurveyModel();
+        //    survey = gSurvey.Obter(id);
+        //    survey.questoes = gQuestao.ListaQuestaoSurvey(id).ToList();
+        //    for (int i = 0; i < survey.questoes.Count; i++)
+        //    {
+        //        survey.questoes[i].itens = gItens.Obter(survey.questoes[i].idTB_ITENS_DA_QUESTAO);
+        //    }
 
-            return View(survey);
-        }
+        //    return View(survey);
+        //}
 
-        [HttpPost]
-        public ActionResult VisualizarSurvey(SurveyModel survey)
-        {
-            int i = 0;
-            string ip = Request.UserHostAddress;
+        //[HttpPost]
+        //public ActionResult VisualizarSurvey(SurveyModel survey)
+        //{
+        //    int i = 0;
+        //    string ip = Request.UserHostAddress;
 
-            RespostaModel respostas = new RespostaModel();
-            EntrevistadoModel entrevistados = new EntrevistadoModel();
-            //Posteriormente colocar um if aqui comparando com o IP para evitar que o mesmo entrevistado responda mais de 
-            //mais de uma vez.
-            entrevistados.nome = ip;
-            entrevistados.sobrenome = ip;
-            entrevistados.email = ip;
-            gEntrevistado.Inserir(entrevistados);
-            //EntrevistadoModel entrevistados_2 = new EntrevistadoModel();
-            entrevistados = gEntrevistado.Obter(entrevistados.idTB_ENTREVISTADO);
-            foreach (QuestaoModel questoes in survey.questoes)
-            {
+        //    RespostaModel respostas = new RespostaModel();
+        //    EntrevistadoModel entrevistados = new EntrevistadoModel();
+        //    //Posteriormente colocar um if aqui comparando com o IP para evitar que o mesmo entrevistado responda mais de 
+        //    //mais de uma vez.
+        //    entrevistados.nome = ip;
+        //    entrevistados.sobrenome = ip;
+        //    entrevistados.email = ip;
+        //    gEntrevistado.Inserir(entrevistados);
+        //    //EntrevistadoModel entrevistados_2 = new EntrevistadoModel();
+        //    entrevistados = gEntrevistado.Obter(entrevistados.idTB_ENTREVISTADO);
+        //    foreach (QuestaoModel questoes in survey.questoes)
+        //    {
 
-                if (survey.questoes[i].Tipo.Equals("OBJETIVA"))
-                {
-                    respostas.Item = survey.questoes[i].respostas.Item;
-                    respostas.id_Questao = survey.questoes[i].id_Questao;
-                    respostas.idTB_ENTREVISTADO = entrevistados.idTB_ENTREVISTADO;
-                    respostas.Resposta = null;
-                    gResposta.Inserir(respostas);
-                    i++;
+        //        if (survey.questoes[i].Tipo.Equals("OBJETIVA"))
+        //        {
+        //            respostas.Item = survey.questoes[i].respostas.Item;
+        //            respostas.id_Questao = survey.questoes[i].id_Questao;
+        //            respostas.idTB_ENTREVISTADO = entrevistados.idTB_ENTREVISTADO;
+        //            respostas.Resposta = null;
+        //            gResposta.Inserir(respostas);
+        //            i++;
 
-                }
-                else
-                {
-                    respostas.Resposta = survey.questoes[i].respostas.Resposta;
-                    respostas.id_Questao = survey.questoes[i].id_Questao;
-                    respostas.idTB_ENTREVISTADO = entrevistados.idTB_ENTREVISTADO;
-                    respostas.Item = null;
-                    gResposta.Inserir(respostas);
-                    i++;
+        //        }
+        //        else
+        //        {
+        //            respostas.Resposta = survey.questoes[i].respostas.Resposta;
+        //            respostas.id_Questao = survey.questoes[i].id_Questao;
+        //            respostas.idTB_ENTREVISTADO = entrevistados.idTB_ENTREVISTADO;
+        //            respostas.Item = null;
+        //            gResposta.Inserir(respostas);
+        //            i++;
 
-                }
+        //        }
 
-            }
+        //    }
 
 
-            return View(survey);
-        }
+        //    return View(survey);
+        //}
 
         // Get
         //id = idSurvey
