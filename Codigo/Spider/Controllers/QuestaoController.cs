@@ -172,7 +172,6 @@ namespace Spider.Controllers
         {
 
 
-
             //List<QuestaoModel> novasquestoes = new List<QuestaoModel>();
             //List<Itens_da_QuestaoModel> itensQuestoes = new List<Itens_da_QuestaoModel>();
 
