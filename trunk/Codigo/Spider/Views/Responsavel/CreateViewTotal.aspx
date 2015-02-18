@@ -50,6 +50,7 @@ if (RadioButton5.Checked)
         <% int i = 0; %>
         
         
+        
          <% foreach (var Questao in Model.questoes) { %>
         <fieldset> 
 
@@ -75,8 +76,8 @@ if (RadioButton5.Checked)
                     <input  
                      id="questoes_<%= i %>__itens__ItemA" 
                      name="questoes[<%= i %>].itens.ItemA"
-                     type="radio"
-                     value="<%= Html.DisplayFor(model => Questao.itens.ItemA)%>" /> 
+                     type="radio" 
+                     value="<%= Html.DisplayFor(model => Questao.itens.ItemA)%>"/>
                      <%: Html.DisplayFor(model => Questao.itens.ItemA)%>
                    </div>
                
@@ -86,10 +87,10 @@ if (RadioButton5.Checked)
                 <div class="display-field">
                 <input  
                      id="questoes_<%= i %>__itens__ItemB" 
-                     name="questoes[<%= i %>].itens.ItemB" 
+                     name="questoes[<%= i %>].itens.ItemB"
                      type="radio" 
-                     value="<%= Html.DisplayFor(model => Questao.itens.ItemB)%>" />
-                <%: Html.DisplayFor(model => Questao.itens.ItemB)%>
+                     value="<%= Html.DisplayFor(model => Questao.itens.ItemB)%>"/>
+                     <%: Html.DisplayFor(model => Questao.itens.ItemB)%>
                 </div>
                 <td>
                    <%-- <%: Html.LabelFor(model => Questao.itens.ItemC)%>--%>
@@ -97,10 +98,10 @@ if (RadioButton5.Checked)
                 <div class="display-field">
                 <input  
                      id="questoes_<%= i %>__itens__ItemC" 
-                     name="questoes[<%= i %>].itens.ItemC" 
+                     name="questoes[<%= i %>].itens.ItemC"
                      type="radio" 
-                     value="<%= Html.DisplayFor(model => Questao.itens.ItemC)%>" />
-                <%: Html.DisplayFor(model => Questao.itens.ItemC)%>
+                     value="<%= Html.DisplayFor(model => Questao.itens.ItemC)%>"/>
+                     <%: Html.DisplayFor(model => Questao.itens.ItemC)%>
                 </div>
                 <td>
                     <%--<%: Html.LabelFor(model => Questao.itens.ItemD)%>--%>
@@ -112,8 +113,8 @@ if (RadioButton5.Checked)
                      id="questoes_<%= i %>__itens__ItemD" 
                      name="questoes[<%= i %>].itens.ItemD"
                      type="radio" 
-                     value="<%= Html.DisplayFor(model => Questao.itens.ItemD)%>" /> 
-                <%: Html.DisplayFor(model => Questao.itens.ItemD)%>
+                     value="<%= Html.DisplayFor(model => Questao.itens.ItemD)%>"/>
+                     <%: Html.DisplayFor(model => Questao.itens.ItemD)%>
                 
                 </div>
                 <td>
@@ -125,10 +126,10 @@ if (RadioButton5.Checked)
                      id="questoes_<%= i %>__itens__ItemE" 
                      name="questoes[<%= i %>].itens.ItemE"
                      type="radio" 
-                     value="<%= Html.DisplayFor(model => Questao.itens.ItemE )%>" />
+                     value="<%= Html.DisplayFor(model => Questao.itens.ItemE)%>"/>
                      <%: Html.DisplayFor(model => Questao.itens.ItemE)%> 
                 </div>
-                 
+                
                  
                 <%-- Resposta:
                  
