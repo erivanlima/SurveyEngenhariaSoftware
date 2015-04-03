@@ -19,7 +19,7 @@
 
 <script type="text/javascript">
      $(document).ready(function () {
-         $('.datepicker').datepicker({ dateFormat: "dd/mm/yy",});
+         $('.datepicker').datepicker({ dateFormat: "dd/mm/yy"});
      });
     </script>
 
@@ -76,6 +76,30 @@
         <div class="editor-field">
             <%: Html.CheckBoxFor(model => model.flag_ativo, new { Value = "true" })%>
             <%: Html.ValidationMessageFor(model => model.flag_ativo) %>
+        </div>
+
+        <div class="editor-label">
+            Randomize Questões
+        </div>
+        <div class="editor-field">
+            <%: Html.CheckBoxFor(model => model.RandomizeQuetsoes, new { Value = "true" })%>
+            <%: Html.ValidationMessageFor(model => model.RandomizeQuetsoes) %>
+        </div>
+
+        <div class="editor-label">
+            Única Resposta
+        </div>
+        <div class="editor-field">
+            <%: Html.CheckBoxFor(model => model.UnicaResposta, new { Value = "true" })%>
+            <%: Html.ValidationMessageFor(model => model.UnicaResposta) %>
+        </div>
+
+        <div class="editor-label">
+            Senha de Acesso
+        </div>
+        <div class="editor-field">
+            <%: Html.EditorFor(model => model.SenhaAcesso)%>
+            <%: Html.ValidationMessageFor(model => model.SenhaAcesso) %>
         </div>
 
         <p>

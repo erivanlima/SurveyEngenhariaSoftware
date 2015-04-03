@@ -90,6 +90,9 @@ namespace Services
                             Data_Criacao = surveyE.Data_Criacao,
                             Data_fim = (DateTime)surveyE.Data_fim,
                             flag_ativo = surveyE.flag_ativo,
+                            RandomizeQuetsoes = surveyE.RandomizeQuestoes,
+                            UnicaResposta = surveyE.UnicaResposta,
+                            SenhaAcesso = surveyE.SenhaAcesso,
                             
     
 
@@ -142,6 +145,9 @@ namespace Services
             surveyE.Titulo = survey.Titulo;
             surveyE.Subtitulo = survey.Subtitulo;
             surveyE.flag_ativo = survey.flag_ativo;
+            surveyE.RandomizeQuestoes = survey.RandomizeQuetsoes;
+            surveyE.UnicaResposta = survey.UnicaResposta;
+            surveyE.SenhaAcesso = survey.SenhaAcesso;
 
 
         }

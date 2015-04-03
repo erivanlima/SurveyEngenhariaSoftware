@@ -97,7 +97,7 @@ namespace Spider.Controllers
                 if (questao.Pergunta != null)
                 {
                     questao.id_Survey = survey.id_Survey;
-                    questao.idTB_ITENS_DA_QUESTAO = gItens.Inserir(questao.itens);
+                    //questao.idTB_ITENS_DA_QUESTAO = gItens.Inserir(questao.itens);
                     gQuestao.Inserir(questao);
                 }
 
@@ -226,7 +226,7 @@ namespace Spider.Controllers
                    survey.questoes = gQuestao.ListaQuestaoSurvey(id).ToList();
                    for (int i = 0; i < survey.questoes.Count; i++)
                    {
-                       survey.questoes[i].itens = gItens.Obter(survey.questoes[i].idTB_ITENS_DA_QUESTAO);
+                       //survey.questoes[i].itens = gItens.Obter(survey.questoes[i].idTB_ITENS_DA_QUESTAO);
                    }
                    foreach (QuestaoModel questao in survey.questoes)
                    {
@@ -234,7 +234,7 @@ namespace Spider.Controllers
                        if (questao.Tipo.Equals("OBJETIVA"))
                        {
                            gQuestao.Remover(questao.id_Questao);
-                           gItens.Remover(questao.idTB_ITENS_DA_QUESTAO);
+                           //gItens.Remover(questao.idTB_ITENS_DA_QUESTAO);
                        }
                        else
                        {

@@ -84,15 +84,15 @@ namespace Services
                         select new QuestaoModel
                         {
                             id_Questao = questaoE.id_Questao,
-                            Codigo = (Boolean)questaoE.Codigo,
+                            EhCodigo = (Boolean)questaoE.EhCodigo,
                             Img = questaoE.Img,
                             Linguagem = questaoE.Linguagem,
                             Obrigatoria = (Boolean)questaoE.Obrigatoria,
                             Pergunta = questaoE.Pergunta,
                             Randomica = (Boolean)questaoE.Randomica,
-                            idTB_ITENS_DA_QUESTAO = (int) questaoE.TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO,
                             id_Survey = questaoE.TB_SURVEY_id_Survey,
                             Tipo = questaoE.Tipo,
+                            Codigo = questaoE.Codigo,
                             
 
                         };
@@ -131,13 +131,14 @@ namespace Services
             questaoE.id_Questao = questao.id_Questao;
             questaoE.Codigo = questao.Codigo;
             questaoE.TB_SURVEY_id_Survey = questao.id_Survey;
-            questaoE.TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO = questao.idTB_ITENS_DA_QUESTAO;
             questaoE.Img = questao.Img;
             questaoE.Obrigatoria = questao.Obrigatoria;
             questaoE.Pergunta = questao.Pergunta;
             questaoE.Randomica = questao.Randomica;
             questaoE.Tipo = questao.Tipo;
             questaoE.Linguagem = questao.Linguagem;
+            questaoE.Codigo = questao.Codigo;
+            questaoE.EhCodigo = questao.EhCodigo;
             
             
         }

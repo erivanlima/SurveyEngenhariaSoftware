@@ -6,7 +6,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<h2>Create</h2>
+<h2>Create</h2>     
 
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
@@ -15,42 +15,43 @@
     SyntaxHighlighter.all();
 </script>
 	<script type="text/javascript" src="<%:Url.Content ("~/Scripts/shBrushCSharp.js")%>"></script>
+    <script src="../../Scripts/addItem.js" type="text/javascript"></script>
 
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
         <legend>QuestaoModel</legend>
-
-        <div class="editor-field">
+        <% Html.HiddenFor(model => model.id_Survey, new { Value = ViewBag.id_Survey });%>
+        <%--<div class="editor-field">
             <%: Html.HiddenFor(model => model.id_Questao, new { Value = '0' })%>
             <%: Html.ValidationMessageFor(model => model.id_Questao) %>
-        </div>
+        </div>--%>
 
-        <div class="editor-label">
+        <%--<div class="editor-label">
             <%: Html.LabelFor(model => model.idTB_ITENS_DA_QUESTAO) %>
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.idTB_ITENS_DA_QUESTAO) %>
             <%: Html.ValidationMessageFor(model => model.idTB_ITENS_DA_QUESTAO) %>
-        </div>
+        </div>--%>
 
-        <div class="editor-label">
+        <%--<div class="editor-label">
             <%: Html.LabelFor(model => model.id_Survey) %>
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.id_Survey) %>
             <%: Html.ValidationMessageFor(model => model.id_Survey) %>
-        </div>
+        </div>--%>
 
-        <div class="editor-label">
+     <%--   <div class="editor-label">
             <%: Html.LabelFor(model => model.Tipo) %>
         </div>
         <div class="editor-field">
-          <%:Html.RadioButtonFor(model => model.Tipo, true, new { id = "Ativo" }) %> <label for="Ativo">Ativo</label>
-         <%: Html.RadioButtonFor(model => model.Tipo, false, new { id = "Inativo" })%> <label for="Inativo">Inativo</label>
+          <%:Html.RadioButtonFor(model => model.Tipo, true, new { id = "SUBJETIVA" }) %> <label for="Ativo">SUBJETIVA</label>
+         <%: Html.RadioButtonFor(model => model.Tipo, false, new { id = "OBJETIVA" })%> <label for="Inativo">OBJETIVA</label>
            <!--  Html.RadioButtonFor(model => model.Tipo) 
              Html.ValidationMessageFor(model => model.Tipo) -->
-        </div>
+        </div>--%>
        
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Pergunta) %>
@@ -82,8 +83,8 @@
             Utilizar código ?
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.Codigo) %>
-            <%: Html.ValidationMessageFor(model => model.Codigo) %>
+            <%: Html.EditorFor(model => model.EhCodigo) %>
+            <%: Html.ValidationMessageFor(model => model.EhCodigo) %>
         </div>
 
         <div class="editor-label">
@@ -94,6 +95,29 @@
             <%: Html.ValidationMessageFor(model => model.Linguagem) %>
         </div>
 
+        <div class="editor-label">
+            <%: Html.LabelFor(model => model.Codigo) %>
+        </div>
+        <div class="editor-field">
+            <%: Html.EditorFor(model => model.Codigo)%>
+            <%: Html.ValidationMessageFor(model => model.Codigo)%>
+        </div>
+
+        <fieldset>
+
+        <% Html.RenderPartial("CreateItens",Model); %>
+
+       
+          <%--<img src="../../Content/imagem/subjetiva.jpg"/>--%>
+        <%--<img src="psubjetiva.png" width="300" height="200"alt="pergunta subjetiva" />  --%>  
+           <div class="editor-label">
+           <%-- <% Html.HiddenFor(model => model.itens.id_Questao, new { Value = ViewBag.id_Questao });%>--%>
+              <a href="javascript: item();" > Adicionar item </a>
+          </div>
+          <div class="item">
+          
+          </div>
+     </fieldset>
         <p>
             <input type="submit" value="Create" />
         </p>

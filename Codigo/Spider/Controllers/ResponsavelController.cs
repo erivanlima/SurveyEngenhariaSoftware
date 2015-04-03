@@ -40,7 +40,8 @@ namespace Spider.Controllers
             survey.questoes = gQuestao.ListaQuestaoSurvey(id).ToList();
             for (int i = 0; i < survey.questoes.Count; i++)
             {
-                survey.questoes[i].itens = gItens.Obter(survey.questoes[i].idTB_ITENS_DA_QUESTAO);
+                //Obter os itens
+                //survey.questoes[i].itens = gItens.Obter(survey.questoes[i].idTB_ITENS_DA_QUESTAO);
             }
 
             return View(survey);
@@ -67,16 +68,17 @@ namespace Spider.Controllers
 
                 if (survey.questoes[i].Tipo.Equals("OBJETIVA"))
                 {
-                    if(survey.questoes[i].itens.ItemA != null)
-                        respostas.Item = survey.questoes[i].itens.ItemA;
-                    if (survey.questoes[i].itens.ItemB != null)
-                        respostas.Item = survey.questoes[i].itens.ItemB;
-                    if (survey.questoes[i].itens.ItemC != null)
-                        respostas.Item = survey.questoes[i].itens.ItemC;
-                    if (survey.questoes[i].itens.ItemD != null)
-                        respostas.Item = survey.questoes[i].itens.ItemD;
-                    if (survey.questoes[i].itens.ItemE != null)
-                        respostas.Item = survey.questoes[i].itens.ItemE;
+
+                    //if(survey.questoes[i].itens.Item != null)
+                      //  respostas.Item = survey.questoes[i].itens.Item;
+                    //if (survey.questoes[i].itens.ItemB != null)
+                    //    respostas.Item = survey.questoes[i].itens.ItemB;
+                    //if (survey.questoes[i].itens.ItemC != null)
+                    //    respostas.Item = survey.questoes[i].itens.ItemC;
+                    //if (survey.questoes[i].itens.ItemD != null)
+                    //    respostas.Item = survey.questoes[i].itens.ItemD;
+                    //if (survey.questoes[i].itens.ItemE != null)
+                    //    respostas.Item = survey.questoes[i].itens.ItemE;
                     
                     respostas.id_Questao = survey.questoes[i].id_Questao;
                     respostas.idTB_ENTREVISTADO = entrevistados.idTB_ENTREVISTADO;

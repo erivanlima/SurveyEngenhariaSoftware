@@ -8,7 +8,7 @@
 
 <br />
 
-<h2>Criar Questões</h2>
+<h2>Modelo de Questão</h2>
 
 <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
@@ -16,9 +16,27 @@
 <script src="<%: Url.Content("~/Scripts/addSubjcomImg.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/addQuestaoobj.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/addObjcomCod.js") %>" type="text/javascript"></script>
-<script src="<%: Url.Content("~/Scripts/fileinput.min.js") %>" type="text/javascript"></script>
+<script src="<%: Url.Content("~/Scripts/addItem.js") %>" type="text/javascript"></script>
+<script>
+    function readURL(input) {
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    
+</script>
+
+<%--<script src="<%: Url.Content("~/Scripts/fileinput.min.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/bootstrap.min.js") %>" type="text/javascript"></script>
-<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">--%>
  
  
 <%--<script runat="server" type="text/C#">
@@ -37,18 +55,18 @@
     }
  </script>--%>
 
-<% using (Html.BeginForm()) { %>
+<% using (Html.BeginForm("CreateQuestoes", "Questao", FormMethod.Post, new { enctype = "multipart/form-data" })) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>SurveyModel</legend>
+        <legend></legend>
 
         
      <% Html.HiddenFor(model => model.id_Survey, new { Value = ViewBag.id_Survey });%>
 
       <fieldset>
        
- 
-        <img src="psubjetiva.png" width="300" height="200"alt="pergunta subjetiva" />    
+          <img src="../../Content/imagem/subjetiva.jpg"/>
+        <%--<img src="psubjetiva.png" width="300" height="200"alt="pergunta subjetiva" />  --%>  
            <div class="editor-label">
               <a href="javascript: perguntasubjetiva();" > Adicionar questão </a>
           </div>
@@ -58,7 +76,8 @@
      </fieldset>
       
     <fieldset>
-        <img src="" alt="pergunta objetiva" />
+        <%--<img src="" alt="pergunta objetiva" />--%>
+        <img src="../../Content/imagem/objetiva.jpg" />
          <div class="editor-label">
            <a href="javascript: perguntaobjetiva();" > Adicionar questão </a>
          </div>
@@ -67,17 +86,20 @@
    </fieldset>    
    
    <fieldset>
-        <img src="" alt="pergunta objetiva com imagem" />
+        <%--<img src="" alt="pergunta objetiva com imagem" />--%>
+       <img src="../../Content/imagem/objetivaimagem.jpg" />
          <div class="editor-label">
            <a href="javascript: perguntasubjcomimg();" > Adicionar questão </a>
          </div>
          <div class="divperguntasubjetivacomimagem">
           
          </div>
+         <img id="blah" src="#" alt="your image" />
    </fieldset>  
 
     <fieldset>
-        <img src="" alt="pergunta objetiva com código" />
+       <%-- <img src="" alt="pergunta objetiva com código" />--%>
+        <img src="../../Content/imagem/objetivacodigo.jpg" />
          <div class="editor-label">
            <a href="javascript: perguntaobjcomcod();" > Adicionar questão </a>
          </div>
@@ -90,6 +112,7 @@
             <input type="submit" value="Salvar" />
         </p>
     </fieldset>
+
 <% } %>
 
 <div>
