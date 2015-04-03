@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Services;
 using Models;
+using System.IO;
 
 namespace Spider.Controllers
 {
@@ -46,28 +47,71 @@ namespace Spider.Controllers
 
         //
         // GET: /Questao/Create
-
-        public ActionResult Create()
+        [HttpGet]
+        public ActionResult Create(int id)
         {
-            return View();
+            ViewBag.id_Survey = id;
+            //QuestaoModel questao = new QuestaoModel();
+
+            return RedirectToAction("Edit/" + DefaultQuestao(id), "Questao");
+           //return View(questao);
+        }
+
+        public int DefaultQuestao(int idSurvey)
+        {
+            QuestaoModel questao = new QuestaoModel();
+            questao.Pergunta = "";
+            questao.id_Survey = idSurvey;
+            //int idQuestaoInserida = gQuestao.Inserir(questao);
+            //gQuestao.Obter(idQuestaoInserida);
+            //return RedirectToAction("ListaQuestoes/" + questao.id_Survey, "Questao");
+            return gQuestao.Inserir(questao);
         }
 
         //
         // POST: /Questao/Create
 
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
+        //[HttpPost]
+        //public ActionResult Create(QuestaoModel questao)
+        //{
+        //    int idQuestaoInserida=0;
+                          
+        //            if (questao.Pergunta != null)
+        //            {
+        //                //questao.id_Survey = id;
+        //                //questao.idTB_ITENS_DA_QUESTAO = gItens.Inserir(questao.itens);
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+        //               idQuestaoInserida = gQuestao.Inserir(questao);
+                        
+        //            }
+
+        //            //return RedirectToAction("ListaQuestoes/" + questao.id_Survey, "Questao");
+        //            return RedirectToAction("Edit/" + idQuestaoInserida, "Questao");
+             
+        //}
+
+        //[HttpGet]
+        //public PartialViewResult CreateItens(int id)
+        //{
+
+        //    ViewBag.id_Questao = id;
+        //    return PartialView();
+
+        //}
+
+        //[HttpPost]
+        public ActionResult CreateItens(Itens_da_QuestaoModel itensModel)
+        {
+
+            gItens.Inserir(itensModel);
+            return View(gItens.ObterItens(itensModel.id_Questao));
+            //return RedirectToAction("Edit/" + idQuestaoInserida, "Questao");
+
+        }
+
+        public PartialViewResult ListaItens(int idQuest)
+        {
+            return PartialView(gItens.ObterItens(idQuest));
         }
 
         //
@@ -168,9 +212,16 @@ namespace Spider.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateQuestoes(SurveyModel survey)
+        public ActionResult CreateQuestoes(SurveyModel survey, HttpPostedFileBase[] images)
         {
-
+            if (images[0] != null && images[0].ContentLength > 0)
+            {
+                // extract only the fielname
+                var fileName = Path.GetFileName(images[0].FileName);
+                // store the file inside ~/App_Data/uploads folder
+                var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
+                images[0].SaveAs(path);
+            }
 
             //List<QuestaoModel> novasquestoes = new List<QuestaoModel>();
             //List<Itens_da_QuestaoModel> itensQuestoes = new List<Itens_da_QuestaoModel>();
@@ -181,7 +232,11 @@ namespace Spider.Controllers
                 if (questao.Pergunta != null)
                 {
                     questao.id_Survey = survey.id_Survey;
-                    questao.idTB_ITENS_DA_QUESTAO = gItens.Inserir(questao.itens);
+                    //questao.idTB_ITENS_DA_QUESTAO = gItens.Inserir(questao.itens);
+
+                    questao.Img = new byte[images[0].ContentLength];
+                    images[0].InputStream.Read(questao.Img, 0, images[0].ContentLength);
+
                     gQuestao.Inserir(questao);
                 }
 

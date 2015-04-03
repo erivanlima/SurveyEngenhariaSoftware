@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Services;
+using Models;
 
 namespace Spider.Controllers
 {
@@ -27,6 +28,10 @@ namespace Spider.Controllers
             return View(gItens.Obter(id));
         }
 
+        public ActionResult ListaItens(int idQuest)
+        {
+            return View(gItens.ObterItens(idQuest));
+        }
         //
         // GET: /Itens/Details/5
 
@@ -38,8 +43,9 @@ namespace Spider.Controllers
         //
         // GET: /Itens/Create
 
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
+            ViewBag.id_Questao = id;
             return View();
         } 
 
@@ -47,18 +53,13 @@ namespace Spider.Controllers
         // POST: /Itens/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Itens_da_QuestaoModel itensModel)
         {
-            try
-            {
+           
                 // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+                gItens.Inserir(itensModel);
+                return PartialView(ListaItens(itensModel.id_Questao));
+           
         }
         
         //

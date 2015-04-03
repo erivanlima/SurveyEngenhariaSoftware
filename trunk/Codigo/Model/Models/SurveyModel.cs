@@ -21,6 +21,10 @@ namespace Models
         public DateTime Data_fim { get; set; }
         public Boolean flag_ativo { get; set; }
 
+        public Boolean RandomizeQuetsoes { get; set; }
+        public Boolean UnicaResposta { get; set; }
+        public String SenhaAcesso { get; set; }
+
         public SurveyModel()
         {
             questoes = new List<QuestaoModel> { };

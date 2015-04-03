@@ -91,11 +91,11 @@ namespace Services
                         select new Itens_da_QuestaoModel
                         {
                             idTB_ITENS_DA_QUESTAO = itensE.idTB_ITENS_DA_QUESTAO,
-                            ItemA= itensE.ItemA,
-                            ItemB = itensE.ItemB,
-                            ItemC = itensE.ItemC,
-                            ItemD = itensE.ItemD,
-                            ItemE = itensE.ItemE,
+                            Item = itensE.Item,
+                            //ItemB = itensE.ItemB,
+                            //ItemC = itensE.ItemC,
+                            //ItemD = itensE.ItemD,
+                            //ItemE = itensE.ItemE,
                         };
             return query;
         }
@@ -111,9 +111,9 @@ namespace Services
 
        
         /// <summary>
-        /// Obtém um Serviço
+        /// Obtém um Item
         /// </summary>
-        /// <param name="id_servico">Identificador do serviço na base de dados</param>
+        /// <param name="id_servico">Identificador do Item na base de dados</param>
         /// <returns>Itens_da_QuestaoModel</returns>
         public Itens_da_QuestaoModel Obter(int IDitens)
         {
@@ -121,7 +121,11 @@ namespace Services
             return itens.ElementAtOrDefault(0);
         }
 
-        
+        public IEnumerable<Itens_da_QuestaoModel> ObterItens(int idQuest)
+        {
+            IEnumerable<Itens_da_QuestaoModel> itens = GetQuery().Where(Itens_da_QuestaoModel => Itens_da_QuestaoModel.id_Questao.Equals(idQuest));
+            return itens;
+        }
 
       
 
@@ -133,11 +137,11 @@ namespace Services
         private void Atribuir(Itens_da_QuestaoModel itens, TB_ITENS_DA_QUESTAO itensE)
         {
             itensE.idTB_ITENS_DA_QUESTAO = itens.idTB_ITENS_DA_QUESTAO;
-            itensE.ItemA = itens.ItemA;
-            itensE.ItemB = itens.ItemB;
-            itensE.ItemC = itens.ItemC;
-            itensE.ItemD = itens.ItemD;
-            itensE.ItemE = itens.ItemE;
+            itensE.Item = itens.Item;
+            //itensE.ItemB = itens.ItemB;
+            //itensE.ItemC = itens.ItemC;
+            //itensE.ItemD = itens.ItemD;
+            //itensE.ItemE = itens.ItemE;
             
 
 

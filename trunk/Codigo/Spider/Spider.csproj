@@ -81,6 +81,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap_2.min.css" />
     <Content Include="Content\fileinput.min.css" />
+    <Content Include="Content\imagem\objetiva.jpg" />
+    <Content Include="Content\imagem\objetivacodigo.jpg" />
+    <Content Include="Content\imagem\objetivaimagem.jpg" />
+    <Content Include="Content\imagem\subjetiva.jpg" />
     <Content Include="Content\main.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -115,6 +119,7 @@
     <Content Include="Scripts\addQuestaoobj.js" />
     <Content Include="Scripts\addSubjcomImg.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\addItem.js" />
     <Content Include="Scripts\fileinput.min.js" />
     <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.5.1.js" />
@@ -130,7 +135,10 @@
     <Content Include="Scripts\shBrushCSharp.js" />
     <Content Include="Scripts\StartSyntax.js" />
     <Content Include="Views\Account\Login.aspx" />
+    <Content Include="Views\Questao\ListaItens.ascx" />
+    <Content Include="Views\Itens\Create.ascx" />
     <Content Include="Views\Questao\Create.aspx" />
+    <Content Include="Views\Questao\CreateItens.ascx" />
     <Content Include="Views\Questao\CreateQuestoes.aspx" />
     <Content Include="Views\Questao\CreateResposta.aspx" />
     <Content Include="Views\Questao\Delete.aspx" />
@@ -175,7 +183,7 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

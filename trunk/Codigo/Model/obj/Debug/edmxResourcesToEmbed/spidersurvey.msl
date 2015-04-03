@@ -146,11 +146,8 @@
     <EntitySetMapping Name="TB_ITENS_DA_QUESTAO">
       <EntityTypeMapping TypeName="mysurveyModel.TB_ITENS_DA_QUESTAO">
         <MappingFragment StoreEntitySet="TB_ITENS_DA_QUESTAO">
-          <ScalarProperty Name="ItemE" ColumnName="ItemE" />
-          <ScalarProperty Name="ItemD" ColumnName="ItemD" />
-          <ScalarProperty Name="ItemC" ColumnName="ItemC" />
-          <ScalarProperty Name="ItemB" ColumnName="ItemB" />
-          <ScalarProperty Name="ItemA" ColumnName="ItemA" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="TB_QUESTAO_id_Questao" ColumnName="TB_QUESTAO_id_Questao" />
           <ScalarProperty Name="idTB_ITENS_DA_QUESTAO" ColumnName="idTB_ITENS_DA_QUESTAO" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -158,15 +155,15 @@
     <EntitySetMapping Name="TB_QUESTAO">
       <EntityTypeMapping TypeName="mysurveyModel.TB_QUESTAO">
         <MappingFragment StoreEntitySet="TB_QUESTAO">
-          <ScalarProperty Name="Linguagem" ColumnName="Linguagem" />
           <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Linguagem" ColumnName="Linguagem" />
+          <ScalarProperty Name="EhCodigo" ColumnName="EhCodigo" />
           <ScalarProperty Name="Obrigatoria" ColumnName="Obrigatoria" />
           <ScalarProperty Name="Randomica" ColumnName="Randomica" />
           <ScalarProperty Name="Img" ColumnName="Img" />
           <ScalarProperty Name="Pergunta" ColumnName="Pergunta" />
           <ScalarProperty Name="Tipo" ColumnName="Tipo" />
           <ScalarProperty Name="TB_SURVEY_id_Survey" ColumnName="TB_SURVEY_id_Survey" />
-          <ScalarProperty Name="TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO" ColumnName="TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO" />
           <ScalarProperty Name="id_Questao" ColumnName="id_Questao" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -195,6 +192,9 @@
     <EntitySetMapping Name="TB_SURVEY">
       <EntityTypeMapping TypeName="mysurveyModel.TB_SURVEY">
         <MappingFragment StoreEntitySet="TB_SURVEY">
+          <ScalarProperty Name="SenhaAcesso" ColumnName="SenhaAcesso" />
+          <ScalarProperty Name="RandomizeQuestoes" ColumnName="RandomizeQuestoes" />
+          <ScalarProperty Name="UnicaResposta" ColumnName="UnicaResposta" />
           <ScalarProperty Name="flag_ativo" ColumnName="flag_ativo" />
           <ScalarProperty Name="Data_fim" ColumnName="Data_fim" />
           <ScalarProperty Name="Data_Criacao" ColumnName="Data_Criacao" />

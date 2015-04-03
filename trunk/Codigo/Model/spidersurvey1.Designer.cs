@@ -19,17 +19,17 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region Metadados de Relação EDM
 
-[assembly: EdmRelationshipAttribute("mysurveyModel", "FK__aspnet_Me__Appli__3B75D760", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Models.aspnet_Applications), "aspnet_Membership", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Models.aspnet_Membership), true)]
-[assembly: EdmRelationshipAttribute("mysurveyModel", "FK__aspnet_Pa__Appli__6D0D32F4", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Models.aspnet_Applications), "aspnet_Paths", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Models.aspnet_Paths), true)]
-[assembly: EdmRelationshipAttribute("mysurveyModel", "FK__aspnet_Ro__Appli__59FA5E80", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Models.aspnet_Applications), "aspnet_Roles", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Models.aspnet_Roles), true)]
-[assembly: EdmRelationshipAttribute("mysurveyModel", "FK__aspnet_Us__Appli__2B3F6F97", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Models.aspnet_Applications), "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Models.aspnet_Users), true)]
-[assembly: EdmRelationshipAttribute("mysurveyModel", "FK__aspnet_Me__UserI__3C69FB99", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Models.aspnet_Users), "aspnet_Membership", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Models.aspnet_Membership), true)]
-[assembly: EdmRelationshipAttribute("mysurveyModel", "FK__aspnet_Pe__PathI__72C60C4A", "aspnet_Paths", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Models.aspnet_Paths), "aspnet_PersonalizationAllUsers", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Models.aspnet_PersonalizationAllUsers), true)]
-[assembly: EdmRelationshipAttribute("mysurveyModel", "FK__aspnet_Pe__PathI__76969D2E", "aspnet_Paths", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Models.aspnet_Paths), "aspnet_PersonalizationPerUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Models.aspnet_PersonalizationPerUser), true)]
-[assembly: EdmRelationshipAttribute("mysurveyModel", "FK__aspnet_Pe__UserI__778AC167", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Models.aspnet_Users), "aspnet_PersonalizationPerUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Models.aspnet_PersonalizationPerUser), true)]
-[assembly: EdmRelationshipAttribute("mysurveyModel", "FK__aspnet_Pr__UserI__5070F446", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Models.aspnet_Users), "aspnet_Profile", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Models.aspnet_Profile), true)]
+[assembly: EdmRelationshipAttribute("mysurveyModel", "FK__aspnet_Me__Appli__403A8C7D", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Models.aspnet_Applications), "aspnet_Membership", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Models.aspnet_Membership), true)]
+[assembly: EdmRelationshipAttribute("mysurveyModel", "FK__aspnet_Pa__Appli__797309D9", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Models.aspnet_Applications), "aspnet_Paths", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Models.aspnet_Paths), true)]
+[assembly: EdmRelationshipAttribute("mysurveyModel", "FK__aspnet_Ro__Appli__628FA481", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Models.aspnet_Applications), "aspnet_Roles", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Models.aspnet_Roles), true)]
+[assembly: EdmRelationshipAttribute("mysurveyModel", "FK__aspnet_Us__Appli__2C3393D0", "aspnet_Applications", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Models.aspnet_Applications), "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Models.aspnet_Users), true)]
+[assembly: EdmRelationshipAttribute("mysurveyModel", "FK__aspnet_Me__UserI__412EB0B6", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Models.aspnet_Users), "aspnet_Membership", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Models.aspnet_Membership), true)]
+[assembly: EdmRelationshipAttribute("mysurveyModel", "FK__aspnet_Pe__PathI__01142BA1", "aspnet_Paths", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Models.aspnet_Paths), "aspnet_PersonalizationAllUsers", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Models.aspnet_PersonalizationAllUsers), true)]
+[assembly: EdmRelationshipAttribute("mysurveyModel", "FK__aspnet_Pe__PathI__06CD04F7", "aspnet_Paths", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Models.aspnet_Paths), "aspnet_PersonalizationPerUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Models.aspnet_PersonalizationPerUser), true)]
+[assembly: EdmRelationshipAttribute("mysurveyModel", "FK__aspnet_Pe__UserI__07C12930", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Models.aspnet_Users), "aspnet_PersonalizationPerUser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Models.aspnet_PersonalizationPerUser), true)]
+[assembly: EdmRelationshipAttribute("mysurveyModel", "FK__aspnet_Pr__UserI__571DF1D5", "aspnet_Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Models.aspnet_Users), "aspnet_Profile", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Models.aspnet_Profile), true)]
 [assembly: EdmRelationshipAttribute("mysurveyModel", "TB_RESPOSTA_FKIndex2", "TB_ENTREVISTADO", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Models.TB_ENTREVISTADO), "TB_RESPOSTA", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Models.TB_RESPOSTA), true)]
-[assembly: EdmRelationshipAttribute("mysurveyModel", "TB_QUESTAO_FKIndex2", "TB_ITENS_DA_QUESTAO", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Models.TB_ITENS_DA_QUESTAO), "TB_QUESTAO", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Models.TB_QUESTAO), true)]
+[assembly: EdmRelationshipAttribute("mysurveyModel", "TB_ITENS_DA_QUESTAO_FKIndex1", "TB_QUESTAO", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Models.TB_QUESTAO), "TB_ITENS_DA_QUESTAO", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Models.TB_ITENS_DA_QUESTAO), true)]
 [assembly: EdmRelationshipAttribute("mysurveyModel", "TB_QUESTAO_FKIndex1", "TB_SURVEY", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Models.TB_SURVEY), "TB_QUESTAO", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Models.TB_QUESTAO), true)]
 [assembly: EdmRelationshipAttribute("mysurveyModel", "TB_RESPOSTA_FKIndex1", "TB_QUESTAO", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Models.TB_QUESTAO), "TB_RESPOSTA", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Models.TB_RESPOSTA), true)]
 [assembly: EdmRelationshipAttribute("mysurveyModel", "TB_SURVEY_FKIndex1", "TB_RESPONSAVEL", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Models.TB_RESPONSAVEL), "TB_SURVEY", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Models.TB_SURVEY), true)]
@@ -836,18 +836,18 @@ namespace Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Me__Appli__3B75D760", "aspnet_Membership")]
+        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Me__Appli__403A8C7D", "aspnet_Membership")]
         public EntityCollection<aspnet_Membership> aspnet_Membership
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_Membership>("mysurveyModel.FK__aspnet_Me__Appli__3B75D760", "aspnet_Membership");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_Membership>("mysurveyModel.FK__aspnet_Me__Appli__403A8C7D", "aspnet_Membership");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_Membership>("mysurveyModel.FK__aspnet_Me__Appli__3B75D760", "aspnet_Membership", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_Membership>("mysurveyModel.FK__aspnet_Me__Appli__403A8C7D", "aspnet_Membership", value);
                 }
             }
         }
@@ -858,18 +858,18 @@ namespace Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Pa__Appli__6D0D32F4", "aspnet_Paths")]
+        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Pa__Appli__797309D9", "aspnet_Paths")]
         public EntityCollection<aspnet_Paths> aspnet_Paths
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_Paths>("mysurveyModel.FK__aspnet_Pa__Appli__6D0D32F4", "aspnet_Paths");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_Paths>("mysurveyModel.FK__aspnet_Pa__Appli__797309D9", "aspnet_Paths");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_Paths>("mysurveyModel.FK__aspnet_Pa__Appli__6D0D32F4", "aspnet_Paths", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_Paths>("mysurveyModel.FK__aspnet_Pa__Appli__797309D9", "aspnet_Paths", value);
                 }
             }
         }
@@ -880,18 +880,18 @@ namespace Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Ro__Appli__59FA5E80", "aspnet_Roles")]
+        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Ro__Appli__628FA481", "aspnet_Roles")]
         public EntityCollection<aspnet_Roles> aspnet_Roles
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_Roles>("mysurveyModel.FK__aspnet_Ro__Appli__59FA5E80", "aspnet_Roles");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_Roles>("mysurveyModel.FK__aspnet_Ro__Appli__628FA481", "aspnet_Roles");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_Roles>("mysurveyModel.FK__aspnet_Ro__Appli__59FA5E80", "aspnet_Roles", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_Roles>("mysurveyModel.FK__aspnet_Ro__Appli__628FA481", "aspnet_Roles", value);
                 }
             }
         }
@@ -902,18 +902,18 @@ namespace Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Us__Appli__2B3F6F97", "aspnet_Users")]
+        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Us__Appli__2C3393D0", "aspnet_Users")]
         public EntityCollection<aspnet_Users> aspnet_Users
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_Users>("mysurveyModel.FK__aspnet_Us__Appli__2B3F6F97", "aspnet_Users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_Users>("mysurveyModel.FK__aspnet_Us__Appli__2C3393D0", "aspnet_Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_Users>("mysurveyModel.FK__aspnet_Us__Appli__2B3F6F97", "aspnet_Users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_Users>("mysurveyModel.FK__aspnet_Us__Appli__2C3393D0", "aspnet_Users", value);
                 }
             }
         }
@@ -1493,16 +1493,16 @@ namespace Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Me__Appli__3B75D760", "aspnet_Applications")]
+        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Me__Appli__403A8C7D", "aspnet_Applications")]
         public aspnet_Applications aspnet_Applications
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Me__Appli__3B75D760", "aspnet_Applications").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Me__Appli__403A8C7D", "aspnet_Applications").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Me__Appli__3B75D760", "aspnet_Applications").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Me__Appli__403A8C7D", "aspnet_Applications").Value = value;
             }
         }
         /// <summary>
@@ -1514,13 +1514,13 @@ namespace Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Me__Appli__3B75D760", "aspnet_Applications");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Me__Appli__403A8C7D", "aspnet_Applications");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Me__Appli__3B75D760", "aspnet_Applications", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Me__Appli__403A8C7D", "aspnet_Applications", value);
                 }
             }
         }
@@ -1531,16 +1531,16 @@ namespace Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Me__UserI__3C69FB99", "aspnet_Users")]
+        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Me__UserI__412EB0B6", "aspnet_Users")]
         public aspnet_Users aspnet_Users
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("mysurveyModel.FK__aspnet_Me__UserI__3C69FB99", "aspnet_Users").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("mysurveyModel.FK__aspnet_Me__UserI__412EB0B6", "aspnet_Users").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("mysurveyModel.FK__aspnet_Me__UserI__3C69FB99", "aspnet_Users").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("mysurveyModel.FK__aspnet_Me__UserI__412EB0B6", "aspnet_Users").Value = value;
             }
         }
         /// <summary>
@@ -1552,13 +1552,13 @@ namespace Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("mysurveyModel.FK__aspnet_Me__UserI__3C69FB99", "aspnet_Users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("mysurveyModel.FK__aspnet_Me__UserI__412EB0B6", "aspnet_Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Users>("mysurveyModel.FK__aspnet_Me__UserI__3C69FB99", "aspnet_Users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Users>("mysurveyModel.FK__aspnet_Me__UserI__412EB0B6", "aspnet_Users", value);
                 }
             }
         }
@@ -1708,16 +1708,16 @@ namespace Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Pa__Appli__6D0D32F4", "aspnet_Applications")]
+        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Pa__Appli__797309D9", "aspnet_Applications")]
         public aspnet_Applications aspnet_Applications
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Pa__Appli__6D0D32F4", "aspnet_Applications").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Pa__Appli__797309D9", "aspnet_Applications").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Pa__Appli__6D0D32F4", "aspnet_Applications").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Pa__Appli__797309D9", "aspnet_Applications").Value = value;
             }
         }
         /// <summary>
@@ -1729,13 +1729,13 @@ namespace Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Pa__Appli__6D0D32F4", "aspnet_Applications");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Pa__Appli__797309D9", "aspnet_Applications");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Pa__Appli__6D0D32F4", "aspnet_Applications", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Pa__Appli__797309D9", "aspnet_Applications", value);
                 }
             }
         }
@@ -1746,16 +1746,16 @@ namespace Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Pe__PathI__72C60C4A", "aspnet_PersonalizationAllUsers")]
+        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Pe__PathI__01142BA1", "aspnet_PersonalizationAllUsers")]
         public aspnet_PersonalizationAllUsers aspnet_PersonalizationAllUsers
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_PersonalizationAllUsers>("mysurveyModel.FK__aspnet_Pe__PathI__72C60C4A", "aspnet_PersonalizationAllUsers").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_PersonalizationAllUsers>("mysurveyModel.FK__aspnet_Pe__PathI__01142BA1", "aspnet_PersonalizationAllUsers").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_PersonalizationAllUsers>("mysurveyModel.FK__aspnet_Pe__PathI__72C60C4A", "aspnet_PersonalizationAllUsers").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_PersonalizationAllUsers>("mysurveyModel.FK__aspnet_Pe__PathI__01142BA1", "aspnet_PersonalizationAllUsers").Value = value;
             }
         }
         /// <summary>
@@ -1767,13 +1767,13 @@ namespace Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_PersonalizationAllUsers>("mysurveyModel.FK__aspnet_Pe__PathI__72C60C4A", "aspnet_PersonalizationAllUsers");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_PersonalizationAllUsers>("mysurveyModel.FK__aspnet_Pe__PathI__01142BA1", "aspnet_PersonalizationAllUsers");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_PersonalizationAllUsers>("mysurveyModel.FK__aspnet_Pe__PathI__72C60C4A", "aspnet_PersonalizationAllUsers", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_PersonalizationAllUsers>("mysurveyModel.FK__aspnet_Pe__PathI__01142BA1", "aspnet_PersonalizationAllUsers", value);
                 }
             }
         }
@@ -1784,18 +1784,18 @@ namespace Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Pe__PathI__76969D2E", "aspnet_PersonalizationPerUser")]
+        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Pe__PathI__06CD04F7", "aspnet_PersonalizationPerUser")]
         public EntityCollection<aspnet_PersonalizationPerUser> aspnet_PersonalizationPerUser
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_PersonalizationPerUser>("mysurveyModel.FK__aspnet_Pe__PathI__76969D2E", "aspnet_PersonalizationPerUser");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_PersonalizationPerUser>("mysurveyModel.FK__aspnet_Pe__PathI__06CD04F7", "aspnet_PersonalizationPerUser");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_PersonalizationPerUser>("mysurveyModel.FK__aspnet_Pe__PathI__76969D2E", "aspnet_PersonalizationPerUser", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_PersonalizationPerUser>("mysurveyModel.FK__aspnet_Pe__PathI__06CD04F7", "aspnet_PersonalizationPerUser", value);
                 }
             }
         }
@@ -1919,16 +1919,16 @@ namespace Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Pe__PathI__72C60C4A", "aspnet_Paths")]
+        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Pe__PathI__01142BA1", "aspnet_Paths")]
         public aspnet_Paths aspnet_Paths
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("mysurveyModel.FK__aspnet_Pe__PathI__72C60C4A", "aspnet_Paths").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("mysurveyModel.FK__aspnet_Pe__PathI__01142BA1", "aspnet_Paths").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("mysurveyModel.FK__aspnet_Pe__PathI__72C60C4A", "aspnet_Paths").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("mysurveyModel.FK__aspnet_Pe__PathI__01142BA1", "aspnet_Paths").Value = value;
             }
         }
         /// <summary>
@@ -1940,13 +1940,13 @@ namespace Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("mysurveyModel.FK__aspnet_Pe__PathI__72C60C4A", "aspnet_Paths");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("mysurveyModel.FK__aspnet_Pe__PathI__01142BA1", "aspnet_Paths");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Paths>("mysurveyModel.FK__aspnet_Pe__PathI__72C60C4A", "aspnet_Paths", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Paths>("mysurveyModel.FK__aspnet_Pe__PathI__01142BA1", "aspnet_Paths", value);
                 }
             }
         }
@@ -2118,16 +2118,16 @@ namespace Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Pe__PathI__76969D2E", "aspnet_Paths")]
+        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Pe__PathI__06CD04F7", "aspnet_Paths")]
         public aspnet_Paths aspnet_Paths
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("mysurveyModel.FK__aspnet_Pe__PathI__76969D2E", "aspnet_Paths").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("mysurveyModel.FK__aspnet_Pe__PathI__06CD04F7", "aspnet_Paths").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("mysurveyModel.FK__aspnet_Pe__PathI__76969D2E", "aspnet_Paths").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("mysurveyModel.FK__aspnet_Pe__PathI__06CD04F7", "aspnet_Paths").Value = value;
             }
         }
         /// <summary>
@@ -2139,13 +2139,13 @@ namespace Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("mysurveyModel.FK__aspnet_Pe__PathI__76969D2E", "aspnet_Paths");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Paths>("mysurveyModel.FK__aspnet_Pe__PathI__06CD04F7", "aspnet_Paths");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Paths>("mysurveyModel.FK__aspnet_Pe__PathI__76969D2E", "aspnet_Paths", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Paths>("mysurveyModel.FK__aspnet_Pe__PathI__06CD04F7", "aspnet_Paths", value);
                 }
             }
         }
@@ -2156,16 +2156,16 @@ namespace Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Pe__UserI__778AC167", "aspnet_Users")]
+        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Pe__UserI__07C12930", "aspnet_Users")]
         public aspnet_Users aspnet_Users
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("mysurveyModel.FK__aspnet_Pe__UserI__778AC167", "aspnet_Users").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("mysurveyModel.FK__aspnet_Pe__UserI__07C12930", "aspnet_Users").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("mysurveyModel.FK__aspnet_Pe__UserI__778AC167", "aspnet_Users").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("mysurveyModel.FK__aspnet_Pe__UserI__07C12930", "aspnet_Users").Value = value;
             }
         }
         /// <summary>
@@ -2177,13 +2177,13 @@ namespace Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("mysurveyModel.FK__aspnet_Pe__UserI__778AC167", "aspnet_Users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("mysurveyModel.FK__aspnet_Pe__UserI__07C12930", "aspnet_Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Users>("mysurveyModel.FK__aspnet_Pe__UserI__778AC167", "aspnet_Users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Users>("mysurveyModel.FK__aspnet_Pe__UserI__07C12930", "aspnet_Users", value);
                 }
             }
         }
@@ -2359,16 +2359,16 @@ namespace Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Pr__UserI__5070F446", "aspnet_Users")]
+        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Pr__UserI__571DF1D5", "aspnet_Users")]
         public aspnet_Users aspnet_Users
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("mysurveyModel.FK__aspnet_Pr__UserI__5070F446", "aspnet_Users").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("mysurveyModel.FK__aspnet_Pr__UserI__571DF1D5", "aspnet_Users").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("mysurveyModel.FK__aspnet_Pr__UserI__5070F446", "aspnet_Users").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("mysurveyModel.FK__aspnet_Pr__UserI__571DF1D5", "aspnet_Users").Value = value;
             }
         }
         /// <summary>
@@ -2380,13 +2380,13 @@ namespace Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("mysurveyModel.FK__aspnet_Pr__UserI__5070F446", "aspnet_Users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Users>("mysurveyModel.FK__aspnet_Pr__UserI__571DF1D5", "aspnet_Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Users>("mysurveyModel.FK__aspnet_Pr__UserI__5070F446", "aspnet_Users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Users>("mysurveyModel.FK__aspnet_Pr__UserI__571DF1D5", "aspnet_Users", value);
                 }
             }
         }
@@ -2560,16 +2560,16 @@ namespace Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Ro__Appli__59FA5E80", "aspnet_Applications")]
+        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Ro__Appli__628FA481", "aspnet_Applications")]
         public aspnet_Applications aspnet_Applications
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Ro__Appli__59FA5E80", "aspnet_Applications").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Ro__Appli__628FA481", "aspnet_Applications").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Ro__Appli__59FA5E80", "aspnet_Applications").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Ro__Appli__628FA481", "aspnet_Applications").Value = value;
             }
         }
         /// <summary>
@@ -2581,13 +2581,13 @@ namespace Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Ro__Appli__59FA5E80", "aspnet_Applications");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Ro__Appli__628FA481", "aspnet_Applications");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Ro__Appli__59FA5E80", "aspnet_Applications", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Ro__Appli__628FA481", "aspnet_Applications", value);
                 }
             }
         }
@@ -2947,16 +2947,16 @@ namespace Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Us__Appli__2B3F6F97", "aspnet_Applications")]
+        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Us__Appli__2C3393D0", "aspnet_Applications")]
         public aspnet_Applications aspnet_Applications
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Us__Appli__2B3F6F97", "aspnet_Applications").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Us__Appli__2C3393D0", "aspnet_Applications").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Us__Appli__2B3F6F97", "aspnet_Applications").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Us__Appli__2C3393D0", "aspnet_Applications").Value = value;
             }
         }
         /// <summary>
@@ -2968,13 +2968,13 @@ namespace Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Us__Appli__2B3F6F97", "aspnet_Applications");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Us__Appli__2C3393D0", "aspnet_Applications");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Us__Appli__2B3F6F97", "aspnet_Applications", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("mysurveyModel.FK__aspnet_Us__Appli__2C3393D0", "aspnet_Applications", value);
                 }
             }
         }
@@ -2985,16 +2985,16 @@ namespace Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Me__UserI__3C69FB99", "aspnet_Membership")]
+        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Me__UserI__412EB0B6", "aspnet_Membership")]
         public aspnet_Membership aspnet_Membership
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Membership>("mysurveyModel.FK__aspnet_Me__UserI__3C69FB99", "aspnet_Membership").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Membership>("mysurveyModel.FK__aspnet_Me__UserI__412EB0B6", "aspnet_Membership").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Membership>("mysurveyModel.FK__aspnet_Me__UserI__3C69FB99", "aspnet_Membership").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Membership>("mysurveyModel.FK__aspnet_Me__UserI__412EB0B6", "aspnet_Membership").Value = value;
             }
         }
         /// <summary>
@@ -3006,13 +3006,13 @@ namespace Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Membership>("mysurveyModel.FK__aspnet_Me__UserI__3C69FB99", "aspnet_Membership");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Membership>("mysurveyModel.FK__aspnet_Me__UserI__412EB0B6", "aspnet_Membership");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Membership>("mysurveyModel.FK__aspnet_Me__UserI__3C69FB99", "aspnet_Membership", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Membership>("mysurveyModel.FK__aspnet_Me__UserI__412EB0B6", "aspnet_Membership", value);
                 }
             }
         }
@@ -3023,18 +3023,18 @@ namespace Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Pe__UserI__778AC167", "aspnet_PersonalizationPerUser")]
+        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Pe__UserI__07C12930", "aspnet_PersonalizationPerUser")]
         public EntityCollection<aspnet_PersonalizationPerUser> aspnet_PersonalizationPerUser
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_PersonalizationPerUser>("mysurveyModel.FK__aspnet_Pe__UserI__778AC167", "aspnet_PersonalizationPerUser");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<aspnet_PersonalizationPerUser>("mysurveyModel.FK__aspnet_Pe__UserI__07C12930", "aspnet_PersonalizationPerUser");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_PersonalizationPerUser>("mysurveyModel.FK__aspnet_Pe__UserI__778AC167", "aspnet_PersonalizationPerUser", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<aspnet_PersonalizationPerUser>("mysurveyModel.FK__aspnet_Pe__UserI__07C12930", "aspnet_PersonalizationPerUser", value);
                 }
             }
         }
@@ -3045,16 +3045,16 @@ namespace Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Pr__UserI__5070F446", "aspnet_Profile")]
+        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "FK__aspnet_Pr__UserI__571DF1D5", "aspnet_Profile")]
         public aspnet_Profile aspnet_Profile
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Profile>("mysurveyModel.FK__aspnet_Pr__UserI__5070F446", "aspnet_Profile").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Profile>("mysurveyModel.FK__aspnet_Pr__UserI__571DF1D5", "aspnet_Profile").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Profile>("mysurveyModel.FK__aspnet_Pr__UserI__5070F446", "aspnet_Profile").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Profile>("mysurveyModel.FK__aspnet_Pr__UserI__571DF1D5", "aspnet_Profile").Value = value;
             }
         }
         /// <summary>
@@ -3066,13 +3066,13 @@ namespace Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Profile>("mysurveyModel.FK__aspnet_Pr__UserI__5070F446", "aspnet_Profile");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<aspnet_Profile>("mysurveyModel.FK__aspnet_Pr__UserI__571DF1D5", "aspnet_Profile");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Profile>("mysurveyModel.FK__aspnet_Pr__UserI__5070F446", "aspnet_Profile", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<aspnet_Profile>("mysurveyModel.FK__aspnet_Pr__UserI__571DF1D5", "aspnet_Profile", value);
                 }
             }
         }
@@ -3681,10 +3681,12 @@ namespace Models
         /// Crie um novo objeto TB_ITENS_DA_QUESTAO.
         /// </summary>
         /// <param name="idTB_ITENS_DA_QUESTAO">Valor inicial da propriedade idTB_ITENS_DA_QUESTAO.</param>
-        public static TB_ITENS_DA_QUESTAO CreateTB_ITENS_DA_QUESTAO(global::System.Int32 idTB_ITENS_DA_QUESTAO)
+        /// <param name="tB_QUESTAO_id_Questao">Valor inicial da propriedade TB_QUESTAO_id_Questao.</param>
+        public static TB_ITENS_DA_QUESTAO CreateTB_ITENS_DA_QUESTAO(global::System.Int32 idTB_ITENS_DA_QUESTAO, global::System.Int32 tB_QUESTAO_id_Questao)
         {
             TB_ITENS_DA_QUESTAO tB_ITENS_DA_QUESTAO = new TB_ITENS_DA_QUESTAO();
             tB_ITENS_DA_QUESTAO.idTB_ITENS_DA_QUESTAO = idTB_ITENS_DA_QUESTAO;
+            tB_ITENS_DA_QUESTAO.TB_QUESTAO_id_Questao = tB_QUESTAO_id_Questao;
             return tB_ITENS_DA_QUESTAO;
         }
 
@@ -3722,122 +3724,50 @@ namespace Models
         /// <summary>
         /// Nenhuma Documentação de Metadados disponível.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String ItemA
+        public global::System.Int32 TB_QUESTAO_id_Questao
         {
             get
             {
-                return _ItemA;
+                return _TB_QUESTAO_id_Questao;
             }
             set
             {
-                OnItemAChanging(value);
-                ReportPropertyChanging("ItemA");
-                _ItemA = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("ItemA");
-                OnItemAChanged();
+                OnTB_QUESTAO_id_QuestaoChanging(value);
+                ReportPropertyChanging("TB_QUESTAO_id_Questao");
+                _TB_QUESTAO_id_Questao = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("TB_QUESTAO_id_Questao");
+                OnTB_QUESTAO_id_QuestaoChanged();
             }
         }
-        private global::System.String _ItemA;
-        partial void OnItemAChanging(global::System.String value);
-        partial void OnItemAChanged();
+        private global::System.Int32 _TB_QUESTAO_id_Questao;
+        partial void OnTB_QUESTAO_id_QuestaoChanging(global::System.Int32 value);
+        partial void OnTB_QUESTAO_id_QuestaoChanged();
     
         /// <summary>
         /// Nenhuma Documentação de Metadados disponível.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String ItemB
+        public global::System.String Item
         {
             get
             {
-                return _ItemB;
+                return _Item;
             }
             set
             {
-                OnItemBChanging(value);
-                ReportPropertyChanging("ItemB");
-                _ItemB = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("ItemB");
-                OnItemBChanged();
+                OnItemChanging(value);
+                ReportPropertyChanging("Item");
+                _Item = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Item");
+                OnItemChanged();
             }
         }
-        private global::System.String _ItemB;
-        partial void OnItemBChanging(global::System.String value);
-        partial void OnItemBChanged();
-    
-        /// <summary>
-        /// Nenhuma Documentação de Metadados disponível.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String ItemC
-        {
-            get
-            {
-                return _ItemC;
-            }
-            set
-            {
-                OnItemCChanging(value);
-                ReportPropertyChanging("ItemC");
-                _ItemC = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("ItemC");
-                OnItemCChanged();
-            }
-        }
-        private global::System.String _ItemC;
-        partial void OnItemCChanging(global::System.String value);
-        partial void OnItemCChanged();
-    
-        /// <summary>
-        /// Nenhuma Documentação de Metadados disponível.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String ItemD
-        {
-            get
-            {
-                return _ItemD;
-            }
-            set
-            {
-                OnItemDChanging(value);
-                ReportPropertyChanging("ItemD");
-                _ItemD = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("ItemD");
-                OnItemDChanged();
-            }
-        }
-        private global::System.String _ItemD;
-        partial void OnItemDChanging(global::System.String value);
-        partial void OnItemDChanged();
-    
-        /// <summary>
-        /// Nenhuma Documentação de Metadados disponível.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String ItemE
-        {
-            get
-            {
-                return _ItemE;
-            }
-            set
-            {
-                OnItemEChanging(value);
-                ReportPropertyChanging("ItemE");
-                _ItemE = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("ItemE");
-                OnItemEChanged();
-            }
-        }
-        private global::System.String _ItemE;
-        partial void OnItemEChanging(global::System.String value);
-        partial void OnItemEChanged();
+        private global::System.String _Item;
+        partial void OnItemChanging(global::System.String value);
+        partial void OnItemChanged();
 
         #endregion
 
@@ -3850,18 +3780,34 @@ namespace Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "TB_QUESTAO_FKIndex2", "TB_QUESTAO")]
-        public EntityCollection<TB_QUESTAO> TB_QUESTAO
+        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "TB_ITENS_DA_QUESTAO_FKIndex1", "TB_QUESTAO")]
+        public TB_QUESTAO TB_QUESTAO
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TB_QUESTAO>("mysurveyModel.TB_QUESTAO_FKIndex2", "TB_QUESTAO");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TB_QUESTAO>("mysurveyModel.TB_ITENS_DA_QUESTAO_FKIndex1", "TB_QUESTAO").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TB_QUESTAO>("mysurveyModel.TB_ITENS_DA_QUESTAO_FKIndex1", "TB_QUESTAO").Value = value;
+            }
+        }
+        /// <summary>
+        /// Nenhuma Documentação de Metadados disponível.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<TB_QUESTAO> TB_QUESTAOReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TB_QUESTAO>("mysurveyModel.TB_ITENS_DA_QUESTAO_FKIndex1", "TB_QUESTAO");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TB_QUESTAO>("mysurveyModel.TB_QUESTAO_FKIndex2", "TB_QUESTAO", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TB_QUESTAO>("mysurveyModel.TB_ITENS_DA_QUESTAO_FKIndex1", "TB_QUESTAO", value);
                 }
             }
         }
@@ -3925,30 +3871,6 @@ namespace Models
         private global::System.Int32 _id_Questao;
         partial void Onid_QuestaoChanging(global::System.Int32 value);
         partial void Onid_QuestaoChanged();
-    
-        /// <summary>
-        /// Nenhuma Documentação de Metadados disponível.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO
-        {
-            get
-            {
-                return _TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO;
-            }
-            set
-            {
-                OnTB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAOChanging(value);
-                ReportPropertyChanging("TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO");
-                _TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO");
-                OnTB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAOChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _TB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAO;
-        partial void OnTB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAOChanging(Nullable<global::System.Int32> value);
-        partial void OnTB_ITENS_DA_QUESTAO_idTB_ITENS_DA_QUESTAOChanged();
     
         /// <summary>
         /// Nenhuma Documentação de Metadados disponível.
@@ -4099,24 +4021,24 @@ namespace Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> Codigo
+        public Nullable<global::System.Boolean> EhCodigo
         {
             get
             {
-                return _Codigo;
+                return _EhCodigo;
             }
             set
             {
-                OnCodigoChanging(value);
-                ReportPropertyChanging("Codigo");
-                _Codigo = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Codigo");
-                OnCodigoChanged();
+                OnEhCodigoChanging(value);
+                ReportPropertyChanging("EhCodigo");
+                _EhCodigo = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("EhCodigo");
+                OnEhCodigoChanged();
             }
         }
-        private Nullable<global::System.Boolean> _Codigo;
-        partial void OnCodigoChanging(Nullable<global::System.Boolean> value);
-        partial void OnCodigoChanged();
+        private Nullable<global::System.Boolean> _EhCodigo;
+        partial void OnEhCodigoChanging(Nullable<global::System.Boolean> value);
+        partial void OnEhCodigoChanged();
     
         /// <summary>
         /// Nenhuma Documentação de Metadados disponível.
@@ -4141,6 +4063,30 @@ namespace Models
         private global::System.String _Linguagem;
         partial void OnLinguagemChanging(global::System.String value);
         partial void OnLinguagemChanged();
+    
+        /// <summary>
+        /// Nenhuma Documentação de Metadados disponível.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Codigo
+        {
+            get
+            {
+                return _Codigo;
+            }
+            set
+            {
+                OnCodigoChanging(value);
+                ReportPropertyChanging("Codigo");
+                _Codigo = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Codigo");
+                OnCodigoChanged();
+            }
+        }
+        private global::System.String _Codigo;
+        partial void OnCodigoChanging(global::System.String value);
+        partial void OnCodigoChanged();
 
         #endregion
 
@@ -4153,34 +4099,18 @@ namespace Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "TB_QUESTAO_FKIndex2", "TB_ITENS_DA_QUESTAO")]
-        public TB_ITENS_DA_QUESTAO TB_ITENS_DA_QUESTAO
+        [EdmRelationshipNavigationPropertyAttribute("mysurveyModel", "TB_ITENS_DA_QUESTAO_FKIndex1", "TB_ITENS_DA_QUESTAO")]
+        public EntityCollection<TB_ITENS_DA_QUESTAO> TB_ITENS_DA_QUESTAO
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TB_ITENS_DA_QUESTAO>("mysurveyModel.TB_QUESTAO_FKIndex2", "TB_ITENS_DA_QUESTAO").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TB_ITENS_DA_QUESTAO>("mysurveyModel.TB_QUESTAO_FKIndex2", "TB_ITENS_DA_QUESTAO").Value = value;
-            }
-        }
-        /// <summary>
-        /// Nenhuma Documentação de Metadados disponível.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<TB_ITENS_DA_QUESTAO> TB_ITENS_DA_QUESTAOReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TB_ITENS_DA_QUESTAO>("mysurveyModel.TB_QUESTAO_FKIndex2", "TB_ITENS_DA_QUESTAO");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TB_ITENS_DA_QUESTAO>("mysurveyModel.TB_ITENS_DA_QUESTAO_FKIndex1", "TB_ITENS_DA_QUESTAO");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TB_ITENS_DA_QUESTAO>("mysurveyModel.TB_QUESTAO_FKIndex2", "TB_ITENS_DA_QUESTAO", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TB_ITENS_DA_QUESTAO>("mysurveyModel.TB_ITENS_DA_QUESTAO_FKIndex1", "TB_ITENS_DA_QUESTAO", value);
                 }
             }
         }
@@ -4666,7 +4596,9 @@ namespace Models
         /// <param name="subtitulo">Valor inicial da propriedade Subtitulo.</param>
         /// <param name="data_Criacao">Valor inicial da propriedade Data_Criacao.</param>
         /// <param name="flag_ativo">Valor inicial da propriedade flag_ativo.</param>
-        public static TB_SURVEY CreateTB_SURVEY(global::System.Int32 id_Survey, global::System.Int32 tB_RESPONSAVEL_id_Responsavel, global::System.String titulo, global::System.String subtitulo, global::System.DateTime data_Criacao, global::System.Boolean flag_ativo)
+        /// <param name="unicaResposta">Valor inicial da propriedade UnicaResposta.</param>
+        /// <param name="randomizeQuestoes">Valor inicial da propriedade RandomizeQuestoes.</param>
+        public static TB_SURVEY CreateTB_SURVEY(global::System.Int32 id_Survey, global::System.Int32 tB_RESPONSAVEL_id_Responsavel, global::System.String titulo, global::System.String subtitulo, global::System.DateTime data_Criacao, global::System.Boolean flag_ativo, global::System.Boolean unicaResposta, global::System.Boolean randomizeQuestoes)
         {
             TB_SURVEY tB_SURVEY = new TB_SURVEY();
             tB_SURVEY.id_Survey = id_Survey;
@@ -4675,6 +4607,8 @@ namespace Models
             tB_SURVEY.Subtitulo = subtitulo;
             tB_SURVEY.Data_Criacao = data_Criacao;
             tB_SURVEY.flag_ativo = flag_ativo;
+            tB_SURVEY.UnicaResposta = unicaResposta;
+            tB_SURVEY.RandomizeQuestoes = randomizeQuestoes;
             return tB_SURVEY;
         }
 
@@ -4852,6 +4786,78 @@ namespace Models
         private global::System.Boolean _flag_ativo;
         partial void Onflag_ativoChanging(global::System.Boolean value);
         partial void Onflag_ativoChanged();
+    
+        /// <summary>
+        /// Nenhuma Documentação de Metadados disponível.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean UnicaResposta
+        {
+            get
+            {
+                return _UnicaResposta;
+            }
+            set
+            {
+                OnUnicaRespostaChanging(value);
+                ReportPropertyChanging("UnicaResposta");
+                _UnicaResposta = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("UnicaResposta");
+                OnUnicaRespostaChanged();
+            }
+        }
+        private global::System.Boolean _UnicaResposta;
+        partial void OnUnicaRespostaChanging(global::System.Boolean value);
+        partial void OnUnicaRespostaChanged();
+    
+        /// <summary>
+        /// Nenhuma Documentação de Metadados disponível.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean RandomizeQuestoes
+        {
+            get
+            {
+                return _RandomizeQuestoes;
+            }
+            set
+            {
+                OnRandomizeQuestoesChanging(value);
+                ReportPropertyChanging("RandomizeQuestoes");
+                _RandomizeQuestoes = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("RandomizeQuestoes");
+                OnRandomizeQuestoesChanged();
+            }
+        }
+        private global::System.Boolean _RandomizeQuestoes;
+        partial void OnRandomizeQuestoesChanging(global::System.Boolean value);
+        partial void OnRandomizeQuestoesChanged();
+    
+        /// <summary>
+        /// Nenhuma Documentação de Metadados disponível.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String SenhaAcesso
+        {
+            get
+            {
+                return _SenhaAcesso;
+            }
+            set
+            {
+                OnSenhaAcessoChanging(value);
+                ReportPropertyChanging("SenhaAcesso");
+                _SenhaAcesso = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("SenhaAcesso");
+                OnSenhaAcessoChanged();
+            }
+        }
+        private global::System.String _SenhaAcesso;
+        partial void OnSenhaAcessoChanging(global::System.String value);
+        partial void OnSenhaAcessoChanged();
 
         #endregion
 
