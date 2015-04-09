@@ -35,16 +35,25 @@ namespace Spider.Controllers
         public ActionResult CreateViewTotal(int id)
         {
             ViewBag.id_Survey = id;
+            
+                   
+            return View(ListaQuestoesItens(id));
+            
+        }
+
+        public SurveyModel ListaQuestoesItens(int id)
+        {
             SurveyModel survey = new SurveyModel();
             survey = gSurvey.Obter(id);
             survey.questoes = gQuestao.ListaQuestaoSurvey(id).ToList();
+
             for (int i = 0; i < survey.questoes.Count; i++)
             {
-                //Obter os itens
-                //survey.questoes[i].itens = gItens.Obter(survey.questoes[i].idTB_ITENS_DA_QUESTAO);
+                int odin = survey.questoes[i].id_Questao;
+                survey.questoes[i].itens= gItens.ObterItens(odin).ToList();
+                
             }
-
-            return View(survey);
+            return survey;
         }
 
         [HttpPost]

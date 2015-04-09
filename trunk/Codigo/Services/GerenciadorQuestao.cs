@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Models;
 using Persistence;
 
@@ -115,8 +114,8 @@ namespace Services
         /// <returns>PessoaModel</returns>
         public QuestaoModel Obter(int IDquestao)
         {
-            IEnumerable<QuestaoModel> questaos = GetQuery().Where(QuestaoModel => QuestaoModel.id_Questao.Equals(IDquestao));
-            return questaos.ElementAtOrDefault(0);
+            IEnumerable<QuestaoModel> questoes = GetQuery().Where(QuestaoModel => QuestaoModel.id_Questao.Equals(IDquestao));
+            return questoes.ElementAtOrDefault(0);
         }
 
        
@@ -153,9 +152,23 @@ namespace Services
             IEnumerable<QuestaoModel> questoesSurveys = GetQuery().Where(QuestaoModel => QuestaoModel.id_Survey.Equals(IDsurvey));
             return questoesSurveys;
         }
-       
+
+        //public IEnumerable<Itens_da_QuestaoModel> ListarItensPorQuestao(int IDquestao)
+        //{
+        //    IEnumerable<Itens_da_QuestaoModel> questoesitens = GetQuery().Where(Itens_da_QuestaoModel => Itens_da_QuestaoModel.id_Questao.Equals(IDquestao));
+        //    return questoesitens;
+        //}
 
 
+        public byte[] ObterImagem(int id)
+        {
+            //int id = EncriptUtils.Descriptografar(idVenda);
+            IQueryable<TB_QUESTAO> TB_QUESTAO = unitOfWork.RepositorioQuestao.GetQueryable();
+            var query = from questaoE in TB_QUESTAO
+                        where  questaoE.id_Questao == id
+                        select questaoE.Img;
+            return query.FirstOrDefault();
+        }
        
     }
 }

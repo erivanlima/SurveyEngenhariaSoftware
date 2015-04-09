@@ -17,7 +17,7 @@
     </div>
 
 <p>
-    <%: Html.ActionLink("Adicionar Questão", "Create", new { id=ViewBag.id_Survey }, new { @class = "button" })%>
+    <%: Html.ActionLink("Adicionar Questão", "ModeloQuestoes", new { id=ViewBag.id_Survey }, new { @class = "button" })%>
 </p>
 <table>
     <tr>
