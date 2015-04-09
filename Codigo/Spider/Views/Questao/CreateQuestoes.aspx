@@ -17,6 +17,7 @@
 <script src="<%: Url.Content("~/Scripts/addQuestaoobj.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/addObjcomCod.js") %>" type="text/javascript"></script>
 <script src="<%: Url.Content("~/Scripts/addItem.js") %>" type="text/javascript"></script>
+
 <script>
     function readURL(input) {
 
@@ -30,7 +31,6 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
-
     
 </script>
 
@@ -61,7 +61,8 @@
         <legend></legend>
 
         
-     <% Html.HiddenFor(model => model.id_Survey, new { Value = ViewBag.id_Survey });%>
+     <%: Html.HiddenFor(model => model.id_Survey, new { Value = ViewBag.id_Survey })%>
+     
 
       <fieldset>
        
@@ -83,6 +84,15 @@
          </div>
          <div class="divperguntaobjetiva">
          </div>
+
+         <div class="editor-label">
+        <a href="javascript: addItem();" > Adicionar item </a>
+     </div>
+
+     <div class="item">
+          
+          </div>
+
    </fieldset>    
    
    <fieldset>
@@ -95,6 +105,14 @@
           
          </div>
          <img id="blah" src="#" alt="your image" />
+
+         <div class="editor-label">
+        <a href="javascript: addItem2();" > Adicionar item </a>
+     </div>
+
+     <div class="item_2">
+          
+          </div>
    </fieldset>  
 
     <fieldset>
@@ -106,6 +124,14 @@
          <div class="divperguntaobjetivacomcodigo">
           
          </div>
+
+         <div class="editor-label">
+        <a href="javascript: addItem3();" > Adicionar item </a>
+     </div>
+
+     <div class="item_3">
+          
+          </div>
    </fieldset>  
          
         <p>

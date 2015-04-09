@@ -90,6 +90,7 @@ namespace Services
             var query = from itensE in tb_itens
                         select new Itens_da_QuestaoModel
                         {
+                            id_Questao = itensE.TB_QUESTAO_id_Questao,
                             idTB_ITENS_DA_QUESTAO = itensE.idTB_ITENS_DA_QUESTAO,
                             Item = itensE.Item,
                             //ItemB = itensE.ItemB,
@@ -115,15 +116,15 @@ namespace Services
         /// </summary>
         /// <param name="id_servico">Identificador do Item na base de dados</param>
         /// <returns>Itens_da_QuestaoModel</returns>
-        public Itens_da_QuestaoModel Obter(int IDitens)
+        public Itens_da_QuestaoModel Obter(int IDques)
         {
-            IEnumerable<Itens_da_QuestaoModel> itens = GetQuery().Where(Itens_da_QuestaoModel => Itens_da_QuestaoModel.idTB_ITENS_DA_QUESTAO.Equals(IDitens));
+            IEnumerable<Itens_da_QuestaoModel> itens = GetQuery().Where(Itens_da_QuestaoModel => Itens_da_QuestaoModel.id_Questao.Equals(IDques));
             return itens.ElementAtOrDefault(0);
         }
 
-        public IEnumerable<Itens_da_QuestaoModel> ObterItens(int idQuest)
+        public IEnumerable<Itens_da_QuestaoModel> ObterItens(int odin)
         {
-            IEnumerable<Itens_da_QuestaoModel> itens = GetQuery().Where(Itens_da_QuestaoModel => Itens_da_QuestaoModel.id_Questao.Equals(idQuest));
+            IEnumerable<Itens_da_QuestaoModel> itens = GetQuery().Where(Itens_da_QuestaoModel => Itens_da_QuestaoModel.id_Questao.Equals(odin));
             return itens;
         }
 
@@ -138,6 +139,7 @@ namespace Services
         {
             itensE.idTB_ITENS_DA_QUESTAO = itens.idTB_ITENS_DA_QUESTAO;
             itensE.Item = itens.Item;
+            itensE.TB_QUESTAO_id_Questao = itens.id_Questao;
             //itensE.ItemB = itens.ItemB;
             //itensE.ItemC = itens.ItemC;
             //itensE.ItemD = itens.ItemD;

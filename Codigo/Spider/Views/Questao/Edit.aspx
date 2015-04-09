@@ -16,17 +16,18 @@
 </script>
 	<script type="text/javascript" src="<%:Url.Content ("~/Scripts/shBrushCSharp.js")%>"></script>
     <script src="../../Scripts/addItem.js" type="text/javascript"></script>
-
+    <script src="<%: Url.Content("~/Scripts/addItem.js") %>" type="text/javascript"></script>
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
         <legend>QuestaoModel</legend>
-        <% Html.HiddenFor(model => model.id_Survey, new { Value = ViewBag.id_Survey });%>
+        <%: Html.HiddenFor(model => model.id_Survey)%>
         <%--<div class="editor-field">
             <%: Html.HiddenFor(model => model.id_Questao)%>
             <%: Html.ValidationMessageFor(model => model.id_Questao) %>
         </div>--%>
         <%: Html.HiddenFor(model => model.id_Questao)%>
+        <%: Html.HiddenFor(model => model.Tipo)%>
         <%--<div class="editor-label">
             <%: Html.LabelFor(model => model.idTB_ITENS_DA_QUESTAO) %>
         </div>
@@ -103,23 +104,10 @@
             <%: Html.ValidationMessageFor(model => model.Codigo)%>
         </div>
 
-        <fieldset>
-          
-        <% Html.RenderPartial("ListaItens",Model.itens); %>
-
-       
-           <%--<div class="editor-label">
-              <a href="javascript: addItem();" > Adicionar item </a>
-          </div>--%>
-
-          <div class="item">
-          
-          </div>
-     </fieldset>
+        </fieldset>
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Salvar" />
         </p>
-    </fieldset>
 <% } %>
 
 <div>
