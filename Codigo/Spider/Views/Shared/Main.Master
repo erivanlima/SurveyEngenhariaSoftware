@@ -3,10 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head id="Head1" runat="server">
-<%--<link href='http://alexgorbatchev.com/pub/sh/current/styles/shCore.css' rel='stylesheet' type='text/css'/>
-<link href='http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css' rel='stylesheet' type='text/css'/>
-<script src='http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js' type='text/javascript'/>
-<script src='http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js' type='text/javascript'/>--%>
+
 <script type='text/javascript'>
     SyntaxHighlighter.all();
 </script>
@@ -19,17 +16,10 @@
         <div class="header-login">
             
             <div id="logindisplay">
-                <%--<% Html.RenderPartial("LogOnUserControl"); %>--%>
+               
             </div> 
             <div id="menucontainer">
-                <%--<ul id="menu">
-                    <li><%: Html.ActionLink("Survey", "Index", "Survey")%></li>
-                    <li><%: Html.ActionLink("Responsável", "Index", "Responsavel")%></li>
-                    <li><%: Html.ActionLink("Questão", "Index", "Questao")%></li>
-                    <li><%: Html.ActionLink("Resposta", "Index", "Resposta")%></li>
-                    <li><%: Html.ActionLink("Home", "Index", "Home")%></li>
-                    <li><%: Html.ActionLink("About", "About", "Home")%></li>
-                </ul>--%>
+               
 
             </div>
         </div>

@@ -223,18 +223,23 @@ namespace Spider.Controllers
                {
                    SurveyModel survey = new SurveyModel();
                    survey = gSurvey.Obter(id);
-                   survey.questoes = gQuestao.ListaQuestaoSurvey(id).ToList();
-                   for (int i = 0; i < survey.questoes.Count; i++)
-                   {
-                       //survey.questoes[i].itens = gItens.Obter(survey.questoes[i].idTB_ITENS_DA_QUESTAO);
-                   }
+                   
                    foreach (QuestaoModel questao in survey.questoes)
                    {
                        gResposta.Remover(questao.respostas.id_Resposta);
                        if (questao.Tipo.Equals("OBJETIVA"))
                        {
-                           gQuestao.Remover(questao.id_Questao);
-                           //gItens.Remover(questao.idTB_ITENS_DA_QUESTAO);
+                           survey.questoes = gQuestao.ListaQuestaoSurvey(id).ToList();
+                           for (int i = 0; i < survey.questoes.Count; i++)
+                           {
+                               survey.questoes[i].itens = gItens.ObterItens(survey.questoes[i].id_Questao).ToList();
+                               foreach (Itens_da_QuestaoModel item in survey.questoes[i].itens)
+                               {
+                                   gItens.Remover(item.id_Questao);
+                               }
+                               gQuestao.Remover(questao.id_Questao);
+                           }
+                           
                        }
                        else
                        {
@@ -245,7 +250,7 @@ namespace Spider.Controllers
                }
              gSurvey.Remover(id);
              return RedirectToAction("Index");
-           // return View();
+           
         }
 
         //

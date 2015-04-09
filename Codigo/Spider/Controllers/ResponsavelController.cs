@@ -90,6 +90,7 @@ namespace Spider.Controllers
                     //    respostas.Item = survey.questoes[i].itens.ItemE;
                     
                     respostas.id_Questao = survey.questoes[i].id_Questao;
+                    respostas.Item = survey.questoes[i].respostas.Item;
                     respostas.idTB_ENTREVISTADO = entrevistados.idTB_ENTREVISTADO;
                     respostas.Resposta = null;
                     gResposta.Inserir(respostas);
@@ -110,7 +111,7 @@ namespace Spider.Controllers
             }
 
 
-            return View(survey);
+            return RedirectToAction("Index","Home");
         }
 
 

@@ -104,7 +104,7 @@
         <fieldset>
          <div class="editor-label">
          <h3>Itens adicionados </h3>
-            <a href="javascript: addItem();" >  </a>
+            <%--<a href="javascript: addItem();" >  </a>--%>
          </div> 
     
           <div class="item">

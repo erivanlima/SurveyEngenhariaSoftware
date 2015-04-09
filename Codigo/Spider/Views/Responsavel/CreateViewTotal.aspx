@@ -3,33 +3,25 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Visualizar Survey
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
-<h2>Visualizar Survey</h2>
-
-<script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
-<script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
-<script type="text/javascript">
-if (RadioButton1.Checked)
-   Label1.Text="You selected " & red.Text
-else
-if (RadioButton2.Checked) 
-   Label1.Text="You selected " & green.Text
-else
-if (RadioButton3.Checked)
-    Label1.Text = "You selected " & blue.Text
-else
-if (RadioButton4.Checked) 
-   Label1.Text="You selected " & green.Text
-else
-if (RadioButton5.Checked)
-    Label1.Text = "You selected " & green.Text
-</script>
-
-<% using (Html.BeginForm()) { %>
+    <h2>
+        Visualizar Survey</h2>
+    <link href="../../Content/shThemeDefault.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/shCore.css" rel="stylesheet" type="text/css" />
+    <script src="../../Scripts/shCore.js" type="text/javascript"></script>
+    <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
+    <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
+        type="text/javascript"></script>
+    <script src="../../Scripts/shBrushJScript.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.all();
+    </script>
+    <script type="text/javascript" src="<%:Url.Content ("~/Scripts/shBrushCSharp.js")%>"></script>
+    <% using (Html.BeginForm())
+       { %>
     <%: Html.ValidationSummary(true) %>
-<fieldset-p>
+    <fieldset-p>
         <legend></legend>
     <fieldset-p>
     <%: Html.HiddenFor(model => model.id_Survey, new { Value = ViewBag.id_Survey })%>
@@ -50,7 +42,8 @@ if (RadioButton5.Checked)
         <% int i = 0; %>
         
                 
-         <% foreach (var Questao in Model.questoes) { %>
+         <% foreach (var Questao in Model.questoes)
+            { %>
         <fieldset> 
 
         <input class="valid" value="<%= Questao.id_Questao %>" id="questoes_<%= i %>__id_Questao" name="questoes[<%= i %>].id_Questao" type="hidden">
@@ -60,46 +53,56 @@ if (RadioButton5.Checked)
           <div class="display-field">
             <%: Html.DisplayFor(model => Questao.Pergunta)%>
           </div>
-              <% int j = 0; %>
+
+          <% if (Questao.Codigo != null)
+             {  %>
+
+          <pre class="brush:csharp">
+              <%: Html.DisplayFor(model => Questao.Codigo)%>
+          </pre>
+
+          <% }  %>
+              
+              <% if (Questao.Img != null)
+                  {  %>
+                 
+                 <div class="imagem">
+                <img src="<%: Url.Action("GetImagem", "Questao", new { id = Model.questoes[i].id_Questao }) %>" id="imagem" alt="Imagem" height="300"/>
+                </div>
+
+                 <% } %> 
+
               <% if (Questao.Tipo.Equals("OBJETIVA"))
                  {  %> 
                  <fieldset>
                         
-               <% foreach (var item in Model.questoes[i].itens) { %>
+               <% foreach (var item in Model.questoes[i].itens)
+                  { %>
                     
                    <div  class="display-field">
-                    <input  
-                     id="questoes_<%= j %>__itens__Item" 
-                     name="questoes[<%= j %>].itens.Item"
+                    <input   
+                     id="questoes_<%= i %>__respostas__Item" 
+                     name="questoes[<%= i %>].respostas.Item"
                      type="radio" 
                      value="<%= Html.DisplayFor(model => item.Item)%>"/>
                      <%: Html.DisplayFor(model => item.Item)%>
                    </div>
-               <% j++;} %>
-                <div class="imagem">
-            <img src="<%: Url.Action("GetImagem", "Questao", new { id = Model.questoes[i].id_Questao }) %>"
-                id="imagem" alt="Imagem" />
-        </div> 
-                <%-- Resposta:
-                 
-                 <input class="text-box single-line" id="questoes_<%= i %>__respostas__Item" name="questoes[<%= i %>].respostas.Item" value="" type="text">--%>
-                            
+               <% 
+                  } %>             
                </fieldset>
                 <% }
-                 
-                  else{  %>   
+                 else
+                 {  %>   
                   <fieldset>
                              Resposta:
-                              <input class="text-box single-line" id="questoes_<%= i %>__respostas__Resposta" name="questoes[<%= i %>].respostas.Resposta" value="" type="text">
+                              <input class="text-box single-line" id="questoes_<%= i %>__respostas__Resposta" name="questoes[<%= i %>].respostas.Resposta" value="" type="text"/>
                 
                  </fieldset>
                    <% } %>  
-              </fieldset>  
-              
-                    
+              </fieldset>      
        <% i++;
-          
-          } %>
+
+            } %>
             </fieldset> 
         
       <p>
@@ -108,10 +111,8 @@ if (RadioButton5.Checked)
         </p>
     </fieldset-p>
 </fieldset-p>
-<% } %>
-
-<div>
-    <%: Html.ActionLink("Voltar", "Index", null,new { @class = "button" })%>
-</div>
-
+    <% } %>
+    <div>
+        <%: Html.ActionLink("Voltar", "Index", null,new { @class = "button" })%>
+    </div>
 </asp:Content>
