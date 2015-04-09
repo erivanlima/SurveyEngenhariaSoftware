@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Services;
 using Models;
 using System.IO;
+using System.Web.UI.WebControls;
 
 namespace Spider.Controllers
 {
@@ -95,7 +96,7 @@ namespace Spider.Controllers
             ViewBag.id_Survey = id;
             //QuestaoModel questao = new QuestaoModel();
 
-            return RedirectToAction("Edit4/" + DefaultQuestaoSubjetiva(id), "Questao");
+            return RedirectToAction("Edit4/" + DefaultQuestaoObj(id), "Questao");
             //return View(questao);
         }
 
@@ -134,37 +135,6 @@ namespace Spider.Controllers
             //return RedirectToAction("ListaQuestoes/" + questao.id_Survey, "Questao");
             return gQuestao.Inserir(questao);
         }
-
-        //
-        // POST: /Questao/Create
-
-        //[HttpPost]
-        //public ActionResult Create(QuestaoModel questao)
-        //{
-        //    int idQuestaoInserida=0;
-
-        //            if (questao.Pergunta != null)
-        //            {
-        //                //questao.id_Survey = id;
-        //                //questao.idTB_ITENS_DA_QUESTAO = gItens.Inserir(questao.itens);
-
-        //               idQuestaoInserida = gQuestao.Inserir(questao);
-
-        //            }
-
-        //            //return RedirectToAction("ListaQuestoes/" + questao.id_Survey, "Questao");
-        //            return RedirectToAction("Edit/" + idQuestaoInserida, "Questao");
-
-        //}
-
-        //[HttpGet]
-        //public PartialViewResult CreateItens(int id)
-        //{
-
-        //    ViewBag.id_Questao = id;
-        //    return PartialView();
-
-        //}
 
         //[HttpPost]
         public ActionResult CreateItens(Itens_da_QuestaoModel itensModel)
@@ -350,27 +320,39 @@ namespace Spider.Controllers
         // POST: /Survey/Edit/5
 
         [HttpPost]
-        public ActionResult Edit4(int id, QuestaoModel questaoModel)
+        public ActionResult Edit4(int id, QuestaoModel questaoModel,HttpPostedFileBase file)
         {
-
-
-            if (ModelState.IsValid)
+            if (file != null && file.ContentLength > 0)
             {
+                // extract only the fielname
+                var fileName = Path.GetFileName(file.FileName);
+                // store the file inside ~/App_Data/uploads folder
+                var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
+                file.SaveAs(path);
+            }
+
+            if (questaoModel.Pergunta != null)
+            {
+                //questaoModel.id_Survey = survey.id_Survey;
+                //questao.idTB_ITENS_DA_QUESTAO = gItens.Inserir(questao.itens);
+
+
+                string result = new StreamReader(file.InputStream).ReadToEnd(); ;
+                
+                questaoModel.Codigo = result;
+
                 foreach (Itens_da_QuestaoModel item in questaoModel.itens)
                 {
+                    //Itens_da_QuestaoModel item = new Itens_da_QuestaoModel();
+                    //survey.questoes[i].itens
                     item.id_Questao = questaoModel.id_Questao;
-
                     gItens.Inserir(item);
-
-
-
                 }
                 gQuestao.Editar(questaoModel);
                 return RedirectToAction("ListaQuestoes/" + questaoModel.id_Survey, "Questao");
-
             }
 
-            return View(questaoModel);
+            return View(questaoModel);  
         }
 
         //
@@ -391,7 +373,10 @@ namespace Spider.Controllers
             questaoModel = gQuestao.Obter(id);
             if (ModelState.IsValid)
             {
-
+                List<Itens_da_QuestaoModel> ListaItens = gItens.ObterItens(questaoModel.id_Questao).ToList();
+                foreach(Itens_da_QuestaoModel itens in ListaItens){
+                    gItens.Remover(itens.id_Questao);
+                }
                 gQuestao.Remover(id);
                 return RedirectToAction("ListaQuestoes/" + questaoModel.id_Survey, "Questao");
             }
@@ -460,16 +445,18 @@ namespace Spider.Controllers
 
         public FileContentResult GetImagem(int id)
         {
+            FileContentResult retorno=null;
             byte[] byteArray = gQuestao.ObterImagem(id);
             if (byteArray != null && byteArray.Length != 0)
             {
-                return new FileContentResult(byteArray, "image/*");
+               retorno =  new FileContentResult(byteArray, "image/*");
             }
-            else
-            {
-                string imagemPadrao = Server.MapPath("~/App_Data/uploads/abc.png");
-                return new FileContentResult(ReadByteArrayFromFile(imagemPadrao), "image/*");
-            }
+            //else
+            //{
+            //    string imagemPadrao = Server.MapPath("null");
+            //    return new FileContentResult(ReadByteArrayFromFile(imagemPadrao), "image/*");
+            //}
+            return retorno;
         }
 
         public static byte[] ReadByteArrayFromFile(string fileName)

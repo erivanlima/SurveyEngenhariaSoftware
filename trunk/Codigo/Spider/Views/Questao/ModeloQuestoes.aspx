@@ -113,12 +113,16 @@
     <fieldset>
        <%-- <img src="" alt="pergunta objetiva com código" />--%>
         <img src="../../Content/imagem/objetivacodigo.jpg" />
-         <div class="editor-label">
+         <%--<div class="editor-label">
            <a href="javascript: perguntaobjcomcod();" > Adicionar questão </a>
          </div>
          <div class="divperguntaobjetivacomcodigo">
           
-         </div>
+         </div>--%>
+
+         <div>
+            <%: Html.ActionLink("Adicionar Questão", "Create4", new { id=ViewBag.id_Survey }, new { @class = "button" })%>
+          </div>
 
    </fieldset>  
          
