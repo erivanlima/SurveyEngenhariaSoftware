@@ -76,6 +76,11 @@ namespace Services
             unitOfWork.RepositorioResposta.Remover(respostaE => respostaE.id_Resposta.Equals(IDresposta));
             unitOfWork.Commit(shared);
         }
+        public void RemoverRespostaPorQuestao(int IDquest)
+        {
+            unitOfWork.RepositorioResposta.Remover(respostaE => respostaE.TB_QUESTAO_id_Questao.Equals(IDquest));
+            unitOfWork.Commit(shared);
+        }
 
 
 
