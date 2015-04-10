@@ -217,34 +217,29 @@ namespace Spider.Controllers
         // POST: /Survey/Delete/5
 
         [HttpPost]
-        public ActionResult Delete(int id,int o=0)
+        public ActionResult Delete(int id, SurveyModel survey)
         {
-            if (ModelState.IsValid)
-               {
-                   SurveyModel survey = new SurveyModel();
-                   survey = gSurvey.Obter(id);
+                 int i = 0;
+                 survey = gSurvey.Obter(id);
+                 survey.questoes = gQuestao.ListaQuestaoSurvey(id).ToList();
+                if (ModelState.IsValid)
+                 {
                    
                    foreach (QuestaoModel questao in survey.questoes)
                    {
-                       gResposta.Remover(questao.respostas.id_Resposta);
-                       if (questao.Tipo.Equals("OBJETIVA"))
-                       {
-                           survey.questoes = gQuestao.ListaQuestaoSurvey(id).ToList();
-                           for (int i = 0; i < survey.questoes.Count; i++)
-                           {
-                               survey.questoes[i].itens = gItens.ObterItens(survey.questoes[i].id_Questao).ToList();
+                       gResposta.RemoverRespostaPorQuestao(questao.id_Questao);
+                       survey.questoes[i].itens = gItens.ObterItens(survey.questoes[i].id_Questao).ToList();
                                foreach (Itens_da_QuestaoModel item in survey.questoes[i].itens)
                                {
-                                   gItens.Remover(item.id_Questao);
+                                   gItens.RemoverPorQuestao(questao.id_Questao);
+                                   
                                }
-                               gQuestao.Remover(questao.id_Questao);
-                           }
                            
-                       }
-                       else
-                       {
-                           gQuestao.Remover(questao.id_Questao);
-                       }
+                          i++;
+                   }
+                   foreach (QuestaoModel questao in survey.questoes)
+                   {
+                       gQuestao.RemoverQuestaoPorSurvey(id);
                    }
 
                }

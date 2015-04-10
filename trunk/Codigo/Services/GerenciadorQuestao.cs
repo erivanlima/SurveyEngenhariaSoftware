@@ -65,9 +65,14 @@ namespace Services
         /// Remove da base de dados
         /// </summary>
         /// <param name="IDquestao"></param>
-        public void Remover(int IDquestao)
+        public void Remover(int IDquest)
         {
-            unitOfWork.RepositorioQuestao.Remover(questaoE => questaoE.id_Questao.Equals(IDquestao));
+            unitOfWork.RepositorioQuestao.Remover(questaoE => questaoE.id_Questao.Equals(IDquest));
+            unitOfWork.Commit(shared);
+        }
+        public void RemoverQuestaoPorSurvey(int IDsurvey)
+        {
+            unitOfWork.RepositorioQuestao.Remover(questaoE => questaoE.TB_SURVEY_id_Survey.Equals(IDsurvey));
             unitOfWork.Commit(shared);
         }
 

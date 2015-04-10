@@ -377,7 +377,7 @@ namespace Spider.Controllers
                 foreach(Itens_da_QuestaoModel itens in ListaItens){
                     gItens.Remover(itens.id_Questao);
                 }
-                gQuestao.Remover(id);
+                gQuestao.RemoverQuestao(id);
                 return RedirectToAction("ListaQuestoes/" + questaoModel.id_Survey, "Questao");
             }
 
