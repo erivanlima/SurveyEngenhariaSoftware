@@ -76,7 +76,6 @@ namespace Services
             unitOfWork.Commit(shared);
         }
 
-
         /// <summary>
         /// Consulta padrão para retornar dados do questao como model
         /// </summary>

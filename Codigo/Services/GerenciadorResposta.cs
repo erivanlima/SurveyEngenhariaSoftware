@@ -73,7 +73,7 @@ namespace Services
         /// <param name="servico"></param>
         public void Remover(int IDresposta)
         {
-            unitOfWork.RepositorioResposta.Remover(respostaE => respostaE.id_Resposta.Equals(IDresposta));
+            unitOfWork.RepositorioResposta.Remover(respostaE => respostaE.TB_QUESTAO_id_Questao.Equals(IDresposta));
             unitOfWork.Commit(shared);
         }
         public void RemoverRespostaPorQuestao(int IDquest)

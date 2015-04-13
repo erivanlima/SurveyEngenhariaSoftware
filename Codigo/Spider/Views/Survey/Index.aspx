@@ -9,7 +9,8 @@
 <h2></h2>
 
 <p>
-    <%: Html.ActionLink("Criar Novo Survey", "CreateSurvey",null,new { @class = "button" }) %>
+
+    <%: Html.ActionLink("Criar Novo Survey", "CreateSurvey",null,new { @class="button"}) %>
 </p>
 <table>
     <tr>
@@ -25,7 +26,7 @@
         <th>
             Ativo
         </th>
-        <th id="thc">
+        <th id="th">
             Ações
         </th>
     </tr>
