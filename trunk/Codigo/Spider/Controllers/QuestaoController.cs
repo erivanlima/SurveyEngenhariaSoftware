@@ -151,6 +151,12 @@ namespace Spider.Controllers
             return PartialView(gItens.ObterItens(idQuest));
         }
 
+
+        public PartialViewResult InfoSurvey(int id)
+        {
+            return PartialView(gSurvey.Obter(id));
+        }
+
         //
         // GET: /Resposta/Create
         [HttpGet]
@@ -177,6 +183,7 @@ namespace Spider.Controllers
         public ActionResult ListaQuestoes(int id)
         {
             ViewBag.id_Survey = id;
+            ViewBag.Titulo = gSurvey.Obter(id).Titulo;
             return View(gQuestao.ListaQuestaoSurvey(id));
         }
 
@@ -195,6 +202,18 @@ namespace Spider.Controllers
         public ActionResult Edit(int id)
         {
             QuestaoModel questaoModel = gQuestao.Obter(id);
+            if (questaoModel.Codigo != null && questaoModel.Img != null)
+            {
+                return RedirectToAction("Edit2/" + id, "Questao");
+            }
+            if (questaoModel.Img != null)
+            {
+                return RedirectToAction("Edit3/" + id, "Questao");
+            }
+            if (questaoModel.Codigo != null)
+            {
+                return RedirectToAction("Edit4/" + id, "Questao");
+            }
             return View(questaoModel);
         }
 
@@ -377,7 +396,7 @@ namespace Spider.Controllers
                 foreach(Itens_da_QuestaoModel itens in ListaItens){
                     gItens.Remover(itens.id_Questao);
                 }
-                gQuestao.RemoverQuestao(id);
+                gQuestao.Remover(id);
                 return RedirectToAction("ListaQuestoes/" + questaoModel.id_Survey, "Questao");
             }
 

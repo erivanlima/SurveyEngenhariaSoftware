@@ -12,9 +12,8 @@
 
 
 <div class="display-label">Título do Survey</div>
-    <div class="display-field">
-       <%-- name = <%: Html.DisplayFor(model => name, new { Value = ViewBag.id_Survey })%>--%>
-    </div>
+    <%--
+    <% Html.Partial("~/InfoSurvey", ViewBag.id_Survey )%>--%>
 
 <p>
     <%: Html.ActionLink("Adicionar Questão", "ModeloQuestoes", new { id=ViewBag.id_Survey }, new { @class = "button" })%>
