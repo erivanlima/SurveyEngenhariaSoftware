@@ -69,7 +69,7 @@
         </div>
         
         <div class="page-header">
-		<input id="input-23" type="file" multiple="true"/>
+		<input id="input-23" type="file" name="file" multiple="true"/>
 		</div>
 			
         <%--<div class="editor-field">
