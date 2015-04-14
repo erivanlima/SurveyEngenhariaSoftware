@@ -25,7 +25,7 @@
     <div class="display-label">Link</div>
     <div class="display-field">
         <p>
-    <%: Html.ActionLink("http://localhost:1433/Responsavel/CreateViewTotal/" + Model.id_Survey, "CreateViewTotal", "Responsavel", new { id = Model.id_Survey })%> 
+    <%: Html.ActionLink("http://"+"Responsavel/CreateViewTotal/" + Model.id_Survey, "CreateViewTotal",new { id = Model.id_Survey }, "Responsavel")%> 
 </p>
     </div>
 

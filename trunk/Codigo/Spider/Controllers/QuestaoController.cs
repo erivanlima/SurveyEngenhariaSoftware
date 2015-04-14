@@ -394,7 +394,7 @@ namespace Spider.Controllers
             {
                 List<Itens_da_QuestaoModel> ListaItens = gItens.ObterItens(questaoModel.id_Questao).ToList();
                 foreach(Itens_da_QuestaoModel itens in ListaItens){
-                    gItens.Remover(itens.id_Questao);
+                    gItens.RemoverPorQuestao(itens.id_Questao);
                 }
                 gQuestao.Remover(id);
                 return RedirectToAction("ListaQuestoes/" + questaoModel.id_Survey, "Questao");

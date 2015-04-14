@@ -185,8 +185,11 @@
     <Content Include="Views\Responsavel\Delete.aspx" />
     <Content Include="Views\Responsavel\Details.aspx" />
     <Content Include="Views\Responsavel\Edit.aspx" />
+    <Content Include="Views\Responsavel\GerarLinkSurvey.aspx" />
     <Content Include="Views\Responsavel\Index.aspx" />
     <Content Include="Views\Responsavel\Listar.aspx" />
+    <Content Include="Views\Responsavel\ListarRespostas.aspx" />
+    <Content Include="Views\Responsavel\VisualizarSurvey.aspx" />
     <Content Include="Views\Survey\EnviarSurvey.aspx" />
     <Content Include="Views\Survey\CreateSurvey.aspx" />
     <Content Include="Views\Survey\Delete.aspx" />
