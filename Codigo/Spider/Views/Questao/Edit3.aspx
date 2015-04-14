@@ -49,9 +49,7 @@
             <%: Html.ValidationMessageFor(model => model.Obrigatoria) %>
         </div>
         <img id="blah" src="#" height="300" alt="your image" />
-        <div class="editor-label">
-            <a href="javascript: addimg();">Adicionar Imagem </a>
-        </div>
+        
         <div class="divimagem">
         </div>
         <fieldset>

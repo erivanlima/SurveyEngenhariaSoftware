@@ -77,17 +77,6 @@ namespace Spider.Controllers
 
                 if (survey.questoes[i].Tipo.Equals("OBJETIVA"))
                 {
-
-                    //if(survey.questoes[i].itens.Item != null)
-                      //  respostas.Item = survey.questoes[i].itens.Item;
-                    //if (survey.questoes[i].itens.ItemB != null)
-                    //    respostas.Item = survey.questoes[i].itens.ItemB;
-                    //if (survey.questoes[i].itens.ItemC != null)
-                    //    respostas.Item = survey.questoes[i].itens.ItemC;
-                    //if (survey.questoes[i].itens.ItemD != null)
-                    //    respostas.Item = survey.questoes[i].itens.ItemD;
-                    //if (survey.questoes[i].itens.ItemE != null)
-                    //    respostas.Item = survey.questoes[i].itens.ItemE;
                     
                     respostas.id_Questao = survey.questoes[i].id_Questao;
                     respostas.Item = survey.questoes[i].respostas.Item;
