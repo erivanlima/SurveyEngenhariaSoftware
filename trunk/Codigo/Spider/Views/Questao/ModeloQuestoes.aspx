@@ -4,9 +4,7 @@
     Criar Questões
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <br />
-    <h2>
-        Modelo de Questão</h2>
+    <h3> Modelo de Questão</h3>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
         type="text/javascript"></script>
@@ -56,7 +54,7 @@
         <legend></legend>
         <%: Html.HiddenFor(model => model.id_Survey, new { Value = ViewBag.id_Survey })%>
         <fieldset>
-            <img src="../../Content/imagem/subjetiva.jpg" />
+            <img src="../../Content/imagem/subjetiva.jpg" alt="Imagem" width="700"  height="250"/>
             <%--<img src="psubjetiva.png" width="300" height="200"alt="pergunta subjetiva" />  --%>
             <%--<div class="editor-label">
               <a href="javascript: perguntasubjetiva();" > Adicionar questão </a>
@@ -68,9 +66,10 @@
                 <%: Html.ActionLink("Adicionar Questão", "Create", new { id=ViewBag.id_Survey }, new { @class = "button" })%>
             </div>
         </fieldset>
+        <br />
         <fieldset>
             <%--<img src="" alt="pergunta objetiva" />--%>
-            <img src="../../Content/imagem/objetiva.jpg" />
+            <img src="../../Content/imagem/objetiva.jpg" alt="Imagem" width="700"  height="250" />
             <%--<div class="editor-label">
            <a href="javascript: perguntaobjetiva();" > Adicionar questão </a>
          </div>
@@ -80,9 +79,10 @@
                 <%: Html.ActionLink("Adicionar Questão", "Create2", new { id=ViewBag.id_Survey }, new { @class = "button" })%>
             </div>
         </fieldset>
+        <br />
         <fieldset>
             <%--<img src="" alt="pergunta objetiva com imagem" />--%>
-            <img src="../../Content/imagem/objetivaimagem.jpg" />
+            <img src="../../Content/imagem/objetivaimagem.jpg" alt="Imagem" width="700"  height="250" />
             <%--<div class="editor-label">
            <a href="javascript: perguntasubjcomimg();" > Adicionar questão </a>
          </div>
@@ -93,9 +93,10 @@
                 <%: Html.ActionLink("Adicionar Questão", "Create3", new { id=ViewBag.id_Survey }, new { @class = "button" })%>
             </div>
         </fieldset>
+        <br />
         <fieldset>
             <%-- <img src="" alt="pergunta objetiva com código" />--%>
-            <img src="../../Content/imagem/objetivacodigo.jpg" />
+            <img src="../../Content/imagem/objetivacodigo.jpg" alt="Imagem" width="700"  height="250"/>
             <%--<div class="editor-label">
            <a href="javascript: perguntaobjcomcod();" > Adicionar questão </a>
          </div>
@@ -106,8 +107,21 @@
                 <%: Html.ActionLink("Adicionar Questão", "Create4", new { id=ViewBag.id_Survey }, new { @class = "button" })%>
             </div>
         </fieldset>
-        <p>
-        </p>
+        <br />
+        <fieldset>
+            <%-- <img src="" alt="pergunta objetiva com código" />--%>
+            <img src="../../Content/imagem/subjetivacodigo.png" alt="Imagem" width="700"  height="250" />
+            <%--<div class="editor-label">
+           <a href="javascript: perguntaobjcomcod();" > Adicionar questão </a>
+         </div>
+         <div class="divperguntaobjetivacomcodigo">
+          
+         </div>--%>
+            <div>
+                <%: Html.ActionLink("Adicionar Questão", "Create5", new { id=ViewBag.id_Survey }, new { @class = "button" })%>
+            </div>
+        </fieldset>
+        <br />
         <div>
             <%: Html.ActionLink("Voltar", "ListaQuestoes", new { id = ViewBag.id_Survey }, new { @class = "button" })%>
         </div>

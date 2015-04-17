@@ -6,9 +6,8 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<br />
 
-<h2>Manter Questões</h2>
+<h3>Manter Questões</h3>
 
 
 <div class="display-label">Título do Survey</div>

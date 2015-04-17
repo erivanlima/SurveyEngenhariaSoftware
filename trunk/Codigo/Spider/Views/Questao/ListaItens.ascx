@@ -40,9 +40,9 @@
             <%: Html.DisplayFor(modelItem => item.Item) %>
         </td>
         <td>
-            <%: Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) %> |
-            <%: Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) %> |
-            <%: Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) %>
+            <%: Html.ActionLink("Edit", "Edit", new {  id= item.id_Questao }) %> |
+            <%: Html.ActionLink("Details", "Details", new { id = item.id_Questao })%> |
+            <%: Html.ActionLink("Delete", "Delete", new { id = item.id_Questao })%>
         </td>
     </tr>
     

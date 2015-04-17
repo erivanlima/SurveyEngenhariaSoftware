@@ -3,8 +3,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>
-    </h2>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
         type="text/javascript"></script>
@@ -19,7 +17,7 @@
        { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>QuestaoModel</legend>
+        <legend>Nova Questão</legend>
         <%: Html.HiddenFor(model => model.id_Survey)%>
         <%: Html.HiddenFor(model => model.id_Questao)%>
         <%: Html.HiddenFor(model => model.Tipo)%>
@@ -47,32 +45,11 @@
             <%: Html.EditorFor(model => model.Obrigatoria) %>
             <%: Html.ValidationMessageFor(model => model.Obrigatoria) %>
         </div>
-        <div class="editor-label">
-            Utilizar código ?
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.EhCodigo) %>
-            <%: Html.ValidationMessageFor(model => model.EhCodigo) %>
-        </div>
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Linguagem) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.Linguagem) %>
-            <%: Html.ValidationMessageFor(model => model.Linguagem) %>
-        </div>
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Codigo) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.Codigo)%>
-            <%: Html.ValidationMessageFor(model => model.Codigo)%>
-        </div>
         <fieldset>
             <div class="editor-label">
                 <a href="javascript: addItem();">Adicionar item </a>
             </div>
-            <table>
+            <%--<table>
                 <tr>
                     <th>
                         idTB_ITENS_DA_QUESTAO
@@ -105,7 +82,7 @@
                     </td>
                 </tr>
                 <% } %>
-            </table>
+            </table>--%>
             <%--<div class="editor-label">
               <a href="javascript: addItem();" > Adicionar item </a>
           </div>--%>
@@ -113,7 +90,7 @@
             </div>
         </fieldset>
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Salvar" />
         </p>
     </fieldset>
     <% } %>

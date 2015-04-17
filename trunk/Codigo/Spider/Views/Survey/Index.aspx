@@ -49,7 +49,7 @@
             <%: Html.ActionLink("Manter Questões", "ListaQuestoes", "Questao", new { id = item.id_Survey }, new { @class = "button" })%> 
             <%: Html.ActionLink("Editar", "Edit", new {  id=item.id_Survey }, new { @class = "button" }) %> 
             <%: Html.ActionLink("Excluir", "Delete", new {  id=item.id_Survey }, new { @class = "button" }) %> 
-            <%: Html.ActionLink("Visualizar", "CreateViewTotal", "Responsavel", new { id = item.id_Survey }, new { @class = "button" })%> 
+            <%: Html.ActionLink("Visualizar", "VisualizarSurvey", "Responsavel", new { id = item.id_Survey }, new { @class = "button" })%> 
             
         </td>
     </tr>

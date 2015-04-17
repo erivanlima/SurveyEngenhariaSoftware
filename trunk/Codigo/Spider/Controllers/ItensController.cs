@@ -28,6 +28,7 @@ namespace Spider.Controllers
             return View(gItens.Obter(id));
         }
 
+        [HttpGet]
         public ActionResult ListaItens(int idQuest)
         {
             return View(gItens.ObterItens(idQuest));

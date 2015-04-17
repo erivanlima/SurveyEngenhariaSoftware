@@ -5,8 +5,6 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-<br />
-
 <h2>Enviar Survey</h2>
 
 <fieldset>
