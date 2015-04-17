@@ -100,6 +100,60 @@ namespace Spider.Controllers
             //return View(questao);
         }
 
+        [HttpGet]
+        public ActionResult Create5(int id)
+        {
+            ViewBag.id_Survey = id;
+            //QuestaoModel questao = new QuestaoModel();
+
+            //return RedirectToAction("Edit4/" + DefaultQuestaoObj(id), "Questao");
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create5(int id, QuestaoModel questao, HttpPostedFileBase file)
+        {
+            if (file != null && file.ContentLength > 0)
+            {
+                // extract only the fielname
+                var fileName = Path.GetFileName(file.FileName);
+                // store the file inside ~/App_Data/uploads folder
+                var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
+                file.SaveAs(path);
+            }
+
+            if (questao.Pergunta != null)
+            {
+                //questaoModel.id_Survey = survey.id_Survey;
+                //questao.idTB_ITENS_DA_QUESTAO = gItens.Inserir(questao.itens);
+
+
+                string result = new StreamReader(file.InputStream).ReadToEnd(); ;
+
+                questao.Codigo = result;
+
+                //foreach (Itens_da_QuestaoModel item in questaoModel.itens)
+                //{
+                //    //Itens_da_QuestaoModel item = new Itens_da_QuestaoModel();
+                //    //survey.questoes[i].itens
+                //    item.id_Questao = questaoModel.id_Questao;
+                //    gItens.Inserir(item);
+                //}
+                questao.Tipo = "SUBJETIVA";
+                gQuestao.Inserir(questao);
+                return RedirectToAction("ListaQuestoes/" + questao.id_Survey, "Questao");
+            }
+
+            return View(questao);  
+
+
+            //ViewBag.id_Survey = id;
+            //QuestaoModel questao = new QuestaoModel();
+
+           // return RedirectToAction("Edit4/" + DefaultQuestaoObj(id), "Questao");
+            //return View(questao);
+        }
+
         public int DefaultQuestaoSubjetiva(int idSurvey)
         {
             QuestaoModel questao = new QuestaoModel();
@@ -183,7 +237,6 @@ namespace Spider.Controllers
         public ActionResult ListaQuestoes(int id)
         {
             ViewBag.id_Survey = id;
-            ViewBag.Titulo = gSurvey.Obter(id).Titulo;
             return View(gQuestao.ListaQuestaoSurvey(id));
         }
 
@@ -202,7 +255,7 @@ namespace Spider.Controllers
         public ActionResult Edit(int id)
         {
             QuestaoModel questaoModel = gQuestao.Obter(id);
-            if (questaoModel.Codigo != null && questaoModel.Img != null)
+            if (questaoModel.Codigo == null && questaoModel.Img == null && questaoModel.Tipo.Equals("OBJETIVA"))
             {
                 return RedirectToAction("Edit2/" + id, "Questao");
             }
@@ -281,6 +334,7 @@ namespace Spider.Controllers
         public ActionResult Edit3(int id)
         {
             QuestaoModel questaoModel = gQuestao.Obter(id);
+            questaoModel.itens = gItens.ObterItens(id).ToList();
             return View(questaoModel);
         }
 

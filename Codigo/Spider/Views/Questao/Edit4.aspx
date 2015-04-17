@@ -5,8 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2></h2>
     
-    
-    <script src="../../Content/jquery-2.1.3.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery-2.1.3.min.js" type="text/javascript"></script>
     <script src="../../Content/kartik-v-bootstrap-fileinput/js/fileinput.js" type="text/javascript"></script>
     <script src="../../Content/bootstrap-3.3.4-dist/js/bootstrap.min.js" type="text/javascript"></script>
 
@@ -21,7 +20,7 @@
        { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>QuestaoModel</legend>
+        <legend>Questão</legend>
         <%: Html.HiddenFor(model => model.id_Survey)%>
         <%: Html.HiddenFor(model => model.id_Questao)%>
         <%: Html.HiddenFor(model => model.Tipo)%>
@@ -29,7 +28,7 @@
             <%: Html.LabelFor(model => model.Pergunta) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.Pergunta) %>
+            <%: Html.TextBoxFor(model => model.Pergunta, new { @class = "form-control", style = "width:auto", size = 106 })%>
             <%: Html.ValidationMessageFor(model => model.Pergunta) %>
         </div>
         <!--<pre class="brush:csharp">
@@ -59,8 +58,27 @@
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Linguagem) %>
         </div>
+
+        <%List<SelectListItem> items = new List<SelectListItem>();
+          items.Add(new SelectListItem
+          {
+              Text = "Java",
+              Value = "Java"
+          });
+          items.Add(new SelectListItem
+          {
+              Text = "CSharp",
+              Value = "CSharp",
+              Selected = true
+          });
+          items.Add(new SelectListItem
+          {
+              Text = "PHP",
+              Value = "PHP"
+          }); %>
+
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.Linguagem) %>
+            <%: Html.DropDownListFor((model => model.Linguagem), new SelectList(items, "Value", "Text"))%>
             <%: Html.ValidationMessageFor(model => model.Linguagem) %>
         </div>
         
@@ -94,7 +112,7 @@
             </div>
         </fieldset>
         <p>
-            <input type="submit" value="Salvar" />
+            <input class="btn btn-primary" type="submit" value="Salvar" />
         </p>
     </fieldset>
     <% } %>
@@ -107,7 +125,7 @@
 
     <script type="text/javascript">
         $("#input-23").fileinput({
-            allowedFileExtensions: ["txt", "aspx", "java", "cs", "text"],
+            allowedFileExtensions: ["txt", "aspx", "java", "cs", "text", "js", "php"],
             showUpload: false,
             layoutTemplates: {
                 main1: "{preview}\n" +

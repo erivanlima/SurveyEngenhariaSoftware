@@ -6,12 +6,12 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<br />
 
-<h2>Manter Questões</h2>
+<h3>Manter Questões</h3>
 
 
-<div class="display-label">Título do Survey</div>
+<%--<div class="display-label">Título do Survey</div>
+--%>
     <%--
     <% Html.Partial("~/InfoSurvey", ViewBag.id_Survey )%>--%>
 
@@ -29,9 +29,6 @@
         <th>
             Obrigatoria
         </th>
-        <th>
-            Linguagem
-        </th>
         <th id="thc">
             Ações
         </th>
@@ -48,9 +45,6 @@
         </td>
         <td>
             <%: Html.DisplayFor(modelItem => item.Obrigatoria) %>
-        </td>
-        <td>
-            <%: Html.DisplayFor(modelItem => item.Linguagem) %>
         </td>
         <td>
             <%: Html.ActionLink("Editar Questão", "Edit", new { id = item.id_Questao }, new { @class = "button" })%> 

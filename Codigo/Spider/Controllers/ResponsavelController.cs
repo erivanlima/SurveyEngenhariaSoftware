@@ -104,20 +104,23 @@ namespace Spider.Controllers
         }
 
 
-        //[HttpGet]
-        //public ActionResult VisualizarSurvey(int id)
-        //{
-        //    ViewBag.id_Survey = id;
-        //    SurveyModel survey = new SurveyModel();
-        //    survey = gSurvey.Obter(id);
-        //    survey.questoes = gQuestao.ListaQuestaoSurvey(id).ToList();
-        //    for (int i = 0; i < survey.questoes.Count; i++)
-        //    {
-        //        survey.questoes[i].itens = gItens.Obter(survey.questoes[i].idTB_ITENS_DA_QUESTAO);
-        //    }
-
-        //    return View(survey);
-        //}
+        [HttpGet]
+        public ActionResult VisualizarSurvey(int id)
+        {
+            //ViewBag.id_Survey = id;
+            //SurveyModel survey = new SurveyModel();
+            //survey = gSurvey.Obter(id);
+            //survey.questoes = gQuestao.ListaQuestaoSurvey(id).ToList();
+            //for (int i = 0; i < survey.questoes.Count; i++)
+            //{
+            //    survey.questoes[i].itens = gItens.Obter(survey.questoes[i].idTB_ITENS_DA_QUESTAO);
+            //}
+            ViewBag.id_Survey = id;
+            
+                   
+            return View(ListaQuestoesItens(id));
+            //return View(survey);
+        }
 
         //[HttpPost]
         //public ActionResult VisualizarSurvey(SurveyModel survey)
@@ -165,8 +168,6 @@ namespace Spider.Controllers
         //    return View(survey);
         //}
 
-        // Get
-        //id = idSurvey
         [HttpGet]
         public ActionResult ListarRespostas(int id)
         {
