@@ -83,7 +83,7 @@
         </div>
         
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Codigo) %>
+            Código
         </div>
         
         <div class="page-header">
@@ -93,7 +93,7 @@
           <%--<%: Html.TextAreaFor(model => model.Codigo, new { htmlAttributes = new { @class = "form-control" } })%>
           <%: Html.EditorFor(model => model.Codigo)%>
         --%>
-        <%: Html.ValidationMessageFor(model => model.Codigo)%>
+        
         </fieldset>
         <p>
             <input class="btn btn-primary" type="submit" value="Salvar" />

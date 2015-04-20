@@ -11,6 +11,7 @@
     <EntitySet Name="aspnet_SchemaVersions" EntityType="mysurveyModel.aspnet_SchemaVersions" />
     <EntitySet Name="aspnet_Users" EntityType="mysurveyModel.aspnet_Users" />
     <EntitySet Name="aspnet_WebEvent_Events" EntityType="mysurveyModel.aspnet_WebEvent_Events" />
+    <EntitySet Name="TB_CLASSE" EntityType="mysurveyModel.TB_CLASSE" />
     <EntitySet Name="TB_ENTREVISTADO" EntityType="mysurveyModel.TB_ENTREVISTADO" />
     <EntitySet Name="TB_ITENS_DA_QUESTAO" EntityType="mysurveyModel.TB_ITENS_DA_QUESTAO" />
     <EntitySet Name="TB_QUESTAO" EntityType="mysurveyModel.TB_QUESTAO" />
@@ -26,41 +27,45 @@
     <EntitySet Name="vw_aspnet_WebPartState_Paths" EntityType="mysurveyModel.vw_aspnet_WebPartState_Paths" />
     <EntitySet Name="vw_aspnet_WebPartState_Shared" EntityType="mysurveyModel.vw_aspnet_WebPartState_Shared" />
     <EntitySet Name="vw_aspnet_WebPartState_User" EntityType="mysurveyModel.vw_aspnet_WebPartState_User" />
-    <AssociationSet Name="FK__aspnet_Me__Appli__276EDEB3" Association="mysurveyModel.FK__aspnet_Me__Appli__276EDEB3">
+    <AssociationSet Name="FK__aspnet_Me__Appli__3A81B327" Association="mysurveyModel.FK__aspnet_Me__Appli__3A81B327">
       <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
       <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Pa__Appli__59063A47" Association="mysurveyModel.FK__aspnet_Pa__Appli__59063A47">
+    <AssociationSet Name="FK__aspnet_Pa__Appli__6C190EBB" Association="mysurveyModel.FK__aspnet_Pa__Appli__6C190EBB">
       <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
       <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Ro__Appli__45F365D3" Association="mysurveyModel.FK__aspnet_Ro__Appli__45F365D3">
+    <AssociationSet Name="FK__aspnet_Ro__Appli__59063A47" Association="mysurveyModel.FK__aspnet_Ro__Appli__59063A47">
       <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
       <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Us__Appli__173876EA" Association="mysurveyModel.FK__aspnet_Us__Appli__173876EA">
+    <AssociationSet Name="FK__aspnet_Us__Appli__2A4B4B5E" Association="mysurveyModel.FK__aspnet_Us__Appli__2A4B4B5E">
       <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
       <End Role="aspnet_Users" EntitySet="aspnet_Users" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Me__UserI__286302EC" Association="mysurveyModel.FK__aspnet_Me__UserI__286302EC">
+    <AssociationSet Name="FK__aspnet_Me__UserI__3B75D760" Association="mysurveyModel.FK__aspnet_Me__UserI__3B75D760">
       <End Role="aspnet_Users" EntitySet="aspnet_Users" />
       <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Pe__PathI__5EBF139D" Association="mysurveyModel.FK__aspnet_Pe__PathI__5EBF139D">
+    <AssociationSet Name="FK__aspnet_Pe__PathI__71D1E811" Association="mysurveyModel.FK__aspnet_Pe__PathI__71D1E811">
       <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
       <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Pe__PathI__628FA481" Association="mysurveyModel.FK__aspnet_Pe__PathI__628FA481">
+    <AssociationSet Name="FK__aspnet_Pe__PathI__75A278F5" Association="mysurveyModel.FK__aspnet_Pe__PathI__75A278F5">
       <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
       <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Pe__UserI__6383C8BA" Association="mysurveyModel.FK__aspnet_Pe__UserI__6383C8BA">
+    <AssociationSet Name="FK__aspnet_Pe__UserI__76969D2E" Association="mysurveyModel.FK__aspnet_Pe__UserI__76969D2E">
       <End Role="aspnet_Users" EntitySet="aspnet_Users" />
       <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Pr__UserI__3C69FB99" Association="mysurveyModel.FK__aspnet_Pr__UserI__3C69FB99">
+    <AssociationSet Name="FK__aspnet_Pr__UserI__4F7CD00D" Association="mysurveyModel.FK__aspnet_Pr__UserI__4F7CD00D">
       <End Role="aspnet_Users" EntitySet="aspnet_Users" />
       <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
+    </AssociationSet>
+    <AssociationSet Name="TB_CLASSE_FKIndex1" Association="mysurveyModel.TB_CLASSE_FKIndex1">
+      <End Role="TB_QUESTAO" EntitySet="TB_QUESTAO" />
+      <End Role="TB_CLASSE" EntitySet="TB_CLASSE" />
     </AssociationSet>
     <AssociationSet Name="TB_RESPOSTA_FKIndex2" Association="mysurveyModel.TB_RESPOSTA_FKIndex2">
       <End Role="TB_ENTREVISTADO" EntitySet="TB_ENTREVISTADO" />
@@ -95,10 +100,10 @@
     <Property Type="String" Name="LoweredApplicationName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
     <Property Type="Guid" Name="ApplicationId" Nullable="false" />
     <Property Type="String" Name="Description" MaxLength="256" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="aspnet_Membership" Relationship="mysurveyModel.FK__aspnet_Me__Appli__276EDEB3" FromRole="aspnet_Applications" ToRole="aspnet_Membership" />
-    <NavigationProperty Name="aspnet_Paths" Relationship="mysurveyModel.FK__aspnet_Pa__Appli__59063A47" FromRole="aspnet_Applications" ToRole="aspnet_Paths" />
-    <NavigationProperty Name="aspnet_Roles" Relationship="mysurveyModel.FK__aspnet_Ro__Appli__45F365D3" FromRole="aspnet_Applications" ToRole="aspnet_Roles" />
-    <NavigationProperty Name="aspnet_Users" Relationship="mysurveyModel.FK__aspnet_Us__Appli__173876EA" FromRole="aspnet_Applications" ToRole="aspnet_Users" />
+    <NavigationProperty Name="aspnet_Membership" Relationship="mysurveyModel.FK__aspnet_Me__Appli__3A81B327" FromRole="aspnet_Applications" ToRole="aspnet_Membership" />
+    <NavigationProperty Name="aspnet_Paths" Relationship="mysurveyModel.FK__aspnet_Pa__Appli__6C190EBB" FromRole="aspnet_Applications" ToRole="aspnet_Paths" />
+    <NavigationProperty Name="aspnet_Roles" Relationship="mysurveyModel.FK__aspnet_Ro__Appli__59063A47" FromRole="aspnet_Applications" ToRole="aspnet_Roles" />
+    <NavigationProperty Name="aspnet_Users" Relationship="mysurveyModel.FK__aspnet_Us__Appli__2A4B4B5E" FromRole="aspnet_Applications" ToRole="aspnet_Users" />
   </EntityType>
   <EntityType Name="aspnet_Membership">
     <Key>
@@ -125,8 +130,8 @@
     <Property Type="Int32" Name="FailedPasswordAnswerAttemptCount" Nullable="false" />
     <Property Type="DateTime" Name="FailedPasswordAnswerAttemptWindowStart" Nullable="false" />
     <Property Type="String" Name="Comment" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="aspnet_Applications" Relationship="mysurveyModel.FK__aspnet_Me__Appli__276EDEB3" FromRole="aspnet_Membership" ToRole="aspnet_Applications" />
-    <NavigationProperty Name="aspnet_Users" Relationship="mysurveyModel.FK__aspnet_Me__UserI__286302EC" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="mysurveyModel.FK__aspnet_Me__Appli__3A81B327" FromRole="aspnet_Membership" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Users" Relationship="mysurveyModel.FK__aspnet_Me__UserI__3B75D760" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
   </EntityType>
   <EntityType Name="aspnet_Paths">
     <Key>
@@ -136,9 +141,9 @@
     <Property Type="Guid" Name="PathId" Nullable="false" />
     <Property Type="String" Name="Path" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="LoweredPath" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="aspnet_Applications" Relationship="mysurveyModel.FK__aspnet_Pa__Appli__59063A47" FromRole="aspnet_Paths" ToRole="aspnet_Applications" />
-    <NavigationProperty Name="aspnet_PersonalizationAllUsers" Relationship="mysurveyModel.FK__aspnet_Pe__PathI__5EBF139D" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationAllUsers" />
-    <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="mysurveyModel.FK__aspnet_Pe__PathI__628FA481" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationPerUser" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="mysurveyModel.FK__aspnet_Pa__Appli__6C190EBB" FromRole="aspnet_Paths" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_PersonalizationAllUsers" Relationship="mysurveyModel.FK__aspnet_Pe__PathI__71D1E811" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationAllUsers" />
+    <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="mysurveyModel.FK__aspnet_Pe__PathI__75A278F5" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationPerUser" />
   </EntityType>
   <EntityType Name="aspnet_PersonalizationAllUsers">
     <Key>
@@ -147,7 +152,7 @@
     <Property Type="Guid" Name="PathId" Nullable="false" />
     <Property Type="Binary" Name="PageSettings" Nullable="false" MaxLength="Max" FixedLength="false" />
     <Property Type="DateTime" Name="LastUpdatedDate" Nullable="false" />
-    <NavigationProperty Name="aspnet_Paths" Relationship="mysurveyModel.FK__aspnet_Pe__PathI__5EBF139D" FromRole="aspnet_PersonalizationAllUsers" ToRole="aspnet_Paths" />
+    <NavigationProperty Name="aspnet_Paths" Relationship="mysurveyModel.FK__aspnet_Pe__PathI__71D1E811" FromRole="aspnet_PersonalizationAllUsers" ToRole="aspnet_Paths" />
   </EntityType>
   <EntityType Name="aspnet_PersonalizationPerUser">
     <Key>
@@ -158,8 +163,8 @@
     <Property Type="Guid" Name="UserId" />
     <Property Type="Binary" Name="PageSettings" Nullable="false" MaxLength="Max" FixedLength="false" />
     <Property Type="DateTime" Name="LastUpdatedDate" Nullable="false" />
-    <NavigationProperty Name="aspnet_Paths" Relationship="mysurveyModel.FK__aspnet_Pe__PathI__628FA481" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Paths" />
-    <NavigationProperty Name="aspnet_Users" Relationship="mysurveyModel.FK__aspnet_Pe__UserI__6383C8BA" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Users" />
+    <NavigationProperty Name="aspnet_Paths" Relationship="mysurveyModel.FK__aspnet_Pe__PathI__75A278F5" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Paths" />
+    <NavigationProperty Name="aspnet_Users" Relationship="mysurveyModel.FK__aspnet_Pe__UserI__76969D2E" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Users" />
   </EntityType>
   <EntityType Name="aspnet_Profile">
     <Key>
@@ -170,7 +175,7 @@
     <Property Type="String" Name="PropertyValuesString" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Type="Binary" Name="PropertyValuesBinary" Nullable="false" MaxLength="Max" FixedLength="false" />
     <Property Type="DateTime" Name="LastUpdatedDate" Nullable="false" />
-    <NavigationProperty Name="aspnet_Users" Relationship="mysurveyModel.FK__aspnet_Pr__UserI__3C69FB99" FromRole="aspnet_Profile" ToRole="aspnet_Users" />
+    <NavigationProperty Name="aspnet_Users" Relationship="mysurveyModel.FK__aspnet_Pr__UserI__4F7CD00D" FromRole="aspnet_Profile" ToRole="aspnet_Users" />
   </EntityType>
   <EntityType Name="aspnet_Roles">
     <Key>
@@ -181,7 +186,7 @@
     <Property Type="String" Name="RoleName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="LoweredRoleName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="Description" MaxLength="256" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="aspnet_Applications" Relationship="mysurveyModel.FK__aspnet_Ro__Appli__45F365D3" FromRole="aspnet_Roles" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="mysurveyModel.FK__aspnet_Ro__Appli__59063A47" FromRole="aspnet_Roles" ToRole="aspnet_Applications" />
     <NavigationProperty Name="aspnet_Users" Relationship="mysurveyModel.aspnet_UsersInRoles" FromRole="aspnet_Roles" ToRole="aspnet_Users" />
   </EntityType>
   <EntityType Name="aspnet_SchemaVersions">
@@ -204,10 +209,10 @@
     <Property Type="String" Name="MobileAlias" MaxLength="16" FixedLength="false" Unicode="true" />
     <Property Type="Boolean" Name="IsAnonymous" Nullable="false" />
     <Property Type="DateTime" Name="LastActivityDate" Nullable="false" />
-    <NavigationProperty Name="aspnet_Applications" Relationship="mysurveyModel.FK__aspnet_Us__Appli__173876EA" FromRole="aspnet_Users" ToRole="aspnet_Applications" />
-    <NavigationProperty Name="aspnet_Membership" Relationship="mysurveyModel.FK__aspnet_Me__UserI__286302EC" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
-    <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="mysurveyModel.FK__aspnet_Pe__UserI__6383C8BA" FromRole="aspnet_Users" ToRole="aspnet_PersonalizationPerUser" />
-    <NavigationProperty Name="aspnet_Profile" Relationship="mysurveyModel.FK__aspnet_Pr__UserI__3C69FB99" FromRole="aspnet_Users" ToRole="aspnet_Profile" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="mysurveyModel.FK__aspnet_Us__Appli__2A4B4B5E" FromRole="aspnet_Users" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Membership" Relationship="mysurveyModel.FK__aspnet_Me__UserI__3B75D760" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+    <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="mysurveyModel.FK__aspnet_Pe__UserI__76969D2E" FromRole="aspnet_Users" ToRole="aspnet_PersonalizationPerUser" />
+    <NavigationProperty Name="aspnet_Profile" Relationship="mysurveyModel.FK__aspnet_Pr__UserI__4F7CD00D" FromRole="aspnet_Users" ToRole="aspnet_Profile" />
     <NavigationProperty Name="aspnet_Roles" Relationship="mysurveyModel.aspnet_UsersInRoles" FromRole="aspnet_Users" ToRole="aspnet_Roles" />
   </EntityType>
   <EntityType Name="aspnet_WebEvent_Events">
@@ -229,6 +234,15 @@
     <Property Type="String" Name="RequestUrl" MaxLength="1024" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="ExceptionType" MaxLength="256" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="Details" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TB_CLASSE">
+    <Key>
+      <PropertyRef Name="id_Classe" />
+    </Key>
+    <Property Type="Int32" Name="id_Classe" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="TB_QUESTAO_id_Questao" Nullable="false" />
+    <Property Type="String" Name="Codigo" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TB_QUESTAO" Relationship="mysurveyModel.TB_CLASSE_FKIndex1" FromRole="TB_CLASSE" ToRole="TB_QUESTAO" />
   </EntityType>
   <EntityType Name="TB_ENTREVISTADO">
     <Key>
@@ -256,13 +270,14 @@
     <Property Type="Int32" Name="id_Questao" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Type="Int32" Name="TB_SURVEY_id_Survey" Nullable="false" />
     <Property Type="String" Name="Tipo" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="Escolha" Nullable="false" />
     <Property Type="String" Name="Pergunta" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Type="Binary" Name="Img" MaxLength="Max" FixedLength="false" />
     <Property Type="Boolean" Name="Randomica" />
     <Property Type="Boolean" Name="Obrigatoria" />
     <Property Type="Boolean" Name="EhCodigo" />
     <Property Type="String" Name="Linguagem" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="Codigo" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TB_CLASSE" Relationship="mysurveyModel.TB_CLASSE_FKIndex1" FromRole="TB_QUESTAO" ToRole="TB_CLASSE" />
     <NavigationProperty Name="TB_ITENS_DA_QUESTAO" Relationship="mysurveyModel.TB_ITENS_DA_QUESTAO_FKIndex1" FromRole="TB_QUESTAO" ToRole="TB_ITENS_DA_QUESTAO" />
     <NavigationProperty Name="TB_SURVEY" Relationship="mysurveyModel.TB_QUESTAO_FKIndex1" FromRole="TB_QUESTAO" ToRole="TB_SURVEY" />
     <NavigationProperty Name="TB_RESPOSTA" Relationship="mysurveyModel.TB_RESPOSTA_FKIndex1" FromRole="TB_QUESTAO" ToRole="TB_RESPOSTA" />
@@ -437,7 +452,7 @@
     <Property Type="Int32" Name="DataSize" />
     <Property Type="DateTime" Name="LastUpdatedDate" Nullable="false" />
   </EntityType>
-  <Association Name="FK__aspnet_Me__Appli__276EDEB3">
+  <Association Name="FK__aspnet_Me__Appli__3A81B327">
     <End Type="mysurveyModel.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
     <End Type="mysurveyModel.aspnet_Membership" Role="aspnet_Membership" Multiplicity="*" />
     <ReferentialConstraint>
@@ -449,7 +464,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Pa__Appli__59063A47">
+  <Association Name="FK__aspnet_Pa__Appli__6C190EBB">
     <End Type="mysurveyModel.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
     <End Type="mysurveyModel.aspnet_Paths" Role="aspnet_Paths" Multiplicity="*" />
     <ReferentialConstraint>
@@ -461,7 +476,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Ro__Appli__45F365D3">
+  <Association Name="FK__aspnet_Ro__Appli__59063A47">
     <End Type="mysurveyModel.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
     <End Type="mysurveyModel.aspnet_Roles" Role="aspnet_Roles" Multiplicity="*" />
     <ReferentialConstraint>
@@ -473,7 +488,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Us__Appli__173876EA">
+  <Association Name="FK__aspnet_Us__Appli__2A4B4B5E">
     <End Type="mysurveyModel.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
     <End Type="mysurveyModel.aspnet_Users" Role="aspnet_Users" Multiplicity="*" />
     <ReferentialConstraint>
@@ -485,7 +500,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Me__UserI__286302EC">
+  <Association Name="FK__aspnet_Me__UserI__3B75D760">
     <End Type="mysurveyModel.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
     <End Type="mysurveyModel.aspnet_Membership" Role="aspnet_Membership" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -497,7 +512,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Pe__PathI__5EBF139D">
+  <Association Name="FK__aspnet_Pe__PathI__71D1E811">
     <End Type="mysurveyModel.aspnet_Paths" Role="aspnet_Paths" Multiplicity="1" />
     <End Type="mysurveyModel.aspnet_PersonalizationAllUsers" Role="aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -509,7 +524,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Pe__PathI__628FA481">
+  <Association Name="FK__aspnet_Pe__PathI__75A278F5">
     <End Type="mysurveyModel.aspnet_Paths" Role="aspnet_Paths" Multiplicity="0..1" />
     <End Type="mysurveyModel.aspnet_PersonalizationPerUser" Role="aspnet_PersonalizationPerUser" Multiplicity="*" />
     <ReferentialConstraint>
@@ -521,7 +536,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Pe__UserI__6383C8BA">
+  <Association Name="FK__aspnet_Pe__UserI__76969D2E">
     <End Type="mysurveyModel.aspnet_Users" Role="aspnet_Users" Multiplicity="0..1" />
     <End Type="mysurveyModel.aspnet_PersonalizationPerUser" Role="aspnet_PersonalizationPerUser" Multiplicity="*" />
     <ReferentialConstraint>
@@ -533,7 +548,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Pr__UserI__3C69FB99">
+  <Association Name="FK__aspnet_Pr__UserI__4F7CD00D">
     <End Type="mysurveyModel.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
     <End Type="mysurveyModel.aspnet_Profile" Role="aspnet_Profile" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -542,6 +557,18 @@
       </Principal>
       <Dependent Role="aspnet_Profile">
         <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TB_CLASSE_FKIndex1">
+    <End Type="mysurveyModel.TB_QUESTAO" Role="TB_QUESTAO" Multiplicity="1" />
+    <End Type="mysurveyModel.TB_CLASSE" Role="TB_CLASSE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_QUESTAO">
+        <PropertyRef Name="id_Questao" />
+      </Principal>
+      <Dependent Role="TB_CLASSE">
+        <PropertyRef Name="TB_QUESTAO_id_Questao" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

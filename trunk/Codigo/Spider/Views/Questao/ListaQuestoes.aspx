@@ -15,9 +15,11 @@
     <%--
     <% Html.Partial("~/InfoSurvey", ViewBag.id_Survey )%>--%>
 
-<p>
-    <%: Html.ActionLink("Adicionar Questão", "ModeloQuestoes", new { id=ViewBag.id_Survey }, new { @class = "button" })%>
+<p >
+<%--<input type="button" class="btn btn-primary"  onclick="location.href=Questao/ModeloQuestoes/'<%: ViewBag.id_Survey %>'" value="Adicionar Questão"/>--%>
+  <%: Html.ActionLink("Adicionar Questão", "ModeloQuestoes", new { id = ViewBag.id_Survey }, new { @class = "btn btn-primary", @style = "text-decoration:none; color:#fff"})%>
 </p>
+
 <table>
     <tr>
         <th>

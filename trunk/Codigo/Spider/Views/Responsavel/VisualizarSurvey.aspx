@@ -53,11 +53,11 @@
             <%: Html.DisplayFor(model => Questao.Pergunta)%>
           </div>
 
-          <% if (Questao.Codigo != null)
+          <% if (Questao.EhCodigo != false)
              {  %>
 
           <pre class="brush:csharp">
-              <%: Html.DisplayFor(model => Questao.Codigo)%>
+              <%: Html.DisplayFor(model => Questao.codigos)%>
           </pre>
 
           <% }  %>

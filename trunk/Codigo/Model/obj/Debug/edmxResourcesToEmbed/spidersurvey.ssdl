@@ -12,6 +12,7 @@
     <EntitySet Name="aspnet_Users" EntityType="mysurveyModel.Store.aspnet_Users" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="aspnet_UsersInRoles" EntityType="mysurveyModel.Store.aspnet_UsersInRoles" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="aspnet_WebEvent_Events" EntityType="mysurveyModel.Store.aspnet_WebEvent_Events" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TB_CLASSE" EntityType="mysurveyModel.Store.TB_CLASSE" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TB_ENTREVISTADO" EntityType="mysurveyModel.Store.TB_ENTREVISTADO" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TB_ITENS_DA_QUESTAO" EntityType="mysurveyModel.Store.TB_ITENS_DA_QUESTAO" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TB_QUESTAO" EntityType="mysurveyModel.Store.TB_QUESTAO" store:Type="Tables" Schema="dbo" />
@@ -109,49 +110,53 @@
       [vw_aspnet_WebPartState_User].[LastUpdatedDate] AS [LastUpdatedDate]
       FROM [dbo].[vw_aspnet_WebPartState_User] AS [vw_aspnet_WebPartState_User]</DefiningQuery>
     </EntitySet>
-    <AssociationSet Name="FK__aspnet_Me__Appli__276EDEB3" Association="mysurveyModel.Store.FK__aspnet_Me__Appli__276EDEB3">
+    <AssociationSet Name="FK__aspnet_Me__Appli__3A81B327" Association="mysurveyModel.Store.FK__aspnet_Me__Appli__3A81B327">
       <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
       <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Me__UserI__286302EC" Association="mysurveyModel.Store.FK__aspnet_Me__UserI__286302EC">
+    <AssociationSet Name="FK__aspnet_Me__UserI__3B75D760" Association="mysurveyModel.Store.FK__aspnet_Me__UserI__3B75D760">
       <End Role="aspnet_Users" EntitySet="aspnet_Users" />
       <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Pa__Appli__59063A47" Association="mysurveyModel.Store.FK__aspnet_Pa__Appli__59063A47">
+    <AssociationSet Name="FK__aspnet_Pa__Appli__6C190EBB" Association="mysurveyModel.Store.FK__aspnet_Pa__Appli__6C190EBB">
       <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
       <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Pe__PathI__5EBF139D" Association="mysurveyModel.Store.FK__aspnet_Pe__PathI__5EBF139D">
+    <AssociationSet Name="FK__aspnet_Pe__PathI__71D1E811" Association="mysurveyModel.Store.FK__aspnet_Pe__PathI__71D1E811">
       <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
       <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Pe__PathI__628FA481" Association="mysurveyModel.Store.FK__aspnet_Pe__PathI__628FA481">
+    <AssociationSet Name="FK__aspnet_Pe__PathI__75A278F5" Association="mysurveyModel.Store.FK__aspnet_Pe__PathI__75A278F5">
       <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
       <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Pe__UserI__6383C8BA" Association="mysurveyModel.Store.FK__aspnet_Pe__UserI__6383C8BA">
+    <AssociationSet Name="FK__aspnet_Pe__UserI__76969D2E" Association="mysurveyModel.Store.FK__aspnet_Pe__UserI__76969D2E">
       <End Role="aspnet_Users" EntitySet="aspnet_Users" />
       <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Pr__UserI__3C69FB99" Association="mysurveyModel.Store.FK__aspnet_Pr__UserI__3C69FB99">
+    <AssociationSet Name="FK__aspnet_Pr__UserI__4F7CD00D" Association="mysurveyModel.Store.FK__aspnet_Pr__UserI__4F7CD00D">
       <End Role="aspnet_Users" EntitySet="aspnet_Users" />
       <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Ro__Appli__45F365D3" Association="mysurveyModel.Store.FK__aspnet_Ro__Appli__45F365D3">
+    <AssociationSet Name="FK__aspnet_Ro__Appli__59063A47" Association="mysurveyModel.Store.FK__aspnet_Ro__Appli__59063A47">
       <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
       <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Us__Appli__173876EA" Association="mysurveyModel.Store.FK__aspnet_Us__Appli__173876EA">
+    <AssociationSet Name="FK__aspnet_Us__Appli__2A4B4B5E" Association="mysurveyModel.Store.FK__aspnet_Us__Appli__2A4B4B5E">
       <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
       <End Role="aspnet_Users" EntitySet="aspnet_Users" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Us__RoleI__4AB81AF0" Association="mysurveyModel.Store.FK__aspnet_Us__RoleI__4AB81AF0">
+    <AssociationSet Name="FK__aspnet_Us__RoleI__5DCAEF64" Association="mysurveyModel.Store.FK__aspnet_Us__RoleI__5DCAEF64">
       <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
       <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
     </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Us__UserI__49C3F6B7" Association="mysurveyModel.Store.FK__aspnet_Us__UserI__49C3F6B7">
+    <AssociationSet Name="FK__aspnet_Us__UserI__5CD6CB2B" Association="mysurveyModel.Store.FK__aspnet_Us__UserI__5CD6CB2B">
       <End Role="aspnet_Users" EntitySet="aspnet_Users" />
       <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="TB_CLASSE_FKIndex1" Association="mysurveyModel.Store.TB_CLASSE_FKIndex1">
+      <End Role="TB_QUESTAO" EntitySet="TB_QUESTAO" />
+      <End Role="TB_CLASSE" EntitySet="TB_CLASSE" />
     </AssociationSet>
     <AssociationSet Name="TB_ITENS_DA_QUESTAO_FKIndex1" Association="mysurveyModel.Store.TB_ITENS_DA_QUESTAO_FKIndex1">
       <End Role="TB_QUESTAO" EntitySet="TB_QUESTAO" />
@@ -305,6 +310,14 @@
     <Property Name="ExceptionType" Type="nvarchar" MaxLength="256" />
     <Property Name="Details" Type="ntext" />
   </EntityType>
+  <EntityType Name="TB_CLASSE">
+    <Key>
+      <PropertyRef Name="id_Classe" />
+    </Key>
+    <Property Name="id_Classe" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TB_QUESTAO_id_Questao" Type="int" Nullable="false" />
+    <Property Name="Codigo" Type="varchar(max)" />
+  </EntityType>
   <EntityType Name="TB_ENTREVISTADO">
     <Key>
       <PropertyRef Name="idTB_ENTREVISTADO" />
@@ -329,13 +342,13 @@
     <Property Name="id_Questao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="TB_SURVEY_id_Survey" Type="int" Nullable="false" />
     <Property Name="Tipo" Type="varchar" MaxLength="10" />
+    <Property Name="Escolha" Type="bit" Nullable="false" />
     <Property Name="Pergunta" Type="varchar(max)" Nullable="false" />
     <Property Name="Img" Type="varbinary(max)" />
     <Property Name="Randomica" Type="bit" />
     <Property Name="Obrigatoria" Type="bit" />
     <Property Name="EhCodigo" Type="bit" />
     <Property Name="Linguagem" Type="varchar" MaxLength="10" />
-    <Property Name="Codigo" Type="varchar(max)" />
   </EntityType>
   <EntityType Name="TB_RESPONSAVEL">
     <Key>
@@ -371,8 +384,8 @@
     <Property Name="RandomizeQuestoes" Type="bit" Nullable="false" />
     <Property Name="SenhaAcesso" Type="varchar" MaxLength="45" />
   </EntityType>
-  <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_Applications' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'mysurvey.dbo.vw_aspnet_Applications' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="vw_aspnet_Applications">
     <Key>
@@ -385,8 +398,8 @@
     <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="256" />
   </EntityType>
-  <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_MembershipUsers' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'mysurvey.dbo.vw_aspnet_MembershipUsers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="vw_aspnet_MembershipUsers">
     <Key>
@@ -431,8 +444,8 @@
     <Property Name="IsAnonymous" Type="bit" Nullable="false" />
     <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
   </EntityType>
-  <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_Profiles' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'mysurvey.dbo.vw_aspnet_Profiles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="vw_aspnet_Profiles">
     <Key>
@@ -443,8 +456,8 @@
     <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
     <Property Name="DataSize" Type="int" />
   </EntityType>
-  <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_Roles' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'mysurvey.dbo.vw_aspnet_Roles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="vw_aspnet_Roles">
     <Key>
@@ -459,8 +472,8 @@
     <Property Name="LoweredRoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
     <Property Name="Description" Type="nvarchar" MaxLength="256" />
   </EntityType>
-  <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_Users' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'mysurvey.dbo.vw_aspnet_Users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="vw_aspnet_Users">
     <Key>
@@ -479,8 +492,8 @@
     <Property Name="IsAnonymous" Type="bit" Nullable="false" />
     <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
   </EntityType>
-  <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_UsersInRoles' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'mysurvey.dbo.vw_aspnet_UsersInRoles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="vw_aspnet_UsersInRoles">
     <Key>
@@ -490,8 +503,8 @@
     <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
   </EntityType>
-  <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_WebPartState_Paths' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'mysurvey.dbo.vw_aspnet_WebPartState_Paths' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="vw_aspnet_WebPartState_Paths">
     <Key>
@@ -505,8 +518,8 @@
     <Property Name="Path" Type="nvarchar" Nullable="false" MaxLength="256" />
     <Property Name="LoweredPath" Type="nvarchar" Nullable="false" MaxLength="256" />
   </EntityType>
-  <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_WebPartState_Shared' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'mysurvey.dbo.vw_aspnet_WebPartState_Shared' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="vw_aspnet_WebPartState_Shared">
     <Key>
@@ -517,8 +530,8 @@
     <Property Name="DataSize" Type="int" />
     <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
   </EntityType>
-  <!--Erros Encontrados Durante a Geração:
-      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_WebPartState_User' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'mysurvey.dbo.vw_aspnet_WebPartState_User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
   <EntityType Name="vw_aspnet_WebPartState_User">
     <Key>
@@ -529,7 +542,7 @@
     <Property Name="DataSize" Type="int" />
     <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
   </EntityType>
-  <Association Name="FK__aspnet_Me__Appli__276EDEB3">
+  <Association Name="FK__aspnet_Me__Appli__3A81B327">
     <End Role="aspnet_Applications" Type="mysurveyModel.Store.aspnet_Applications" Multiplicity="1" />
     <End Role="aspnet_Membership" Type="mysurveyModel.Store.aspnet_Membership" Multiplicity="*" />
     <ReferentialConstraint>
@@ -541,7 +554,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Me__UserI__286302EC">
+  <Association Name="FK__aspnet_Me__UserI__3B75D760">
     <End Role="aspnet_Users" Type="mysurveyModel.Store.aspnet_Users" Multiplicity="1" />
     <End Role="aspnet_Membership" Type="mysurveyModel.Store.aspnet_Membership" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -553,7 +566,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Pa__Appli__59063A47">
+  <Association Name="FK__aspnet_Pa__Appli__6C190EBB">
     <End Role="aspnet_Applications" Type="mysurveyModel.Store.aspnet_Applications" Multiplicity="1" />
     <End Role="aspnet_Paths" Type="mysurveyModel.Store.aspnet_Paths" Multiplicity="*" />
     <ReferentialConstraint>
@@ -565,7 +578,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Pe__PathI__5EBF139D">
+  <Association Name="FK__aspnet_Pe__PathI__71D1E811">
     <End Role="aspnet_Paths" Type="mysurveyModel.Store.aspnet_Paths" Multiplicity="1" />
     <End Role="aspnet_PersonalizationAllUsers" Type="mysurveyModel.Store.aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -577,7 +590,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Pe__PathI__628FA481">
+  <Association Name="FK__aspnet_Pe__PathI__75A278F5">
     <End Role="aspnet_Paths" Type="mysurveyModel.Store.aspnet_Paths" Multiplicity="0..1" />
     <End Role="aspnet_PersonalizationPerUser" Type="mysurveyModel.Store.aspnet_PersonalizationPerUser" Multiplicity="*" />
     <ReferentialConstraint>
@@ -589,7 +602,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Pe__UserI__6383C8BA">
+  <Association Name="FK__aspnet_Pe__UserI__76969D2E">
     <End Role="aspnet_Users" Type="mysurveyModel.Store.aspnet_Users" Multiplicity="0..1" />
     <End Role="aspnet_PersonalizationPerUser" Type="mysurveyModel.Store.aspnet_PersonalizationPerUser" Multiplicity="*" />
     <ReferentialConstraint>
@@ -601,7 +614,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Pr__UserI__3C69FB99">
+  <Association Name="FK__aspnet_Pr__UserI__4F7CD00D">
     <End Role="aspnet_Users" Type="mysurveyModel.Store.aspnet_Users" Multiplicity="1" />
     <End Role="aspnet_Profile" Type="mysurveyModel.Store.aspnet_Profile" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -613,7 +626,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Ro__Appli__45F365D3">
+  <Association Name="FK__aspnet_Ro__Appli__59063A47">
     <End Role="aspnet_Applications" Type="mysurveyModel.Store.aspnet_Applications" Multiplicity="1" />
     <End Role="aspnet_Roles" Type="mysurveyModel.Store.aspnet_Roles" Multiplicity="*" />
     <ReferentialConstraint>
@@ -625,7 +638,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Us__Appli__173876EA">
+  <Association Name="FK__aspnet_Us__Appli__2A4B4B5E">
     <End Role="aspnet_Applications" Type="mysurveyModel.Store.aspnet_Applications" Multiplicity="1" />
     <End Role="aspnet_Users" Type="mysurveyModel.Store.aspnet_Users" Multiplicity="*" />
     <ReferentialConstraint>
@@ -637,7 +650,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Us__RoleI__4AB81AF0">
+  <Association Name="FK__aspnet_Us__RoleI__5DCAEF64">
     <End Role="aspnet_Roles" Type="mysurveyModel.Store.aspnet_Roles" Multiplicity="1" />
     <End Role="aspnet_UsersInRoles" Type="mysurveyModel.Store.aspnet_UsersInRoles" Multiplicity="*" />
     <ReferentialConstraint>
@@ -649,7 +662,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__aspnet_Us__UserI__49C3F6B7">
+  <Association Name="FK__aspnet_Us__UserI__5CD6CB2B">
     <End Role="aspnet_Users" Type="mysurveyModel.Store.aspnet_Users" Multiplicity="1" />
     <End Role="aspnet_UsersInRoles" Type="mysurveyModel.Store.aspnet_UsersInRoles" Multiplicity="*" />
     <ReferentialConstraint>
@@ -658,6 +671,18 @@
       </Principal>
       <Dependent Role="aspnet_UsersInRoles">
         <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TB_CLASSE_FKIndex1">
+    <End Role="TB_QUESTAO" Type="mysurveyModel.Store.TB_QUESTAO" Multiplicity="1" />
+    <End Role="TB_CLASSE" Type="mysurveyModel.Store.TB_CLASSE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_QUESTAO">
+        <PropertyRef Name="id_Questao" />
+      </Principal>
+      <Dependent Role="TB_CLASSE">
+        <PropertyRef Name="TB_QUESTAO_id_Questao" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

@@ -45,47 +45,19 @@
             <%: Html.EditorFor(model => model.Obrigatoria) %>
             <%: Html.ValidationMessageFor(model => model.Obrigatoria) %>
         </div>
+         <div class="editor-label">
+             Permitir mais de uma resposta a esta pergunta ?
+        </div>
+        <div class="editor-field">
+            <%: Html.EditorFor(model => model.Escolha) %>
+            <%: Html.ValidationMessageFor(model => model.Escolha) %>
+        </div>
+
         <fieldset>
             <div class="editor-label">
                 <a href="javascript: addItem();">Adicionar item </a>
             </div>
-            <%--<table>
-                <tr>
-                    <th>
-                        idTB_ITENS_DA_QUESTAO
-                    </th>
-                    <th>
-                        id_Questao
-                    </th>
-                    <th>
-                        Item
-                    </th>
-                </tr>
-                <% foreach (var itens in Model.itens)
-                   { %>
-                <tr>
-                    <td>
-                        <%: Html.DisplayFor(model => itens.Item) %>
-                    </td>
-                    <td>
-                        <%: Html.DisplayFor(model => itens.id_Questao) %>
-                    </td>
-                    <td>
-                        <%: Html.DisplayFor(model => itens.Item) %>
-                    </td>
-                    <td>
-                        <%: Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) %>
-                        |
-                        <%: Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) %>
-                        |
-                        <%: Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) %>
-                    </td>
-                </tr>
-                <% } %>
-            </table>--%>
-            <%--<div class="editor-label">
-              <a href="javascript: addItem();" > Adicionar item </a>
-          </div>--%>
+            
             <div class="item">
             </div>
         </fieldset>

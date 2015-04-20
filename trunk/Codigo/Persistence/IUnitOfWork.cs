@@ -13,6 +13,7 @@ namespace Persistence
         IRepositorioGenerico<TB_RESPONSAVEL> RepositorioResponsavel { get; }
         IRepositorioGenerico<TB_RESPOSTA> RepositorioResposta { get; }
         IRepositorioGenerico<TB_SURVEY> RepositorioSurvey { get; }
+        IRepositorioGenerico<TB_CLASSE> RepositorioClasse { get; }
        
 
     }
