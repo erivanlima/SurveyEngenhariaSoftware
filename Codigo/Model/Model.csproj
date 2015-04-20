@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ClasseModel.cs" />
     <Compile Include="Models\EntrevistadoModel.cs" />
     <Compile Include="Models\Itens_da_QuestaoModel.cs" />
     <Compile Include="Models\QuestaoModel.cs" />
@@ -67,7 +68,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.Config" />
-    <Content Include="spidersurvey.edmx.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

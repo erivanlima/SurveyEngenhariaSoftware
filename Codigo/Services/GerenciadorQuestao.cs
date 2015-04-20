@@ -95,8 +95,7 @@ namespace Services
                             Randomica = (Boolean)questaoE.Randomica,
                             id_Survey = questaoE.TB_SURVEY_id_Survey,
                             Tipo = questaoE.Tipo,
-                            Codigo = questaoE.Codigo,
-                            
+                            Escolha = questaoE.Escolha,                            
 
                         };
             return query;
@@ -132,7 +131,7 @@ namespace Services
         private void Atribuir(QuestaoModel questao, TB_QUESTAO questaoE)
         {
             questaoE.id_Questao = questao.id_Questao;
-            questaoE.Codigo = questao.Codigo;
+            questaoE.Escolha = questao.Escolha;
             questaoE.TB_SURVEY_id_Survey = questao.id_Survey;
             questaoE.Img = questao.Img;
             questaoE.Obrigatoria = questao.Obrigatoria;
@@ -140,7 +139,6 @@ namespace Services
             questaoE.Randomica = questao.Randomica;
             questaoE.Tipo = questao.Tipo;
             questaoE.Linguagem = questao.Linguagem;
-            questaoE.Codigo = questao.Codigo;
             questaoE.EhCodigo = questao.EhCodigo;
             
             

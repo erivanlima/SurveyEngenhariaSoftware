@@ -21,6 +21,7 @@ namespace Persistence
         private IRepositorioGenerico<TB_RESPONSAVEL> _repResponsavel;
         private IRepositorioGenerico<TB_RESPOSTA> _repResposta;
         private IRepositorioGenerico<TB_SURVEY> _repSurvey;
+        private IRepositorioGenerico<TB_CLASSE> _repClasse;
         
 
         /// <summary>
@@ -112,6 +113,17 @@ namespace Persistence
                     _repSurvey = new RepositorioGenerico<TB_SURVEY>(_context);
                 }
                 return _repSurvey;
+            }
+        }
+        public IRepositorioGenerico<TB_CLASSE> RepositorioClasse
+        {
+            get
+            {
+                if (_repClasse == null)
+                {
+                    _repClasse = new RepositorioGenerico<TB_CLASSE>(_context);
+                }
+                return _repClasse;
             }
         }
 

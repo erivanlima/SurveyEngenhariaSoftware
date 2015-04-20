@@ -306,6 +306,7 @@
     <Content Include="Views\Account\Login.aspx" />
     <Content Include="Views\Itens\Edit.aspx" />
     <Content Include="Views\Itens\ListaItens.aspx" />
+    <Content Include="Views\Questao\Create2.aspx" />
     <Content Include="Views\Questao\Create5.aspx" />
     <Content Include="Views\Questao\Edit4.aspx" />
     <Content Include="Views\Questao\Edit3.aspx" />

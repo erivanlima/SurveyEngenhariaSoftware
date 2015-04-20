@@ -133,6 +133,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="TB_CLASSE">
+      <EntityTypeMapping TypeName="mysurveyModel.TB_CLASSE">
+        <MappingFragment StoreEntitySet="TB_CLASSE">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="TB_QUESTAO_id_Questao" ColumnName="TB_QUESTAO_id_Questao" />
+          <ScalarProperty Name="id_Classe" ColumnName="id_Classe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="TB_ENTREVISTADO">
       <EntityTypeMapping TypeName="mysurveyModel.TB_ENTREVISTADO">
         <MappingFragment StoreEntitySet="TB_ENTREVISTADO">
@@ -155,13 +164,13 @@
     <EntitySetMapping Name="TB_QUESTAO">
       <EntityTypeMapping TypeName="mysurveyModel.TB_QUESTAO">
         <MappingFragment StoreEntitySet="TB_QUESTAO">
-          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
           <ScalarProperty Name="Linguagem" ColumnName="Linguagem" />
           <ScalarProperty Name="EhCodigo" ColumnName="EhCodigo" />
           <ScalarProperty Name="Obrigatoria" ColumnName="Obrigatoria" />
           <ScalarProperty Name="Randomica" ColumnName="Randomica" />
           <ScalarProperty Name="Img" ColumnName="Img" />
           <ScalarProperty Name="Pergunta" ColumnName="Pergunta" />
+          <ScalarProperty Name="Escolha" ColumnName="Escolha" />
           <ScalarProperty Name="Tipo" ColumnName="Tipo" />
           <ScalarProperty Name="TB_SURVEY_id_Survey" ColumnName="TB_SURVEY_id_Survey" />
           <ScalarProperty Name="id_Questao" ColumnName="id_Questao" />

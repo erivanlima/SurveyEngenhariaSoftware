@@ -20,6 +20,7 @@ namespace Spider.Controllers
         private GerenciadorEntrevistado gEntrevistado;
         private GerenciadorResposta gResposta;
         private GerenciadorItens gItens;
+        private GerenciadorClasse gClasses;
 
 
         public QuestaoController()
@@ -29,6 +30,7 @@ namespace Spider.Controllers
             gResposta = new GerenciadorResposta();
             gSurvey = new GerenciadorSurvey();
             gItens = new GerenciadorItens();
+            gClasses = new GerenciadorClasse();
 
         }
 
@@ -73,10 +75,10 @@ namespace Spider.Controllers
         public ActionResult Create2(int id)
         {
             ViewBag.id_Survey = id;
-            //QuestaoModel questao = new QuestaoModel();
+            
 
             return RedirectToAction("Edit2/" + DefaultQuestaoObj(id), "Questao");
-            //return View(questao);
+            
         }
 
         [HttpGet]
@@ -124,23 +126,20 @@ namespace Spider.Controllers
 
             if (questao.Pergunta != null)
             {
-                //questaoModel.id_Survey = survey.id_Survey;
-                //questao.idTB_ITENS_DA_QUESTAO = gItens.Inserir(questao.itens);
-
-
-                string result = new StreamReader(file.InputStream).ReadToEnd(); ;
-
-                questao.Codigo = result;
-
-                //foreach (Itens_da_QuestaoModel item in questaoModel.itens)
-                //{
-                //    //Itens_da_QuestaoModel item = new Itens_da_QuestaoModel();
-                //    //survey.questoes[i].itens
-                //    item.id_Questao = questaoModel.id_Questao;
-                //    gItens.Inserir(item);
-                //}
+               
+                string result;
                 questao.Tipo = "SUBJETIVA";
-                gQuestao.Inserir(questao);
+                int idquest=  gQuestao.Inserir(questao);
+                foreach (ClasseModel classe in questao.codigos)
+                {
+                    result = new StreamReader(file.InputStream).ReadToEnd();
+                    classe.Codigo = result;
+                    classe.id_Questao = idquest;
+                    gClasses.Inserir(classe);
+                }
+
+                
+               
                 return RedirectToAction("ListaQuestoes/" + questao.id_Survey, "Questao");
             }
 
@@ -255,7 +254,7 @@ namespace Spider.Controllers
         public ActionResult Edit(int id)
         {
             QuestaoModel questaoModel = gQuestao.Obter(id);
-            if (questaoModel.Codigo == null && questaoModel.Img == null && questaoModel.Tipo.Equals("OBJETIVA"))
+            if (questaoModel.EhCodigo == false && questaoModel.Img == null && questaoModel.Tipo.Equals("OBJETIVA"))
             {
                 return RedirectToAction("Edit2/" + id, "Questao");
             }
@@ -263,7 +262,7 @@ namespace Spider.Controllers
             {
                 return RedirectToAction("Edit3/" + id, "Questao");
             }
-            if (questaoModel.Codigo != null)
+            if (questaoModel.EhCodigo != false)
             {
                 return RedirectToAction("Edit4/" + id, "Questao");
             }
@@ -331,10 +330,46 @@ namespace Spider.Controllers
             return View(questaoModel);
         }
 
+        //
+        //public ActionResult Create2(int id)
+        //{
+        //    ViewBag.id_Survey = id;
+        //    //QuestaoModel questaoModel = gQuestao.Obter(id);
+        //    return View();
+        //}
+
+        //
+        // POST: /Survey/Edit/5
+
+        //[HttpPost]
+        //public ActionResult Create2(QuestaoModel questaoModel)
+        //{
+
+        //    int idQuestao = gQuestao.Inserir(questaoModel);
+        //    if (ModelState.IsValid)
+        //    {
+        //        foreach (Itens_da_QuestaoModel item in questaoModel.itens)
+        //        {
+        //            item.id_Questao = idQuestao;
+
+        //            gItens.Inserir(item);
+
+
+
+        //        }
+
+        //        return RedirectToAction("ListaQuestoes/" + questaoModel.id_Survey, "Questao");
+
+        //    }
+
+        //    return View(questaoModel);
+        //}
+
         public ActionResult Edit3(int id)
         {
             QuestaoModel questaoModel = gQuestao.Obter(id);
             questaoModel.itens = gItens.ObterItens(id).ToList();
+            ViewBag.id_Questao = questaoModel.id_Questao;
             return View(questaoModel);
         }
 
@@ -406,18 +441,19 @@ namespace Spider.Controllers
 
             if (questaoModel.Pergunta != null)
             {
-                //questaoModel.id_Survey = survey.id_Survey;
-                //questao.idTB_ITENS_DA_QUESTAO = gItens.Inserir(questao.itens);
 
-
-                string result = new StreamReader(file.InputStream).ReadToEnd(); ;
+                string result;
                 
-                questaoModel.Codigo = result;
+                foreach (ClasseModel classe in questaoModel.codigos)
+                {
+                    result = new StreamReader(file.InputStream).ReadToEnd();
+                    classe.id_Questao = questaoModel.id_Questao;
+                    classe.Codigo = result;
+                    gClasses.Inserir(classe);
+                }
 
                 foreach (Itens_da_QuestaoModel item in questaoModel.itens)
                 {
-                    //Itens_da_QuestaoModel item = new Itens_da_QuestaoModel();
-                    //survey.questoes[i].itens
                     item.id_Questao = questaoModel.id_Questao;
                     gItens.Inserir(item);
                 }

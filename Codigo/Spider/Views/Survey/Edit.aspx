@@ -6,7 +6,28 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
-    <script src="<%: Url.Content("~/Scripts/jquery-ui-1.8.11.js") %>" type="text/javascript"></script>
+    <%--<script src="<%: Url.Content("~/Scripts/jquery-ui-1.8.11.js") %>" type="text/javascript"></script>--%>
+    
+    <script src="../../Content/jquery-1.10.js" type="text/javascript"></script>
+    <script src="../../Content/bootstrap-3.3.4-dist/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../../Content/vitalets-bootstrap-datepicker-c7af15b/js/bootstrap-datepicker.js"
+        type="text/javascript"></script>
+    <script src="../../Content/vitalets-bootstrap-datepicker-c7af15b/js/locales/bootstrap-datepicker.pt-BR.js"
+        type="text/javascript"></script>
+    <link href="../../Content/bootstrap-3.3.4-dist/css/bootstrap.css" rel="stylesheet"
+        type="text/css" />
+    <link href="../../Content/vitalets-bootstrap-datepicker-c7af15b/css/datepicker.css"
+        rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#datepicker').datepicker({
+                autoclose: true,
+                format: 'dd/mm/yyyy',
+                language: 'pt-BR'
+            });
+        });
+    </script>
     <fieldset>
         <legend>Editar Survey</legend>
         <% using (Html.BeginForm())
@@ -36,47 +57,41 @@
             <%: Html.ValidationMessageFor(model => model.Data_Criacao) %>
         </div>
         <div class="editor-label">
-            Data Fim
-        </div>
-        <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.Data_fim, new { @class = "datepicker" })%>
-            <%: Html.ValidationMessageFor(model => model.Data_fim) %>
-        </div>
+        Data de Encerramento
+    </div>
+    <div class="editor-field">
+        <%: Html.TextBoxFor(model => model.Data_fim, new { @id = "datepicker", @class = "form-control" })%>
+        <%: Html.ValidationMessageFor(model => model.Data_fim) %>
+    </div>
+    <div class="checkbox">
         <div class="editor-label">
             Ativo
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.flag_ativo) %>
+            <%: Html.CheckBoxFor(model => model.flag_ativo)%>
             <%: Html.ValidationMessageFor(model => model.flag_ativo) %>
-        </div>
-        <div class="editor-label">
+       </div>
+       <div class="editor-label">
             Randomize Questões
-        </div>
-        <div class="editor-field">
-            <%: Html.CheckBoxFor(model => model.RandomizeQuetsoes, new { Value = "true" })%>
+            <%: Html.CheckBoxFor(model => model.RandomizeQuetsoes)%>
             <%: Html.ValidationMessageFor(model => model.RandomizeQuetsoes) %>
         </div>
         <div class="editor-label">
             Única Resposta
-        </div>
-        <div class="editor-field">
-            <%: Html.CheckBoxFor(model => model.UnicaResposta, new { Value = "true" })%>
+            <%: Html.CheckBoxFor(model => model.UnicaResposta)%>
             <%: Html.ValidationMessageFor(model => model.UnicaResposta) %>
         </div>
-        <div class="editor-label">
-            Senha de Acesso
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.SenhaAcesso)%>
-            <%: Html.ValidationMessageFor(model => model.SenhaAcesso) %>
-        </div>
-        <br />
-    <p>
-        <input class="btn btn-primary" type="submit" value="Salvar"/>
-    </p>
-    </fieldset>
-    <% } %>
-    <div>
-        <%: Html.ActionLink("Voltar", "Index") %>
     </div>
+    <div class="editor-label">
+        Senha de Acesso
+    </div>
+    <div class="editor-field">
+        <%: Html.TextBoxFor(model => model.SenhaAcesso, new { @class = "form-control"})%>
+        <%: Html.ValidationMessageFor(model => model.SenhaAcesso) %>
+    </div>
+    <br />
+    <p>
+        <input class="btn btn-primary" type="submit" value="Salvar" /> 
+        <input type="button" class="btn btn-default" onclick="location.href='<%: Url.Action("Index", "Survey") %>'" value="Voltar"/>
+ 
+    </p>
+    <% } %>
 </asp:Content>

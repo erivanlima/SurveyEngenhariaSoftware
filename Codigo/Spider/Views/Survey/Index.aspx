@@ -10,7 +10,8 @@
 
 <p>
 
-    <%: Html.ActionLink("Criar Novo Survey", "CreateSurvey",null,new { @class="button"}) %>
+    <input type="button" class="btn btn-primary"  onclick="location.href='<%: Url.Action("CreateSurvey", "Survey") %>'" value="Novo Survey"/>
+    <%--<%: Html.ActionLink("Criar Novo Survey", "CreateSurvey",null,new { @class="button"}) %>--%>
 </p>
 <table>
     <tr>

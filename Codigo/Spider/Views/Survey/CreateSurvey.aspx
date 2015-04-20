@@ -29,7 +29,7 @@
     <%--<script src="../../Scripts/bootstrap-datepicker.js" type="text/javascript"></script>--%>
     <script type="text/javascript">
         $(document).ready(function () {
-            $('.datepicker').datepicker({ 
+            $('#datepicker').datepicker({ 
             autoclose: true,
             format: 'dd/mm/yyyy',                
                 language: 'pt-BR'
@@ -37,7 +37,6 @@
         });
     </script>
     <% using (Html.BeginForm()) { %>
-    <div>
     <fieldset>
                 <legend>Novo Survey</legend>
     
@@ -58,7 +57,7 @@
         <%: Html.ValidationMessageFor(model => model.Titulo) %>
     </div>
     <div class="editor-label">
-        Subtitulo
+        Subtítulo
     </div>
     <div class="editor-field">
         <%: Html.TextBoxFor(model => model.Subtitulo, new { @class = "form-control", style = "width:auto", size = 106 })%>
@@ -76,46 +75,42 @@
         Data de Encerramento
     </div>
     <div class="editor-field">
-        <%: Html.TextBoxFor(model => model.Data_fim, new { @class = "datepicker" }) %>
+        <%: Html.TextBoxFor(model => model.Data_fim, new { @id = "datepicker", @class = "form-control" })%>
         <%: Html.ValidationMessageFor(model => model.Data_fim) %>
     </div>
-    <div class="editor-label">
-        Ativo
-    </div>
-    <div class="editor-field">
-        <%: Html.CheckBoxFor(model => model.flag_ativo, new { Value = "true" })%>
-        <%: Html.ValidationMessageFor(model => model.flag_ativo) %>
-    </div>
-    <div class="editor-label">
-        Randomize Questões
-    </div>
-    <div class="editor-field">
-        <%: Html.CheckBoxFor(model => model.RandomizeQuetsoes, new { Value = "true" })%>
-        <%: Html.ValidationMessageFor(model => model.RandomizeQuetsoes) %>
-    </div>
-    <div class="editor-label">
-        Única Resposta
-    </div>
-    <div class="editor-field">
-        <%: Html.CheckBoxFor(model => model.UnicaResposta, new { Value = "true" })%>
-        <%: Html.ValidationMessageFor(model => model.UnicaResposta) %>
+    <div class="checkbox">
+        <div class="editor-label">
+            Ativo
+            <%: Html.CheckBoxFor(model => model.flag_ativo, new { @checked = "checked" })%>
+            <%: Html.ValidationMessageFor(model => model.flag_ativo) %>
+       </div>
+       <div class="editor-label">
+            Randomize Questões
+            <%: Html.CheckBoxFor(model => model.RandomizeQuetsoes)%>
+            <%: Html.ValidationMessageFor(model => model.RandomizeQuetsoes) %>
+        </div>
+        <div class="editor-label">
+            Única Resposta
+            <%: Html.CheckBoxFor(model => model.UnicaResposta, new { Value = "true" })%>
+            <%: Html.ValidationMessageFor(model => model.UnicaResposta) %>
+        </div>
     </div>
     <div class="editor-label">
         Senha de Acesso
     </div>
     <div class="editor-field">
-        <%: Html.EditorFor(model => model.SenhaAcesso)%>
+        <%: Html.TextBoxFor(model => model.SenhaAcesso, new { @class = "form-control"})%>
         <%: Html.ValidationMessageFor(model => model.SenhaAcesso) %>
     </div>
     <br />
     <p>
-        <input type="submit" value="Salvar" />
+        <input class="btn btn-primary" type="submit" value="Salvar" /> 
+        <input type="button" class="btn btn-default" onclick="location.href='<%: Url.Action("Index", "Survey") %>'" value="Voltar"/>
+ 
     </p>
     <% } %>
-    <div>
+    <%--<div>
         <%: Html.ActionLink("Voltar", "Index", "Survey")%>
-    </div>
+    </div>--%>
     </fieldset>
-    </div>
-
 </asp:Content>
