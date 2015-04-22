@@ -51,24 +51,35 @@
                     <div class="display-field">
                         <%: Html.DisplayFor(model => Questao.Pergunta)%>
                     </div>
-                    <% if (Questao.Codigo != null && Questao.Linguagem.Equals("CSharp"))
+                    <% if (Questao.EhCodigo)
                        {  %>
-                            <pre class="brush:csharp">
-                            <%: Html.DisplayFor(model => Questao.Codigo)%>
-                            </pre>
-                    <% }  %>
-                    <% if (Questao.Codigo != null && Questao.Linguagem.Equals("Java"))
+                    <% foreach (var codigo in Model.questoes[i].codigos)
+                       { %>
+                    <% if (Questao.Linguagem.Equals("CSharp"))
                        {  %>
-                            <pre class="brush:java">
-                            <%: Html.DisplayFor(model => Questao.Codigo)%>
+                    <pre class="brush:csharp">
+                                <%: Html.DisplayFor(model => codigo.Codigo)%>
                             </pre>
-                    <% }  %>
-                    <% if (Questao.Codigo != null && Questao.Linguagem.Equals("PHP"))
+                    <% }  
+                    %>
+                    <% if (Questao.Linguagem.Equals("Java"))
                        {  %>
-                            <pre class="brush:php">
-                            <%: Html.DisplayFor(model => Questao.Codigo)%>
+                    <pre class="brush:java">
+                            <%: Html.DisplayFor(model => codigo.Codigo)%>
                             </pre>
-                    <% }  %>
+                    <% } 
+                    %>
+                    <% if (Questao.Linguagem.Equals("PHP"))
+                       {  %>
+                    <pre class="brush:php">
+                            <%: Html.DisplayFor(model => codigo.Codigo)%>
+                            </pre>
+                    <% 
+                       }  %>
+                    <% 
+                            }  %>
+                    <% 
+                       }  %>
                     <% if (Questao.Img != null)
                        {  %>
                     <div class="imagem">
@@ -81,13 +92,23 @@
                     <fieldset>
                         <% foreach (var item in Model.questoes[i].itens)
                            { %>
+                        <% if (Questao.Escolha)
+                           {  %>
                         <div class="display-field">
                             <input id="questoes_<%= i %>__respostas__Item" name="questoes[<%= i %>].respostas.Item"
-                                type="radio" value="<%= Html.DisplayFor(model => item.Item)%>" />
+                                type="checkbox" value="<%= Html.DisplayFor(model => item.Item)%>" />
                             <%: Html.DisplayFor(model => item.Item)%>
                         </div>
+                        <% }
+                           else
+                           { %>
+                        <div class="display-field">
+                            <input name="questoes[<%= i %>].respostas.Item" type="radio" value="<%= Html.DisplayFor(model => item.Item)%>" />
+                            <%: Html.DisplayFor(model => item.Item)%>
+                        </div>
+                        <% } %>
                         <% 
-                  } %>
+                           } %>
                     </fieldset>
                     <% }
                        else
@@ -100,8 +121,7 @@
                     <% } %>
                 </fieldset>
                 <% i++;
-
-            } %>
+                   } %>
             </fieldset>
             <p>
                 <input type="submit" value="Salvar" />

@@ -286,7 +286,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\addItem.js" />
     <Content Include="Scripts\addObjcomImg.js" />
-    <Content Include="Scripts\editItem.js" />
+    <Content Include="Scripts\addItemAux.js" />
     <Content Include="Scripts\fileinput.min.js" />
     <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.5.1.js" />
@@ -306,8 +306,8 @@
     <Content Include="Views\Account\Login.aspx" />
     <Content Include="Views\Itens\Edit.aspx" />
     <Content Include="Views\Itens\ListaItens.aspx" />
-    <Content Include="Views\Questao\Create2.aspx" />
     <Content Include="Views\Questao\Create5.aspx" />
+    <Content Include="Views\Questao\CriarQuestaoObj.aspx" />
     <Content Include="Views\Questao\Edit4.aspx" />
     <Content Include="Views\Questao\Edit3.aspx" />
     <Content Include="Views\Questao\Edit2.aspx" />
@@ -453,7 +453,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>6063</DevelopmentServerPort>
+          <DevelopmentServerPort>2278</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

@@ -144,13 +144,7 @@ namespace Services
             itensE.idTB_ITENS_DA_QUESTAO = itens.idTB_ITENS_DA_QUESTAO;
             itensE.Item = itens.Item;
             itensE.TB_QUESTAO_id_Questao = itens.id_Questao;
-            //itensE.ItemB = itens.ItemB;
-            //itensE.ItemC = itens.ItemC;
-            //itensE.ItemD = itens.ItemD;
-            //itensE.ItemE = itens.ItemE;
             
-
-
         }
     }
 }

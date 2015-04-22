@@ -83,24 +83,16 @@
         </div>
         
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Codigo) %>
+            Código
         </div>
         
         <div class="page-header">
-		<input id="input-23" type="file" name="file" multiple="true"/>
+		<input id="input-23" type="file" name="files" multiple="true"/>
 		</div>
-			
-        <%--<div class="editor-field">
-          <%--<%: Html.TextAreaFor(model => model.Codigo, new { htmlAttributes = new { @class = "form-control" } })%>
-          <%: Html.EditorFor(model => model.Codigo)%>
-        --%>
-        <%: Html.ValidationMessageFor(model => model.Codigo)%>
+        <%: Html.ValidationMessageFor(model => model.codigos)%>
         <div class="editor-label">
             <a href="javascript: addItem();">Adicionar Item </a>
         </div>
-        <%--<div class="divimagem">
-          
-         </div>--%>
         <fieldset>
             <div class="editor-label">
                 <h3>

@@ -11,6 +11,7 @@ namespace Models
         public int id_Survey { get; set; }
         public RespostaModel respostas { get; set; }
         public List<Itens_da_QuestaoModel> itens { get; set; }
+        public List<Itens_da_QuestaoModel> itensAux { get; set; }
         public List<ClasseModel> codigos { get; set; }
         public string Tipo { get; set; }
         public Boolean Escolha { get; set; }
@@ -26,6 +27,7 @@ namespace Models
         {
             //itens = new Itens_da_QuestaoModel { };
             itens = new List<Itens_da_QuestaoModel> { };
+            itensAux = new List<Itens_da_QuestaoModel> { };
             respostas = new RespostaModel();
             codigos = new List<ClasseModel>();
         

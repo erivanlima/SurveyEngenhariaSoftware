@@ -24,29 +24,7 @@ Questão
         <%: Html.HiddenFor(model => model.id_Survey)%>
         <%: Html.HiddenFor(model => model.id_Questao)%>
         <%: Html.HiddenFor(model => model.Tipo)%>
-        <%--<div class="editor-label">
-            <%: Html.LabelFor(model => model.idTB_ITENS_DA_QUESTAO) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.idTB_ITENS_DA_QUESTAO) %>
-            <%: Html.ValidationMessageFor(model => model.idTB_ITENS_DA_QUESTAO) %>
-        </div>--%>
-        <%--<div class="editor-label">
-            <%: Html.LabelFor(model => model.id_Survey) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.id_Survey) %>
-            <%: Html.ValidationMessageFor(model => model.id_Survey) %>
-        </div>--%>
-        <%--   <div class="editor-label">
-            <%: Html.LabelFor(model => model.Tipo) %>
-        </div>
-        <div class="editor-field">
-          <%:Html.RadioButtonFor(model => model.Tipo, true, new { id = "SUBJETIVA" }) %> <label for="Ativo">SUBJETIVA</label>
-         <%: Html.RadioButtonFor(model => model.Tipo, false, new { id = "OBJETIVA" })%> <label for="Inativo">OBJETIVA</label>
-           <!--  Html.RadioButtonFor(model => model.Tipo) 
-             Html.ValidationMessageFor(model => model.Tipo) -->
-        </div>--%>
+       
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Pergunta) %>
         </div>
@@ -54,9 +32,6 @@ Questão
             <%: Html.TextBoxFor(model => model.Pergunta, new { @class = "form-control", style = "width:auto", size = 106 })%>
             <%: Html.ValidationMessageFor(model => model.Pergunta) %>
         </div>
-        <!--<pre class="brush:csharp">
-              
-        </pre>-->
         <div class="editor-label">
             Itens Randômicos ?
         </div>
@@ -71,27 +46,8 @@ Questão
             <%: Html.EditorFor(model => model.Obrigatoria) %>
             <%: Html.ValidationMessageFor(model => model.Obrigatoria) %>
         </div>
-        <div class="editor-label">
-            Utilizar código ?
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.EhCodigo) %>
-            <%: Html.ValidationMessageFor(model => model.EhCodigo) %>
-        </div>
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Linguagem) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.Linguagem) %>
-            <%: Html.ValidationMessageFor(model => model.Linguagem) %>
-        </div>
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Codigo) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.Codigo)%>
-            <%: Html.ValidationMessageFor(model => model.Codigo)%>
-        </div>
+       
+       
     </fieldset>
     <br />
     <p>

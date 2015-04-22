@@ -76,7 +76,8 @@
          <div class="divperguntaobjetiva">
          </div>--%>
             <div>
-                <%: Html.ActionLink("Adicionar Questão", "Create2", new { id=ViewBag.id_Survey }, new { @class = "button" })%>
+                <%--<%: Html.ActionLink("Adicionar Questão", "Create2", new { id=ViewBag.id_Survey }, new { @class = "button" })%>--%>
+                <%: Html.ActionLink("Adicionar Questão", "CriarQuestaoObj", new { id=ViewBag.id_Survey }, new { @class = "button" })%>
             </div>
         </fieldset>
         <br />
