@@ -75,10 +75,10 @@ namespace Spider.Controllers
         public ActionResult Create2(int id)
         {
             ViewBag.id_Survey = id;
-            
+
 
             return RedirectToAction("Edit2/" + DefaultQuestaoObj(id), "Questao");
-            
+
         }
 
         [HttpGet]
@@ -106,51 +106,38 @@ namespace Spider.Controllers
         public ActionResult Create5(int id)
         {
             ViewBag.id_Survey = id;
-            //QuestaoModel questao = new QuestaoModel();
-
-            //return RedirectToAction("Edit4/" + DefaultQuestaoObj(id), "Questao");
             return View();
         }
 
         [HttpPost]
-        public ActionResult Create5(int id, QuestaoModel questao, HttpPostedFileBase file)
+        public ActionResult Create5(int id, QuestaoModel questao, List<HttpPostedFileBase> files)
         {
-            if (file != null && file.ContentLength > 0)
-            {
-                // extract only the fielname
-                var fileName = Path.GetFileName(file.FileName);
-                // store the file inside ~/App_Data/uploads folder
-                var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
-                file.SaveAs(path);
-            }
 
-            if (questao.Pergunta != null)
+            questao.Tipo = "SUBJETIVA";
+            int idquest = gQuestao.Inserir(questao);
+
+            foreach (HttpPostedFileBase file in files)
             {
-               
-                string result;
-                questao.Tipo = "SUBJETIVA";
-                int idquest=  gQuestao.Inserir(questao);
-                foreach (ClasseModel classe in questao.codigos)
+                if (file != null && file.ContentLength > 0)
                 {
+                    string result;
+                    // extract only the fielname
+                    var fileName = Path.GetFileName(file.FileName);
+                    // store the file inside ~/App_Data/uploads folder
+                    var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
+                    file.SaveAs(path);
+
+                    ClasseModel classe = new ClasseModel();
                     result = new StreamReader(file.InputStream).ReadToEnd();
-                    classe.Codigo = result;
                     classe.id_Questao = idquest;
+                    classe.Codigo = result;
                     gClasses.Inserir(classe);
                 }
-
-                
                
-                return RedirectToAction("ListaQuestoes/" + questao.id_Survey, "Questao");
             }
 
-            return View(questao);  
+            return RedirectToAction("ListaQuestoes/" + questao.id_Survey, "Questao");
 
-
-            //ViewBag.id_Survey = id;
-            //QuestaoModel questao = new QuestaoModel();
-
-           // return RedirectToAction("Edit4/" + DefaultQuestaoObj(id), "Questao");
-            //return View(questao);
         }
 
         public int DefaultQuestaoSubjetiva(int idSurvey)
@@ -299,7 +286,9 @@ namespace Spider.Controllers
 
         public ActionResult Edit2(int id)
         {
+            //List<Itens_da_QuestaoModel> itens = new List<Itens_da_QuestaoModel>();
             QuestaoModel questaoModel = gQuestao.Obter(id);
+            questaoModel.itens = gItens.ObterItens(questaoModel.id_Questao).ToList();
             return View(questaoModel);
         }
 
@@ -309,19 +298,29 @@ namespace Spider.Controllers
         [HttpPost]
         public ActionResult Edit2(int id, QuestaoModel questaoModel)
         {
-
+            gItens.RemoverPorQuestao(questaoModel.id_Questao);
 
             if (ModelState.IsValid)
             {
+
                 foreach (Itens_da_QuestaoModel item in questaoModel.itens)
                 {
-                    item.id_Questao = questaoModel.id_Questao;
+                    if (item.Item != null)
+                    {
 
+                        item.id_Questao = questaoModel.id_Questao;
+                        gItens.Inserir(item);
+                    }
+                }
+
+                foreach (Itens_da_QuestaoModel item in questaoModel.itensAux)
+                {
+
+                    item.id_Questao = questaoModel.id_Questao;
                     gItens.Inserir(item);
 
-
-
                 }
+
                 gQuestao.Editar(questaoModel);
                 return RedirectToAction("ListaQuestoes/" + questaoModel.id_Survey, "Questao");
 
@@ -330,40 +329,38 @@ namespace Spider.Controllers
             return View(questaoModel);
         }
 
-        //
-        //public ActionResult Create2(int id)
-        //{
-        //    ViewBag.id_Survey = id;
-        //    //QuestaoModel questaoModel = gQuestao.Obter(id);
-        //    return View();
-        //}
 
-        //
-        // POST: /Survey/Edit/5
-
-        //[HttpPost]
-        //public ActionResult Create2(QuestaoModel questaoModel)
-        //{
-
-        //    int idQuestao = gQuestao.Inserir(questaoModel);
-        //    if (ModelState.IsValid)
-        //    {
-        //        foreach (Itens_da_QuestaoModel item in questaoModel.itens)
-        //        {
-        //            item.id_Questao = idQuestao;
-
-        //            gItens.Inserir(item);
+        public ActionResult CriarQuestaoObj(int id)
+        {
+            ViewBag.id_Survey = id;
+            return View();
+        }
 
 
+        [HttpPost]
+        public ActionResult CriarQuestaoObj(int id, QuestaoModel questaoModel)
+        {
 
-        //        }
+            questaoModel.Tipo = "OBJETIVA";
+            int idQuestao = gQuestao.Inserir(questaoModel);
+            if (ModelState.IsValid)
+            {
+                foreach (Itens_da_QuestaoModel item in questaoModel.itens)
+                {
+                    if (item.Item != null)
+                    {
+                        item.id_Questao = idQuestao;
+                        gItens.Inserir(item);
+                    }
 
-        //        return RedirectToAction("ListaQuestoes/" + questaoModel.id_Survey, "Questao");
+                }
 
-        //    }
+                return RedirectToAction("ListaQuestoes/" + questaoModel.id_Survey, "Questao");
 
-        //    return View(questaoModel);
-        //}
+            }
+
+            return View(questaoModel);
+        }
 
         public ActionResult Edit3(int id)
         {
@@ -377,7 +374,7 @@ namespace Spider.Controllers
         // POST: /Survey/Edit/5
 
         [HttpPost]
-        public ActionResult Edit3(int id, QuestaoModel questaoModel,HttpPostedFileBase[] images)
+        public ActionResult Edit3(int id, QuestaoModel questaoModel, HttpPostedFileBase[] images)
         {
 
             if (images[0] != null && images[0].ContentLength > 0)
@@ -412,8 +409,8 @@ namespace Spider.Controllers
                 gQuestao.Editar(questaoModel);
                 return RedirectToAction("ListaQuestoes/" + questaoModel.id_Survey, "Questao");
             }
-            
-            return View(questaoModel);   
+
+            return View(questaoModel);
         }
 
 
@@ -428,29 +425,29 @@ namespace Spider.Controllers
         // POST: /Survey/Edit/5
 
         [HttpPost]
-        public ActionResult Edit4(int id, QuestaoModel questaoModel,HttpPostedFileBase file)
+        public ActionResult Edit4(int id, QuestaoModel questaoModel, List<HttpPostedFileBase> files)
         {
-            if (file != null && file.ContentLength > 0)
+            foreach (HttpPostedFileBase file in files)
             {
-                // extract only the fielname
-                var fileName = Path.GetFileName(file.FileName);
-                // store the file inside ~/App_Data/uploads folder
-                var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
-                file.SaveAs(path);
-            }
-
-            if (questaoModel.Pergunta != null)
-            {
-
-                string result;
-                
-                foreach (ClasseModel classe in questaoModel.codigos)
+                if (file != null && file.ContentLength > 0)
                 {
+                    // extract only the fielname
+                    var fileName = Path.GetFileName(file.FileName);
+                    // store the file inside ~/App_Data/uploads folder
+                    var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
+                    file.SaveAs(path);
+                    string result;
+
+                    ClasseModel classe = new ClasseModel();
                     result = new StreamReader(file.InputStream).ReadToEnd();
                     classe.id_Questao = questaoModel.id_Questao;
                     classe.Codigo = result;
                     gClasses.Inserir(classe);
                 }
+            }
+
+            if (questaoModel.Pergunta != null)
+            {
 
                 foreach (Itens_da_QuestaoModel item in questaoModel.itens)
                 {
@@ -461,7 +458,7 @@ namespace Spider.Controllers
                 return RedirectToAction("ListaQuestoes/" + questaoModel.id_Survey, "Questao");
             }
 
-            return View(questaoModel);  
+            return View(questaoModel);
         }
 
         //
@@ -483,7 +480,8 @@ namespace Spider.Controllers
             if (ModelState.IsValid)
             {
                 List<Itens_da_QuestaoModel> ListaItens = gItens.ObterItens(questaoModel.id_Questao).ToList();
-                foreach(Itens_da_QuestaoModel itens in ListaItens){
+                foreach (Itens_da_QuestaoModel itens in ListaItens)
+                {
                     gItens.RemoverPorQuestao(itens.id_Questao);
                 }
                 gQuestao.Remover(id);
@@ -554,11 +552,11 @@ namespace Spider.Controllers
 
         public FileContentResult GetImagem(int id)
         {
-            FileContentResult retorno=null;
+            FileContentResult retorno = null;
             byte[] byteArray = gQuestao.ObterImagem(id);
             if (byteArray != null && byteArray.Length != 0)
             {
-               retorno =  new FileContentResult(byteArray, "image/*");
+                retorno = new FileContentResult(byteArray, "image/*");
             }
             //else
             //{
