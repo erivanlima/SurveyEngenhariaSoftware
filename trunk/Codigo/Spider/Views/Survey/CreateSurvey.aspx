@@ -42,13 +42,7 @@
     
     <%: Html.ValidationSummary(true) %>
     <%: Html.HiddenFor(model => model.id_Responsavel, new { Value = ViewBag.id_Responsavel })%>
-    <%--<div class="editor-label">
-            <%: Html.LabelFor(model => model.id_Responsavel) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.id_Responsavel) %>
-            <%: Html.ValidationMessageFor(model => model.id_Responsavel) %>
-        </div>--%>
+    
     <div class="editor-label">
         Titulo
     </div>
@@ -109,8 +103,5 @@
  
     </p>
     <% } %>
-    <%--<div>
-        <%: Html.ActionLink("Voltar", "Index", "Survey")%>
-    </div>--%>
     </fieldset>
 </asp:Content>
