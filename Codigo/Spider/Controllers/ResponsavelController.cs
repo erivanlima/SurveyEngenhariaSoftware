@@ -6,6 +6,9 @@ using System.Web.Mvc;
 using Services;
 using Models;
 using System.Web.Security;
+using System.Web.Helpers;
+using Microsoft.Reporting.WebForms;
+using System.Web.UI.DataVisualization.Charting;
 
 
 namespace Spider.Controllers
@@ -69,7 +72,7 @@ namespace Spider.Controllers
             entrevistados.nome = ip;
             entrevistados.sobrenome = ip;
             entrevistados.email = ip;
-            gEntrevistado.Inserir(entrevistados);
+            int id = gEntrevistado.Inserir(entrevistados);
             //EntrevistadoModel entrevistados_2 = new EntrevistadoModel();
             entrevistados = gEntrevistado.Obter(entrevistados.idTB_ENTREVISTADO);
             foreach (QuestaoModel questoes in survey.questoes)
@@ -80,7 +83,7 @@ namespace Spider.Controllers
                     
                     respostas.id_Questao = survey.questoes[i].id_Questao;
                     respostas.Item = survey.questoes[i].respostas.Item;
-                    respostas.idTB_ENTREVISTADO = entrevistados.idTB_ENTREVISTADO;
+                    respostas.idTB_ENTREVISTADO = id;
                     respostas.Resposta = null;
                     gResposta.Inserir(respostas);
                     i++;
@@ -322,6 +325,196 @@ namespace Spider.Controllers
         {
 
             return View(gSurvey.Obter(id));
-        } 
+        }
+
+
+
+
+        public ViewResult Respostas()
+        {
+
+           
+            // Models.DataSetRespostaQuestao.V_RespostaPorQuestaoDataTable;
+           // QuestaoModel questao = new QuestaoModel();
+           // questao = gQuestao.Obter(41);
+           // List<RespostaModel> resp = new List<RespostaModel>();
+           // resp = RespostasPorQuestao(41);
+           // //resp = dsR();
+           // List<string> respString = new List<string>();
+            
+
+           // var myChart = new System.Web.Helpers.Chart(width: 600, height: 400)
+           //.AddTitle("Resposta por Questão")
+           //.AddSeries("Default", chartType: "Pie",
+           // xValue: resp, xField: "Item",
+           // yValues: resp, yFields: "Item")
+           //     //.DataBindTable(resp, xField: "Item")
+           //.Write();
+           // return null;
+            return View();
+        }
+
+
+        public ViewResult RespostasQuestao()
+        {
+            IEnumerable<RespostaModel> respostas;
+            TempData["Resposta"] = gResposta.ObterTodos();
+            respostas = (IEnumerable<RespostaModel>)TempData["Resposta"];
+            IEnumerable<IGrouping<string, RespostaModel>> grupoResp = respostas.GroupBy(resp => resp.Item);
+
+            List<string[]> data = new List<string[]>();
+            data.Add(new[] { "Resposta", "Item" });
+
+            foreach (var itensGrupo in grupoResp)
+            {
+                data.Add(new[] { itensGrupo.ElementAtOrDefault(0).Item, itensGrupo.ElementAtOrDefault(0).idTB_ENTREVISTADO.ToString() });
+            }
+
+            return View();
+        }
+
+        public List<RespostaModel> RespostasPorQuestao(int id)
+        {
+           
+            //ViewBag.id_Survey = id;
+            //SurveyModel survey = new SurveyModel();
+            //survey = gSurvey.Obter(id);
+            //survey.questoes = gQuestao.ListaQuestaoSurvey(id).ToList();
+            //ViewBag.Titulo = survey.Titulo;
+            QuestaoModel questao = new QuestaoModel();
+            questao = gQuestao.Obter(id);
+            List<RespostaModel> resp = new List<RespostaModel>();
+            List<RespostaModel> resp2 = new List<RespostaModel>();
+            //for (int i = 0; i < survey.questoes.Count; i++)
+            //{
+                //resp.Add(resp);
+                resp = gResposta.ListaRespostaPorQuestao(questao.id_Questao).ToList();
+                //resp2.AddRange(resp);
+                //TempData["Resposta"] = resp;
+            //}
+            return resp;
+        }
+
+        public JsonResult GraficoRespostas()
+        {
+            int id = 41;
+            QuestaoModel questao = new QuestaoModel();
+            //questao = gQuestao.Obter(id);
+            IEnumerable<RespostaModel> respostas;
+            respostas = gResposta.ListaRespostaPorQuestao(id).ToList();
+            if (TempData["Respostas"] == null)
+            {
+             
+                respostas = (IEnumerable<RespostaModel>)TempData["Respostas"];
+            }
+
+            
+            List<string[]> data = new List<string[]>();
+            data.Add(new[] { "Questao", "Resposta" });
+
+            foreach (var itensGrupo in respostas)
+            {
+                data.Add(new[] { itensGrupo.Item, itensGrupo.id_Questao.ToString()});
+            }
+            return Json(data);
+        }
+
+        public ActionResult FormGraficoResposta()
+        {
+            return View();
+        }
+
+        public ActionResult Graficos()
+        {
+            return View();
+        }
+
+        public ActionResult graficoRespostaPorQuestao()
+        {
+
+            //IEnumerable<RespostaModel> respostas;
+            //DataSetRespostaQuestao dsR;
+            //IEnumerable<RespostaModel> respostas;
+            QuestaoModel questao = new QuestaoModel();
+            questao = gQuestao.Obter(41);
+            List<RespostaModel> resp = new List<RespostaModel>();
+            //IEnumerable<IGrouping<string, RespostaModel>> grupoResp = bancos.GroupBy(banco => banco.Descricao);
+            resp = RespostasPorQuestao(41);
+            //resp = dsR();
+            List<string> respString = new List<string>();
+            //string[] qtdResp = new string[resp.Count];
+            //int[] qtdInt = new int[resp.Count];
+            //int j = 1;
+            //foreach(var res in resp){
+
+                
+            //    if (resp.Contains(res))
+            //    {
+            //        respString.Add(res.Item);
+            //        qtdInt[j] += 1;
+
+            //    }
+            //    else
+            //    {
+            //        respString.Add(res.Item);
+            //        qtdInt[j] += 1;
+            //    }
+
+            //} j++;
+            
+           //qtdResp = resp.Count.ToString();
+            
+            var myChart = new System.Web.Helpers.Chart(width: 600, height: 400)
+           .AddTitle("Resposta por Questão")
+           .AddSeries("Default", chartType: "Pie",
+            xValue: resp, xField: "Item",
+            yValues: resp, yFields: "id_Resposta" )
+           //.DataBindTable(resp, xField: "Item")
+           .Write();
+            return null;
+        }
+
+        public ActionResult RelatorioRespostasPorQuestao(int idQuest)
+        {
+            LocalReport relatorio = new LocalReport();
+
+            //Caminho onde o arquivo do Report Viewer está localizado
+            relatorio.ReportPath = Server.MapPath("~/Reports/RelatorioRespostasPorQuestao.rdlc");
+            //Define o nome do nosso DataSource e qual rotina irá preenche-lo, no caso, nosso método criado anteriormente
+            relatorio.DataSources.Add(new ReportDataSource("DataSetRespostas", gResposta.ListaRespostaPorQuestao(idQuest)));
+
+            string reportType = "PDF";
+            string mimeType;
+            string encoding;
+            string fileNameExtension;
+
+            string deviceInfo =
+             "<DeviceInfo>" +
+             " <OutputFormat>PDF</OutputFormat>" +
+             " <PageWidth>9in</PageWidth>" +
+             " <PageHeight>11in</PageHeight>" +
+             " <MarginTop>0.7in</MarginTop>" +
+             " <MarginLeft>2in</MarginLeft>" +
+             " <MarginRight>2in</MarginRight>" +
+             " <MarginBottom>0.7in</MarginBottom>" +
+             "</DeviceInfo>";
+
+            Warning[] warnings;
+            string[] streams;
+            byte[] bytes;
+
+            //Renderiza o relatório em bytes
+            bytes = relatorio.Render(
+            reportType,
+            deviceInfo,
+            out mimeType,
+            out encoding,
+            out fileNameExtension,
+            out streams,
+            out warnings);
+
+            return File(bytes, mimeType);
+        }
+
     }
 }

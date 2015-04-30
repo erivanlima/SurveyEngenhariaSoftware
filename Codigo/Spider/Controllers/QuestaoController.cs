@@ -62,13 +62,20 @@ namespace Spider.Controllers
         //
         // GET: /Questao/Create
         [HttpGet]
-        public ActionResult Create(int id)
+        public ActionResult CriarQuestao(int id)
         {
             ViewBag.id_Survey = id;
-            //QuestaoModel questao = new QuestaoModel();
+            return View();
+        }
 
-            return RedirectToAction("Edit/" + DefaultQuestaoSubjetiva(id), "Questao");
-            //return View(questao);
+        [HttpPost]
+        public ActionResult CriarQuestao(int id, QuestaoModel questao)
+        {
+            questao.Tipo = "SUBJETIVA";
+            gQuestao.Inserir(questao);
+
+            return RedirectToAction("ListaQuestoes/" + questao.id_Survey, "Questao");
+
         }
 
         [HttpGet]
@@ -81,25 +88,139 @@ namespace Spider.Controllers
 
         }
 
-        [HttpGet]
-        public ActionResult Create3(int id)
+        public ActionResult CriarQuestaoObj(int id)
         {
             ViewBag.id_Survey = id;
-            //QuestaoModel questao = new QuestaoModel();
-
-            return RedirectToAction("Edit3/" + DefaultQuestaoObjImg(id), "Questao");
-            //return View(questao);
+            return View();
         }
 
 
+        [HttpPost]
+        public ActionResult CriarQuestaoObj(int id, QuestaoModel questaoModel)
+        {
+
+            questaoModel.Tipo = "OBJETIVA";
+            int idQuestao = gQuestao.Inserir(questaoModel);
+            if (ModelState.IsValid)
+            {
+                foreach (Itens_da_QuestaoModel item in questaoModel.itens)
+                {
+                    if (item.Item != null)
+                    {
+                        item.id_Questao = idQuestao;
+                        gItens.Inserir(item);
+                    }
+
+                }
+
+                return RedirectToAction("ListaQuestoes/" + questaoModel.id_Survey, "Questao");
+
+            }
+
+            return View(questaoModel);
+        }
+
         [HttpGet]
-        public ActionResult Create4(int id)
+        public ActionResult CriarQuestaoImgObj(int id)
         {
             ViewBag.id_Survey = id;
-            //QuestaoModel questao = new QuestaoModel();
+            //return RedirectToAction("Edit3/" + DefaultQuestaoObjImg(id), "Questao");
+            return View();
+        }
 
-            return RedirectToAction("Edit4/" + DefaultQuestaoObj(id), "Questao");
-            //return View(questao);
+        [HttpPost]
+        public ActionResult CriarQuestaoImgObj(int id, QuestaoModel questaoModel, HttpPostedFileBase[] images)
+        {
+            questaoModel.Tipo = "OBJETIVA";
+            
+            if (images[0] != null && images[0].ContentLength > 0)
+            {
+                // extract only the fielname
+                var fileName = Path.GetFileName(images[0].FileName);
+                // store the file inside ~/App_Data/uploads folder
+                var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
+                images[0].SaveAs(path);
+            }
+
+            if (questaoModel.Pergunta != null)
+            {
+                
+                questaoModel.Img = new byte[images[0].ContentLength];
+                images[0].InputStream.Read(questaoModel.Img, 0, images[0].ContentLength);
+
+                int idquest = gQuestao.Inserir(questaoModel);
+                //gQuestao.Editar(questaoModel);
+
+                foreach (Itens_da_QuestaoModel item in questaoModel.itens)
+                {
+                    if (item.Item != null)
+                    {
+                        item.id_Questao = idquest;
+                        gItens.Inserir(item);
+                    }
+
+                }
+
+                return RedirectToAction("ListaQuestoes/" + questaoModel.id_Survey, "Questao");
+            }
+
+            return View(questaoModel);
+        }
+
+        [HttpGet]
+        public ActionResult CriarQuestaoCodObj(int id)
+        {
+            ViewBag.id_Survey = id;
+            
+            //return RedirectToAction("Edit4/" + DefaultQuestaoObj(id), "Questao");
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CriarQuestaoCodObj(int id, QuestaoModel questao, List<HttpPostedFileBase> files)
+        {
+
+            questao.Tipo = "OBJETIVA";
+            questao.EhCodigo = true;
+            int idquest = gQuestao.Inserir(questao);
+
+            foreach (HttpPostedFileBase file in files)
+            {
+                if (file != null && file.ContentLength > 0)
+                {
+                    string result;
+                    // extract only the fielname
+                    var fileName = Path.GetFileName(file.FileName);
+                    // store the file inside ~/App_Data/uploads folder
+                    var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
+                    file.SaveAs(path);
+
+                    ClasseModel classe = new ClasseModel();
+                    result = new StreamReader(file.InputStream).ReadToEnd();
+                    classe.id_Questao = idquest;
+                    classe.Codigo = result;
+                    gClasses.Inserir(classe);
+                }
+
+                if (questao.Pergunta != null)
+                {
+
+                    foreach (Itens_da_QuestaoModel item in questao.itens)
+                    {
+                        if (item.Item != null)
+                        {
+                            item.id_Questao = idquest;
+                            gItens.Inserir(item);
+                        }
+
+                    }
+
+                }
+
+                return RedirectToAction("ListaQuestoes/" + questao.id_Survey, "Questao");
+
+            }
+            return View();
         }
 
         [HttpGet]
@@ -329,38 +450,6 @@ namespace Spider.Controllers
             return View(questaoModel);
         }
 
-
-        public ActionResult CriarQuestaoObj(int id)
-        {
-            ViewBag.id_Survey = id;
-            return View();
-        }
-
-
-        [HttpPost]
-        public ActionResult CriarQuestaoObj(int id, QuestaoModel questaoModel)
-        {
-
-            questaoModel.Tipo = "OBJETIVA";
-            int idQuestao = gQuestao.Inserir(questaoModel);
-            if (ModelState.IsValid)
-            {
-                foreach (Itens_da_QuestaoModel item in questaoModel.itens)
-                {
-                    if (item.Item != null)
-                    {
-                        item.id_Questao = idQuestao;
-                        gItens.Inserir(item);
-                    }
-
-                }
-
-                return RedirectToAction("ListaQuestoes/" + questaoModel.id_Survey, "Questao");
-
-            }
-
-            return View(questaoModel);
-        }
 
         public ActionResult Edit3(int id)
         {

@@ -15,7 +15,7 @@
 <% using (Html.BeginForm()) { %>
     <%: Html.ValidationSummary(true) %>
     <fieldset>
-        <legend>QuestaoModel</legend>
+        <legend>Criar Questão</legend>
         <div class="editor-label">
             <%: Html.HiddenFor(model => model.id_Survey, new { Value = ViewBag.id_Survey })%>
         </div>
@@ -54,21 +54,7 @@
             <%: Html.ValidationMessageFor(model => model.Obrigatoria) %>
         </div>
 
-        <%--<div class="editor-label">
-            <%: Html.LabelFor(model => model.EhCodigo) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.EhCodigo) %>
-            <%: Html.ValidationMessageFor(model => model.EhCodigo) %>
-        </div>--%>
-
-        <%--<div class="editor-label">
-            <%: Html.LabelFor(model => model.Linguagem) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.Linguagem) %>
-            <%: Html.ValidationMessageFor(model => model.Linguagem) %>
-        </div>--%>
+       
         <fieldset>
             <div class="editor-label">
                 <a href="javascript: addItem();">Adicionar item </a>
@@ -78,13 +64,13 @@
             </div>
         </fieldset>
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Salvar" />
         </p>
     </fieldset>
 <% } %>
 
 <div>
-    <%: Html.ActionLink("Voltar", "ListaQuestoes", new { id = ViewBag.id_Survey }, new { @class = "button" })%>   
+    <%: Html.ActionLink("Voltar", "ModeloQuestoes", new { id = ViewBag.id_Survey }, new { @class = "button" })%>   
 </div>
 
 </asp:Content>
