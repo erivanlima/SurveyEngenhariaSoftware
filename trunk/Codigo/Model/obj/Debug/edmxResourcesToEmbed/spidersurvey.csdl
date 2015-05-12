@@ -271,6 +271,7 @@
     <Property Type="Int32" Name="TB_SURVEY_id_Survey" Nullable="false" />
     <Property Type="String" Name="Tipo" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Type="Boolean" Name="Escolha" Nullable="false" />
+    <Property Type="Boolean" Name="TemOutro" Nullable="false" />
     <Property Type="String" Name="Pergunta" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Type="Binary" Name="Img" MaxLength="Max" FixedLength="false" />
     <Property Type="Boolean" Name="Randomica" />
@@ -301,6 +302,7 @@
     <Property Type="Int32" Name="TB_QUESTAO_id_Questao" Nullable="false" />
     <Property Type="String" Name="Resposta" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="Item" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OutroTxt" MaxLength="Max" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="TB_ENTREVISTADO" Relationship="mysurveyModel.TB_RESPOSTA_FKIndex2" FromRole="TB_RESPOSTA" ToRole="TB_ENTREVISTADO" />
     <NavigationProperty Name="TB_QUESTAO" Relationship="mysurveyModel.TB_RESPOSTA_FKIndex1" FromRole="TB_RESPOSTA" ToRole="TB_QUESTAO" />
   </EntityType>

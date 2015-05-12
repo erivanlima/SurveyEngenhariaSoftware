@@ -20,18 +20,20 @@ namespace Models
         public Boolean Randomica { get; set; }
         public Boolean Obrigatoria { get; set; }
         public Boolean EhCodigo { get; set; }
+        public Boolean TemOutro { get; set; }
         public string Linguagem { get; set; }
         
 
          public QuestaoModel()
         {
-            //itens = new Itens_da_QuestaoModel { };
+            
             itens = new List<Itens_da_QuestaoModel> { };
             itensAux = new List<Itens_da_QuestaoModel> { };
             respostas = new RespostaModel();
             codigos = new List<ClasseModel>();
         
-        }
+        
+         }
 
       
 

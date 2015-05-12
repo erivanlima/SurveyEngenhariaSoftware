@@ -343,6 +343,7 @@
     <Property Name="TB_SURVEY_id_Survey" Type="int" Nullable="false" />
     <Property Name="Tipo" Type="varchar" MaxLength="10" />
     <Property Name="Escolha" Type="bit" Nullable="false" />
+    <Property Name="TemOutro" Type="bit" Nullable="false" />
     <Property Name="Pergunta" Type="varchar(max)" Nullable="false" />
     <Property Name="Img" Type="varbinary(max)" />
     <Property Name="Randomica" Type="bit" />
@@ -368,6 +369,7 @@
     <Property Name="TB_QUESTAO_id_Questao" Type="int" Nullable="false" />
     <Property Name="Resposta" Type="varchar(max)" />
     <Property Name="Item" Type="varchar(max)" />
+    <Property Name="OutroTxt" Type="varchar(max)" />
   </EntityType>
   <EntityType Name="TB_SURVEY">
     <Key>
@@ -384,8 +386,8 @@
     <Property Name="RandomizeQuestoes" Type="bit" Nullable="false" />
     <Property Name="SenhaAcesso" Type="varchar" MaxLength="45" />
   </EntityType>
-  <!--Errors Found During Generation:
-      warning 6002: The table/view 'mysurvey.dbo.vw_aspnet_Applications' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+  <!--Erros Encontrados Durante a Geração:
+      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_Applications' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
       -->
   <EntityType Name="vw_aspnet_Applications">
     <Key>
@@ -398,8 +400,8 @@
     <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="256" />
   </EntityType>
-  <!--Errors Found During Generation:
-      warning 6002: The table/view 'mysurvey.dbo.vw_aspnet_MembershipUsers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+  <!--Erros Encontrados Durante a Geração:
+      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_MembershipUsers' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
       -->
   <EntityType Name="vw_aspnet_MembershipUsers">
     <Key>
@@ -444,8 +446,8 @@
     <Property Name="IsAnonymous" Type="bit" Nullable="false" />
     <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-      warning 6002: The table/view 'mysurvey.dbo.vw_aspnet_Profiles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+  <!--Erros Encontrados Durante a Geração:
+      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_Profiles' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
       -->
   <EntityType Name="vw_aspnet_Profiles">
     <Key>
@@ -456,8 +458,8 @@
     <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
     <Property Name="DataSize" Type="int" />
   </EntityType>
-  <!--Errors Found During Generation:
-      warning 6002: The table/view 'mysurvey.dbo.vw_aspnet_Roles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+  <!--Erros Encontrados Durante a Geração:
+      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_Roles' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
       -->
   <EntityType Name="vw_aspnet_Roles">
     <Key>
@@ -472,8 +474,8 @@
     <Property Name="LoweredRoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
     <Property Name="Description" Type="nvarchar" MaxLength="256" />
   </EntityType>
-  <!--Errors Found During Generation:
-      warning 6002: The table/view 'mysurvey.dbo.vw_aspnet_Users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+  <!--Erros Encontrados Durante a Geração:
+      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_Users' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
       -->
   <EntityType Name="vw_aspnet_Users">
     <Key>
@@ -492,8 +494,8 @@
     <Property Name="IsAnonymous" Type="bit" Nullable="false" />
     <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-      warning 6002: The table/view 'mysurvey.dbo.vw_aspnet_UsersInRoles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+  <!--Erros Encontrados Durante a Geração:
+      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_UsersInRoles' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
       -->
   <EntityType Name="vw_aspnet_UsersInRoles">
     <Key>
@@ -503,8 +505,8 @@
     <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-      warning 6002: The table/view 'mysurvey.dbo.vw_aspnet_WebPartState_Paths' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+  <!--Erros Encontrados Durante a Geração:
+      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_WebPartState_Paths' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
       -->
   <EntityType Name="vw_aspnet_WebPartState_Paths">
     <Key>
@@ -518,8 +520,8 @@
     <Property Name="Path" Type="nvarchar" Nullable="false" MaxLength="256" />
     <Property Name="LoweredPath" Type="nvarchar" Nullable="false" MaxLength="256" />
   </EntityType>
-  <!--Errors Found During Generation:
-      warning 6002: The table/view 'mysurvey.dbo.vw_aspnet_WebPartState_Shared' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+  <!--Erros Encontrados Durante a Geração:
+      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_WebPartState_Shared' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
       -->
   <EntityType Name="vw_aspnet_WebPartState_Shared">
     <Key>
@@ -530,8 +532,8 @@
     <Property Name="DataSize" Type="int" />
     <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-      warning 6002: The table/view 'mysurvey.dbo.vw_aspnet_WebPartState_User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+  <!--Erros Encontrados Durante a Geração:
+      aviso 6002: A tabela/exibição 'mysurvey.dbo.vw_aspnet_WebPartState_User' não tem uma chave primária definida. A chave foi inferida e a definição criada como uma tabela/exibição somente leitura.
       -->
   <EntityType Name="vw_aspnet_WebPartState_User">
     <Key>

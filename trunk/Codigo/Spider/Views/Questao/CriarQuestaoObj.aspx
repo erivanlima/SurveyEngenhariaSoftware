@@ -54,7 +54,18 @@
             <%: Html.ValidationMessageFor(model => model.Obrigatoria) %>
         </div>
 
+<<<<<<< .mine
+        <div class="editor-label">
+            Adicionar opção "outro" ?
+        </div>
+        <div class="editor-field">
+            <%: Html.EditorFor(model => model.TemOutro) %>
+            <%: Html.ValidationMessageFor(model => model.TemOutro) %>
+        </div>
+
+=======
        
+>>>>>>> .r52
         <fieldset>
             <div class="editor-label">
                 <a href="javascript: addItem();">Adicionar item </a>

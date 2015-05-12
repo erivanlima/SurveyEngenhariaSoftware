@@ -95,7 +95,9 @@ namespace Services
                             Randomica = (Boolean)questaoE.Randomica,
                             id_Survey = questaoE.TB_SURVEY_id_Survey,
                             Tipo = questaoE.Tipo,
-                            Escolha = questaoE.Escolha,                            
+                            Escolha = questaoE.Escolha,   
+                            TemOutro = questaoE.TemOutro,
+                            
 
                         };
             return query;
@@ -140,6 +142,8 @@ namespace Services
             questaoE.Tipo = questao.Tipo;
             questaoE.Linguagem = questao.Linguagem;
             questaoE.EhCodigo = questao.EhCodigo;
+            questaoE.TemOutro = questao.TemOutro;
+            
             
             
         }

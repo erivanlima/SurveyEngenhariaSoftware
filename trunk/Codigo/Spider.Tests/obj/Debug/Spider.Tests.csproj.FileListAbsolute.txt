@@ -126,3 +126,17 @@ C:\Users\Douglas\Documents\survey-tcc\trunk\Codigo\Spider.Tests\bin\Debug\Persis
 C:\Users\Douglas\Documents\survey-tcc\trunk\Codigo\Spider.Tests\obj\Debug\Spider.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Douglas\Documents\survey-tcc\trunk\Codigo\Spider.Tests\obj\Debug\Spider.Tests.dll
 C:\Users\Douglas\Documents\survey-tcc\trunk\Codigo\Spider.Tests\obj\Debug\Spider.Tests.pdb
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Spider.Tests\bin\Debug\Spider.Tests.dll.config
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Spider.Tests\bin\Debug\Spider.Tests.dll
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Spider.Tests\bin\Debug\Spider.Tests.pdb
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Spider.Tests\bin\Debug\Spider.dll
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Spider.Tests\bin\Debug\Services.dll
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Spider.Tests\bin\Debug\Model.dll
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Spider.Tests\bin\Debug\Persistence.dll
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Spider.Tests\bin\Debug\Spider.pdb
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Spider.Tests\bin\Debug\Services.pdb
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Spider.Tests\bin\Debug\Model.pdb
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Spider.Tests\bin\Debug\Persistence.pdb
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Spider.Tests\obj\Debug\Spider.Tests.csprojResolveAssemblyReference.cache
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Spider.Tests\obj\Debug\Spider.Tests.dll
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Spider.Tests\obj\Debug\Spider.Tests.pdb

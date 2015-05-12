@@ -73,3 +73,11 @@ C:\Users\Douglas\Documents\survey-tcc\trunk\Codigo\Persistence\bin\Debug\Model.p
 C:\Users\Douglas\Documents\survey-tcc\trunk\Codigo\Persistence\obj\Debug\Persistence.csprojResolveAssemblyReference.cache
 C:\Users\Douglas\Documents\survey-tcc\trunk\Codigo\Persistence\obj\Debug\Persistence.dll
 C:\Users\Douglas\Documents\survey-tcc\trunk\Codigo\Persistence\obj\Debug\Persistence.pdb
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Persistence\bin\Debug\Persistence.dll.config
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Persistence\bin\Debug\Persistence.dll
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Persistence\bin\Debug\Persistence.pdb
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Persistence\bin\Debug\Model.dll
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Persistence\bin\Debug\Model.pdb
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Persistence\obj\Debug\Persistence.csprojResolveAssemblyReference.cache
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Persistence\obj\Debug\Persistence.dll
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Persistence\obj\Debug\Persistence.pdb

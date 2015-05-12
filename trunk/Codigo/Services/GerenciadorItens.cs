@@ -125,6 +125,11 @@ namespace Services
             IEnumerable<Itens_da_QuestaoModel> itens = GetQuery().Where(Itens_da_QuestaoModel => Itens_da_QuestaoModel.id_Questao.Equals(IDques));
             return itens.ElementAtOrDefault(0);
         }
+        public Itens_da_QuestaoModel ObterIDitem(int IDitem)
+        {
+            IEnumerable<Itens_da_QuestaoModel> itens = GetQuery().Where(Itens_da_QuestaoModel => Itens_da_QuestaoModel.idTB_ITENS_DA_QUESTAO.Equals(IDitem));
+            return itens.ElementAtOrDefault(0);
+        }
 
         public IEnumerable<Itens_da_QuestaoModel> ObterItens(int odin)
         {

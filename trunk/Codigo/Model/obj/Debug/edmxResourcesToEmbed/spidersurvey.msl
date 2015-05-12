@@ -170,6 +170,7 @@
           <ScalarProperty Name="Randomica" ColumnName="Randomica" />
           <ScalarProperty Name="Img" ColumnName="Img" />
           <ScalarProperty Name="Pergunta" ColumnName="Pergunta" />
+          <ScalarProperty Name="TemOutro" ColumnName="TemOutro" />
           <ScalarProperty Name="Escolha" ColumnName="Escolha" />
           <ScalarProperty Name="Tipo" ColumnName="Tipo" />
           <ScalarProperty Name="TB_SURVEY_id_Survey" ColumnName="TB_SURVEY_id_Survey" />
@@ -190,6 +191,7 @@
     <EntitySetMapping Name="TB_RESPOSTA">
       <EntityTypeMapping TypeName="mysurveyModel.TB_RESPOSTA">
         <MappingFragment StoreEntitySet="TB_RESPOSTA">
+          <ScalarProperty Name="OutroTxt" ColumnName="OutroTxt" />
           <ScalarProperty Name="Item" ColumnName="Item" />
           <ScalarProperty Name="Resposta" ColumnName="Resposta" />
           <ScalarProperty Name="TB_QUESTAO_id_Questao" ColumnName="TB_QUESTAO_id_Questao" />
