@@ -77,7 +77,7 @@
                     <% 
                        }  %>
                     <% 
-                            }  %>
+                       }  %>
                     <% 
                        }  %>
                     <% if (Questao.Img != null)
@@ -95,9 +95,9 @@
                         <% if (Questao.Escolha)
                            {  %>
                         <div class="display-field">
-                            <input id="questoes_<%= i %>__respostas__Item" name="questoes[<%= i %>].respostas.Item"
-                                type="checkbox" value="<%= Html.DisplayFor(model => item.Item)%>" />
+                            <input id="questoes_<%= i %>__respostas_Item" name="meucheck" type="checkbox" value="<%= Html.DisplayFor(model => item.idTB_ITENS_DA_QUESTAO ) %>" />
                             <%: Html.DisplayFor(model => item.Item)%>
+                            <%--id="questoes_<%= i %>__respostas_Item"--%>
                         </div>
                         <% }
                            else
@@ -119,6 +119,24 @@
                             value="" type="text" />
                     </fieldset>
                     <% } %>
+               <% if (Questao.TemOutro)
+                       {  %>
+                    <% if (Questao.Escolha)
+                       {  %>
+                        <input type="checkbox" />
+                            Outro (opcional):
+                            <input class="text-box single-line" name="questoes[<%= i %>].respostas.OutroTxt"
+                            value="" type="text" />
+                    <% }
+                       else
+                       {%>
+                        <input name="questoes[<%= i %>].respostas.Item" " type="radio"  />
+                        Outro (opcional):
+                        <input name="questoes[<%= i %>].respostas.OutroTxt" type="text" value="" />
+                        <% }
+                             %>
+                  <% } 
+                       %>
                 </fieldset>
                 <% i++;
                    } %>

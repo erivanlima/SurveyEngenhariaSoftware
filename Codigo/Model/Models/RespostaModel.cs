@@ -12,5 +12,7 @@ namespace Models
         public int id_Questao { get; set; }
         public String Resposta { get; set; }
         public String Item { get; set; }
+        public string OutroTxt { get; set; }
+      
     }
 }

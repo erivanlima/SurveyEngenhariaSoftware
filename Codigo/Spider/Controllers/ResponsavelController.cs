@@ -6,10 +6,13 @@ using System.Web.Mvc;
 using Services;
 using Models;
 using System.Web.Security;
+<<<<<<< .mine
+using System.Web.Helpers;
+=======
 using System.Web.Helpers;
 using Microsoft.Reporting.WebForms;
 using System.Web.UI.DataVisualization.Charting;
-
+>>>>>>> .r52
 
 namespace Spider.Controllers
 {
@@ -22,6 +25,7 @@ namespace Spider.Controllers
         private GerenciadorItens gItens;
         private GerenciadorResposta gResposta;
         private GerenciadorEntrevistado gEntrevistado;
+        private GerenciadorClasse gClasses;
 
 
         public ResponsavelController()
@@ -32,6 +36,7 @@ namespace Spider.Controllers
             gItens = new GerenciadorItens();
             gResposta = new GerenciadorResposta();
             gEntrevistado = new GerenciadorEntrevistado();
+            gClasses = new GerenciadorClasse();
         }
 
         [HttpGet]
@@ -54,18 +59,22 @@ namespace Spider.Controllers
             {
                 int odin = survey.questoes[i].id_Questao;
                 survey.questoes[i].itens= gItens.ObterItens(odin).ToList();
+                survey.questoes[i].codigos = gClasses.ObterClasses(odin).ToList();
+                
                 
             }
             return survey;
         }
 
+      
+
         [HttpPost]
-        public ActionResult CreateViewTotal(SurveyModel survey)
+        public ActionResult CreateViewTotal(SurveyModel survey,  List<string> meucheck)
         {
             int i = 0;
-            string ip = Request.UserHostAddress;
-
+            Itens_da_QuestaoModel itensQuestaoRespostaCheck = new Itens_da_QuestaoModel();
             RespostaModel respostas = new RespostaModel();
+            string ip = Request.UserHostAddress;
             EntrevistadoModel entrevistados = new EntrevistadoModel();
             //Posteriormente colocar um if aqui comparando com o IP para evitar que o mesmo entrevistado responda mais de 
             //mais de uma vez.
@@ -73,13 +82,39 @@ namespace Spider.Controllers
             entrevistados.sobrenome = ip;
             entrevistados.email = ip;
             int id = gEntrevistado.Inserir(entrevistados);
-            //EntrevistadoModel entrevistados_2 = new EntrevistadoModel();
-            entrevistados = gEntrevistado.Obter(entrevistados.idTB_ENTREVISTADO);
+            IQueryable<EntrevistadoModel> entrevistadoE = gEntrevistado.obterIdEntrevistadoUltimo();
+            int idEnt =0;
+           
+            foreach (EntrevistadoModel entrevistado in entrevistadoE)
+            {
+              idEnt = entrevistado.idTB_ENTREVISTADO;
+            }
+
+            
+            foreach( var  iditem in meucheck)
+            {
+                
+                itensQuestaoRespostaCheck = gItens.ObterIDitem(Convert.ToInt32(iditem));
+                respostas.id_Questao = itensQuestaoRespostaCheck.id_Questao;
+                respostas.Item = itensQuestaoRespostaCheck.Item;
+                respostas.idTB_ENTREVISTADO = idEnt;
+                respostas.Resposta = null;
+                respostas.OutroTxt = null;
+                gResposta.Inserir(respostas);
+                
+                
+            }
+            
+           
             foreach (QuestaoModel questoes in survey.questoes)
             {
 
-                if (survey.questoes[i].Tipo.Equals("OBJETIVA"))
+                if (survey.questoes[i].respostas.OutroTxt == null && survey.questoes[i].respostas.Item != null)
                 {
+<<<<<<< .mine
+                    if (survey.questoes[i].Tipo.Equals("OBJETIVA") && survey.questoes[i].respostas.Item != null)
+                    {
+=======
                     
                     respostas.id_Questao = survey.questoes[i].id_Questao;
                     respostas.Item = survey.questoes[i].respostas.Item;
@@ -87,19 +122,61 @@ namespace Spider.Controllers
                     respostas.Resposta = null;
                     gResposta.Inserir(respostas);
                     i++;
+>>>>>>> .r52
 
+                        respostas.id_Questao = survey.questoes[i].id_Questao;
+                        respostas.Item = survey.questoes[i].respostas.Item;
+                        respostas.idTB_ENTREVISTADO = idEnt;
+                        respostas.Resposta = null;
+                        respostas.OutroTxt = null;
+                        gResposta.Inserir(respostas);
+                        i++;
+
+                    }
+                    else
+                    {
+                        if (survey.questoes[i].Tipo.Equals("SUBJETIVA"))
+                        {
+                            respostas.Resposta = survey.questoes[i].respostas.Resposta;
+                            respostas.id_Questao = survey.questoes[i].id_Questao;
+                            respostas.idTB_ENTREVISTADO = idEnt;
+                            respostas.Item = null;
+                            respostas.OutroTxt = null;
+                            gResposta.Inserir(respostas);
+
+                        }
+                        i++;
+                    }
                 }
-                else
+                else 
                 {
-                    respostas.Resposta = survey.questoes[i].respostas.Resposta;
-                    respostas.id_Questao = survey.questoes[i].id_Questao;
-                    respostas.idTB_ENTREVISTADO = entrevistados.idTB_ENTREVISTADO;
-                    respostas.Item = null;
-                    gResposta.Inserir(respostas);
-                    i++;
+                    if (survey.questoes[i].Tipo.Equals("SUBJETIVA"))
+                    {
+                        respostas.Resposta = survey.questoes[i].respostas.Resposta;
+                        respostas.id_Questao = survey.questoes[i].id_Questao;
+                        respostas.idTB_ENTREVISTADO = idEnt;
+                        respostas.Item = null;
+                        respostas.OutroTxt = null;
+                        gResposta.Inserir(respostas);
+                        i++;
 
+                    }
+                    else 
+                    {
+                        if (survey.questoes[i].respostas.OutroTxt != null)
+                        { 
+                            respostas.id_Questao = survey.questoes[i].id_Questao;
+                            respostas.idTB_ENTREVISTADO = idEnt;
+                            respostas.Item = null;
+                            respostas.Resposta = null;
+                            respostas.OutroTxt = survey.questoes[i].respostas.OutroTxt;
+                            gResposta.Inserir(respostas);
+                        }
+                        i++;
+                    }
+                
                 }
-
+                
             }
 
 

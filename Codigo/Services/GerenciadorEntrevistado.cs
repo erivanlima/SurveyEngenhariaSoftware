@@ -97,6 +97,22 @@ namespace Services
             return query;
         }
 
+        public IQueryable<EntrevistadoModel> obterIdEntrevistadoUltimo()
+        {
+            IQueryable<TB_ENTREVISTADO> tb_entrevistado = unitOfWork.RepositorioEntrevistado.GetQueryable();
+            var query = (from entrevistadoE in tb_entrevistado  orderby entrevistadoE.idTB_ENTREVISTADO descending
+                        
+                        
+                        select new EntrevistadoModel
+                        {
+                            idTB_ENTREVISTADO = entrevistadoE.idTB_ENTREVISTADO
+
+
+                        }).Take(1);
+
+            return query;
+        }
+
         /// <summary>
         /// Obter todas as entidades cadastradas
         /// </summary>
@@ -121,7 +137,7 @@ namespace Services
             IEnumerable<EntrevistadoModel> entrevistados = GetQuery().Where(entrevistadoModel => entrevistadoModel.nome.Equals(ip));
             return entrevistados.ElementAtOrDefault(0);
         }
-
+      
         /// <summary>
         /// Atribui dados do ClienteModel para o Cliente Entity
         /// </summary>

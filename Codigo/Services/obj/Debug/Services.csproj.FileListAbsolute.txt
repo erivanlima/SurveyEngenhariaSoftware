@@ -88,3 +88,12 @@ C:\Users\Douglas\Documents\survey-tcc\trunk\Codigo\Services\bin\Debug\Persistenc
 C:\Users\Douglas\Documents\survey-tcc\trunk\Codigo\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
 C:\Users\Douglas\Documents\survey-tcc\trunk\Codigo\Services\obj\Debug\Services.dll
 C:\Users\Douglas\Documents\survey-tcc\trunk\Codigo\Services\obj\Debug\Services.pdb
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Services\bin\Debug\Services.dll
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Services\bin\Debug\Services.pdb
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Services\bin\Debug\Model.dll
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Services\bin\Debug\Persistence.dll
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Services\bin\Debug\Model.pdb
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Services\bin\Debug\Persistence.pdb
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Services\obj\Debug\Services.dll
+C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Services\obj\Debug\Services.pdb

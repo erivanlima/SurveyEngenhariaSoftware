@@ -100,6 +100,7 @@ namespace Services
                             id_Questao = respostaE.TB_QUESTAO_id_Questao,
                             Resposta = respostaE.Resposta,
                             Item = respostaE.Item,
+                            OutroTxt = respostaE.OutroTxt,
 
                         };
             return query;
@@ -143,6 +144,7 @@ namespace Services
             respostaE.TB_QUESTAO_id_Questao = resposta.id_Questao;
             respostaE.Resposta = resposta.Resposta;
             respostaE.Item = resposta.Item;
+            respostaE.OutroTxt = resposta.OutroTxt;
         }
 
 
