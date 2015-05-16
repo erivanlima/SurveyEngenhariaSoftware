@@ -38,11 +38,39 @@
       <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WebForms.10.0.40219.1\lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\microsoft-web-helpers.2.1.20710.2\lib\net40\Microsoft.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -52,6 +80,22 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -61,6 +105,14 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20505.0\lib\net40\WebMatrix.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20505.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
@@ -71,10 +123,68 @@
     <Compile Include="Controllers\ResponsavelController.cs" />
     <Compile Include="Controllers\RespostaController.cs" />
     <Compile Include="Controllers\SurveyController.cs" />
+    <Compile Include="DataSetRespostaQuestao.cs">
+      <DependentUpon>DataSetRespostaQuestao.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DataSetRespostaQuestao.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRespostaQuestao.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Relatório\DataSetRespostas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRespostas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Responsavel\AnaliseGrafica.aspx.cs">
+      <DependentUpon>AnaliseGrafica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Responsavel\AnaliseGrafica.aspx.designer.cs">
+      <DependentUpon>AnaliseGrafica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Responsavel\FormGraficoResposta.aspx.cs">
+      <DependentUpon>FormGraficoResposta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Responsavel\FormGraficoResposta.aspx.designer.cs">
+      <DependentUpon>FormGraficoResposta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Responsavel\GraficoDeRespostasPorQuestao.aspx.cs">
+      <DependentUpon>GraficoDeRespostasPorQuestao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Responsavel\GraficoDeRespostasPorQuestao.aspx.designer.cs">
+      <DependentUpon>GraficoDeRespostasPorQuestao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Responsavel\RespostaPorQuestao.aspx.cs">
+      <DependentUpon>RespostaPorQuestao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Responsavel\RespostasPorQuestao.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RespostasPorQuestao.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Responsavel\RespostasQuestao.aspx.cs">
+      <DependentUpon>RespostasQuestao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Responsavel\RespostasQuestao.aspx.designer.cs">
+      <DependentUpon>RespostasQuestao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Responsavel\ViewGraficos.aspx.cs">
+      <DependentUpon>ViewGraficos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Responsavel\ViewGraficos.aspx.designer.cs">
+      <DependentUpon>ViewGraficos.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-3.3.4-dist\css\bootstrap-theme.css" />
@@ -88,13 +198,18 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\datepickerPtBr.js" />
+    <Content Include="Content\imagem\calculoamostral.gif" />
+    <Content Include="Content\imagem\Formula.png" />
     <Content Include="Content\imagem\objetiva.jpg" />
     <Content Include="Content\imagem\objetivacodigo.jpg" />
     <Content Include="Content\imagem\objetivaimagem.jpg" />
     <Content Include="Content\imagem\subjetiva.jpg" />
     <Content Include="Content\imagem\subjetivacodigo.png" />
     <Content Include="Content\jquery-1.10.js" />
+    <Content Include="MvcDiagnostics.aspx" />
+    <Content Include="Scripts\grafico.js" />
     <Content Include="Scripts\jquery-1.10.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\jquery-2.1.3.js" />
     <Content Include="Scripts\jquery-2.1.3.min.js" />
     <Content Include="Content\jquery-ui.css" />
@@ -283,7 +398,6 @@
     <Content Include="Scripts\addQuestaoobj.js" />
     <Content Include="Scripts\addSubjcomImg.js" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\addItem.js" />
     <Content Include="Scripts\addObjcomImg.js" />
     <Content Include="Scripts\addItemAux.js" />
@@ -297,8 +411,10 @@
     <Content Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jsapi.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Scripts\MyChart.js" />
     <Content Include="Scripts\shBrushCSharp.js" />
     <Content Include="Scripts\shBrushJScript.js" />
     <Content Include="Scripts\shCore.js" />
@@ -307,6 +423,9 @@
     <Content Include="Views\Itens\Edit.aspx" />
     <Content Include="Views\Itens\ListaItens.aspx" />
     <Content Include="Views\Questao\Create5.aspx" />
+    <Content Include="Views\Questao\CriarQuestao.aspx" />
+    <Content Include="Views\Questao\CriarQuestaoCodObj.aspx" />
+    <Content Include="Views\Questao\CriarQuestaoImgObj.aspx" />
     <Content Include="Views\Questao\CriarQuestaoObj.aspx" />
     <Content Include="Views\Questao\Edit4.aspx" />
     <Content Include="Views\Questao\Edit3.aspx" />
@@ -323,16 +442,28 @@
     <Content Include="Views\Questao\Edit.aspx" />
     <Content Include="Views\Questao\Index.aspx" />
     <Content Include="Views\Questao\ListaQuestoes.aspx" />
+    <Content Include="Views\Responsavel\AnaliseGrafica.aspx" />
     <Content Include="Views\Responsavel\Create.aspx" />
     <Content Include="Views\Responsavel\CreateViewTotal.aspx" />
     <Content Include="Views\Responsavel\Delete.aspx" />
     <Content Include="Views\Responsavel\Details.aspx" />
     <Content Include="Views\Responsavel\Edit.aspx" />
+    <Content Include="Views\Responsavel\FormGraficoResposta.aspx" />
     <Content Include="Views\Responsavel\GerarLinkSurvey.aspx" />
+    <Content Include="Views\Responsavel\GetRespostaData.aspx" />
+    <Content Include="Views\Responsavel\GraficoDeRespostasPorQuestao.aspx" />
+    <Content Include="Views\Responsavel\graficoRespostaPorQuestao.aspx" />
+    <Content Include="Views\Responsavel\GraficoRespostas.aspx" />
+    <Content Include="Views\Responsavel\Graficos.aspx" />
     <Content Include="Views\Responsavel\Index.aspx" />
     <Content Include="Views\Responsavel\Listar.aspx" />
     <Content Include="Views\Responsavel\ListarRespostas.aspx" />
+    <Content Include="Views\Responsavel\RespostaPorQuestao.aspx" />
+    <Content Include="Views\Responsavel\Respostas.aspx" />
+    <Content Include="Views\Responsavel\RespostasQuestao.aspx" />
+    <Content Include="Views\Responsavel\ViewGraficos.aspx" />
     <Content Include="Views\Responsavel\VisualizarSurvey.aspx" />
+    <Content Include="Views\Survey\CalculoAmostral.aspx" />
     <Content Include="Views\Survey\EnviarSurvey.aspx" />
     <Content Include="Views\Survey\CreateSurvey.aspx" />
     <Content Include="Views\Survey\Delete.aspx" />
@@ -361,7 +492,9 @@
     <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Shared\LogOnUserControl.ascx" />
     <Content Include="Views\Shared\Site.Master" />
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\uploads\" />
@@ -435,6 +568,42 @@
     <None Include="Content\vitalets-bootstrap-datepicker-c7af15b\LICENSE" />
     <None Include="Content\vitalets-bootstrap-datepicker-c7af15b\README.md" />
     <None Include="Content\vitalets-bootstrap-datepicker-c7af15b\tests\README.md" />
+    <None Include="DataSetRespostaQuestao.xsc">
+      <DependentUpon>DataSetRespostaQuestao.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRespostaQuestao.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRespostaQuestao.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetRespostaQuestao.xss">
+      <DependentUpon>DataSetRespostaQuestao.xsd</DependentUpon>
+    </None>
+    <None Include="Relatório\DataSetRespostas.xsc">
+      <DependentUpon>DataSetRespostas.xsd</DependentUpon>
+    </None>
+    <None Include="Relatório\DataSetRespostas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRespostas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Relatório\DataSetRespostas.xss">
+      <DependentUpon>DataSetRespostas.xsd</DependentUpon>
+    </None>
+    <None Include="Views\Responsavel\RespostasPorQuestao.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>RespostasPorQuestao.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Relatório\RelatorioRespostasPorQuestao.rdlc" />
+    <None Include="Views\Responsavel\RespostasPorQuestao.dbml.layout">
+      <DependentUpon>RespostasPorQuestao.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -453,7 +622,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>2278</DevelopmentServerPort>
+          <DevelopmentServerPort>37948</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
