@@ -6,13 +6,13 @@ using System.Web.Mvc;
 using Services;
 using Models;
 using System.Web.Security;
-<<<<<<< .mine
-using System.Web.Helpers;
-=======
 using System.Web.Helpers;
 using Microsoft.Reporting.WebForms;
 using System.Web.UI.DataVisualization.Charting;
->>>>>>> .r52
+using System.Data;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+
 
 namespace Spider.Controllers
 {
@@ -25,7 +25,6 @@ namespace Spider.Controllers
         private GerenciadorItens gItens;
         private GerenciadorResposta gResposta;
         private GerenciadorEntrevistado gEntrevistado;
-        private GerenciadorClasse gClasses;
 
 
         public ResponsavelController()
@@ -36,7 +35,6 @@ namespace Spider.Controllers
             gItens = new GerenciadorItens();
             gResposta = new GerenciadorResposta();
             gEntrevistado = new GerenciadorEntrevistado();
-            gClasses = new GerenciadorClasse();
         }
 
         [HttpGet]
@@ -59,22 +57,18 @@ namespace Spider.Controllers
             {
                 int odin = survey.questoes[i].id_Questao;
                 survey.questoes[i].itens= gItens.ObterItens(odin).ToList();
-                survey.questoes[i].codigos = gClasses.ObterClasses(odin).ToList();
-                
                 
             }
             return survey;
         }
 
-      
-
         [HttpPost]
-        public ActionResult CreateViewTotal(SurveyModel survey,  List<string> meucheck)
+        public ActionResult CreateViewTotal(SurveyModel survey)
         {
             int i = 0;
-            Itens_da_QuestaoModel itensQuestaoRespostaCheck = new Itens_da_QuestaoModel();
-            RespostaModel respostas = new RespostaModel();
             string ip = Request.UserHostAddress;
+
+            RespostaModel respostas = new RespostaModel();
             EntrevistadoModel entrevistados = new EntrevistadoModel();
             //Posteriormente colocar um if aqui comparando com o IP para evitar que o mesmo entrevistado responda mais de 
             //mais de uma vez.
@@ -82,39 +76,13 @@ namespace Spider.Controllers
             entrevistados.sobrenome = ip;
             entrevistados.email = ip;
             int id = gEntrevistado.Inserir(entrevistados);
-            IQueryable<EntrevistadoModel> entrevistadoE = gEntrevistado.obterIdEntrevistadoUltimo();
-            int idEnt =0;
-           
-            foreach (EntrevistadoModel entrevistado in entrevistadoE)
-            {
-              idEnt = entrevistado.idTB_ENTREVISTADO;
-            }
-
-            
-            foreach( var  iditem in meucheck)
-            {
-                
-                itensQuestaoRespostaCheck = gItens.ObterIDitem(Convert.ToInt32(iditem));
-                respostas.id_Questao = itensQuestaoRespostaCheck.id_Questao;
-                respostas.Item = itensQuestaoRespostaCheck.Item;
-                respostas.idTB_ENTREVISTADO = idEnt;
-                respostas.Resposta = null;
-                respostas.OutroTxt = null;
-                gResposta.Inserir(respostas);
-                
-                
-            }
-            
-           
+            //EntrevistadoModel entrevistados_2 = new EntrevistadoModel();
+            entrevistados = gEntrevistado.Obter(entrevistados.idTB_ENTREVISTADO);
             foreach (QuestaoModel questoes in survey.questoes)
             {
 
-                if (survey.questoes[i].respostas.OutroTxt == null && survey.questoes[i].respostas.Item != null)
+                if (survey.questoes[i].Tipo.Equals("OBJETIVA"))
                 {
-<<<<<<< .mine
-                    if (survey.questoes[i].Tipo.Equals("OBJETIVA") && survey.questoes[i].respostas.Item != null)
-                    {
-=======
                     
                     respostas.id_Questao = survey.questoes[i].id_Questao;
                     respostas.Item = survey.questoes[i].respostas.Item;
@@ -122,66 +90,33 @@ namespace Spider.Controllers
                     respostas.Resposta = null;
                     gResposta.Inserir(respostas);
                     i++;
->>>>>>> .r52
 
-                        respostas.id_Questao = survey.questoes[i].id_Questao;
-                        respostas.Item = survey.questoes[i].respostas.Item;
-                        respostas.idTB_ENTREVISTADO = idEnt;
-                        respostas.Resposta = null;
-                        respostas.OutroTxt = null;
-                        gResposta.Inserir(respostas);
-                        i++;
-
-                    }
-                    else
-                    {
-                        if (survey.questoes[i].Tipo.Equals("SUBJETIVA"))
-                        {
-                            respostas.Resposta = survey.questoes[i].respostas.Resposta;
-                            respostas.id_Questao = survey.questoes[i].id_Questao;
-                            respostas.idTB_ENTREVISTADO = idEnt;
-                            respostas.Item = null;
-                            respostas.OutroTxt = null;
-                            gResposta.Inserir(respostas);
-
-                        }
-                        i++;
-                    }
                 }
-                else 
+                else
                 {
-                    if (survey.questoes[i].Tipo.Equals("SUBJETIVA"))
-                    {
-                        respostas.Resposta = survey.questoes[i].respostas.Resposta;
-                        respostas.id_Questao = survey.questoes[i].id_Questao;
-                        respostas.idTB_ENTREVISTADO = idEnt;
-                        respostas.Item = null;
-                        respostas.OutroTxt = null;
-                        gResposta.Inserir(respostas);
-                        i++;
+                    respostas.Resposta = survey.questoes[i].respostas.Resposta;
+                    respostas.id_Questao = survey.questoes[i].id_Questao;
+                    respostas.idTB_ENTREVISTADO = entrevistados.idTB_ENTREVISTADO;
+                    respostas.Item = null;
+                    gResposta.Inserir(respostas);
+                    i++;
 
-                    }
-                    else 
-                    {
-                        if (survey.questoes[i].respostas.OutroTxt != null)
-                        { 
-                            respostas.id_Questao = survey.questoes[i].id_Questao;
-                            respostas.idTB_ENTREVISTADO = idEnt;
-                            respostas.Item = null;
-                            respostas.Resposta = null;
-                            respostas.OutroTxt = survey.questoes[i].respostas.OutroTxt;
-                            gResposta.Inserir(respostas);
-                        }
-                        i++;
-                    }
-                
                 }
-                
+
             }
 
 
             return RedirectToAction("Index","Home");
         }
+
+
+        [HttpGet]
+        public ActionResult Resp(int id)
+        {
+            
+            return View();
+        }
+
 
 
         [HttpGet]
@@ -404,8 +339,71 @@ namespace Spider.Controllers
             return View(gSurvey.Obter(id));
         }
 
+        public ActionResult GetRespostaData()
+        {
+            Models.DataSetRespostaQuestaoTableAdapters.V_RespostaPorQuestaoTableAdapter ds = 
+                new Models.DataSetRespostaQuestaoTableAdapters.V_RespostaPorQuestaoTableAdapter();
+          
+
+            var dat = gResposta.GetQueryCount(41)
+            .GroupBy(c => new { Item = c.Item, id_Resposta = c.id_Resposta }).AsEnumerable().ToList();
+            //var da = data1.Count(d => d.Item as 'Quantidade');
+            List<RespostaModel> list = new List<RespostaModel>();
+            List<RespostaModel> list2 = new List<RespostaModel>();
+            //foreach(var item in data1){
+            //    item.id_Resposta = 1;
+            //}
+           // list = data1.ToList();
+            var va = ds.GetData(42).AsEnumerable().ToList();
+            list2 = gResposta.GetQueryCount(41).ToList();
+
+            List<string[]> data = new List<string[]>();
+            data.Add(new[] { "Item", "Quantidade" });
+
+            foreach (var itens in va)
+            {
+                data.Add(new[] { itens.Item, itens.qtdItens.ToString() });
+            }
+            //var data = ds.GetData(41).ToList();
+            //list = results2.ToList();
+            
+            //int count = va.Count();
+            //for (int i = 0; i <= count; i++)
+            //{
+            //    list[i].id_Resposta = va[i].qtdItens;
+            //    list[i].Item = va[i].Item ;
+            //    list[i].id_Questao = va[i].TB_QUESTAO_id_Questao;
+            //    list[i].idTB_ENTREVISTADO = 0;
+                
+                
+            //}
 
 
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetRespostaDataColumn()
+        {
+            Models.DataSetRespostaQuestaoTableAdapters.V_RespostaPorQuestaoTableAdapter ds =
+                new Models.DataSetRespostaQuestaoTableAdapters.V_RespostaPorQuestaoTableAdapter();
+         
+            var va = ds.GetData(42).AsEnumerable().ToList();
+
+            List<string[]> data = new List<string[]>();
+            data.Add(new[] { "Item", "Quantidade" });
+
+            foreach (var itens in va)
+            {
+                data.Add(new[] { itens.Item, itens.qtdItens.ToString() });
+            }
+
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult AnaliseGrafica()
+        {
+            return View();
+        }
 
         public ViewResult Respostas()
         {
@@ -432,22 +430,21 @@ namespace Spider.Controllers
         }
 
 
-        public ViewResult RespostasQuestao()
+        public JsonResult RespostasQuestao()
         {
             IEnumerable<RespostaModel> respostas;
-            TempData["Resposta"] = gResposta.ObterTodos();
-            respostas = (IEnumerable<RespostaModel>)TempData["Resposta"];
+            respostas = gResposta.ObterTodos();
+            // = (IEnumerable<RespostaModel>)TempData["Resposta"];
             IEnumerable<IGrouping<string, RespostaModel>> grupoResp = respostas.GroupBy(resp => resp.Item);
 
             List<string[]> data = new List<string[]>();
-            data.Add(new[] { "Resposta", "Item" });
+            data.Add(new[] { "Item", "id_Questao" });
 
             foreach (var itensGrupo in grupoResp)
             {
-                data.Add(new[] { itensGrupo.ElementAtOrDefault(0).Item, itensGrupo.ElementAtOrDefault(0).idTB_ENTREVISTADO.ToString() });
+                data.Add(new[] { itensGrupo.ElementAtOrDefault(0).Item, itensGrupo.ElementAtOrDefault(0).id_Questao.ToString() });
             }
-
-            return View();
+            return Json(data,JsonRequestBehavior.AllowGet);
         }
 
         public List<RespostaModel> RespostasPorQuestao(int id)
@@ -472,7 +469,12 @@ namespace Spider.Controllers
             return resp;
         }
 
-        public JsonResult GraficoRespostas()
+        public ActionResult RespostaPorQuestao()
+        {
+            return View();
+        }
+
+        public ActionResult GraficoRespostas()
         {
             int id = 41;
             QuestaoModel questao = new QuestaoModel();
@@ -506,48 +508,23 @@ namespace Spider.Controllers
             return View();
         }
 
-        public ActionResult graficoRespostaPorQuestao()
+        public ActionResult ViewGraficos()
         {
+            return View();
+        }
 
-            //IEnumerable<RespostaModel> respostas;
-            //DataSetRespostaQuestao dsR;
-            //IEnumerable<RespostaModel> respostas;
-            QuestaoModel questao = new QuestaoModel();
-            questao = gQuestao.Obter(41);
-            List<RespostaModel> resp = new List<RespostaModel>();
-            //IEnumerable<IGrouping<string, RespostaModel>> grupoResp = bancos.GroupBy(banco => banco.Descricao);
-            resp = RespostasPorQuestao(41);
-            //resp = dsR();
-            List<string> respString = new List<string>();
-            //string[] qtdResp = new string[resp.Count];
-            //int[] qtdInt = new int[resp.Count];
-            //int j = 1;
-            //foreach(var res in resp){
+        public ActionResult graficoRespostaPorQuestao(int id)
+        {
+            Models.DataSetRespostaQuestaoTableAdapters.V_RespostaPorQuestaoTableAdapter ds =
+               new Models.DataSetRespostaQuestaoTableAdapters.V_RespostaPorQuestaoTableAdapter();
 
-                
-            //    if (resp.Contains(res))
-            //    {
-            //        respString.Add(res.Item);
-            //        qtdInt[j] += 1;
-
-            //    }
-            //    else
-            //    {
-            //        respString.Add(res.Item);
-            //        qtdInt[j] += 1;
-            //    }
-
-            //} j++;
-            
-           //qtdResp = resp.Count.ToString();
-            
+            var va = ds.GetData(id).AsEnumerable().ToList();            
             var myChart = new System.Web.Helpers.Chart(width: 600, height: 400)
            .AddTitle("Resposta por Questão")
            .AddSeries("Default", chartType: "Pie",
-            xValue: resp, xField: "Item",
-            yValues: resp, yFields: "id_Resposta" )
-           //.DataBindTable(resp, xField: "Item")
-           .Write();
+            xValue: va, xField: "Item",
+            yValues: va, yFields: "percentual").AddLegend();
+            myChart.Write();
             return null;
         }
 

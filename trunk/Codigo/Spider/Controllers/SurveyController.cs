@@ -113,40 +113,6 @@ namespace Spider.Controllers
             return PartialView(gQuestao.ObterTodos());
         }
 
-        //[HttpGet]
-        //public ActionResult ListaQuestoes(int idsurvey)
-        //{
-
-        //    //ViewBag.id_Questao = gQuestao.Obter(id).id_Questao;
-        //    //ViewBag.Pergunta = gQuestao.Obter(id).Pergunta;
-        //    ViewBag.id_Survey = idsurvey;
-
-        //    return View();
-        //}
-
-        //[HttpPost]
-        //public ActionResult ListaQuestoes(SurveyModel survey)
-        //{
-        //    //int idsurvey = 0;
-        //    //SurveyModel survey = new SurveyModel();
-        //    List<QuestaoModel> SurveyQuestoes = new List<QuestaoModel>();
-
-        //    SurveyQuestoes = survey.questoes;
-        //    foreach (QuestaoModel questao in SurveyQuestoes)
-        //    {
-        //        SurveyQuestoes.Add(gQuestao.Obter(survey.id_Survey));
-        //        //if (questao.id_Survey == idsurvey)
-        //        //{
-        //        //questao.idTB_ITENS_DA_QUESTAO = gItens.Inserir(questao.itens);
-        //        SurveyQuestoes.Add(gQuestao.Obter(questao.id_Survey));
-        //        //gQuestao.Inserir(questao);
-        //        //}
-
-        //    }
-
-        //    return View(SurveyQuestoes);
-        //}
-
         //
         // GET: /Survey/Create
         [HttpGet]
@@ -265,6 +231,12 @@ namespace Spider.Controllers
             int idCodigo = gResponsavel.ObterIdResp(usuario.ToString());
             return View(gSurvey.ListarSurvey(idCodigo));
         }
+
+        public ActionResult CalculoAmostral()
+        {
+            return View();
+        }
+
 
 
     }
