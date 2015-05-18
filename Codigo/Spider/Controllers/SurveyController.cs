@@ -19,6 +19,7 @@ namespace Spider.Controllers
         private GerenciadorItens gItens;
         private GerenciadorResposta gResposta;
         private GerenciadorResponsavel gResponsavel;
+        private GerenciadorClasse gClasses;
 
 
 
@@ -29,6 +30,7 @@ namespace Spider.Controllers
             gItens = new GerenciadorItens();
             gResposta = new GerenciadorResposta();
             gResponsavel = new GerenciadorResponsavel();
+            gClasses = new GerenciadorClasse();
 
 
         }
@@ -195,11 +197,18 @@ namespace Spider.Controllers
                    {
                        gResposta.RemoverRespostaPorQuestao(questao.id_Questao);
                        survey.questoes[i].itens = gItens.ObterItens(survey.questoes[i].id_Questao).ToList();
+                       survey.questoes[i].codigos = gClasses.ObterClasses(survey.questoes[i].id_Questao).ToList();
                                foreach (Itens_da_QuestaoModel item in survey.questoes[i].itens)
                                {
                                    gItens.RemoverPorQuestao(questao.id_Questao);
                                    
                                }
+                               foreach (ClasseModel item in survey.questoes[i].codigos)
+                               {
+                                   gClasses.RemoverPorQuestao(questao.id_Questao);
+
+                               }
+
                            
                           i++;
                    }

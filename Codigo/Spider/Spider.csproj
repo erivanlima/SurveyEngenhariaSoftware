@@ -423,9 +423,14 @@
     <Content Include="Views\Itens\Edit.aspx" />
     <Content Include="Views\Itens\ListaItens.aspx" />
     <Content Include="Views\Questao\Create5.aspx" />
+<<<<<<< .mine
+    <Content Include="Views\Questao\CriarQuestaoCodObj.aspx" />
+    <Content Include="Views\Questao\CriarQuestaoImgObj.aspx" />
+=======
     <Content Include="Views\Questao\CriarQuestao.aspx" />
     <Content Include="Views\Questao\CriarQuestaoCodObj.aspx" />
     <Content Include="Views\Questao\CriarQuestaoImgObj.aspx" />
+>>>>>>> .r54
     <Content Include="Views\Questao\CriarQuestaoObj.aspx" />
     <Content Include="Views\Questao\Edit4.aspx" />
     <Content Include="Views\Questao\Edit3.aspx" />

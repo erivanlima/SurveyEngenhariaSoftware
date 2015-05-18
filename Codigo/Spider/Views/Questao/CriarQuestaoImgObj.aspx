@@ -29,28 +29,33 @@
             <%: Html.ValidationMessageFor(model => model.Pergunta) %>
         </div>
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Escolha) %>
+            Itens Randômicos?
+        </div>
+        <div class="editor-field">
+            <%: Html.EditorFor(model => model.Randomica) %>
+            <%: Html.ValidationMessageFor(model => model.Randomica) %>
+        </div>
+        <div class="editor-label">
+            Resposta obrigatória?
+        </div>
+        <div class="editor-field">
+            <%: Html.EditorFor(model => model.Obrigatoria) %>
+            <%: Html.ValidationMessageFor(model => model.Obrigatoria) %>
+        </div>
+        <div class="editor-label">
+            Múltipla escolha?
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Escolha) %>
             <%: Html.ValidationMessageFor(model => model.Escolha) %>
         </div>
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Randomica) %>
+            Adicionar opção "outro" ?
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.Randomica) %>
-            <%: Html.ValidationMessageFor(model => model.Randomica) %>
+            <%: Html.EditorFor(model => model.TemOutro) %>
+            <%: Html.ValidationMessageFor(model => model.TemOutro) %>
         </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Obrigatoria) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.Obrigatoria) %>
-            <%: Html.ValidationMessageFor(model => model.Obrigatoria) %>
-        </div>
-
         <div class="editor-label">
             Imagem
         </div>

@@ -31,30 +31,28 @@
         </div>
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Escolha) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.Escolha) %>
-            <%: Html.ValidationMessageFor(model => model.Escolha) %>
-        </div>
-
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Randomica) %>
+            Itens Randômicos?
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Randomica) %>
             <%: Html.ValidationMessageFor(model => model.Randomica) %>
         </div>
-
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Obrigatoria) %>
+            Resposta obrigatória?
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Obrigatoria) %>
             <%: Html.ValidationMessageFor(model => model.Obrigatoria) %>
         </div>
+        <div class="editor-label">
+            Múltipla escolha?
+        </div>
+        <div class="editor-field">
+            <%: Html.EditorFor(model => model.Escolha) %>
+            <%: Html.ValidationMessageFor(model => model.Escolha) %>
+        </div>
+       
 
-<<<<<<< .mine
         <div class="editor-label">
             Adicionar opção "outro" ?
         </div>
@@ -63,9 +61,7 @@
             <%: Html.ValidationMessageFor(model => model.TemOutro) %>
         </div>
 
-=======
-       
->>>>>>> .r52
+
         <fieldset>
             <div class="editor-label">
                 <a href="javascript: addItem();">Adicionar item </a>
@@ -76,13 +72,12 @@
         </fieldset>
         <p>
             <input type="submit" value="Salvar" />
+             <%: Html.ActionLink("Voltar", "ModeloQuestoes", new { id = ViewBag.id_Survey }, new { @class = "btn btn-default", @style = "text-decoration:none; color:#333" })%>
         </p>
     </fieldset>
 <% } %>
 
-<div>
-    <%: Html.ActionLink("Voltar", "ModeloQuestoes", new { id = ViewBag.id_Survey }, new { @class = "button" })%>   
-</div>
+
 
 </asp:Content>
 

@@ -45,12 +45,20 @@
             <%: Html.ValidationMessageFor(model => model.Obrigatoria) %>
         </div>
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.Escolha) %>
+            Múltipla escolha?
         </div>
         <div class="editor-field">
             <%: Html.EditorFor(model => model.Escolha) %>
             <%: Html.ValidationMessageFor(model => model.Escolha) %>
         </div>
+         <div class="editor-label">
+            Adicionar opção "outro" ?
+        </div>
+        <div class="editor-field">
+            <%: Html.EditorFor(model => model.TemOutro) %>
+            <%: Html.ValidationMessageFor(model => model.TemOutro) %>
+        </div>
+
 
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Linguagem) %>

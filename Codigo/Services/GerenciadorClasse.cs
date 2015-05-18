@@ -113,7 +113,11 @@ namespace Services
             IEnumerable<ClasseModel> classes = GetQuery().Where(ClasseModel => ClasseModel.id_Questao.Equals(IDquest));
             return classes;
         }
-       
+        public void RemoverPorQuestao(int IDquest)
+        {
+            unitOfWork.RepositorioClasse.Remover(ClasseE => ClasseE.TB_QUESTAO_id_Questao.Equals(IDquest));
+            unitOfWork.Commit(shared);
+        }
 
         /// <summary>
         /// Atribui dados do ClienteModel para o Cliente Entity
