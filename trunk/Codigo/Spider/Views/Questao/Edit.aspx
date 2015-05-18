@@ -32,13 +32,7 @@ Questão
             <%: Html.TextBoxFor(model => model.Pergunta, new { @class = "form-control", style = "width:auto", size = 106 })%>
             <%: Html.ValidationMessageFor(model => model.Pergunta) %>
         </div>
-        <div class="editor-label">
-            Itens Randômicos ?
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.Randomica) %>
-            <%: Html.ValidationMessageFor(model => model.Randomica) %>
-        </div>
+       
         <div class="editor-label">
             Resposta obrigatória ?
         </div>
@@ -52,12 +46,11 @@ Questão
     <br />
     <p>
         <input class="btn btn-primary" type="submit" value="Salvar"/>
+        <%: Html.ActionLink("Voltar", "ListaQuestoes", new { id = Model.id_Survey }, new { @class = "btn btn-default", @style = "text-decoration:none; color:#333" })%>
     </p>
     <% } %>
     <p>
     </p>
-    <div>
-        <%: Html.ActionLink("Voltar", "ListaQuestoes", new { id = Model.id_Survey }, new { @class = "button" })%>
-    </div>
+    
     </div>
 </asp:Content>

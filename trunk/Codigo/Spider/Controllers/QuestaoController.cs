@@ -235,6 +235,7 @@ namespace Spider.Controllers
         {
 
             questao.Tipo = "SUBJETIVA";
+            questao.EhCodigo = true;
             int idquest = gQuestao.Inserir(questao);
 
             foreach (HttpPostedFileBase file in files)
@@ -556,6 +557,7 @@ namespace Spider.Controllers
         public ActionResult Delete(int id)
         {
             QuestaoModel questaoModel = gQuestao.Obter(id);
+            questaoModel.codigos= gClasses.ObterClasses(id).ToList();
             return View(questaoModel);
         }
 
@@ -569,9 +571,14 @@ namespace Spider.Controllers
             if (ModelState.IsValid)
             {
                 List<Itens_da_QuestaoModel> ListaItens = gItens.ObterItens(questaoModel.id_Questao).ToList();
+                List<ClasseModel> ListaClasses = gClasses.ObterClasses(questaoModel.id_Questao).ToList();
                 foreach (Itens_da_QuestaoModel itens in ListaItens)
                 {
                     gItens.RemoverPorQuestao(itens.id_Questao);
+                }
+                foreach (ClasseModel itens in ListaClasses)
+                {
+                    gClasses.RemoverPorQuestao(itens.id_Questao);
                 }
                 gQuestao.Remover(id);
                 return RedirectToAction("ListaQuestoes/" + questaoModel.id_Survey, "Questao");

@@ -66,14 +66,14 @@
         </fieldset>
         <p>
             <input type="submit" value="Salvar" />
+          
+            <%: Html.ActionLink("Voltar", "ListaQuestoes", new { id = Model.id_Survey }, new { @class = "btn btn-default", @style = "text-decoration:none; color:#333" })%>
         </p>
     </fieldset>
     <% } %>
     <p>
     </p>
-    <div>
-        <%: Html.ActionLink("Voltar", "ListaQuestoes", new { id = Model.id_Survey }, new { @class = "button" })%>
-    </div>
+    
     <script>
         $('.remover').click(function () {
 

@@ -44,7 +44,7 @@
             <%: Html.DisplayFor(modelItem => item.flag_ativo) %>
         </td>
         <td>
-            <%: Html.ActionLink("Enviar via Email", "GerarLinkSurvey", "Responsavel", new { id = item.id_Survey }, new { @class = "button" })%> 
+            <%: Html.ActionLink("Gerar Link", "GerarLinkSurvey", "Responsavel", new { id = item.id_Survey }, new { @class = "button" })%> 
             <%: Html.ActionLink("Enviar via Rede Social", "Edit", new { id = item.id_Survey }, new { @class = "button" })%>  
             <%: Html.ActionLink("Visualizar", "VisualizarSurvey","Responsavel", new { id = item.id_Survey },new { @class = "button" })%> 
             

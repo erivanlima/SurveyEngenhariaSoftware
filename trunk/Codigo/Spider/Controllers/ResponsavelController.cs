@@ -7,11 +7,14 @@ using Services;
 using Models;
 using System.Web.Security;
 using System.Web.Helpers;
+<<<<<<< .mine
+=======
 using Microsoft.Reporting.WebForms;
 using System.Web.UI.DataVisualization.Charting;
 using System.Data;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+>>>>>>> .r54
 
 
 namespace Spider.Controllers
@@ -83,6 +86,34 @@ namespace Spider.Controllers
 
                 if (survey.questoes[i].Tipo.Equals("OBJETIVA"))
                 {
+<<<<<<< .mine
+
+                    if (survey.questoes[i].Tipo.Equals("OBJETIVA") && survey.questoes[i].respostas.Item != null)
+                    {
+                       respostas.id_Questao = survey.questoes[i].id_Questao;
+                        respostas.Item = survey.questoes[i].respostas.Item;
+                        respostas.idTB_ENTREVISTADO = idEnt;
+                        respostas.Resposta = null;
+                        respostas.OutroTxt = null;
+                        gResposta.Inserir(respostas);
+                        i++;
+
+                    }
+                    else
+                    {
+                        if (survey.questoes[i].Tipo.Equals("SUBJETIVA"))
+                        {
+                            respostas.Resposta = survey.questoes[i].respostas.Resposta;
+                            respostas.id_Questao = survey.questoes[i].id_Questao;
+                            respostas.idTB_ENTREVISTADO = idEnt;
+                            respostas.Item = null;
+                            respostas.OutroTxt = null;
+                            gResposta.Inserir(respostas);
+
+                        }
+                        i++;
+                    }
+=======
                     
                     respostas.id_Questao = survey.questoes[i].id_Questao;
                     respostas.Item = survey.questoes[i].respostas.Item;
@@ -91,6 +122,7 @@ namespace Spider.Controllers
                     gResposta.Inserir(respostas);
                     i++;
 
+>>>>>>> .r54
                 }
                 else
                 {
@@ -528,47 +560,47 @@ namespace Spider.Controllers
             return null;
         }
 
-        public ActionResult RelatorioRespostasPorQuestao(int idQuest)
-        {
-            LocalReport relatorio = new LocalReport();
+        //public ActionResult RelatorioRespostasPorQuestao(int idQuest)
+        //{
+        //    LocalReport relatorio = new LocalReport();
 
-            //Caminho onde o arquivo do Report Viewer está localizado
-            relatorio.ReportPath = Server.MapPath("~/Reports/RelatorioRespostasPorQuestao.rdlc");
-            //Define o nome do nosso DataSource e qual rotina irá preenche-lo, no caso, nosso método criado anteriormente
-            relatorio.DataSources.Add(new ReportDataSource("DataSetRespostas", gResposta.ListaRespostaPorQuestao(idQuest)));
+        //    //Caminho onde o arquivo do Report Viewer está localizado
+        //    relatorio.ReportPath = Server.MapPath("~/Reports/RelatorioRespostasPorQuestao.rdlc");
+        //    //Define o nome do nosso DataSource e qual rotina irá preenche-lo, no caso, nosso método criado anteriormente
+        //    relatorio.DataSources.Add(new ReportDataSource("DataSetRespostas", gResposta.ListaRespostaPorQuestao(idQuest)));
 
-            string reportType = "PDF";
-            string mimeType;
-            string encoding;
-            string fileNameExtension;
+        //    string reportType = "PDF";
+        //    string mimeType;
+        //    string encoding;
+        //    string fileNameExtension;
 
-            string deviceInfo =
-             "<DeviceInfo>" +
-             " <OutputFormat>PDF</OutputFormat>" +
-             " <PageWidth>9in</PageWidth>" +
-             " <PageHeight>11in</PageHeight>" +
-             " <MarginTop>0.7in</MarginTop>" +
-             " <MarginLeft>2in</MarginLeft>" +
-             " <MarginRight>2in</MarginRight>" +
-             " <MarginBottom>0.7in</MarginBottom>" +
-             "</DeviceInfo>";
+        //    string deviceInfo =
+        //     "<DeviceInfo>" +
+        //     " <OutputFormat>PDF</OutputFormat>" +
+        //     " <PageWidth>9in</PageWidth>" +
+        //     " <PageHeight>11in</PageHeight>" +
+        //     " <MarginTop>0.7in</MarginTop>" +
+        //     " <MarginLeft>2in</MarginLeft>" +
+        //     " <MarginRight>2in</MarginRight>" +
+        //     " <MarginBottom>0.7in</MarginBottom>" +
+        //     "</DeviceInfo>";
 
-            Warning[] warnings;
-            string[] streams;
-            byte[] bytes;
+        //    Warning[] warnings;
+        //    string[] streams;
+        //    byte[] bytes;
 
-            //Renderiza o relatório em bytes
-            bytes = relatorio.Render(
-            reportType,
-            deviceInfo,
-            out mimeType,
-            out encoding,
-            out fileNameExtension,
-            out streams,
-            out warnings);
+        //    //Renderiza o relatório em bytes
+        //    bytes = relatorio.Render(
+        //    reportType,
+        //    deviceInfo,
+        //    out mimeType,
+        //    out encoding,
+        //    out fileNameExtension,
+        //    out streams,
+        //    out warnings);
 
-            return File(bytes, mimeType);
-        }
+        //    return File(bytes, mimeType);
+        //}
 
     }
 }

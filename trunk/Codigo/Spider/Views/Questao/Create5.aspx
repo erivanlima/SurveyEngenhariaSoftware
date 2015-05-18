@@ -32,13 +32,7 @@
         <!--<pre class="brush:csharp">
               
         </pre>-->
-        <div class="editor-label">
-            Itens Randômicos ?
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.Randomica) %>
-            <%: Html.ValidationMessageFor(model => model.Randomica) %>
-        </div>
+        
         <div class="editor-label">
             Resposta obrigatória ?
         </div>
@@ -46,13 +40,7 @@
             <%: Html.EditorFor(model => model.Obrigatoria) %>
             <%: Html.ValidationMessageFor(model => model.Obrigatoria) %>
         </div>
-        <div class="editor-label">
-            Utilizar código ?
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.EhCodigo) %>
-            <%: Html.ValidationMessageFor(model => model.EhCodigo) %>
-        </div>
+        
         <div class="editor-label">
             <%: Html.LabelFor(model => model.Linguagem) %>
         </div>
@@ -86,6 +74,7 @@
     </fieldset>
     <p>
         <input class="btn btn-primary" type="submit" value="Salvar" />
+         <%: Html.ActionLink("Voltar", "ModeloQuestoes", new { id = ViewBag.id_Survey }, new { @class = "btn btn-default", @style = "text-decoration:none; color:#333" })%>
     </p>
     <% } %>
     <script type="text/javascript">

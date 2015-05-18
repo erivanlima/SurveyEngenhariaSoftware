@@ -8,7 +8,21 @@
 <br />
 
 <h3>Excluir Questão</h3>
-
+  <link href="../../Content/shThemeDefault.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/shCore.css" rel="stylesheet" type="text/css" />
+    <script src="../../Scripts/shCore.js" type="text/javascript"></script>
+    <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
+    <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
+        type="text/javascript"></script>
+    <script src="../../Scripts/shBrushJScript.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        SyntaxHighlighter.defaults['toolbar'] = false;
+        SyntaxHighlighter.all();
+    </script>
+    <script type="text/javascript" src="<%:Url.Content ("~/Scripts/shBrushCSharp.js")%>"></script>
+    <script src="../../Content/syntaxhighlighter_3.0.83/scripts/shBrushJava.js" type="text/javascript"></script>
+    <script src="../../Content/syntaxhighlighter_3.0.83/scripts/shBrushPhp.js" type="text/javascript"></script>
+   
 <h3>Deseja realmente excluir?</h3>
 <fieldset>
     <legend></legend>
@@ -30,11 +44,46 @@
     <div class="display-field">
         <%: Html.DisplayFor(model => model.Obrigatoria) %>
     </div>
-
+    
     <div class="display-label">Codigo</div>
-    <div class="display-field">
-        <%: Html.DisplayFor(model => model.Codigo) %>
-    </div>
+    <% int i = 0; %>
+    <% foreach (var codigo in Model.codigos )
+       { %>
+          
+                <% if (Model.Linguagem.Equals("Java"))
+                  {  %>
+                <div class="display-field">
+                <pre class="brush:java">
+                    <%: Html.DisplayFor(model => codigo.Codigo)%>
+                    </pre>
+                </div>
+                <% } 
+                    %>
+
+              
+                  <% if (Model.Linguagem.Equals("CSharp"))
+                  {  %>   
+                <div class="display-field">
+                <pre class="brush:csharp">
+                    <%: Html.DisplayFor(model => codigo.Codigo)%>
+                    </pre>
+                </div>
+                <% } 
+                    %>
+
+                  <% if (Model.Linguagem.Equals("PHP"))
+                  {  %>
+                <div class="display-field">
+                <pre class="brush:php">
+                    <%: Html.DisplayFor(model => codigo.Codigo)%>
+                    </pre>
+                </div>
+                <% } 
+                    %>
+          
+            
+          <% i++; %>
+      <%  }  %>
 
     <div class="display-label">Linguagem</div>
     <div class="display-field">
