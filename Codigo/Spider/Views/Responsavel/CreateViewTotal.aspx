@@ -10,6 +10,7 @@
     <link href="../../Content/shCore.css" rel="stylesheet" type="text/css" />
     <script src="../../Scripts/shCore.js" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
+    <script src="../../Scripts/jquery2.1.0.js" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
         type="text/javascript"></script>
     <script src="../../Scripts/shBrushJScript.js" type="text/javascript"></script>
@@ -20,6 +21,37 @@
     <script type="text/javascript" src="<%:Url.Content ("~/Scripts/shBrushCSharp.js")%>"></script>
     <script src="../../Content/syntaxhighlighter_3.0.83/scripts/shBrushJava.js" type="text/javascript"></script>
     <script src="../../Content/syntaxhighlighter_3.0.83/scripts/shBrushPhp.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function myFunction() {
+
+
+            var checkboxs = document.getElementsByName("meucheck");
+                var okay = false;
+                for (var i = 0, l = checkboxs.length; i < l; i++) {
+                    if (checkboxs[i].checked) {
+                        okay = true;
+                    }
+                }
+                if (okay) alert("Thank you for checking a checkbox");
+                else alert("Please check a checkbox");
+            
+        }   
+
+    </script>
+ <script type="text/javascript">
+        function Test() {
+            //            var tmpvar = 'meucheckid[' + i + ']';
+            var checkboxs = document.getElementsByName('meucheck');
+            var okay = false;
+            for (var i = 0, l = checkboxs.length; i < l; i++) {
+                if (checkboxs[i].checked) {
+                    okay = true;
+                }
+            }
+            if (okay) alert("Thank you for checking a checkbox");
+            else alert("Please check a checkbox");
+        }
+</script>
     <% using (Html.BeginForm())
        { %>
     <%: Html.ValidationSummary(true) %>
@@ -40,6 +72,7 @@
             </div>
             <fieldset>
                 <% int i = 0; %>
+                <% int j = 0; %>
                 <% foreach (var Questao in Model.questoes)
                    { %>
                 <fieldset>
@@ -88,16 +121,43 @@
                     </div>
                     <% } %>
                     <% if (Questao.Tipo.Equals("OBJETIVA"))
-                       {  %>
+                       { %>
                     <fieldset>
+                    
                         <% foreach (var item in Model.questoes[i].itens)
+                           { %>
+                        <% if (Questao.Obrigatoria)
+                           {  %>
+                        <% if (Questao.Escolha)
+                           {  %>
+                        
+                            <div class="display-field " >
+                              <input id="meucheckid" name="meucheck" type="checkbox" value="<%= Html.DisplayFor(model => item.idTB_ITENS_DA_QUESTAO ) %>" />
+                              <%: Html.DisplayFor(model => item.Item)%>
+                              <input name="questoes[<%= i %>].Escolha" type="hidden" value="true" />
+                             <%j++; %> 
+                            </div>
+                        
+                        
+                        <% }
+                           else
+                           { %>
+                        <div class="display-field">
+                            <input name="questoes[<%= i %>].respostas.Item" type="radio" value="<%= Html.DisplayFor(model => item.Item)%>"
+                                required="required" />
+                            <%: Html.DisplayFor(model => item.Item)%>
+                        </div>
+                        <% } 
+                        %>
+                        <% }
+                           else
                            { %>
                         <% if (Questao.Escolha)
                            {  %>
                         <div class="display-field">
-                            <input id="questoes_<%= i %>__respostas_Item" name="meucheck" type="checkbox" value="<%= Html.DisplayFor(model => item.idTB_ITENS_DA_QUESTAO ) %>" />
+                            <input  id="questoes_<%= i %>__respostas_Item" name="meucheck" type="checkbox" value="<%= Html.DisplayFor(model => item.idTB_ITENS_DA_QUESTAO ) %>" />
                             <%: Html.DisplayFor(model => item.Item)%>
-                            <%--id="questoes_<%= i %>__respostas_Item"--%>
+                            <input name="questoes[<%= i %>].Escolha" type="hidden" value="true" />
                         </div>
                         <% }
                            else
@@ -106,43 +166,59 @@
                             <input name="questoes[<%= i %>].respostas.Item" type="radio" value="<%= Html.DisplayFor(model => item.Item)%>" />
                             <%: Html.DisplayFor(model => item.Item)%>
                         </div>
-                        <% } %>
                         <% 
                            } %>
+                        <% 
+                           } %>
+                        <% 
+                         } %>
                     </fieldset>
                     <% }
                        else
                        {  %>
                     <fieldset>
                         Resposta:
+                        <% if (Questao.Obrigatoria)
+                           {  %>
                         <input class="text-box single-line" id="questoes_<%= i %>__respostas__Resposta" name="questoes[<%= i %>].respostas.Resposta"
+                            value="" type="text" required="required" />
+                        <% }
+                           else
+                           {  %>
+                        <input class="text-box single-line" name="questoes[<%= i %>].respostas.Resposta"
                             value="" type="text" />
+                        <% }
+                        %>
                     </fieldset>
-                    <% } %>
-               <% if (Questao.TemOutro)
+                    <% } 
+                    %>
+                    <% if (Questao.TemOutro)
                        {  %>
                     <% if (Questao.Escolha)
                        {  %>
-                        <input type="checkbox" />
-                            Outro (opcional):
-                            <input class="text-box single-line" name="questoes[<%= i %>].respostas.OutroTxt"
-                            value="" type="text" />
+                    <input type="checkbox" />
+                    Outro (opcional):
+                    <input class="text-box single-line" name="questoes[<%= i %>].respostas.OutroTxt"
+                        value="" type="text" />
+                    <input name="questoes[<%= i %>].TemOutro" type="hidden" value="true" />
                     <% }
                        else
                        {%>
-                        <input name="questoes[<%= i %>].respostas.Item" " type="radio"  />
-                        Outro (opcional):
-                        <input name="questoes[<%= i %>].respostas.OutroTxt" type="text" value="" />
-                        <% }
-                             %>
-                  <% } 
-                       %>
+                    <input name="questoes[<%= i %>].respostas.Item" type="radio" />
+                    Outro (opcional):
+                    <input name="questoes[<%= i %>].respostas.OutroTxt" type="text" value="" />
+                    <input name="questoes[<%= i %>].TemOutro" type="hidden" value="true" />
+                    <% }
+                    %>
+                    <% } 
+                    %>
                 </fieldset>
-                <% i++;
+                <% i++; 
                    } %>
+
             </fieldset>
             <p>
-                <input type="submit" value="Salvar" />
+                <input type="submit" value="Salvar"  onclick="Test()" />
             </p>
         </fieldset>
     </fieldset>
