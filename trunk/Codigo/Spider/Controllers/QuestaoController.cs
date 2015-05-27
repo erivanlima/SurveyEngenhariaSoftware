@@ -78,15 +78,7 @@ namespace Spider.Controllers
 
         }
 
-        [HttpGet]
-        public ActionResult Create2(int id)
-        {
-            ViewBag.id_Survey = id;
-
-
-            return RedirectToAction("Edit2/" + DefaultQuestaoObj(id), "Questao");
-
-        }
+       
 
         public ActionResult CriarQuestaoObj(int id)
         {
@@ -261,42 +253,7 @@ namespace Spider.Controllers
             return RedirectToAction("ListaQuestoes/" + questao.id_Survey, "Questao");
 
         }
-
-        public int DefaultQuestaoSubjetiva(int idSurvey)
-        {
-            QuestaoModel questao = new QuestaoModel();
-            questao.Pergunta = "";
-            questao.id_Survey = idSurvey;
-            questao.Tipo = "SUBJETIVA";
-            //int idQuestaoInserida = gQuestao.Inserir(questao);
-            //gQuestao.Obter(idQuestaoInserida);
-            //return RedirectToAction("ListaQuestoes/" + questao.id_Survey, "Questao");
-            return gQuestao.Inserir(questao);
-        }
-
-        public int DefaultQuestaoObj(int idSurvey)
-        {
-            QuestaoModel questao = new QuestaoModel();
-            questao.Pergunta = "";
-            questao.id_Survey = idSurvey;
-            questao.Tipo = "OBJETIVA";
-            //int idQuestaoInserida = gQuestao.Inserir(questao);
-            //gQuestao.Obter(idQuestaoInserida);
-            //return RedirectToAction("ListaQuestoes/" + questao.id_Survey, "Questao");
-            return gQuestao.Inserir(questao);
-        }
-
-        public int DefaultQuestaoObjImg(int idSurvey)
-        {
-            QuestaoModel questao = new QuestaoModel();
-            questao.Pergunta = "";
-            questao.id_Survey = idSurvey;
-            questao.Tipo = "OBJETIVA";
-            //int idQuestaoInserida = gQuestao.Inserir(questao);
-            //gQuestao.Obter(idQuestaoInserida);
-            //return RedirectToAction("ListaQuestoes/" + questao.id_Survey, "Questao");
-            return gQuestao.Inserir(questao);
-        }
+     
 
         //[HttpPost]
         public ActionResult CreateItens(Itens_da_QuestaoModel itensModel)
@@ -371,9 +328,13 @@ namespace Spider.Controllers
             {
                 return RedirectToAction("Edit3/" + id, "Questao");
             }
-            if (questaoModel.EhCodigo != false)
+            if (questaoModel.EhCodigo != false && questaoModel.Tipo.Equals("OBJETIVA"))
             {
                 return RedirectToAction("Edit4/" + id, "Questao");
+            }
+            if (questaoModel.EhCodigo != false && questaoModel.Tipo.Equals("SUBJETIVA"))
+            {
+                return RedirectToAction("Edit5/" + id, "Questao");
             }
             return View(questaoModel);
         }
@@ -381,7 +342,7 @@ namespace Spider.Controllers
         //
         // POST: /Survey/Edit/5
 
-        [HttpPost]
+        [HttpPost] //subjetiva
         public ActionResult Edit(int id, QuestaoModel questaoModel)
         {
 
@@ -417,7 +378,7 @@ namespace Spider.Controllers
         //
         // POST: /Survey/Edit/5
 
-        [HttpPost]
+        [HttpPost]//objetiva
         public ActionResult Edit2(int id, QuestaoModel questaoModel)
         {
             gItens.RemoverPorQuestao(questaoModel.id_Questao);
@@ -437,9 +398,11 @@ namespace Spider.Controllers
 
                 foreach (Itens_da_QuestaoModel item in questaoModel.itensAux)
                 {
-
-                    item.id_Questao = questaoModel.id_Questao;
-                    gItens.Inserir(item);
+                    if (item.Item != null)
+                    {
+                        item.id_Questao = questaoModel.id_Questao;
+                        gItens.Inserir(item);
+                    }
 
                 }
 
@@ -463,10 +426,10 @@ namespace Spider.Controllers
         //
         // POST: /Survey/Edit/5
 
-        [HttpPost]
+        [HttpPost] //objetiva com imagem
         public ActionResult Edit3(int id, QuestaoModel questaoModel, HttpPostedFileBase[] images)
         {
-
+            gItens.RemoverPorQuestao(questaoModel.id_Questao);
             if (images[0] != null && images[0].ContentLength > 0)
             {
                 // extract only the fielname
@@ -475,26 +438,41 @@ namespace Spider.Controllers
                 var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
                 images[0].SaveAs(path);
             }
+            else { };
+           
 
             if (questaoModel.Pergunta != null)
             {
-                //questaoModel.id_Survey = survey.id_Survey;
-                //questao.idTB_ITENS_DA_QUESTAO = gItens.Inserir(questao.itens);
 
-                questaoModel.Img = new byte[images[0].ContentLength];
-                images[0].InputStream.Read(questaoModel.Img, 0, images[0].ContentLength);
 
-                //gQuestao.Editar(questaoModel);
-
-                //Itens_da_QuestaoModel item = new Itens_da_QuestaoModel();
-                //item.id_Questao = questaoModel.id_Questao;
+                if (images[0] != null && images[0].ContentLength > 0)
+                {
+                    questaoModel.Img = new byte[images[0].ContentLength];
+                    images[0].InputStream.Read(questaoModel.Img, 0, images[0].ContentLength);
+                }
+                else
+                {
+                    questaoModel.Img = gQuestao.Obter(questaoModel.id_Questao).Img;
+                   
+                
+                }
 
                 foreach (Itens_da_QuestaoModel item in questaoModel.itens)
                 {
-                    //Itens_da_QuestaoModel item = new Itens_da_QuestaoModel();
-                    //survey.questoes[i].itens
-                    item.id_Questao = questaoModel.id_Questao;
-                    gItens.Inserir(item);
+                    if (item.Item != null)
+                    {
+                        item.id_Questao = questaoModel.id_Questao;
+                        gItens.Inserir(item);
+                    }
+                }
+                foreach (Itens_da_QuestaoModel item in questaoModel.itensAux)
+                {
+                    if(item.Item != null)
+                    {
+                        item.id_Questao = questaoModel.id_Questao;
+                        gItens.Inserir(item);
+                    }
+
                 }
                 gQuestao.Editar(questaoModel);
                 return RedirectToAction("ListaQuestoes/" + questaoModel.id_Survey, "Questao");
@@ -508,15 +486,18 @@ namespace Spider.Controllers
         public ActionResult Edit4(int id)
         {
             QuestaoModel questaoModel = gQuestao.Obter(id);
+            questaoModel.itens = gItens.ObterItens(id).ToList();
+            questaoModel.codigos = gClasses.ObterClasses(id).ToList();
             return View(questaoModel);
         }
 
         //
         // POST: /Survey/Edit/5
 
-        [HttpPost]
+        [HttpPost] //objetiva com código
         public ActionResult Edit4(int id, QuestaoModel questaoModel, List<HttpPostedFileBase> files)
         {
+            gItens.RemoverPorQuestao(questaoModel.id_Questao);
             foreach (HttpPostedFileBase file in files)
             {
                 if (file != null && file.ContentLength > 0)
@@ -541,8 +522,20 @@ namespace Spider.Controllers
 
                 foreach (Itens_da_QuestaoModel item in questaoModel.itens)
                 {
-                    item.id_Questao = questaoModel.id_Questao;
-                    gItens.Inserir(item);
+                    if (item.Item != null)
+                    {
+                        item.id_Questao = questaoModel.id_Questao;
+                        gItens.Inserir(item);
+                    }
+                }
+                foreach (Itens_da_QuestaoModel item in questaoModel.itensAux)
+                {
+                    if (item.Item != null)
+                    {
+                        item.id_Questao = questaoModel.id_Questao;
+                        gItens.Inserir(item);
+                    }
+
                 }
                 gQuestao.Editar(questaoModel);
                 return RedirectToAction("ListaQuestoes/" + questaoModel.id_Survey, "Questao");
@@ -551,6 +544,48 @@ namespace Spider.Controllers
             return View(questaoModel);
         }
 
+        public ActionResult Edit5(int id)
+        {
+
+            QuestaoModel questaoModel = gQuestao.Obter(id);
+            questaoModel.codigos = gClasses.ObterClasses(id).ToList();
+
+            return View(questaoModel);
+        }
+
+        //
+        // POST: /Survey/Edit/5
+        [HttpPost]//subjetiva com código
+        public ActionResult Edit5(int id, QuestaoModel questaoModel, List<HttpPostedFileBase> files)
+        {
+
+           
+                //gClasses.RemoverPorIdQuestao(questaoModel.id_Questao);
+           
+            foreach (HttpPostedFileBase file in files)
+            {
+                if (file != null && file.ContentLength > 0)
+                {
+                    // extract only the fielname
+                    var fileName = Path.GetFileName(questaoModel.id_Questao + file.FileName);
+                    // store the file inside ~/App_Data/uploads folder
+                    var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
+                    file.SaveAs(path);
+                    string result;
+                    ClasseModel classe = new ClasseModel();
+                    result = new StreamReader(file.InputStream).ReadToEnd();
+                    classe.id_Questao = questaoModel.id_Questao;
+                    classe.Codigo = result;
+                    gClasses.Inserir(classe);
+                }
+            }
+            if (questaoModel.Pergunta != null)
+            {
+                gQuestao.Editar(questaoModel);
+                return RedirectToAction("ListaQuestoes/" + questaoModel.id_Survey, "Questao");
+            }
+            return View(questaoModel);
+        }
         //
         // GET: /Questao/Delete/5
 

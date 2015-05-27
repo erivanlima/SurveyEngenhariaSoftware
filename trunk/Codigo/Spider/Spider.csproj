@@ -136,55 +136,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetRespostaQuestao.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Relatório\DataSetRespostas.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetRespostas.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Responsavel\AnaliseGrafica.aspx.cs">
-      <DependentUpon>AnaliseGrafica.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Responsavel\AnaliseGrafica.aspx.designer.cs">
-      <DependentUpon>AnaliseGrafica.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Responsavel\FormGraficoResposta.aspx.cs">
-      <DependentUpon>FormGraficoResposta.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Responsavel\FormGraficoResposta.aspx.designer.cs">
-      <DependentUpon>FormGraficoResposta.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Responsavel\GraficoDeRespostasPorQuestao.aspx.cs">
-      <DependentUpon>GraficoDeRespostasPorQuestao.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Responsavel\GraficoDeRespostasPorQuestao.aspx.designer.cs">
-      <DependentUpon>GraficoDeRespostasPorQuestao.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Responsavel\RespostaPorQuestao.aspx.cs">
-      <DependentUpon>RespostaPorQuestao.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Responsavel\RespostasPorQuestao.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RespostasPorQuestao.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Responsavel\RespostasQuestao.aspx.cs">
-      <DependentUpon>RespostasQuestao.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Responsavel\RespostasQuestao.aspx.designer.cs">
-      <DependentUpon>RespostasQuestao.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Responsavel\ViewGraficos.aspx.cs">
-      <DependentUpon>ViewGraficos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Responsavel\ViewGraficos.aspx.designer.cs">
-      <DependentUpon>ViewGraficos.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-3.3.4-dist\css\bootstrap-theme.css" />
@@ -206,7 +157,8 @@
     <Content Include="Content\imagem\subjetiva.jpg" />
     <Content Include="Content\imagem\subjetivacodigo.png" />
     <Content Include="Content\jquery-1.10.js" />
-    <Content Include="MvcDiagnostics.aspx" />
+    <Content Include="Scripts\addObjcomCod.js" />
+    <Content Include="Scripts\editObjcomImg.js" />
     <Content Include="Scripts\grafico.js" />
     <Content Include="Scripts\jquery-1.10.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
@@ -393,7 +345,6 @@
     <Content Include="Content\vitalets-bootstrap-datepicker-c7af15b\tests\tests.html" />
     <Content Include="Content\vitalets-bootstrap-datepicker-c7af15b\tests\_coverage.html" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\addObjcomCod.js" />
     <Content Include="Scripts\addQuestao.js" />
     <Content Include="Scripts\addQuestaoobj.js" />
     <Content Include="Scripts\addSubjcomImg.js" />
@@ -422,15 +373,13 @@
     <Content Include="Views\Account\Login.aspx" />
     <Content Include="Views\Itens\Edit.aspx" />
     <Content Include="Views\Itens\ListaItens.aspx" />
+    <Content Include="Views\Questao\Edit5.aspx" />
     <Content Include="Views\Questao\Create5.aspx" />
-<<<<<<< .mine
     <Content Include="Views\Questao\CriarQuestaoCodObj.aspx" />
     <Content Include="Views\Questao\CriarQuestaoImgObj.aspx" />
-=======
     <Content Include="Views\Questao\CriarQuestao.aspx" />
     <Content Include="Views\Questao\CriarQuestaoCodObj.aspx" />
     <Content Include="Views\Questao\CriarQuestaoImgObj.aspx" />
->>>>>>> .r54
     <Content Include="Views\Questao\CriarQuestaoObj.aspx" />
     <Content Include="Views\Questao\Edit4.aspx" />
     <Content Include="Views\Questao\Edit3.aspx" />
@@ -447,26 +396,18 @@
     <Content Include="Views\Questao\Edit.aspx" />
     <Content Include="Views\Questao\Index.aspx" />
     <Content Include="Views\Questao\ListaQuestoes.aspx" />
-    <Content Include="Views\Responsavel\AnaliseGrafica.aspx" />
     <Content Include="Views\Responsavel\Create.aspx" />
     <Content Include="Views\Responsavel\CreateViewTotal.aspx" />
     <Content Include="Views\Responsavel\Delete.aspx" />
     <Content Include="Views\Responsavel\Details.aspx" />
     <Content Include="Views\Responsavel\Edit.aspx" />
-    <Content Include="Views\Responsavel\FormGraficoResposta.aspx" />
     <Content Include="Views\Responsavel\GerarLinkSurvey.aspx" />
     <Content Include="Views\Responsavel\GetRespostaData.aspx" />
-    <Content Include="Views\Responsavel\GraficoDeRespostasPorQuestao.aspx" />
     <Content Include="Views\Responsavel\graficoRespostaPorQuestao.aspx" />
-    <Content Include="Views\Responsavel\GraficoRespostas.aspx" />
     <Content Include="Views\Responsavel\Graficos.aspx" />
     <Content Include="Views\Responsavel\Index.aspx" />
     <Content Include="Views\Responsavel\Listar.aspx" />
     <Content Include="Views\Responsavel\ListarRespostas.aspx" />
-    <Content Include="Views\Responsavel\RespostaPorQuestao.aspx" />
-    <Content Include="Views\Responsavel\Respostas.aspx" />
-    <Content Include="Views\Responsavel\RespostasQuestao.aspx" />
-    <Content Include="Views\Responsavel\ViewGraficos.aspx" />
     <Content Include="Views\Responsavel\VisualizarSurvey.aspx" />
     <Content Include="Views\Survey\CalculoAmostral.aspx" />
     <Content Include="Views\Survey\EnviarSurvey.aspx" />
@@ -584,28 +525,7 @@
     <None Include="DataSetRespostaQuestao.xss">
       <DependentUpon>DataSetRespostaQuestao.xsd</DependentUpon>
     </None>
-    <None Include="Relatório\DataSetRespostas.xsc">
-      <DependentUpon>DataSetRespostas.xsd</DependentUpon>
-    </None>
-    <None Include="Relatório\DataSetRespostas.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetRespostas.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Relatório\DataSetRespostas.xss">
-      <DependentUpon>DataSetRespostas.xsd</DependentUpon>
-    </None>
-    <None Include="Views\Responsavel\RespostasPorQuestao.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>RespostasPorQuestao.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Relatório\RelatorioRespostasPorQuestao.rdlc" />
-    <None Include="Views\Responsavel\RespostasPorQuestao.dbml.layout">
-      <DependentUpon>RespostasPorQuestao.dbml</DependentUpon>
-    </None>
+    <Content Include="Scripts\jquery2.1.0.js" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

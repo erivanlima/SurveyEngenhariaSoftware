@@ -118,6 +118,11 @@ namespace Services
             unitOfWork.RepositorioClasse.Remover(ClasseE => ClasseE.TB_QUESTAO_id_Questao.Equals(IDquest));
             unitOfWork.Commit(shared);
         }
+        public void RemoverPorIdQuestao(int IdQuestao)
+        {
+            unitOfWork.RepositorioClasse.Remover(ClasseE => ClasseE.TB_QUESTAO_id_Questao.Equals(IdQuestao));
+            unitOfWork.Commit(shared);
+        }
 
         /// <summary>
         /// Atribui dados do ClienteModel para o Cliente Entity
