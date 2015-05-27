@@ -14,8 +14,7 @@
     </script>
     <script type="text/javascript" src="<%:Url.Content ("~/Scripts/shBrushCSharp.js")%>"></script>
     <script src="<%: Url.Content("~/Scripts/addItem.js") %>" type="text/javascript"></script>
-    <script src="<%: Url.Content("~/Scripts/editItem.js") %>" type="text/javascript"></script>
-    <script src="<%: Url.Content("~/Scripts/addObjcomImg.js") %>" type="text/javascript"></script>
+    <script src="<%: Url.Content("~/Scripts/editObjcomImg.js") %>" type="text/javascript"></script>
     <% using (Html.BeginForm("Edit3", "Questao", FormMethod.Post, new { enctype = "multipart/form-data" }))
        { %>
     <%: Html.ValidationSummary(true) %>
@@ -55,14 +54,19 @@
             <%--<asp:Image ImageUrl= "~/App_data/uploads/abc.png" runat="server"/>--%>
         </div>
         <fieldset>
-            <div class="editor-label">
-                <h3>
-                    Itens adicionados
-                </h3>
-                <a href="javascript: addItem();"></a>
+            
+          
+            <% int k = 0; %>
+            <% foreach (var item in Model.itens)
+               { %>
+            <div class="display-field">
+                Nome do item: <input id="itens_<%= k %>__Item" name="itens[<%= k %>].Item" type="text" value="<%= Html.DisplayFor(model => item.Item)%>" /> 
+                <input value='Remover' class='remover' type='button'/>
             </div>
+            <% k++;
+               } %>
             <div class="item">
-                <%: Html.ActionLink("Editar Itens", "ListaItens", "Itens", new { id=Model.id_Questao },null)%>
+              
             </div>
         </fieldset>
         <p>
@@ -84,5 +88,13 @@
                 reader.readAsDataURL(input.files[0]);
             }
         }
+    </script>
+    <script>
+        $('.remover').click(function () {
+
+            $(this).closest('div').hide();
+            $(this).closest('div').find("input[type = text]").val("");
+
+        });
     </script>
 </asp:Content>

@@ -9,7 +9,7 @@ function addimg() {
         console.log("Blz" + $(this).attr("data-id"));
         readURL(this);
     });
-    
+  
     
     $('.adicionar').click(function () {
 
