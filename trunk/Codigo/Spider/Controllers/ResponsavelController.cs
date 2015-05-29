@@ -48,10 +48,7 @@ namespace Spider.Controllers
         public SurveyModel ListaQuestoesItens(int id)
         {
             SurveyModel survey = new SurveyModel();
-            Random random = new Random();
             survey = gSurvey.Obter(id);
-            List<Itens_da_QuestaoModel> Listaux = new List<Itens_da_QuestaoModel>();
-            int index=0;
             survey.questoes = gQuestao.ListaQuestaoSurvey(id).ToList();
 
             for (int i = 0; i < survey.questoes.Count; i++)
@@ -61,36 +58,30 @@ namespace Spider.Controllers
 
                 if (survey.questoes[i].Randomica)
                 {
-                    List<string> Lisstr = new List<string>();
+                    List<string> auxList = new List<string>();
                     for (int j = 0; j < survey.questoes[i].itens.Count; j++)
                     {
-                        int cont = 1;
-                        
-                        do
+                        auxList.Add(survey.questoes[i].itens[j].Item);
+
+                    }
+
+                    List<string> randomList = new List<string>();
+                    Random r = new Random();
+                    int randomIndex = 0;
+                                                                    
+                        while (auxList.Count > 0)
                         {
-                            index = random.Next(survey.questoes[i].itens.Count);
-                            if (Lisstr.Count == 0)
-                            {
-                                
-                                Lisstr.Add(survey.questoes[i].itens[index].Item);
-                                cont--;
-                            }
-                            if (!Lisstr.Contains(survey.questoes[i].itens[index].Item))
-                            {
-                                
-                                Lisstr.Add(survey.questoes[i].itens[index].Item);
-                                cont--;
-                            }
-                             
-                        } while (cont != 0);
-                    }
-                    
-                    
-                    for (int k = 0; k < Lisstr.Count; k++ )
+                            randomIndex = r.Next(0, auxList.Count); //Choose a random object in the list
+                            randomList.Add(auxList[randomIndex]); //add it to the new, random list
+                            auxList.RemoveAt(randomIndex); //remove to avoid duplicates
+                        }
+                    for(int k=0; k < randomList.Count; k++)
                     {
-                        survey.questoes[i].itens[k].Item = Lisstr[k].ToString();
+                        survey.questoes[i].itens[k].Item = randomList[k].ToString();
                         
                     }
+                        
+                     
                 }
 
                 
@@ -98,7 +89,7 @@ namespace Spider.Controllers
             return survey;
         }
 
-        
+     
         [HttpPost]
         public ActionResult CreateViewTotal(SurveyModel survey,  List<string> meucheck)
         {
