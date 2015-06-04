@@ -245,7 +245,66 @@ namespace Spider.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public ActionResult VisualizarEnviarSurvey(int id)
+        {
+            
+            ViewBag.id_Survey = id;
+            return View(ListaQuestoesItens(id));
+         
+        }
+        public SurveyModel ListaQuestoesItens(int id)
+        {
+            SurveyModel survey = new SurveyModel();
+            survey = gSurvey.Obter(id);
+            survey.questoes = gQuestao.ListaQuestaoSurvey(id).ToList();
+            for (int j = 0; j < survey.questoes.Count; j++)
+            {
+                if (survey.questoes[j].EhCodigo)
+                {
+                    survey.questoes[j].codigos = gClasses.ObterClasses(survey.questoes[j].id_Questao).ToList();
+                }
+            }
 
+            for (int i = 0; i < survey.questoes.Count; i++)
+            {
+                int odin = survey.questoes[i].id_Questao;
+                survey.questoes[i].itens = gItens.ObterItens(odin).ToList();
+
+                if (survey.questoes[i].Randomica)
+                {
+                    List<string> auxList = new List<string>();
+                    for (int j = 0; j < survey.questoes[i].itens.Count; j++)
+                    {
+                        auxList.Add(survey.questoes[i].itens[j].Item);
+
+                    }
+
+                    List<string> randomList = new List<string>();
+                    Random r = new Random();
+                    int randomIndex = 0;
+
+                    while (auxList.Count > 0)
+                    {
+                        randomIndex = r.Next(0, auxList.Count); //Choose a random object in the list
+                        randomList.Add(auxList[randomIndex]); //add it to the new, random list
+                        auxList.RemoveAt(randomIndex); //remove to avoid duplicates
+                    }
+                    for (int k = 0; k < randomList.Count; k++)
+                    {
+                        survey.questoes[i].itens[k].Item = randomList[k].ToString();
+
+                    }
+
+
+                }
+
+
+            }
+            return survey;
+        }
+
+     
 
 
     }
