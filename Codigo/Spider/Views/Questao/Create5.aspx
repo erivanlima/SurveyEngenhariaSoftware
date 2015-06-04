@@ -81,6 +81,7 @@
         $("#input-23").fileinput({
             allowedFileExtensions: ["txt", "aspx", "java", "cs", "text", "js", "php"],
             showUpload: false,
+            browseLabel: "Selecionar Código",
             layoutTemplates: {
                 main1: "{preview}\n" +
                 "<div class=\'input-group {class}\'>\n" +

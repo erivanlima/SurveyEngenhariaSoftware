@@ -511,6 +511,7 @@ namespace Spider.Controllers
 
                     ClasseModel classe = new ClasseModel();
                     result = new StreamReader(file.InputStream).ReadToEnd();
+                    gClasses.RemoverPorIdQuestao(questaoModel.id_Questao);
                     classe.id_Questao = questaoModel.id_Questao;
                     classe.Codigo = result;
                     gClasses.Inserir(classe);
@@ -573,6 +574,7 @@ namespace Spider.Controllers
                     file.SaveAs(path);
                     string result;
                     ClasseModel classe = new ClasseModel();
+                    gClasses.RemoverPorIdQuestao(questaoModel.id_Questao);
                     result = new StreamReader(file.InputStream).ReadToEnd();
                     classe.id_Questao = questaoModel.id_Questao;
                     classe.Codigo = result;

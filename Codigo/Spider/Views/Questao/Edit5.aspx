@@ -65,8 +65,7 @@
         </div>
         <% foreach (var codigo in Model.codigos)
            { %>
-        <textarea class="form-control" rows="5" style="font-family: Monaco,Consolas,monospace;
-            height: 500px;">
+        <textarea class="form-control" rows="5" style="font-family: Monaco,Consolas,monospace; height: 300px;">
                     <%: Model.codigos[0].Codigo%>
                     </textarea>
         <% 
@@ -90,7 +89,7 @@
         $("#input-23").fileinput({
             allowedFileExtensions: ["txt", "aspx", "java", "cs", "text", "php"],
             showUpload: false,
-            browseLabel: "Selecionar Arquivos",
+            browseLabel: "Selecionar Código",
             layoutTemplates: {
                 main1: "{preview}\n" +
                 "<div class=\'input-group {class}\'>\n" +
