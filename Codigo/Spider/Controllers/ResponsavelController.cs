@@ -25,6 +25,7 @@ namespace Spider.Controllers
         private GerenciadorItens gItens;
         private GerenciadorResposta gResposta;
         private GerenciadorEntrevistado gEntrevistado;
+        private GerenciadorClasse gClasses;
 
 
         public ResponsavelController()
@@ -35,6 +36,7 @@ namespace Spider.Controllers
             gItens = new GerenciadorItens();
             gResposta = new GerenciadorResposta();
             gEntrevistado = new GerenciadorEntrevistado();
+            gClasses = new GerenciadorClasse();
         }
 
         [HttpGet]
@@ -50,6 +52,13 @@ namespace Spider.Controllers
             SurveyModel survey = new SurveyModel();
             survey = gSurvey.Obter(id);
             survey.questoes = gQuestao.ListaQuestaoSurvey(id).ToList();
+            for (int j = 0; j < survey.questoes.Count; j++)
+            {
+                if (survey.questoes[j].EhCodigo)
+                {
+                    survey.questoes[j].codigos = gClasses.ObterClasses(survey.questoes[j].id_Questao).ToList();
+                }
+            }
 
             for (int i = 0; i < survey.questoes.Count; i++)
             {

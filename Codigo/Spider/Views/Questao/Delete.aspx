@@ -93,7 +93,8 @@
 <% using (Html.BeginForm()) { %>
     <p>
         <input type="submit" value="Excluir" /> |
-        <%: Html.ActionLink("Voltar", "Index", new { @class = "button" })%>
+      
+           <%: Html.ActionLink("Voltar", "ListaQuestoes", new { id = Model.id_Survey }, new { @class = "btn btn-default", @style = "text-decoration:none; color:#333" })%>
     </p>
 <% } %>
 

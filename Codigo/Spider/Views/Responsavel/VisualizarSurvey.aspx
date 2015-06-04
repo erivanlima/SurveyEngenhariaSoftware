@@ -146,6 +146,6 @@
     </fieldset>
     <% } %>
     <div>
-        <%: Html.ActionLink("Voltar", "Index", null,new { @class = "button" })%>
+        <%: Html.ActionLink("Voltar", "Index","Survey", null,new { @class = "button" })%>
     </div>
 </asp:Content>
