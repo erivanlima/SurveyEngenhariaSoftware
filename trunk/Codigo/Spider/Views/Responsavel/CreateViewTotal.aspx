@@ -1,11 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<Models.SurveyModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Visualizar Survey
+    Responder Survey
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>
-        Visualizar Survey</h2>
+        Responder Survey</h2>
     <link href="../../Content/shThemeDefault.css" rel="stylesheet" type="text/css" />
     <link href="../../Content/shCore.css" rel="stylesheet" type="text/css" />
     <script src="../../Scripts/shCore.js" type="text/javascript"></script>
@@ -26,22 +26,6 @@
 
 
             var checkboxs = document.getElementsByName("meucheck");
-                var okay = false;
-                for (var i = 0, l = checkboxs.length; i < l; i++) {
-                    if (checkboxs[i].checked) {
-                        okay = true;
-                    }
-                }
-                if (okay) alert("Thank you for checking a checkbox");
-                else alert("Please check a checkbox");
-            
-        }   
-
-    </script>
- <script type="text/javascript">
-        function Test() {
-            //            var tmpvar = 'meucheckid[' + i + ']';
-            var checkboxs = document.getElementsByName('meucheck');
             var okay = false;
             for (var i = 0, l = checkboxs.length; i < l; i++) {
                 if (checkboxs[i].checked) {
@@ -50,7 +34,23 @@
             }
             if (okay) alert("Thank you for checking a checkbox");
             else alert("Please check a checkbox");
-        }
+
+        }   
+
+    </script>
+ <script type="text/javascript">
+     function Test() {
+         //            var tmpvar = 'meucheckid[' + i + ']';
+         var checkboxs = document.getElementsByName('meucheck');
+         var okay = false;
+         for (var i = 0, l = checkboxs.length; i < l; i++) {
+             if (checkboxs[i].checked) {
+                 okay = true;
+             }
+         }
+         if (okay) alert("Thank you for checking a checkbox");
+         else alert("Please check a checkbox");
+     }
 </script>
     <% using (Html.BeginForm())
        { %>

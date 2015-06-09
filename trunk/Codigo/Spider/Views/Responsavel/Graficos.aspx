@@ -1,17 +1,17 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<Models.RespostaModel>>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<Models.QuestaoModel>>" %>
  
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 Gráficos
 </asp:Content>
 
-<asp:Content ID="Content3" ContentPlaceHolderID="HeadContent" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="HeadContent" runat="server">
 
 
 <script type="text/javascript">
-     var ControllerDados ="<%: Url.Action("GetRespostaData", "Responsavel")%>";
+     var ControllerDados ="<%: Url.Action("GetRespostaData","Responsavel",new { id = ViewBag.id_Questao })%>";
      var titulo="Resposta por Questao";
      var nomeId = "graficoRespostaQuestao";
-     var ControllerDados2 ="<%: Url.Action("GetRespostaDataColumn", "Responsavel")%>";
+     var ControllerDados2 ="<%: Url.Action("GetRespostaDataColumn","Responsavel",new { id = ViewBag.id_Questao })%>";
      var titulo2="Resposta por Questao2";
      var nomeId2 = "graficoRespostaQuestao2";
 </script>
@@ -59,7 +59,7 @@ Gráficos
 
 </asp:Content>
  
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
  
     <form id="form1" runat="server">
  

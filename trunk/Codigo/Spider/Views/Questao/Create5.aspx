@@ -29,10 +29,6 @@
             <%: Html.TextBoxFor(model => model.Pergunta, new { @class = "form-control", style = "width:auto", size = 106 })%>
             <%: Html.ValidationMessageFor(model => model.Pergunta) %>
         </div>
-        <!--<pre class="brush:csharp">
-              
-        </pre>-->
-        
         <div class="editor-label">
             Resposta obrigatória ?
         </div>

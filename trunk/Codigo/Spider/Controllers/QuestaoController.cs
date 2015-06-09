@@ -180,18 +180,26 @@ namespace Spider.Controllers
             {
                 if (file != null && file.ContentLength > 0)
                 {
-                    string result;
-                    // extract only the fielname
-                    var fileName = Path.GetFileName(file.FileName);
-                    // store the file inside ~/App_Data/uploads folder
-                    var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
-                    file.SaveAs(path);
+                    if (questao.Linguagem.Equals("CSharp") && file.FileName.EndsWith("cs") || questao.Linguagem.Equals("PHP") && file.FileName.EndsWith("php")
+                     || questao.Linguagem.Equals("Java") && file.FileName.EndsWith("java"))
+                    {
+                        string result;
+                        // extract only the fielname
+                        var fileName = Path.GetFileName(file.FileName);
+                        // store the file inside ~/App_Data/uploads folder
+                        var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
+                        file.SaveAs(path);
 
-                    ClasseModel classe = new ClasseModel();
-                    result = new StreamReader(file.InputStream).ReadToEnd();
-                    classe.id_Questao = idquest;
-                    classe.Codigo = result;
-                    gClasses.Inserir(classe);
+                        ClasseModel classe = new ClasseModel();
+                        result = new StreamReader(file.InputStream).ReadToEnd();
+                        classe.id_Questao = idquest;
+                        classe.Codigo = result;
+                        gClasses.Inserir(classe);
+                    }
+                    else 
+                    {
+                        return RedirectToAction("Erro/" + questao.id_Survey, "Questao");
+                    }
                 }
 
                 if (questao.Pergunta != null)
@@ -234,19 +242,28 @@ namespace Spider.Controllers
             {
                 if (file != null && file.ContentLength > 0)
                 {
-                    string result;
-                    // extract only the fielname
-                    var fileName = Path.GetFileName(file.FileName);
-                    // store the file inside ~/App_Data/uploads folder
-                    var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
-                    file.SaveAs(path);
+                    if (questao.Linguagem.Equals("CSharp") && file.FileName.EndsWith("cs") || questao.Linguagem.Equals("PHP") && file.FileName.EndsWith("php")
+                    || questao.Linguagem.Equals("Java") && file.FileName.EndsWith("java"))
+                    {
+                        string result;
+                        // extract only the fielname
+                        var fileName = Path.GetFileName(file.FileName);
+                        // store the file inside ~/App_Data/uploads folder
+                        var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
+                        file.SaveAs(path);
 
-                    ClasseModel classe = new ClasseModel();
-                    result = new StreamReader(file.InputStream).ReadToEnd();
-                    classe.id_Questao = idquest;
-                    classe.Codigo = result;
-                    gClasses.Inserir(classe);
+                        ClasseModel classe = new ClasseModel();
+                        result = new StreamReader(file.InputStream).ReadToEnd();
+                        classe.id_Questao = idquest;
+                        classe.Codigo = result;
+                        gClasses.Inserir(classe);
+                    }
+                    else
+                    {
+                        return RedirectToAction("Erro/" + questao.id_Survey, "Questao");
+                    }
                 }
+                
                
             }
 
@@ -502,19 +519,26 @@ namespace Spider.Controllers
             {
                 if (file != null && file.ContentLength > 0)
                 {
-                    // extract only the fielname
-                    var fileName = Path.GetFileName(file.FileName);
-                    // store the file inside ~/App_Data/uploads folder
-                    var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
-                    file.SaveAs(path);
-                    string result;
+                    if (questaoModel.Linguagem.Equals("CSharp") && file.FileName.EndsWith("cs") || questaoModel.Linguagem.Equals("PHP") && file.FileName.EndsWith("php")
+                    || questaoModel.Linguagem.Equals("Java") && file.FileName.EndsWith("java"))
+                    {
+                        // extract only the fielname
+                        var fileName = Path.GetFileName(file.FileName);
+                        // store the file inside ~/App_Data/uploads folder
+                        var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
+                        file.SaveAs(path);
+                        string result;
 
-                    ClasseModel classe = new ClasseModel();
-                    result = new StreamReader(file.InputStream).ReadToEnd();
-                    gClasses.RemoverPorIdQuestao(questaoModel.id_Questao);
-                    classe.id_Questao = questaoModel.id_Questao;
-                    classe.Codigo = result;
-                    gClasses.Inserir(classe);
+                        ClasseModel classe = new ClasseModel();
+                        result = new StreamReader(file.InputStream).ReadToEnd();
+                        gClasses.RemoverPorIdQuestao(questaoModel.id_Questao);
+                        classe.id_Questao = questaoModel.id_Questao;
+                        classe.Codigo = result;
+                        gClasses.Inserir(classe);
+                    }
+                    else {
+                        return RedirectToAction("Erro/" + questaoModel.id_Survey, "Questao");
+                    }
                 }
             }
 
@@ -565,21 +589,32 @@ namespace Spider.Controllers
            
             foreach (HttpPostedFileBase file in files)
             {
-                if (file != null && file.ContentLength > 0)
-                {
-                    // extract only the fielname
-                    var fileName = Path.GetFileName(questaoModel.id_Questao + file.FileName);
-                    // store the file inside ~/App_Data/uploads folder
-                    var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
-                    file.SaveAs(path);
-                    string result;
-                    ClasseModel classe = new ClasseModel();
-                    gClasses.RemoverPorIdQuestao(questaoModel.id_Questao);
-                    result = new StreamReader(file.InputStream).ReadToEnd();
-                    classe.id_Questao = questaoModel.id_Questao;
-                    classe.Codigo = result;
-                    gClasses.Inserir(classe);
+                
+                    if (file != null && file.ContentLength > 0)
+                    {
+                      if (questaoModel.Linguagem.Equals("CSharp") && file.FileName.EndsWith("cs") || questaoModel.Linguagem.Equals("PHP") && file.FileName.EndsWith("php")
+                        || questaoModel.Linguagem.Equals("Java") && file.FileName.EndsWith("java"))
+                        {
+                        // extract only the fielname
+                        var fileName = Path.GetFileName(questaoModel.id_Questao + file.FileName);
+                        // store the file inside ~/App_Data/uploads folder
+                        var path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
+                        file.SaveAs(path);
+                        string result;
+                        ClasseModel classe = new ClasseModel();
+                        gClasses.RemoverPorIdQuestao(questaoModel.id_Questao);
+                        result = new StreamReader(file.InputStream).ReadToEnd();
+                        classe.id_Questao = questaoModel.id_Questao;
+                        classe.Codigo = result;
+                        gClasses.Inserir(classe);
+                      }
+                      else
+                      {
+                          return RedirectToAction("Erro/" + questaoModel.id_Survey, "Questao");
+
+                      }
                 }
+               
             }
             if (questaoModel.Pergunta != null)
             {
@@ -587,6 +622,11 @@ namespace Spider.Controllers
                 return RedirectToAction("ListaQuestoes/" + questaoModel.id_Survey, "Questao");
             }
             return View(questaoModel);
+        }
+        public ActionResult Erro()
+        {
+
+            return View();
         }
         //
         // GET: /Questao/Delete/5

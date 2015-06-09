@@ -38,13 +38,44 @@ namespace Spider.Controllers
             gEntrevistado = new GerenciadorEntrevistado();
             gClasses = new GerenciadorClasse();
         }
+        
 
         [HttpGet]
         public ActionResult CreateViewTotal(int id)
         {
+            SurveyModel survey_2 = new SurveyModel();
             ViewBag.id_Survey = id;
-            return View(ListaQuestoesItens(id));
+            survey_2 = gSurvey.Obter(id);
+            if (survey_2.Data_fim < DateTime.Now)
+            {
+                TempData["Mensagem"] = "Data limite do Survey expirada, contate o responsável.";
+                //ViewBag.Mensagem = "Data limite do Survey expirada, contate o responsável.";
+                return RedirectToAction("Inativo/" + survey_2.id_Survey, "Survey");
+            }
+            else if (survey_2.flag_ativo != true)
+            {
+                TempData["Mensagem"] = "Survey Inativo, contate o responsável.";
+                return RedirectToAction("Inativo/" + survey_2.id_Survey, "Survey");
+            }
+            else
+            {
+                return View(ListaQuestoesItens(id));
+            }
             
+        }
+
+        private List<QuestaoModel> RandomizeListaQuestoes(List<QuestaoModel> inputList)
+        {
+            List<QuestaoModel> randomList = new List<QuestaoModel>();
+            Random r = new Random();
+            int randomIndex = 0;
+            while (inputList.Count > 0)
+            {
+                randomIndex = r.Next(0, inputList.Count); //Choose a random object in the list
+                randomList.Add(inputList[randomIndex]); //add it to the new, random list
+                inputList.RemoveAt(randomIndex); //remove to avoid duplicates
+            }
+            return randomList; //return the new random list
         }
 
         public SurveyModel ListaQuestoesItens(int id)
@@ -52,6 +83,11 @@ namespace Spider.Controllers
             SurveyModel survey = new SurveyModel();
             survey = gSurvey.Obter(id);
             survey.questoes = gQuestao.ListaQuestaoSurvey(id).ToList();
+            if (survey.RandomizeQuetsoes)
+            {
+                survey.questoes = RandomizeListaQuestoes(gQuestao.ListaQuestaoSurvey(id).ToList());
+                
+            }
             for (int j = 0; j < survey.questoes.Count; j++)
             {
                 if (survey.questoes[j].EhCodigo)
@@ -90,9 +126,7 @@ namespace Spider.Controllers
                         
                     }
                         
-                     
                 }
-
                 
             }
             return survey;
@@ -102,68 +136,96 @@ namespace Spider.Controllers
         [HttpPost]
         public ActionResult CreateViewTotal(SurveyModel survey,  List<string> meucheck)
         {
-            int i = 0;
-            Itens_da_QuestaoModel itensQuestaoRespostaCheck = new Itens_da_QuestaoModel();
-            RespostaModel respostas = new RespostaModel();
-            string ip = Request.UserHostAddress;
-            EntrevistadoModel entrevistados = new EntrevistadoModel();
-            //Posteriormente colocar um if aqui comparando com o IP para evitar que o mesmo entrevistado responda mais de 
-            //mais de uma vez.
-            entrevistados.nome = ip;
-            entrevistados.sobrenome = ip;
-            entrevistados.email = ip;
-            int id = gEntrevistado.Inserir(entrevistados);
-            IQueryable<EntrevistadoModel> entrevistadoE = gEntrevistado.obterIdEntrevistadoUltimo();
-            int idEnt =0;
-           
-            foreach (EntrevistadoModel entrevistado in entrevistadoE)
+            if (survey.Data_fim < DateTime.Now)
             {
-              idEnt = entrevistado.idTB_ENTREVISTADO;
+                ViewBag.Mensagem = "Data limite do Survey expirada, contate o responsável.";
+                return RedirectToAction("Inativo/" + survey.id_Survey, "Survey");
             }
-
-        
-            
-            foreach( var  iditem in meucheck)
+            else if (survey.flag_ativo != true)
             {
-              i = 0;
-              itensQuestaoRespostaCheck = gItens.ObterIDitem(Convert.ToInt32(iditem));
-              foreach (var item in survey.questoes)
-              {
-                  if (itensQuestaoRespostaCheck.id_Questao == item.id_Questao )
-                  {
-                      respostas.OutroTxt = survey.questoes[i].respostas.OutroTxt;
-                      
-                  }
-                  i++;
-              }
-               
-                respostas.id_Questao = itensQuestaoRespostaCheck.id_Questao;
-                respostas.Item = itensQuestaoRespostaCheck.Item;
-                respostas.idTB_ENTREVISTADO = idEnt;
-                respostas.Resposta = null;
-                gResposta.Inserir(respostas);
+                ViewBag.Mensagem = "Survey inativo, contate o responsável.";
+                return RedirectToAction("Inativo/" + survey.id_Survey, "Survey");
+            }
+            else
+            {
                 
-            }
+                int i = 0;
+                Itens_da_QuestaoModel itensQuestaoRespostaCheck = new Itens_da_QuestaoModel();
+                RespostaModel respostas = new RespostaModel();
+                string ip = Request.UserHostAddress;
+                EntrevistadoModel entrevistados = new EntrevistadoModel();
+                //Posteriormente colocar um if aqui comparando com o IP para evitar que o mesmo entrevistado responda mais de 
+                //mais de uma vez.
+                entrevistados.nome = ip;
+                entrevistados.sobrenome = ip;
+                entrevistados.email = ip;
+                int id = gEntrevistado.Inserir(entrevistados);
+                IQueryable<EntrevistadoModel> entrevistadoE = gEntrevistado.obterIdEntrevistadoUltimo();
+                int idEnt = 0;
 
-            i = 0;
-            foreach (QuestaoModel questoes in survey.questoes)
-            {
+                foreach (EntrevistadoModel entrevistado in entrevistadoE)
+                {
+                    idEnt = entrevistado.idTB_ENTREVISTADO;
+                }
 
-                if (survey.questoes[i].respostas.OutroTxt == null && survey.questoes[i].respostas.Item != null)
+
+
+                foreach (var iditem in meucheck)
+                {
+                    i = 0;
+                    itensQuestaoRespostaCheck = gItens.ObterIDitem(Convert.ToInt32(iditem));
+                    foreach (var item in survey.questoes)
+                    {
+                        if (itensQuestaoRespostaCheck.id_Questao == item.id_Questao)
+                        {
+                            respostas.OutroTxt = survey.questoes[i].respostas.OutroTxt;
+
+                        }
+                        i++;
+                    }
+
+                    respostas.id_Questao = itensQuestaoRespostaCheck.id_Questao;
+                    respostas.Item = itensQuestaoRespostaCheck.Item;
+                    respostas.idTB_ENTREVISTADO = idEnt;
+                    respostas.Resposta = null;
+                    gResposta.Inserir(respostas);
+
+                }
+
+                i = 0;
+                foreach (QuestaoModel questoes in survey.questoes)
                 {
 
-                    if (survey.questoes[i].Tipo.Equals("OBJETIVA") && survey.questoes[i].respostas.Item != null)
+                    if (survey.questoes[i].respostas.OutroTxt == null && survey.questoes[i].respostas.Item != null)
                     {
 
-                    
-                        respostas.id_Questao = survey.questoes[i].id_Questao;
-                        respostas.Item = survey.questoes[i].respostas.Item;
-                        respostas.idTB_ENTREVISTADO = idEnt;
-                        respostas.Resposta = null;
-                        respostas.OutroTxt = null;
-                        gResposta.Inserir(respostas);
-                        i++;
+                        if (survey.questoes[i].Tipo.Equals("OBJETIVA") && survey.questoes[i].respostas.Item != null)
+                        {
 
+
+                            respostas.id_Questao = survey.questoes[i].id_Questao;
+                            respostas.Item = survey.questoes[i].respostas.Item;
+                            respostas.idTB_ENTREVISTADO = idEnt;
+                            respostas.Resposta = null;
+                            respostas.OutroTxt = null;
+                            gResposta.Inserir(respostas);
+                            i++;
+
+                        }
+                        else
+                        {
+                            if (survey.questoes[i].Tipo.Equals("SUBJETIVA"))
+                            {
+                                respostas.Resposta = survey.questoes[i].respostas.Resposta;
+                                respostas.id_Questao = survey.questoes[i].id_Questao;
+                                respostas.idTB_ENTREVISTADO = idEnt;
+                                respostas.Item = null;
+                                respostas.OutroTxt = null;
+                                gResposta.Inserir(respostas);
+
+                            }
+                            i++;
+                        }
                     }
                     else
                     {
@@ -175,47 +237,31 @@ namespace Spider.Controllers
                             respostas.Item = null;
                             respostas.OutroTxt = null;
                             gResposta.Inserir(respostas);
+                            i++;
 
                         }
-                        i++;
-                    }
-                }
-                else 
-                {
-                    if (survey.questoes[i].Tipo.Equals("SUBJETIVA"))
-                    {
-                        respostas.Resposta = survey.questoes[i].respostas.Resposta;
-                        respostas.id_Questao = survey.questoes[i].id_Questao;
-                        respostas.idTB_ENTREVISTADO = idEnt;
-                        respostas.Item = null;
-                        respostas.OutroTxt = null;
-                        gResposta.Inserir(respostas);
-                        i++;
+                        else
+                        {
+                            if (survey.questoes[i].respostas.OutroTxt != null && survey.questoes[i].Escolha == false)
+                            {
+                                respostas.id_Questao = survey.questoes[i].id_Questao;
+                                respostas.idTB_ENTREVISTADO = idEnt;
+                                respostas.Item = null;
+                                respostas.Resposta = null;
+                                respostas.OutroTxt = survey.questoes[i].respostas.OutroTxt;
+                                gResposta.Inserir(respostas);
+                            }
+                            i++;
+                        }
 
                     }
-                    else 
-                    {
-                        if (survey.questoes[i].respostas.OutroTxt != null && survey.questoes[i].Escolha==false)
-                        { 
-                            respostas.id_Questao = survey.questoes[i].id_Questao;
-                            respostas.idTB_ENTREVISTADO = idEnt;
-                            respostas.Item = null;
-                            respostas.Resposta = null;
-                            respostas.OutroTxt = survey.questoes[i].respostas.OutroTxt;
-                            gResposta.Inserir(respostas);
-                        }
-                        i++;
-                    }
-                
+
                 }
-                
+
+                return RedirectToAction("Index", "Home");
             }
-
-
-            return RedirectToAction("Index","Home");
+            
         }
-
-
 
         [HttpGet]
         public ActionResult Resp(int id)
@@ -223,8 +269,6 @@ namespace Spider.Controllers
             
             return View();
         }
-
-
 
         [HttpGet]
         public ActionResult VisualizarSurvey(int id)
@@ -243,52 +287,6 @@ namespace Spider.Controllers
             return View(ListaQuestoesItens(id));
             //return View(survey);
         }
-
-        //[HttpPost]
-        //public ActionResult VisualizarSurvey(SurveyModel survey)
-        //{
-        //    int i = 0;
-        //    string ip = Request.UserHostAddress;
-
-        //    RespostaModel respostas = new RespostaModel();
-        //    EntrevistadoModel entrevistados = new EntrevistadoModel();
-        //    //Posteriormente colocar um if aqui comparando com o IP para evitar que o mesmo entrevistado responda mais de 
-        //    //mais de uma vez.
-        //    entrevistados.nome = ip;
-        //    entrevistados.sobrenome = ip;
-        //    entrevistados.email = ip;
-        //    gEntrevistado.Inserir(entrevistados);
-        //    //EntrevistadoModel entrevistados_2 = new EntrevistadoModel();
-        //    entrevistados = gEntrevistado.Obter(entrevistados.idTB_ENTREVISTADO);
-        //    foreach (QuestaoModel questoes in survey.questoes)
-        //    {
-
-        //        if (survey.questoes[i].Tipo.Equals("OBJETIVA"))
-        //        {
-        //            respostas.Item = survey.questoes[i].respostas.Item;
-        //            respostas.id_Questao = survey.questoes[i].id_Questao;
-        //            respostas.idTB_ENTREVISTADO = entrevistados.idTB_ENTREVISTADO;
-        //            respostas.Resposta = null;
-        //            gResposta.Inserir(respostas);
-        //            i++;
-
-        //        }
-        //        else
-        //        {
-        //            respostas.Resposta = survey.questoes[i].respostas.Resposta;
-        //            respostas.id_Questao = survey.questoes[i].id_Questao;
-        //            respostas.idTB_ENTREVISTADO = entrevistados.idTB_ENTREVISTADO;
-        //            respostas.Item = null;
-        //            gResposta.Inserir(respostas);
-        //            i++;
-
-        //        }
-
-        //    }
-
-
-        //    return View(survey);
-        //}
 
         [HttpGet]
         public ActionResult ListarRespostas(int id)
@@ -446,53 +444,59 @@ namespace Spider.Controllers
             return View(gSurvey.Obter(id));
         }
 
-        public ActionResult GetRespostaData()
+        public JsonResult GetRespostaData(int id)
         {
-            Models.DataSetRespostaQuestaoTableAdapters.V_RespostaPorQuestaoTableAdapter ds = 
+            Models.DataSetRespostaQuestaoTableAdapters.V_RespostaPorQuestaoTableAdapter ds =
                 new Models.DataSetRespostaQuestaoTableAdapters.V_RespostaPorQuestaoTableAdapter();
-          
 
-           var va = ds.GetData(1).AsEnumerable().ToList();
-          
+            var va = ds.GetData(id).AsEnumerable().ToList();
+
+            Models.DataSetRespostaQuestaoTableAdapters.V_RespostaPorQuestaoOutroTableAdapter dsO =
+                new Models.DataSetRespostaQuestaoTableAdapters.V_RespostaPorQuestaoOutroTableAdapter();
+
+            var vaOutro = dsO.GetData(id).AsEnumerable().ToList();
+
 
             List<string[]> data = new List<string[]>();
             data.Add(new[] { "Item", "Quantidade" });
-
             foreach (var itens in va)
             {
                 data.Add(new[] { itens.Item, itens.qtdItens.ToString() });
-            }
-            //var data = ds.GetData(41).ToList();
-            //list = results2.ToList();
-            
-            //int count = va.Count();
-            //for (int i = 0; i <= count; i++)
-            //{
-            //    list[i].id_Resposta = va[i].qtdItens;
-            //    list[i].Item = va[i].Item ;
-            //    list[i].id_Questao = va[i].TB_QUESTAO_id_Questao;
-            //    list[i].idTB_ENTREVISTADO = 0;
-                
-                
-            //}
 
+            }
+
+            foreach (var itensOutro in vaOutro)
+            {
+                data.Add(new[] { itensOutro.OutroTxt, itensOutro.qtdItensOutro.ToString() });
+            }
 
             return Json(data, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult GetRespostaDataColumn()
+        public JsonResult GetRespostaDataColumn(int id)
         {
             Models.DataSetRespostaQuestaoTableAdapters.V_RespostaPorQuestaoTableAdapter ds =
                 new Models.DataSetRespostaQuestaoTableAdapters.V_RespostaPorQuestaoTableAdapter();
-         
-            var va = ds.GetData(42).AsEnumerable().ToList();
+
+            var va = ds.GetData(id).AsEnumerable().ToList();
+
+            Models.DataSetRespostaQuestaoTableAdapters.V_RespostaPorQuestaoOutroTableAdapter dsO =
+               new Models.DataSetRespostaQuestaoTableAdapters.V_RespostaPorQuestaoOutroTableAdapter();
+
+            var vaOutro = dsO.GetData(id).AsEnumerable().ToList();
+
 
             List<string[]> data = new List<string[]>();
             data.Add(new[] { "Item", "Quantidade" });
-
             foreach (var itens in va)
             {
                 data.Add(new[] { itens.Item, itens.qtdItens.ToString() });
+
+            }
+
+            foreach (var itensOutro in vaOutro)
+            {
+                data.Add(new[] { itensOutro.OutroTxt, itensOutro.qtdItensOutro.ToString() });
             }
 
             return Json(data, JsonRequestBehavior.AllowGet);
@@ -502,31 +506,6 @@ namespace Spider.Controllers
         {
             return View();
         }
-
-        public ViewResult Respostas()
-        {
-
-           
-            // Models.DataSetRespostaQuestao.V_RespostaPorQuestaoDataTable;
-           // QuestaoModel questao = new QuestaoModel();
-           // questao = gQuestao.Obter(41);
-           // List<RespostaModel> resp = new List<RespostaModel>();
-           // resp = RespostasPorQuestao(41);
-           // //resp = dsR();
-           // List<string> respString = new List<string>();
-            
-
-           // var myChart = new System.Web.Helpers.Chart(width: 600, height: 400)
-           //.AddTitle("Resposta por Questão")
-           //.AddSeries("Default", chartType: "Pie",
-           // xValue: resp, xField: "Item",
-           // yValues: resp, yFields: "Item")
-           //     //.DataBindTable(resp, xField: "Item")
-           //.Write();
-           // return null;
-            return View();
-        }
-
 
         public JsonResult RespostasQuestao()
         {
@@ -545,73 +524,12 @@ namespace Spider.Controllers
             return Json(data,JsonRequestBehavior.AllowGet);
         }
 
-        public List<RespostaModel> RespostasPorQuestao(int id)
+        public ActionResult Graficos(int id)
         {
-           
-            //ViewBag.id_Survey = id;
-            //SurveyModel survey = new SurveyModel();
-            //survey = gSurvey.Obter(id);
-            //survey.questoes = gQuestao.ListaQuestaoSurvey(id).ToList();
-            //ViewBag.Titulo = survey.Titulo;
-            QuestaoModel questao = new QuestaoModel();
-            questao = gQuestao.Obter(id);
-            List<RespostaModel> resp = new List<RespostaModel>();
-            List<RespostaModel> resp2 = new List<RespostaModel>();
-            //for (int i = 0; i < survey.questoes.Count; i++)
-            //{
-                //resp.Add(resp);
-                resp = gResposta.ListaRespostaPorQuestao(questao.id_Questao).ToList();
-                //resp2.AddRange(resp);
-                //TempData["Resposta"] = resp;
-            //}
-            return resp;
-        }
-
-        public ActionResult RespostaPorQuestao()
-        {
+            ViewBag.id_Questao = id;
             return View();
         }
 
-        public ActionResult GraficoRespostas()
-        {
-            int id = 41;
-            QuestaoModel questao = new QuestaoModel();
-            //questao = gQuestao.Obter(id);
-            IEnumerable<RespostaModel> respostas;
-            respostas = gResposta.ListaRespostaPorQuestao(id).ToList();
-            if (TempData["Respostas"] == null)
-            {
-             
-                respostas = (IEnumerable<RespostaModel>)TempData["Respostas"];
-            }
-
-            
-            List<string[]> data = new List<string[]>();
-            data.Add(new[] { "Questao", "Resposta" });
-
-            foreach (var itensGrupo in respostas)
-            {
-                data.Add(new[] { itensGrupo.Item, itensGrupo.id_Questao.ToString()});
-            }
-            return Json(data);
-        }
-
-        public ActionResult FormGraficoResposta()
-        {
-            return View();
-        }
-
-        public ActionResult Graficos()
-        {
-            return View();
-        }
-
-        public ActionResult ViewGraficos()
-        {
-            return View();
-        }
-
-       
 
         //public ActionResult RelatorioRespostasPorQuestao(int idQuest)
         //{
