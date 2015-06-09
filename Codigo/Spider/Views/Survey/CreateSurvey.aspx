@@ -72,22 +72,20 @@
         <%: Html.TextBoxFor(model => model.Data_fim, new { @id = "datepicker", @class = "form-control" })%>
         <%: Html.ValidationMessageFor(model => model.Data_fim) %>
     </div>
-    <div class="checkbox">
-        <div class="editor-label">
-            Ativo
-            <%: Html.CheckBoxFor(model => model.flag_ativo, new { @checked = "checked" })%>
-            <%: Html.ValidationMessageFor(model => model.flag_ativo) %>
-       </div>
-       <div class="editor-label">
-            Randomize Questões
-            <%: Html.CheckBoxFor(model => model.RandomizeQuetsoes)%>
-            <%: Html.ValidationMessageFor(model => model.RandomizeQuetsoes) %>
-        </div>
-        <div class="editor-label">
-            Única Resposta
-            <%: Html.CheckBoxFor(model => model.UnicaResposta, new { Value = "true" })%>
-            <%: Html.ValidationMessageFor(model => model.UnicaResposta) %>
-        </div>
+    <div class="editor-label">
+        <%: Html.CheckBoxFor(model => model.flag_ativo, new { @checked = "checked" })%>
+        Ativo
+        <%: Html.ValidationMessageFor(model => model.flag_ativo) %>
+    </div>
+    <div class="editor-label">
+        <%: Html.CheckBoxFor(model => model.RandomizeQuetsoes)%>
+        Randomize Questões
+        <%: Html.ValidationMessageFor(model => model.RandomizeQuetsoes) %>
+    </div>
+    <div class="editor-label">
+        <%: Html.CheckBoxFor(model => model.UnicaResposta, new { Value = "true" })%>
+        Única Resposta
+        <%: Html.ValidationMessageFor(model => model.UnicaResposta) %>
     </div>
     <div class="editor-label">
         Senha de Acesso

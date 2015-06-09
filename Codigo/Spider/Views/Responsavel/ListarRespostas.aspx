@@ -28,6 +28,12 @@
         <th>
             Item
         </th>
+        <th>
+            Outro
+        </th>
+        <th>
+            Gráfico
+        </th>
     </tr>
 
 <% foreach (var item in Model) { %>
@@ -47,11 +53,12 @@
         <td>
             <%: Html.DisplayFor(modelItem => item.Item) %>
         </td>
-        <%--<td>
-            <%: Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) %> |
-            <%: Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) %> |
-            <%: Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) %>
-        </td>--%>
+        <td>
+            <%: Html.DisplayFor(modelItem => item.OutroTxt) %>
+        </td>
+        <td>
+            <%: Html.ActionLink("Gráfico", "Graficos", "Responsavel",new {  id=item.id_Questao }, null)%>
+        </td>
     </tr>
 
 <% } %>

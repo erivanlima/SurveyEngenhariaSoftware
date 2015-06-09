@@ -35,13 +35,21 @@ namespace Spider.Controllers
 
         }
 
+
         public ActionResult Index()
         {
             MembershipUser usuario = Membership.GetUser();
             int idCodigo = gResponsavel.ObterIdResp(usuario.ToString());
             return View(gSurvey.ListarSurvey(idCodigo));
         }
-
+        public ActionResult Inativo()
+        {
+            if (TempData["Mensagem"] != null)
+            {
+                ViewBag.Mensagem  = TempData["Mensagem"];
+            }
+            return View();
+        }
         public int retornarIdResponsavel(string usuario)
         {
 
