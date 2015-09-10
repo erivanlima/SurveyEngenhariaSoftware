@@ -43,7 +43,7 @@ namespace Services
         /// <returns>Chave identificante na base</returns>
         public int Inserir(SurveyModel survey)
         {
-            TB_SURVEY surveyE = new TB_SURVEY();
+            tb_survey surveyE = new tb_survey();
             Atribuir(survey, surveyE);
             unitOfWork.RepositorioSurvey.Inserir(surveyE);
             unitOfWork.Commit(shared);
@@ -56,7 +56,7 @@ namespace Services
         /// <param name="surveyssoa"></param>
         public void Editar(SurveyModel survey)
         {
-            TB_SURVEY surveyE = new TB_SURVEY();
+            tb_survey surveyE = new tb_survey();
             Atribuir(survey, surveyE);
             unitOfWork.RepositorioSurvey.Editar(surveyE);
             unitOfWork.Commit(shared);
@@ -79,7 +79,7 @@ namespace Services
         /// <returns></returns>
         private IQueryable<SurveyModel> GetQuery()
         {
-            IQueryable<TB_SURVEY> tb_survey = unitOfWork.RepositorioSurvey.GetQueryable();
+            IQueryable<tb_survey> tb_survey = unitOfWork.RepositorioSurvey.GetQueryable();
             var query = from surveyE in tb_survey
                         select new SurveyModel
                         {
@@ -136,7 +136,7 @@ namespace Services
         /// </summary>
         /// <param name="surveyssoa">Objeto do modelo</param>
         /// <param name="survey">Entity survey da base de dados</param>
-        private void Atribuir(SurveyModel survey, TB_SURVEY surveyE)
+        private void Atribuir(SurveyModel survey, tb_survey surveyE)
         {
             surveyE.id_Survey = survey.id_Survey;
             surveyE.TB_RESPONSAVEL_id_Responsavel = survey.id_Responsavel;

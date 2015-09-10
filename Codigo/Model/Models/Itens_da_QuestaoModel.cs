@@ -7,7 +7,7 @@ namespace Models
 {
     public class Itens_da_QuestaoModel
     {
-        public int idTB_ITENS_DA_QUESTAO { get; set; }
+        public int idtb_itens_da_questao { get; set; }
         public int id_Questao { get; set; }
         //public String ItemA { get; set; }
         //public String ItemB { get; set; }

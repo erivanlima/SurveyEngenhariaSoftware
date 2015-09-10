@@ -15,7 +15,7 @@
     <tr>
         <th></th>
         <th>
-            idTB_ITENS_DA_QUESTAO
+            idtb_itens_da_questao
         </th>
         <th>
             id_Questao
@@ -33,7 +33,7 @@
             <%: Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) %>
         </td>
         <td>
-            <%: item.idTB_ITENS_DA_QUESTAO %>
+            <%: item.idtb_itens_da_questao %>
         </td>
         <td>
             <%: item.id_Questao %>

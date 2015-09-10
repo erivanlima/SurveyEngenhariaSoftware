@@ -24,7 +24,7 @@
             <Mappings>
               <Mapping SourceColumn="qtdItens" DataSetColumn="qtdItens" />
               <Mapping SourceColumn="Item" DataSetColumn="Item" />
-              <Mapping SourceColumn="TB_QUESTAO_id_Questao" DataSetColumn="TB_QUESTAO_id_Questao" />
+              <Mapping SourceColumn="tb_questao_id_Questao" DataSetColumn="tb_questao_id_Questao" />
               <Mapping SourceColumn="percentual" DataSetColumn="percentual" />
             </Mappings>
             <Sources />
@@ -46,7 +46,7 @@
             <Mappings>
               <Mapping SourceColumn="qtdResp" DataSetColumn="qtdResp" />
               <Mapping SourceColumn="Resposta" DataSetColumn="Resposta" />
-              <Mapping SourceColumn="TB_QUESTAO_id_Questao" DataSetColumn="TB_QUESTAO_id_Questao" />
+              <Mapping SourceColumn="tb_questao_id_Questao" DataSetColumn="tb_questao_id_Questao" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -67,7 +67,7 @@
             <Mappings>
               <Mapping SourceColumn="qtdItensOutro" DataSetColumn="qtdItensOutro" />
               <Mapping SourceColumn="OutroTxt" DataSetColumn="OutroTxt" />
-              <Mapping SourceColumn="TB_QUESTAO_id_Questao" DataSetColumn="TB_QUESTAO_id_Questao" />
+              <Mapping SourceColumn="tb_questao_id_Questao" DataSetColumn="tb_questao_id_Questao" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -90,7 +90,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TB_QUESTAO_id_Questao" msprop:Generator_ColumnVarNameInTable="columnTB_QUESTAO_id_Questao" msprop:Generator_ColumnPropNameInRow="TB_QUESTAO_id_Questao" msprop:Generator_ColumnPropNameInTable="TB_QUESTAO_id_QuestaoColumn" msprop:Generator_UserColumnName="TB_QUESTAO_id_Questao" type="xs:int" />
+              <xs:element name="tb_questao_id_Questao" msprop:Generator_ColumnVarNameInTable="columntb_questao_id_Questao" msprop:Generator_ColumnPropNameInRow="tb_questao_id_Questao" msprop:Generator_ColumnPropNameInTable="tb_questao_id_QuestaoColumn" msprop:Generator_UserColumnName="tb_questao_id_Questao" type="xs:int" />
               <xs:element name="percentual" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnpercentual" msprop:Generator_ColumnPropNameInRow="percentual" msprop:Generator_ColumnPropNameInTable="percentualColumn" msprop:Generator_UserColumnName="percentual" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
@@ -106,7 +106,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TB_QUESTAO_id_Questao" msprop:Generator_ColumnVarNameInTable="columnTB_QUESTAO_id_Questao" msprop:Generator_ColumnPropNameInRow="TB_QUESTAO_id_Questao" msprop:Generator_ColumnPropNameInTable="TB_QUESTAO_id_QuestaoColumn" msprop:Generator_UserColumnName="TB_QUESTAO_id_Questao" type="xs:int" />
+              <xs:element name="tb_questao_id_Questao" msprop:Generator_ColumnVarNameInTable="columntb_questao_id_Questao" msprop:Generator_ColumnPropNameInRow="tb_questao_id_Questao" msprop:Generator_ColumnPropNameInTable="tb_questao_id_QuestaoColumn" msprop:Generator_UserColumnName="tb_questao_id_Questao" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -121,7 +121,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TB_QUESTAO_id_Questao" msprop:Generator_ColumnVarNameInTable="columnTB_QUESTAO_id_Questao" msprop:Generator_ColumnPropNameInRow="TB_QUESTAO_id_Questao" msprop:Generator_ColumnPropNameInTable="TB_QUESTAO_id_QuestaoColumn" msprop:Generator_UserColumnName="TB_QUESTAO_id_Questao" type="xs:int" />
+              <xs:element name="tb_questao_id_Questao" msprop:Generator_ColumnVarNameInTable="columntb_questao_id_Questao" msprop:Generator_ColumnPropNameInRow="tb_questao_id_Questao" msprop:Generator_ColumnPropNameInTable="tb_questao_id_QuestaoColumn" msprop:Generator_UserColumnName="tb_questao_id_Questao" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

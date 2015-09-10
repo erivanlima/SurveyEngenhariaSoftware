@@ -95,7 +95,7 @@
                         <% if (Questao.Escolha)
                            {  %>
                         <div class="display-field">
-                            <input id="questoes_<%= i %>__respostas_Item" name="meucheck" type="checkbox" value="<%= Html.DisplayFor(model => item.idTB_ITENS_DA_QUESTAO ) %>" />
+                            <input id="questoes_<%= i %>__respostas_Item" name="meucheck" type="checkbox" value="<%= Html.DisplayFor(model => item.idtb_itens_da_questao ) %>" />
                             <%: Html.DisplayFor(model => item.Item)%>
                             <%--id="questoes_<%= i %>__respostas_Item"--%>
                         </div>

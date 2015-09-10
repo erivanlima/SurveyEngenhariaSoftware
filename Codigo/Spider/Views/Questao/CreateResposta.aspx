@@ -19,11 +19,11 @@
        <%: Html.HiddenFor(model => model.id_Questao, new { Value = ViewBag.id_Questao })%>
 
         <%--<div class="editor-label">
-            <%: Html.LabelFor(model => model.idTB_ENTREVISTADO) %>
+            <%: Html.LabelFor(model => model.idtb_entrevistado) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.idTB_ENTREVISTADO) %>
-            <%: Html.ValidationMessageFor(model => model.idTB_ENTREVISTADO) %>
+            <%: Html.EditorFor(model => model.idtb_entrevistado) %>
+            <%: Html.ValidationMessageFor(model => model.idtb_entrevistado) %>
         </div>--%>
 
        <%-- <div class="display-label">

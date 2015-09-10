@@ -25,7 +25,7 @@
             id_Resposta
         </th>
         <th>
-            idTB_ENTREVISTADO
+            idtb_entrevistado
         </th>
         <th>
             id_Questao
@@ -49,7 +49,7 @@
             <%: item.id_Resposta %>
         </td>
         <td>
-            <%: item.idTB_ENTREVISTADO %>
+            <%: item.idtb_entrevistado %>
         </td>
         <td>
             <%: item.id_Questao %>

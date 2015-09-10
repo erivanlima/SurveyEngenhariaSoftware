@@ -38,7 +38,7 @@
                 //              ['Demais', 2]
                 //            ]);
                 for (var i = 0; i < data.length; i++) {
-                    tdata.addRow([data[i].Item, data[i].qtdItens, data[i].TB_QUESTAO_id_Questao]);
+                    tdata.addRow([data[i].Item, data[i].qtdItens, data[i].tb_questao_id_Questao]);
                 }
 
                 //Opções adicionais do gráfico

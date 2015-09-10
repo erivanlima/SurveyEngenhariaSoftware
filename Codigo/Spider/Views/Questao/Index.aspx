@@ -17,7 +17,7 @@
             id_Questao
         </th>
         <th>
-            idTB_ITENS_DA_QUESTAO
+            idtb_itens_da_questao
         </th>
         <th>
             id_Survey
@@ -49,7 +49,7 @@
             <%: Html.DisplayFor(modelItem => item.id_Questao) %>
         </td>
         <td>
-            <%: Html.DisplayFor(modelItem => item.idTB_ITENS_DA_QUESTAO) %>
+            <%: Html.DisplayFor(modelItem => item.idtb_itens_da_questao) %>
         </td>
         <td>
             <%: Html.DisplayFor(modelItem => item.id_Survey) %>

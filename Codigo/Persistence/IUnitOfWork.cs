@@ -7,13 +7,13 @@ namespace Persistence
     public interface IUnitOfWork
     {
         void Commit(bool shared);
-        IRepositorioGenerico<TB_ENTREVISTADO> RepositorioEntrevistado { get; }
-        IRepositorioGenerico<TB_ITENS_DA_QUESTAO> RepositorioItens { get; }
-        IRepositorioGenerico<TB_QUESTAO> RepositorioQuestao { get; }
-        IRepositorioGenerico<TB_RESPONSAVEL> RepositorioResponsavel { get; }
-        IRepositorioGenerico<TB_RESPOSTA> RepositorioResposta { get; }
-        IRepositorioGenerico<TB_SURVEY> RepositorioSurvey { get; }
-        IRepositorioGenerico<TB_CLASSE> RepositorioClasse { get; }
+        IRepositorioGenerico<tb_entrevistado> RepositorioEntrevistado { get; }
+        IRepositorioGenerico<tb_itens_da_questao> RepositorioItens { get; }
+        IRepositorioGenerico<tb_questao> RepositorioQuestao { get; }
+        IRepositorioGenerico<tb_responsavel> RepositorioResponsavel { get; }
+        IRepositorioGenerico<tb_resposta> RepositorioResposta { get; }
+        IRepositorioGenerico<tb_survey> RepositorioSurvey { get; }
+        IRepositorioGenerico<tb_classe> RepositorioClasse { get; }
        
 
     }

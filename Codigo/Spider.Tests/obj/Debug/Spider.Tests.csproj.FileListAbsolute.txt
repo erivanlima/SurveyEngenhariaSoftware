@@ -140,3 +140,16 @@ C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Spider.Tests\bin\Debug\Persi
 C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Spider.Tests\obj\Debug\Spider.Tests.csprojResolveAssemblyReference.cache
 C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Spider.Tests\obj\Debug\Spider.Tests.dll
 C:\Users\adouglas\Documents\survey-tcc\trunk\Codigo\Spider.Tests\obj\Debug\Spider.Tests.pdb
+D:\Projetos\survey-tcc\Codigo\Spider.Tests\obj\Debug\Spider.Tests.csprojResolveAssemblyReference.cache
+D:\Projetos\survey-tcc\Codigo\Spider.Tests\bin\Debug\Spider.Tests.dll
+D:\Projetos\survey-tcc\Codigo\Spider.Tests\bin\Debug\Spider.Tests.pdb
+D:\Projetos\survey-tcc\Codigo\Spider.Tests\bin\Debug\Spider.dll
+D:\Projetos\survey-tcc\Codigo\Spider.Tests\bin\Debug\Services.dll
+D:\Projetos\survey-tcc\Codigo\Spider.Tests\bin\Debug\Model.dll
+D:\Projetos\survey-tcc\Codigo\Spider.Tests\bin\Debug\Persistence.dll
+D:\Projetos\survey-tcc\Codigo\Spider.Tests\bin\Debug\Spider.pdb
+D:\Projetos\survey-tcc\Codigo\Spider.Tests\bin\Debug\Services.pdb
+D:\Projetos\survey-tcc\Codigo\Spider.Tests\bin\Debug\Model.pdb
+D:\Projetos\survey-tcc\Codigo\Spider.Tests\bin\Debug\Persistence.pdb
+D:\Projetos\survey-tcc\Codigo\Spider.Tests\obj\Debug\Spider.Tests.dll
+D:\Projetos\survey-tcc\Codigo\Spider.Tests\obj\Debug\Spider.Tests.pdb

@@ -48,7 +48,7 @@ namespace Services
         /// <returns>Chave identificante na base</returns>
         public int Inserir(Itens_da_QuestaoModel itens)
         {
-            TB_ITENS_DA_QUESTAO itensE = new TB_ITENS_DA_QUESTAO();
+            tb_itens_da_questao itensE = new tb_itens_da_questao();
             Atribuir(itens, itensE);
             unitOfWork.RepositorioItens.Inserir(itensE);
             unitOfWork.Commit(shared);
@@ -61,7 +61,7 @@ namespace Services
         /// <param name="servico"></param>
         public void Editar(Itens_da_QuestaoModel itens)
         {
-            TB_ITENS_DA_QUESTAO itensE = new TB_ITENS_DA_QUESTAO();
+            tb_itens_da_questao itensE = new tb_itens_da_questao();
             Atribuir(itens, itensE);
             unitOfWork.RepositorioItens.Editar(itensE);
             unitOfWork.Commit(shared);
@@ -90,12 +90,12 @@ namespace Services
         /// <returns></returns>
         private IQueryable<Itens_da_QuestaoModel> GetQuery()
         {
-            IQueryable<TB_ITENS_DA_QUESTAO> tb_itens = unitOfWork.RepositorioItens.GetQueryable();
+            IQueryable<tb_itens_da_questao> tb_itens = unitOfWork.RepositorioItens.GetQueryable();
             var query = from itensE in tb_itens
                         select new Itens_da_QuestaoModel
                         {
                             id_Questao = itensE.TB_QUESTAO_id_Questao,
-                            idTB_ITENS_DA_QUESTAO = itensE.idTB_ITENS_DA_QUESTAO,
+                            idtb_itens_da_questao = itensE.idTB_ITENS_DA_QUESTAO,
                             Item = itensE.Item,
                             //ItemB = itensE.ItemB,
                             //ItemC = itensE.ItemC,
@@ -127,7 +127,7 @@ namespace Services
         }
         public Itens_da_QuestaoModel ObterIDitem(int IDitem)
         {
-            IEnumerable<Itens_da_QuestaoModel> itens = GetQuery().Where(Itens_da_QuestaoModel => Itens_da_QuestaoModel.idTB_ITENS_DA_QUESTAO.Equals(IDitem));
+            IEnumerable<Itens_da_QuestaoModel> itens = GetQuery().Where(Itens_da_QuestaoModel => Itens_da_QuestaoModel.idtb_itens_da_questao.Equals(IDitem));
             return itens.ElementAtOrDefault(0);
         }
 
@@ -144,9 +144,9 @@ namespace Services
         /// </summary>
         /// <param name="servico">Objeto do modelo</param>
         /// <param name="serE">Entity mapeada da base de dados</param>
-        private void Atribuir(Itens_da_QuestaoModel itens, TB_ITENS_DA_QUESTAO itensE)
+        private void Atribuir(Itens_da_QuestaoModel itens, tb_itens_da_questao itensE)
         {
-            itensE.idTB_ITENS_DA_QUESTAO = itens.idTB_ITENS_DA_QUESTAO;
+            itensE.idTB_ITENS_DA_QUESTAO = itens.idtb_itens_da_questao;
             itensE.Item = itens.Item;
             itensE.TB_QUESTAO_id_Questao = itens.id_Questao;
             

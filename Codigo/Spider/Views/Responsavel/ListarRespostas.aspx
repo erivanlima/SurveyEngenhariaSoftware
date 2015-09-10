@@ -42,7 +42,7 @@
             <%: Html.DisplayFor(modelItem => item.id_Resposta) %>
         </td>--%>
         <td>
-            <%: Html.DisplayFor(modelItem => item.idTB_ENTREVISTADO) %>
+            <%: Html.DisplayFor(modelItem => item.idtb_entrevistado) %>
         </td>
         <td>
             <%: Html.DisplayFor(modelItem => item.id_Questao) %>

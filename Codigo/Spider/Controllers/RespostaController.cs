@@ -52,7 +52,7 @@ namespace Spider.Controllers
             RespostaModel resposta = new RespostaModel();
             resposta = questao.respostas;
             resposta.id_Questao = questao.id_Questao;
-            resposta.idTB_ENTREVISTADO = gEntrevistado.Inserir(entrevistado);
+            resposta.idtb_entrevistado = gEntrevistado.Inserir(entrevistado);
             gResposta.Inserir(resposta);
 
 

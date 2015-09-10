@@ -42,7 +42,7 @@ namespace Services
         /// <returns>Chave identificante na base</returns>
         public int Inserir(QuestaoModel questao)
         {
-            TB_QUESTAO questaoE = new TB_QUESTAO();
+            tb_questao questaoE = new tb_questao();
             Atribuir(questao, questaoE);
             unitOfWork.RepositorioQuestao.Inserir(questaoE);
             unitOfWork.Commit(shared);
@@ -55,7 +55,7 @@ namespace Services
         /// <param name="questao"></param>
         public void Editar(QuestaoModel questao)
         {
-            TB_QUESTAO questaoE = new TB_QUESTAO();
+            tb_questao questaoE = new tb_questao();
             Atribuir(questao, questaoE);
             unitOfWork.RepositorioQuestao.Editar(questaoE);
             unitOfWork.Commit(shared);
@@ -82,7 +82,7 @@ namespace Services
         /// <returns></returns>
         private IQueryable<QuestaoModel> GetQuery()
         {
-            IQueryable<TB_QUESTAO> tb_questao = unitOfWork.RepositorioQuestao.GetQueryable();
+            IQueryable<tb_questao> tb_questao = unitOfWork.RepositorioQuestao.GetQueryable();
             var query = from questaoE in tb_questao
                         select new QuestaoModel
                         {
@@ -130,7 +130,7 @@ namespace Services
         /// </summary>
         /// <param name="questao">Objeto do modelo</param>
         /// <param name="questaoE">Entity mapeada da base de dados</param>
-        private void Atribuir(QuestaoModel questao, TB_QUESTAO questaoE)
+        private void Atribuir(QuestaoModel questao, tb_questao questaoE)
         {
             questaoE.id_Questao = questao.id_Questao;
             questaoE.Escolha = questao.Escolha;
@@ -169,8 +169,8 @@ namespace Services
         public byte[] ObterImagem(int id)
         {
             //int id = EncriptUtils.Descriptografar(idVenda);
-            IQueryable<TB_QUESTAO> TB_QUESTAO = unitOfWork.RepositorioQuestao.GetQueryable();
-            var query = from questaoE in TB_QUESTAO
+            IQueryable<tb_questao> tb_questao = unitOfWork.RepositorioQuestao.GetQueryable();
+            var query = from questaoE in tb_questao
                         where  questaoE.id_Questao == id
                         select questaoE.Img;
             return query.FirstOrDefault();

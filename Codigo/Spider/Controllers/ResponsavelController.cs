@@ -165,7 +165,7 @@ namespace Spider.Controllers
 
                 foreach (EntrevistadoModel entrevistado in entrevistadoE)
                 {
-                    idEnt = entrevistado.idTB_ENTREVISTADO;
+                    idEnt = entrevistado.idtb_entrevistado;
                 }
 
 
@@ -186,7 +186,7 @@ namespace Spider.Controllers
 
                     respostas.id_Questao = itensQuestaoRespostaCheck.id_Questao;
                     respostas.Item = itensQuestaoRespostaCheck.Item;
-                    respostas.idTB_ENTREVISTADO = idEnt;
+                    respostas.idtb_entrevistado = idEnt;
                     respostas.Resposta = null;
                     gResposta.Inserir(respostas);
 
@@ -205,7 +205,7 @@ namespace Spider.Controllers
 
                             respostas.id_Questao = survey.questoes[i].id_Questao;
                             respostas.Item = survey.questoes[i].respostas.Item;
-                            respostas.idTB_ENTREVISTADO = idEnt;
+                            respostas.idtb_entrevistado = idEnt;
                             respostas.Resposta = null;
                             respostas.OutroTxt = null;
                             gResposta.Inserir(respostas);
@@ -218,7 +218,7 @@ namespace Spider.Controllers
                             {
                                 respostas.Resposta = survey.questoes[i].respostas.Resposta;
                                 respostas.id_Questao = survey.questoes[i].id_Questao;
-                                respostas.idTB_ENTREVISTADO = idEnt;
+                                respostas.idtb_entrevistado = idEnt;
                                 respostas.Item = null;
                                 respostas.OutroTxt = null;
                                 gResposta.Inserir(respostas);
@@ -233,7 +233,7 @@ namespace Spider.Controllers
                         {
                             respostas.Resposta = survey.questoes[i].respostas.Resposta;
                             respostas.id_Questao = survey.questoes[i].id_Questao;
-                            respostas.idTB_ENTREVISTADO = idEnt;
+                            respostas.idtb_entrevistado = idEnt;
                             respostas.Item = null;
                             respostas.OutroTxt = null;
                             gResposta.Inserir(respostas);
@@ -245,7 +245,7 @@ namespace Spider.Controllers
                             if (survey.questoes[i].respostas.OutroTxt != null && survey.questoes[i].Escolha == false)
                             {
                                 respostas.id_Questao = survey.questoes[i].id_Questao;
-                                respostas.idTB_ENTREVISTADO = idEnt;
+                                respostas.idtb_entrevistado = idEnt;
                                 respostas.Item = null;
                                 respostas.Resposta = null;
                                 respostas.OutroTxt = survey.questoes[i].respostas.OutroTxt;
@@ -279,7 +279,7 @@ namespace Spider.Controllers
             //survey.questoes = gQuestao.ListaQuestaoSurvey(id).ToList();
             //for (int i = 0; i < survey.questoes.Count; i++)
             //{
-            //    survey.questoes[i].itens = gItens.Obter(survey.questoes[i].idTB_ITENS_DA_QUESTAO);
+            //    survey.questoes[i].itens = gItens.Obter(survey.questoes[i].idtb_itens_da_questao);
             //}
             ViewBag.id_Survey = id;
             

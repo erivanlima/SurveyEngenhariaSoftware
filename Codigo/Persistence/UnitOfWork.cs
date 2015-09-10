@@ -15,13 +15,13 @@ namespace Persistence
     public class UnitOfWork : IDisposable, IUnitOfWork
     {
         private mysurveyEntities _context;
-        private IRepositorioGenerico<TB_ENTREVISTADO> _repEntrevistado;
-        private IRepositorioGenerico<TB_ITENS_DA_QUESTAO> _repItens;
-        private IRepositorioGenerico<TB_QUESTAO> _repQuestao;
-        private IRepositorioGenerico<TB_RESPONSAVEL> _repResponsavel;
-        private IRepositorioGenerico<TB_RESPOSTA> _repResposta;
-        private IRepositorioGenerico<TB_SURVEY> _repSurvey;
-        private IRepositorioGenerico<TB_CLASSE> _repClasse;
+        private IRepositorioGenerico<tb_entrevistado> _repEntrevistado;
+        private IRepositorioGenerico<tb_itens_da_questao> _repItens;
+        private IRepositorioGenerico<tb_questao> _repQuestao;
+        private IRepositorioGenerico<tb_responsavel> _repResponsavel;
+        private IRepositorioGenerico<tb_resposta> _repResposta;
+        private IRepositorioGenerico<tb_survey> _repSurvey;
+        private IRepositorioGenerico<tb_classe> _repClasse;
         
 
         /// <summary>
@@ -37,13 +37,13 @@ namespace Persistence
         /// <summary>
         /// Repositório para manipular dados persistidos de Pessoas
         /// </summary>
-        public IRepositorioGenerico<TB_ENTREVISTADO> RepositorioEntrevistado
+        public IRepositorioGenerico<tb_entrevistado> RepositorioEntrevistado
         {
             get
             {
                 if (_repEntrevistado == null)
                 {
-                    _repEntrevistado = new RepositorioGenerico<TB_ENTREVISTADO>(_context);
+                    _repEntrevistado = new RepositorioGenerico<tb_entrevistado>(_context);
                 }
 
                 return _repEntrevistado;
@@ -53,13 +53,13 @@ namespace Persistence
         /// <summary>
         /// Repositório para manipular dados persistidos de pessoa_serviço
         /// </summary>
-        public IRepositorioGenerico<TB_ITENS_DA_QUESTAO> RepositorioItens
+        public IRepositorioGenerico<tb_itens_da_questao> RepositorioItens
         {
             get
             {
                 if (_repItens == null)
                 {
-                    _repItens = new RepositorioGenerico<TB_ITENS_DA_QUESTAO>(_context);
+                    _repItens = new RepositorioGenerico<tb_itens_da_questao>(_context);
                 }
                 return _repItens;
             }
@@ -68,60 +68,60 @@ namespace Persistence
         /// <summary>
         /// Repositório para manipular dados persistidos de Serviços
         /// </summary>
-        public IRepositorioGenerico<TB_QUESTAO> RepositorioQuestao
+        public IRepositorioGenerico<tb_questao> RepositorioQuestao
         {
             get
             {
                 if (_repQuestao == null)
                 {
-                    _repQuestao = new RepositorioGenerico<TB_QUESTAO>(_context);
+                    _repQuestao = new RepositorioGenerico<tb_questao>(_context);
                 }
                 return _repQuestao;
             }
         }
 
-        public IRepositorioGenerico<TB_RESPONSAVEL> RepositorioResponsavel
+        public IRepositorioGenerico<tb_responsavel> RepositorioResponsavel
         {
             get
             {
                 if (_repResponsavel == null)
                 {
-                    _repResponsavel = new RepositorioGenerico<TB_RESPONSAVEL>(_context);
+                    _repResponsavel = new RepositorioGenerico<tb_responsavel>(_context);
                 }
                 return _repResponsavel;
             }
         }
 
-        public IRepositorioGenerico<TB_RESPOSTA> RepositorioResposta
+        public IRepositorioGenerico<tb_resposta> RepositorioResposta
         {
             get
             {
                 if (_repResposta == null)
                 {
-                    _repResposta = new RepositorioGenerico<TB_RESPOSTA>(_context);
+                    _repResposta = new RepositorioGenerico<tb_resposta>(_context);
                 }
                 return _repResposta;
             }
         }
 
-        public IRepositorioGenerico<TB_SURVEY> RepositorioSurvey
+        public IRepositorioGenerico<tb_survey> RepositorioSurvey
         {
             get
             {
                 if (_repSurvey == null)
                 {
-                    _repSurvey = new RepositorioGenerico<TB_SURVEY>(_context);
+                    _repSurvey = new RepositorioGenerico<tb_survey>(_context);
                 }
                 return _repSurvey;
             }
         }
-        public IRepositorioGenerico<TB_CLASSE> RepositorioClasse
+        public IRepositorioGenerico<tb_classe> RepositorioClasse
         {
             get
             {
                 if (_repClasse == null)
                 {
-                    _repClasse = new RepositorioGenerico<TB_CLASSE>(_context);
+                    _repClasse = new RepositorioGenerico<tb_classe>(_context);
                 }
                 return _repClasse;
             }

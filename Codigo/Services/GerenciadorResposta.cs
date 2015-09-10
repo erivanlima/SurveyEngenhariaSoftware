@@ -48,7 +48,7 @@ namespace Services
         /// <returns>Chave identificante na base</returns>
         public int Inserir(RespostaModel resposta)
         {
-            TB_RESPOSTA respostaE = new TB_RESPOSTA();
+            tb_resposta respostaE = new tb_resposta();
             Atribuir(resposta, respostaE);
             unitOfWork.RepositorioResposta.Inserir(respostaE);
             unitOfWork.Commit(shared);
@@ -61,7 +61,7 @@ namespace Services
         /// <param name="servico"></param>
         public void Editar(RespostaModel resposta)
         {
-            TB_RESPOSTA respostaE = new TB_RESPOSTA();
+            tb_resposta respostaE = new tb_resposta();
             Atribuir(resposta, respostaE);
             unitOfWork.RepositorioResposta.Editar(respostaE);
             unitOfWork.Commit(shared);
@@ -91,12 +91,12 @@ namespace Services
         /// <returns></returns>
         private IQueryable<RespostaModel> GetQuery()
         {
-            IQueryable<TB_RESPOSTA> tb_resposta = unitOfWork.RepositorioResposta.GetQueryable();
+            IQueryable<tb_resposta> tb_resposta = unitOfWork.RepositorioResposta.GetQueryable();
             var query = from respostaE in tb_resposta
                         select new RespostaModel
                         {
                             id_Resposta = respostaE.id_Resposta,
-                            idTB_ENTREVISTADO = respostaE.TB_ENTREVISTADO_idTB_ENTREVISTADO,
+                            idtb_entrevistado = respostaE.TB_ENTREVISTADO_idTB_ENTREVISTADO,
                             id_Questao = respostaE.TB_QUESTAO_id_Questao,
                             Resposta = respostaE.Resposta,
                             Item = respostaE.Item,
@@ -137,10 +137,10 @@ namespace Services
         /// </summary>
         /// <param name="servico">Objeto do modelo</param>
         /// <param name="serE">Entity mapeada da base de dados</param>
-        private void Atribuir(RespostaModel resposta, TB_RESPOSTA respostaE)
+        private void Atribuir(RespostaModel resposta, tb_resposta respostaE)
         {
             respostaE.id_Resposta = resposta.id_Resposta;
-            respostaE.TB_ENTREVISTADO_idTB_ENTREVISTADO = resposta.idTB_ENTREVISTADO;
+            respostaE.TB_ENTREVISTADO_idTB_ENTREVISTADO = resposta.idtb_entrevistado;
             respostaE.TB_QUESTAO_id_Questao = resposta.id_Questao;
             respostaE.Resposta = resposta.Resposta;
             respostaE.Item = resposta.Item;

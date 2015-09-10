@@ -40,7 +40,7 @@ namespace Services
         /// <returns>Chave identificante na base</returns>
         public int Inserir(ResponsavelModel responsavel)
         {
-            TB_RESPONSAVEL responsavelE = new TB_RESPONSAVEL();
+            tb_responsavel responsavelE = new tb_responsavel();
             Atribuir(responsavel, responsavelE);
             unitOfWork.RepositorioResponsavel.Inserir(responsavelE);
             unitOfWork.Commit(shared);
@@ -53,7 +53,7 @@ namespace Services
         /// <param name="responsavel"></param>
         public void Editar(ResponsavelModel responsavel)
         {
-            TB_RESPONSAVEL responsavelE = new TB_RESPONSAVEL();
+            tb_responsavel responsavelE = new tb_responsavel();
             Atribuir(responsavel, responsavelE);
             unitOfWork.RepositorioResponsavel.Editar(responsavelE);
             unitOfWork.Commit(shared);
@@ -76,7 +76,7 @@ namespace Services
         /// <returns></returns>
         private IQueryable<ResponsavelModel> GetQuery()
         {
-            IQueryable<TB_RESPONSAVEL> tb_responsavel = unitOfWork.RepositorioResponsavel.GetQueryable();
+            IQueryable<tb_responsavel> tb_responsavel = unitOfWork.RepositorioResponsavel.GetQueryable();
             var query = from responsavel in tb_responsavel
                         select new ResponsavelModel
                         {
@@ -111,7 +111,7 @@ namespace Services
 
         public IQueryable<ResponsavelModel> obterIdResponsavel(string login)
         {
-            IQueryable<TB_RESPONSAVEL> tb_responsavel = unitOfWork.RepositorioResponsavel.GetQueryable();
+            IQueryable<tb_responsavel> tb_responsavel = unitOfWork.RepositorioResponsavel.GetQueryable();
             var query = from responsavelE in tb_responsavel where responsavelE.email.Equals(login)
                         select new ResponsavelModel
                         {
@@ -139,7 +139,7 @@ namespace Services
         /// </summary>
         /// <param name="responsavel">Objeto do modelo</param>
         /// <param name="esp">Entity mapeada da base de dados</param>
-        private void Atribuir(ResponsavelModel responsavel, TB_RESPONSAVEL responsavelE)
+        private void Atribuir(ResponsavelModel responsavel, tb_responsavel responsavelE)
         {
            
             responsavelE.id_Responsavel = responsavel.id_Responsavel;

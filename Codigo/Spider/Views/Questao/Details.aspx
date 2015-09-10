@@ -18,9 +18,9 @@
         <%: Html.DisplayFor(model => model.id_Questao) %>
     </div>
 
-    <div class="display-label">idTB_ITENS_DA_QUESTAO</div>
+    <div class="display-label">idtb_itens_da_questao</div>
     <div class="display-field">
-        <%: Html.DisplayFor(model => model.idTB_ITENS_DA_QUESTAO) %>
+        <%: Html.DisplayFor(model => model.idtb_itens_da_questao) %>
        
         <div class="display-label">item</div>
         <div class="display-field">

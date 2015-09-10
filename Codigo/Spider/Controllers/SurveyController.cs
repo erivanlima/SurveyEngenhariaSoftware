@@ -107,7 +107,7 @@ namespace Spider.Controllers
                 if (questao.Pergunta != null)
                 {
                     questao.id_Survey = survey.id_Survey;
-                    //questao.idTB_ITENS_DA_QUESTAO = gItens.Inserir(questao.itens);
+                    //questao.idtb_itens_da_questao = gItens.Inserir(questao.itens);
                     gQuestao.Inserir(questao);
                 }
 

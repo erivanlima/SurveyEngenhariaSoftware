@@ -48,7 +48,7 @@ namespace Services
         /// <returns>Chave identificante na base</returns>
         public int Inserir(EntrevistadoModel entrevistado)
         {
-            TB_ENTREVISTADO entrevistadoE = new TB_ENTREVISTADO();
+            tb_entrevistado entrevistadoE = new tb_entrevistado();
             Atribuir(entrevistado, entrevistadoE);
             unitOfWork.RepositorioEntrevistado.Inserir(entrevistadoE);
             unitOfWork.Commit(shared);
@@ -61,7 +61,7 @@ namespace Services
         /// <param name="entrevistado"></param>
         public void Editar(EntrevistadoModel entrevistado)
         {
-            TB_ENTREVISTADO entrevistadoE = new TB_ENTREVISTADO();
+            tb_entrevistado entrevistadoE = new tb_entrevistado();
             Atribuir(entrevistado, entrevistadoE);
             unitOfWork.RepositorioEntrevistado.Editar(entrevistadoE);
             unitOfWork.Commit(shared);
@@ -84,11 +84,11 @@ namespace Services
         /// <returns></returns>
         private IQueryable<EntrevistadoModel> GetQuery()
         {
-            IQueryable<TB_ENTREVISTADO> tb_entrevistado = unitOfWork.RepositorioEntrevistado.GetQueryable();
+            IQueryable<tb_entrevistado> tb_entrevistado = unitOfWork.RepositorioEntrevistado.GetQueryable();
             var query = from entrevistadoE in tb_entrevistado
                         select new EntrevistadoModel
                         {
-                            idTB_ENTREVISTADO = entrevistadoE.idTB_ENTREVISTADO,
+                            idtb_entrevistado = entrevistadoE.idTB_ENTREVISTADO,
                             nome = entrevistadoE.NOME,
                             sobrenome = entrevistadoE.SOBRENOME,
                             email = entrevistadoE.EMAIL,
@@ -99,13 +99,13 @@ namespace Services
 
         public IQueryable<EntrevistadoModel> obterIdEntrevistadoUltimo()
         {
-            IQueryable<TB_ENTREVISTADO> tb_entrevistado = unitOfWork.RepositorioEntrevistado.GetQueryable();
+            IQueryable<tb_entrevistado> tb_entrevistado = unitOfWork.RepositorioEntrevistado.GetQueryable();
             var query = (from entrevistadoE in tb_entrevistado  orderby entrevistadoE.idTB_ENTREVISTADO descending
                         
                         
                         select new EntrevistadoModel
                         {
-                            idTB_ENTREVISTADO = entrevistadoE.idTB_ENTREVISTADO
+                            idtb_entrevistado = entrevistadoE.idTB_ENTREVISTADO
 
 
                         }).Take(1);
@@ -129,7 +129,7 @@ namespace Services
         /// <returns>PessoaModel</returns>
         public EntrevistadoModel Obter(int IDentrevistado)
         {
-            IEnumerable<EntrevistadoModel> entrevistados = GetQuery().Where(entrevistadoModel => entrevistadoModel.idTB_ENTREVISTADO.Equals(IDentrevistado));
+            IEnumerable<EntrevistadoModel> entrevistados = GetQuery().Where(entrevistadoModel => entrevistadoModel.idtb_entrevistado.Equals(IDentrevistado));
             return entrevistados.ElementAtOrDefault(0);
         }
         public EntrevistadoModel ObterPorIP(string ip)
@@ -143,9 +143,9 @@ namespace Services
         /// </summary>
         /// <param name="entrevistado">Objeto do modelo</param>
         /// <param name="entrevistadoE">Entity mapeada da base de dados</param>
-        private void Atribuir(EntrevistadoModel entrevistado, TB_ENTREVISTADO entrevistadoE)
+        private void Atribuir(EntrevistadoModel entrevistado, tb_entrevistado entrevistadoE)
         {
-             entrevistadoE.idTB_ENTREVISTADO = entrevistado.idTB_ENTREVISTADO; 
+             entrevistadoE.idTB_ENTREVISTADO = entrevistado.idtb_entrevistado; 
              entrevistadoE.NOME = entrevistado.nome;
              entrevistadoE.SOBRENOME = entrevistado.sobrenome;
              entrevistadoE.EMAIL = entrevistado.email;
@@ -162,7 +162,7 @@ namespace Services
         {
             IEnumerable<EntrevistadoModel> entrevistado = GetQuery().
                 Where(EntrevistadoModel => EntrevistadoModel.sobrenome.Equals(User));
-            return entrevistado.ElementAtOrDefault(0).idTB_ENTREVISTADO;
+            return entrevistado.ElementAtOrDefault(0).idtb_entrevistado;
         }
     }
 }

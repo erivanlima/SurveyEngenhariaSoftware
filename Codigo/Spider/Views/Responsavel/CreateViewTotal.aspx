@@ -132,7 +132,7 @@
                            {  %>
                         
                             <div class="display-field " >
-                              <input id="meucheckid" name="meucheck" type="checkbox" value="<%= Html.DisplayFor(model => item.idTB_ITENS_DA_QUESTAO ) %>" />
+                              <input id="meucheckid" name="meucheck" type="checkbox" value="<%= Html.DisplayFor(model => item.idtb_itens_da_questao ) %>" />
                               <%: Html.DisplayFor(model => item.Item)%>
                               <input name="questoes[<%= i %>].Escolha" type="hidden" value="true" />
                              <%j++; %> 
@@ -155,7 +155,7 @@
                         <% if (Questao.Escolha)
                            {  %>
                         <div class="display-field">
-                            <input  id="questoes_<%= i %>__respostas_Item" name="meucheck" type="checkbox" value="<%= Html.DisplayFor(model => item.idTB_ITENS_DA_QUESTAO ) %>" />
+                            <input  id="questoes_<%= i %>__respostas_Item" name="meucheck" type="checkbox" value="<%= Html.DisplayFor(model => item.idtb_itens_da_questao ) %>" />
                             <%: Html.DisplayFor(model => item.Item)%>
                             <input name="questoes[<%= i %>].Escolha" type="hidden" value="true" />
                         </div>

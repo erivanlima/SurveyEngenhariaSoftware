@@ -18,7 +18,7 @@
 <table>
     <tr>
         <th>
-            idTB_ITENS_DA_QUESTAO
+            idtb_itens_da_questao
         </th>
         <th>
             id_Questao
@@ -31,7 +31,7 @@
 <% foreach (var item in Model) { %>
     <tr>
         <td>
-            <%: Html.DisplayFor(modelItem => item.idTB_ITENS_DA_QUESTAO) %>
+            <%: Html.DisplayFor(modelItem => item.idtb_itens_da_questao) %>
         </td>
         <td>
             <%: Html.DisplayFor(modelItem => item.id_Questao) %>

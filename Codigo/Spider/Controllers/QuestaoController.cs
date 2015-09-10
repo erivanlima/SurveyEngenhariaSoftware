@@ -309,7 +309,7 @@ namespace Spider.Controllers
         {
 
             EntrevistadoModel entrevistado = new EntrevistadoModel();
-            resp.idTB_ENTREVISTADO = gEntrevistado.Inserir(entrevistado);
+            resp.idtb_entrevistado = gEntrevistado.Inserir(entrevistado);
             gResposta.Inserir(resp);
             return RedirectToAction("Index");
         }
@@ -695,7 +695,7 @@ namespace Spider.Controllers
                 if (questao.Pergunta != null)
                 {
                     questao.id_Survey = survey.id_Survey;
-                    //questao.idTB_ITENS_DA_QUESTAO = gItens.Inserir(questao.itens);
+                    //questao.idtb_itens_da_questao = gItens.Inserir(questao.itens);
 
                     questao.Img = new byte[images[0].ContentLength];
                     images[0].InputStream.Read(questao.Img, 0, images[0].ContentLength);

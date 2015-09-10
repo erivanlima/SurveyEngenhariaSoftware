@@ -1,5 +1,0 @@
-C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\teste\bin\Debug\teste.dll.config
-C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\teste\bin\Debug\teste.dll
-C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\teste\bin\Debug\teste.pdb
-C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\teste\obj\Debug\teste.dll
-C:\Users\Douglas\Documents\Tcc-Survey\trunk\MySurvey\teste\obj\Debug\teste.pdb

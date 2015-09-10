@@ -39,7 +39,7 @@ namespace Services
         /// <returns>Chave identificante na base</returns>
         public int Inserir(ClasseModel Classe)
         {
-            TB_CLASSE ClasseE = new TB_CLASSE();
+            tb_classe ClasseE = new tb_classe();
             Atribuir(Classe, ClasseE);
             unitOfWork.RepositorioClasse.Inserir(ClasseE);
             unitOfWork.Commit(shared);
@@ -52,7 +52,7 @@ namespace Services
         /// <param name="Classe"></param>
         public void Editar(ClasseModel Classe)
         {
-            TB_CLASSE ClasseE = new TB_CLASSE();
+            tb_classe ClasseE = new tb_classe();
             Atribuir(Classe, ClasseE);
             unitOfWork.RepositorioClasse.Editar(ClasseE);
             unitOfWork.Commit(shared);
@@ -75,7 +75,7 @@ namespace Services
         /// <returns></returns>
         private IQueryable<ClasseModel> GetQuery()
         {
-            IQueryable<TB_CLASSE> tb_Classe = unitOfWork.RepositorioClasse.GetQueryable();
+            IQueryable<tb_classe> tb_Classe = unitOfWork.RepositorioClasse.GetQueryable();
             var query = from ClasseE in tb_Classe
                         select new ClasseModel
                         {
@@ -129,7 +129,7 @@ namespace Services
         /// </summary>
         /// <param name="Classe">Objeto do modelo</param>
         /// <param name="ClasseE">Entity mapeada da base de dados</param>
-        private void Atribuir(ClasseModel Classe, TB_CLASSE ClasseE)
+        private void Atribuir(ClasseModel Classe, tb_classe ClasseE)
         {
              ClasseE.id_Classe = Classe.id_Classe; 
              ClasseE.TB_QUESTAO_id_Questao = Classe.id_Questao;

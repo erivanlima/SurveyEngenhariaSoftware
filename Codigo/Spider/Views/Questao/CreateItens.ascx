@@ -10,11 +10,11 @@
         <legend>Itens_da_QuestaoModel</legend>
 
         <%--<div class="editor-label">
-            <%: Html.LabelFor(model => model.idTB_ITENS_DA_QUESTAO) %>
+            <%: Html.LabelFor(model => model.idtb_itens_da_questao) %>
         </div>
         <div class="editor-field">
-            <%: Html.EditorFor(model => model.idTB_ITENS_DA_QUESTAO) %>
-            <%: Html.ValidationMessageFor(model => model.idTB_ITENS_DA_QUESTAO) %>
+            <%: Html.EditorFor(model => model.idtb_itens_da_questao) %>
+            <%: Html.ValidationMessageFor(model => model.idtb_itens_da_questao) %>
         </div>--%>
 
         <div class="editor-label">
