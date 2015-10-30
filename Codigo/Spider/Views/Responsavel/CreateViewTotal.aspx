@@ -180,7 +180,7 @@
                         Resposta:
                         <% if (Questao.Obrigatoria)
                            {  %>
-                        <input class="text-box single-line" id="questoes_<%= i %>__respostas__Resposta" name="questoes[<%= i %>].respostas.Resposta"
+                        <input class="syntaxhighlighter" id="questoes_<%= i %>__respostas__Resposta" name="questoes[<%= i %>].respostas.Resposta"
                             value="" type="text" required="required" />
                         <% }
                            else

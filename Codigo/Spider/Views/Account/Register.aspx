@@ -5,13 +5,13 @@
 </asp:Content>
 
 <asp:Content ID="registerContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Create a New Account</h2>
+    <h2>Criar uma nova conta</h2>
     <p>
-        Use the form below to create a new account. 
+        Use o formulário abaixo para criar uma nova conta. 
     </p>
-    <p>
+    <%--<p>
         Passwords are required to be a minimum of <%: Membership.MinRequiredPasswordLength %> characters in length.
-    </p>
+    </p>--%>
 
     <script src="<%: Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
     <script src="<%: Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>" type="text/javascript"></script>
@@ -20,42 +20,42 @@
         <%: Html.ValidationSummary(true, "Account creation was unsuccessful. Please correct the errors and try again.") %>
         <div>
             <fieldset>
-                <legend>Account Information</legend>
+                <legend>Dados da conta</legend>
                 
-                <div class="editor-label">
-                    <%: Html.LabelFor(m => m.UserName) %>
-                </div>
                 <div class="editor-field">
+                <div class="editor-label">
+                    Nome
+                </div>
                     <%: Html.TextBoxFor(m => m.UserName) %>
                     <%: Html.ValidationMessageFor(m => m.UserName) %>
                 </div>
                 
-                <div class="editor-label">
-                    <%: Html.LabelFor(m => m.Email) %>
-                </div>
                 <div class="editor-field">
+                <div class="editor-label">
+                    Email
+                </div>
                     <%: Html.TextBoxFor(m => m.Email) %>
                     <%: Html.ValidationMessageFor(m => m.Email) %>
                 </div>
                 
-                <div class="editor-label">
-                    <%: Html.LabelFor(m => m.Password) %>
-                </div>
                 <div class="editor-field">
+                <div class="editor-label">
+                    Senha 
+                </div>
                     <%: Html.PasswordFor(m => m.Password) %>
                     <%: Html.ValidationMessageFor(m => m.Password) %>
                 </div>
-                
-                <div class="editor-label">
-                    <%: Html.LabelFor(m => m.ConfirmPassword) %>
-                </div>
+               
                 <div class="editor-field">
+                <div class="editor-label">
+                    Confirme a Senha
+                </div>
                     <%: Html.PasswordFor(m => m.ConfirmPassword) %>
                     <%: Html.ValidationMessageFor(m => m.ConfirmPassword) %>
                 </div>
-                
+                 <br />
                 <p>
-                    <input type="submit" value="Register" />
+                    <input class="btn btn-primary" type="submit" value="Salvar" />
                 </p>
             </fieldset>
         </div>

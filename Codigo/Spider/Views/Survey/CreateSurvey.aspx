@@ -62,7 +62,7 @@
         </div>--%>
     <div class="editor-field">
         <%: Html.HiddenFor(model => model.Data_Criacao, new { Value = DateTime.Now.ToShortDateString() })%>
-        <%: Html.ValidationMessageFor(model => model.Data_Criacao) %>
+        <%--<%: Html.ValidationMessageFor(model => model.Data_Criacao) %>--%>
     </div>
 
     <div class="editor-label">

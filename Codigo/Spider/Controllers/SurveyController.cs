@@ -261,6 +261,7 @@ namespace Spider.Controllers
             return View(ListaQuestoesItens(id));
          
         }
+
         public SurveyModel ListaQuestoesItens(int id)
         {
             SurveyModel survey = new SurveyModel();
@@ -312,7 +313,21 @@ namespace Spider.Controllers
             return survey;
         }
 
-     
+        [HttpGet]
+        public ActionResult Sobre()
+        {
+
+            return View();
+
+        }
+
+        [HttpGet]
+        public ActionResult Contato()
+        {
+
+            return View();
+
+        }
 
 
     }
